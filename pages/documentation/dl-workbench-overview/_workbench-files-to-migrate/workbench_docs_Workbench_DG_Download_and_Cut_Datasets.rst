@@ -1,11 +1,19 @@
 .. index:: pair: page; Cut Datasets
-.. _doxid-workbench_docs__workbench__d_g__download_and__cut__datasets:
+.. _workbench_types__cut_datasets:
+
+.. meta::
+   :description: Information on how to cut datasets which are considered as "big in size" to decrease loading times. 
+                 Provided is also list of datasets which support cutting.
+   :keywords: OpenVINO, Deep Learning Workbench, DL Workbench, user guide, cut dataset, decrease loading time, 
+              ImageNet, Pascal Visual Object Classes, Pascal VOC, Common Objects in Context, COCO
 
 
 Cut Datasets
 ============
 
-:target:`doxid-workbench_docs__workbench__d_g__download_and__cut__datasets_1md_openvino_workbench_docs_workbench_dg_download_and_cut_datasets` Original datasets are considerably big in size. If you want to save your time when loading original datasets into the DL Workbench, cut them as described in the following sections.
+:target:`workbench_types__cut_datasets_1md_openvino_workbench_docs_workbench_dg_download_and_cut_datasets` Original 
+datasets are considerably big in size. If you want to save your time when loading original datasets into the DL Workbench, 
+cut them as described in the following sections.
 
 * `ImageNet <#imagenet>`__
 
@@ -13,7 +21,8 @@ Cut Datasets
 
 * `Common Objects in Context (COCO) <#coco>`__
 
-To learn more about dataset types supported by the DL Workbench, their structure, and how to download them, refer to :ref:`Dataset Types <doxid-workbench_docs__workbench__d_g__dataset__types>`.
+To learn more about dataset types supported by the DL Workbench, their structure, and how to download them, refer to 
+:ref:`Dataset Types <workbench_dataset__types>`.
 
 .. _imagenet:
 
@@ -25,21 +34,17 @@ Cut ImageNet Dataset
 
 #. Save `the script to cut datatsets <https://raw.githubusercontent.com/aalborov/cut_dataset/38c6dd3948ce4084a52c66e2e83c63eb3fa883e9/cut_dataset.py>`__ to the following directory:
    
-   * Linux\*, macOS\*: ``/home/<user>/Work``. Replace ``<user>`` with your username.
+   * Linux, macOS: ``/home/<user>/Work``. Replace ``<user>`` with your username.
    
-   * Windows\* : ``C:\Work``
+   * Windows : ``C:\Work``
 
-#. Put the :ref:`downloaded dataset <doxid-workbench_docs__workbench__d_g__dataset__types>` in the same directory.
+#. Put the :ref:`downloaded dataset <workbench_dataset__types>` in the same directory.
 
 #. Follow instructions for your operating system.
 
-.. note:: Replace ``<user>`` with your username. Run the following command in a terminal for Linux, macOS and in the Windows PowerShell\* for Windows.
-
-
-
-
-
-
+.. note::
+   Replace ``<user>`` with your username. Run the following command in a terminal for Linux, macOS and in the Windows 
+   PowerShell for Windows.
 
 
 
@@ -95,21 +100,17 @@ Cut Pascal VOC Dataset
 
 #. Save `the script to cut datatsets <https://raw.githubusercontent.com/aalborov/cut_dataset/38c6dd3948ce4084a52c66e2e83c63eb3fa883e9/cut_dataset.py>`__ to the following directory:
    
-   * Linux\*, macOS\*: ``/home/<user>/Work``. Replace ``<user>`` with your username.
+   * Linux, macOS: ``/home/<user>/Work``. Replace ``<user>`` with your username.
    
-   * Windows\* : ``C:\Work``
+   * Windows : ``C:\Work``
 
-#. Put the :ref:`downloaded dataset <doxid-workbench_docs__workbench__d_g__dataset__types>` in the same directory.
+#. Put the :ref:`downloaded dataset <workbench_dataset__types>` in the same directory.
 
 #. Follow instructions for your operating system.
 
-.. note:: Replace ``<user>`` with your username. Run the following command in a terminal for Linux, macOS and in the Windows PowerShell\* for Windows.
-
-
-
-
-
-
+.. note::
+   Replace ``<user>`` with your username. Run the following command in a terminal for Linux, macOS and in the Windows 
+   PowerShell for Windows.
 
 
 
@@ -165,25 +166,21 @@ Cut COCO Dataset
 
 #. Save `the script to cut datatsets <https://raw.githubusercontent.com/aalborov/cut_dataset/38c6dd3948ce4084a52c66e2e83c63eb3fa883e9/cut_dataset.py>`__ to the following directory:
    
-   * Linux\*, macOS\*: ``/home/<user>/Work``. Replace ``<user>`` with your username.
+   * Linux, macOS: ``/home/<user>/Work``. Replace ``<user>`` with your username.
      
      .. note:: Replace ``<user>`` with your username.
      
      
      
-     \* Windows\* : ``C:\Work``
+     * Windows : ``C:\Work``
 
-#. Put the :ref:`downloaded archives <doxid-workbench_docs__workbench__d_g__dataset__types>` in the same directory.
+#. Put the :ref:`downloaded archives <workbench_dataset__types>` in the same directory.
 
 #. Follow instructions for your operating system.
 
-.. note:: Replace ``<user>`` with your username. Run the following command in a terminal for Linux, macOS and in the Windows PowerShell\* for Windows.
-
-
-
-
-
-
+.. note::
+   Replace ``<user>`` with your username. Run the following command in a terminal for Linux, macOS and in the Windows 
+   PowerShell for Windows.
 
 
 
@@ -235,9 +232,9 @@ This command runs the script with the following arguments:
 See Also
 ~~~~~~~~
 
-* :ref:`Dataset Types <doxid-workbench_docs__workbench__d_g__dataset__types>`
+* :ref:`Dataset Types <workbench_dataset__types>`
 
-* :ref:`Import Datasets <doxid-workbench_docs__workbench__d_g__generate__datasets>`
+* :ref:`Import Datasets <workbench_dataset__obtain_datasets>`
 
 * :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 

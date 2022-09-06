@@ -47,7 +47,7 @@ Default method optimizes your model to achieve best performance. The algorithm u
 
 .. _accuracyaware:
 
-.. note:: This method supports both annotated and not annotated datasets. See :ref:`Dataset Types <doxid-workbench_docs__workbench__d_g__dataset__types>` for details.
+.. note:: This method supports both annotated and not annotated datasets. See :ref:`Dataset Types <workbench_dataset__types>` for details.
 
 
 
@@ -60,7 +60,7 @@ AccuracyAware calibration optimizes your model to achieve best performance possi
 
 .. _performance-preset:
 
-.. note:: This method supports only annotated datasets. See :ref:`Dataset Types <doxid-workbench_docs__workbench__d_g__dataset__types>` for details.
+.. note:: This method supports only annotated datasets. See :ref:`Dataset Types <workbench_dataset__types>` for details.
 
 
 
@@ -89,7 +89,7 @@ Overall flow for converting a model from FP32 to INT8:
 
 #. :ref:`Select an FP32 model <workbench_guide__obtain_models>`
 
-#. :ref:`Select an appropriate dataset <doxid-workbench_docs__workbench__d_g__generate__datasets>`
+#. :ref:`Select an appropriate dataset <workbench_dataset__obtain_datasets>`
 
 #. :ref:`Run a baseline inference <dl_workbench__get_started>`
 

@@ -48,7 +48,7 @@ to import a model or select **Explore 100+ OMZ Models** to upload a model from O
         :classes: btn-outline-primary btn-block stretched-link
 
 Once you have imported a model, you are redirected to the **Create Project** page, where you can select the imported model 
-and proceed to :ref:`select a dataset <doxid-workbench_docs__workbench__d_g__generate__datasets>`.
+and proceed to :ref:`select a dataset <workbench_dataset__obtain_datasets>`.
 
 You can find all imported models on the **Start Page** :
 

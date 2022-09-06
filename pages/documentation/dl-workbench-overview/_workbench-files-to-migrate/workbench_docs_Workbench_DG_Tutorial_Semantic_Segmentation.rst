@@ -35,7 +35,7 @@ has become, and check the difference between original and optimized model accura
       - `Semantic Segmentation <https://paperswithcode.com/task/semantic-segmentation>`__
       - `TensorFlow\* <https://www.tensorflow.org/>`__
       - `Open Model Zoo <https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/public/deeplabv3>`__
-      - :ref:`Pascal Visual Object Classes (Pascal VOC) <doxid-workbench_docs__workbench__d_g__dataset__types>`
+      - :ref:`Pascal Visual Object Classes (Pascal VOC) <workbench_dataset__types>`
 
 .. tip::
    You can learn how to :ref:`import a model <workbench_start__import_model>` and 
@@ -141,7 +141,7 @@ Next Step
 After evaluating the accuracy, you can decide whether the difference between imported and optimized models predictions 
 is critical or not:
 
-* If the tradeoff between accuracy and performance is too big, :ref:`import an annotated dataset <doxid-workbench_docs__workbench__d_g__generate__datasets>` and use `AccuracyAware optimization method <Int-8_Quantization.md#accuracyaware>`__, then repeat the steps from this tutorial.
+* If the tradeoff between accuracy and performance is too big, :ref:`import an annotated dataset <workbench_dataset__obtain_datasets>` and use `AccuracyAware optimization method <Int-8_Quantization.md#accuracyaware>`__, then repeat the steps from this tutorial.
 
 * If the tradeoff is acceptable, :ref:`explore inference configurations <doxid-workbench_docs__workbench__d_g__deploy_and__integrate__performance__criteria_into__application>` to further enhance the performance. Then create a :ref:`deployment package <doxid-workbench_docs__workbench__d_g__deployment__package>` with your ready-to-deploy model.
 

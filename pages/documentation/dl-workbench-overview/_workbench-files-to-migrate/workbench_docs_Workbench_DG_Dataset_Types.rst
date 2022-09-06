@@ -1,13 +1,19 @@
 .. index:: pair: page; Dataset Types
-.. _doxid-workbench_docs__workbench__d_g__dataset__types:
+.. _workbench_dataset__types:
 
+.. meta::
+   :description: The list of dataset types available to use in the OpenVINO Deep 
+                 Learning Workbench with description how to use them.
+   :keywords: OpenVINO, Deep Learning Workbench, DL Workbench, user guide, dataset type, ImageNet, 
+              Pascal Visual Object Classes, Pascal VO Classes, Pascal VOC, Common Objects in Context, COCO, 
+              Common Semantic Segmentation, CSS, Common Super-Resolution, CSR, Labeled Faces in the Wild, LFW, 
+              Labeled Faces in the Wild, LFW, Visual Geometry Group Face 2, VGGFace2, Wider Face, Open Images, 
+              Open Images, Cityscapes, Not annotated dataset
 
 Dataset Types
 =============
 
-:target:`doxid-workbench_docs__workbench__d_g__dataset__types_1md_openvino_workbench_docs_workbench_dg_dataset_types`
-
-
+:target:`workbench_dataset__types_1md_openvino_workbench_docs_workbench_dg_dataset_types`
 
 
 
@@ -41,7 +47,8 @@ Below is the list of dataset types available to use in the DL Workbench:
 
 * `Not annotated dataset <#unannotated>`__
 
-Your dataset does not need to contain images from official databases providing these types, like ImageNet or Pascal VOC, but it needs to adhere to the supported dataset formats.
+Your dataset does not need to contain images from official databases providing these types, like ImageNet or 
+Pascal VOC, but it needs to adhere to the supported dataset formats.
 
 .. list-table::
     :header-rows: 1
@@ -134,10 +141,9 @@ The annotation file is organized as follows:
 
 .. _voc:
 
-.. note:: The dataset is considerably big in size. If you want to save your time when loading it into the DL Workbench, follow the instructions to :ref:`cut the dataset <doxid-workbench_docs__workbench__d_g__download_and__cut__datasets>`.
-
-
-
+.. note::
+   The dataset is considerably big in size. If you want to save your time when loading it into the DL Workbench, 
+   follow the instructions to :ref:`cut the dataset <workbench_types__cut_datasets>`.
 
 
 Pascal Visual Object Classes (Pascal VOC)
@@ -172,7 +178,7 @@ To download test data from `Pascal VOC <http://host.robots.ox.ac.uk/pascal/VOC/>
 
 #. Download the *training/validation_data* file.
 
-.. note:: The dataset is considerably big in size. If you want to save your time when loading it into the DL Workbench, follow the instructions to :ref:`cut the dataset <doxid-workbench_docs__workbench__d_g__download_and__cut__datasets>`.
+.. note:: The dataset is considerably big in size. If you want to save your time when loading it into the DL Workbench, follow the instructions to :ref:`cut the dataset <workbench_types__cut_datasets>`.
 
 
 
@@ -258,7 +264,7 @@ To use a dataset from the `COCO <http://cocodataset.org>`__ website, download an
 
 * `2017 Val images <http://images.cocodataset.org/zips/val2017.zip>`__ and `2017 Train/Val annotations <http://images.cocodataset.org/annotations/annotations_trainval2017.zip>`__
 
-.. note:: The dataset is considerably big in size. If you want to save your time when loading it into the DL Workbench, follow the instructions to :ref:`cut the dataset <doxid-workbench_docs__workbench__d_g__download_and__cut__datasets>`.
+.. note:: The dataset is considerably big in size. If you want to save your time when loading it into the DL Workbench, follow the instructions to :ref:`cut the dataset <workbench_types__cut_datasets>`.
 
 
 
@@ -734,9 +740,9 @@ The archive is organized as follows:
 See Also
 ~~~~~~~~
 
-* :ref:`Cut Datasets <doxid-workbench_docs__workbench__d_g__download_and__cut__datasets>`
+* :ref:`Cut Datasets <workbench_types__cut_datasets>`
 
-* :ref:`Import Datasets <doxid-workbench_docs__workbench__d_g__generate__datasets>`
+* :ref:`Import Datasets <workbench_dataset__obtain_datasets>`
 
 * :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 

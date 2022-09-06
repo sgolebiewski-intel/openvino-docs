@@ -29,7 +29,7 @@ To profile on a remote machine, follow the steps below:
 
 #. :ref:`Add an environment <doxid-workbench_docs__workbench__d_g__select__environment>` to the project.
 
-#. :ref:`Add a dataset <doxid-workbench_docs__workbench__d_g__generate__datasets>` to the project.
+#. :ref:`Add a dataset <workbench_dataset__obtain_datasets>` to the project.
 
 #. :ref:`Create a project <workbench_start__create_project>`.
 

@@ -1,14 +1,19 @@
 .. index:: pair: page; Obtain Datasets
-.. _doxid-workbench_docs__workbench__d_g__generate__datasets:
+.. _workbench_dataset__obtain_datasets:
+
+.. meta::
+   :description: Information on how to create and import annotated datasets of different formats, 
+                 upload not annotated dataset, and enlarge datasets using augmentation in OpenVINO 
+                 Deep Learning Workbench.
+   :keywords: OpenVINO, Deep Learning Workbench, DL Workbench, create dataset, import dataset, obatin dataset, 
+              enlarge datasets, model validation, image dataset, annoted dataset, not annoted dataset, 
+              text dataset
 
 
 Obtain Datasets
 ===============
 
-:target:`doxid-workbench_docs__workbench__d_g__generate__datasets_1md_openvino_workbench_docs_workbench_dg_import_datasets`
-
-
-
+:target:`workbench_dataset__obtain_datasets_1md_openvino_workbench_docs_workbench_dg_import_datasets`
 
 
 .. toctree::
@@ -17,7 +22,8 @@ Obtain Datasets
 
    workbench_docs_Workbench_DG_Dataset_Types
 
-Validation of the model is always performed against specific data combined into datasets. To obtain trustworthy results, a dataset must satisfy the following requirements:
+Validation of the model is always performed against specific data combined into datasets. To obtain trustworthy results, 
+a dataset must satisfy the following requirements:
 
 * Format: the data should be compatible with the model domain (Computer Vision or Natural Language Processing).
 
@@ -25,10 +31,9 @@ Validation of the model is always performed against specific data combined into 
 
 * Size: a dataset should contain a sufficient number of items (100+).
 
-.. note:: You can use `Datumaro <https://openvinotoolkit.github.io/datumaro/docs/>`__ to make the process of creating your dataset easier. Datumaro is a free framework and CLI tool for building, transforming, and analyzing datasets and annotations.
-
-
-
+.. note::
+   You can use `Datumaro <https://openvinotoolkit.github.io/datumaro/docs/>`__ to make the process of creating your 
+   dataset easier. Datumaro is a free framework and CLI tool for building, transforming, and analyzing datasets and annotations.
 
 
 Image Dataset
@@ -99,11 +104,12 @@ Image datasets can be either Annotated or Not Annotated:
 
 .. dropdown:: Upload Annotated Dataset
 
-    **NOTE**: Sample datasets must consist of a small sampling of images and be in
-    ImageNet, Pascal Visual Object Classes (Pascal VOC), Common Objects in Context
-    (COCO), Common Semantic Segmentation, Labeled Faces in the Wild (LFW), Visual Geometry Group Face 2 (VGGFace2), Wider Face, Open Images, Cityscapes
-    or unannotated format. To learn more about
-    the formats, refer to Dataset Types.
+   .. note:: 
+      Sample datasets must consist of a small sampling of images and be in
+      ImageNet, Pascal Visual Object Classes (Pascal VOC), Common Objects in Context
+      (COCO), Common Semantic Segmentation, Labeled Faces in the Wild (LFW), Visual Geometry Group Face 2 (VGGFace2), Wider Face, Open Images, Cityscapes
+      or unannotated format. To learn more about
+      the formats, refer to Dataset Types.
 
    On the **Create Project** page, go to **Select a Validation Dataset** tab and click **Import Image Dataset**:
 
@@ -123,7 +129,9 @@ Image datasets can be either Annotated or Not Annotated:
 Text Dataset
 ~~~~~~~~~~~~
 
-A text dataset should be represented as a table in СSV/TSV format of at least two columns with Text and Label for Text Classification use case. Textual Entailment task requires a СSV table of three columns with Premise, Hypothesis, and Label. `HuggingFace’s datasets library <https://huggingface.co/datasets>`__ provides access to different text datasets.
+A text dataset should be represented as a table in СSV/TSV format of at least two columns with Text and Label for Text 
+Classification use case. Textual Entailment task requires a СSV table of three columns with Premise, Hypothesis, and Label. 
+`HuggingFace’s datasets library <https://huggingface.co/datasets>`__ provides access to different text datasets.
 
 .. dropdown:: Upload Text Dataset
 
@@ -150,9 +158,9 @@ A text dataset should be represented as a table in СSV/TSV format of at least t
 See Also
 ~~~~~~~~
 
-* :ref:`Dataset Types <doxid-workbench_docs__workbench__d_g__dataset__types>`
+* :ref:`Dataset Types <workbench_dataset__types>`
 
-* :ref:`Cut Datasets <doxid-workbench_docs__workbench__d_g__download_and__cut__datasets>`
+* :ref:`Cut Datasets <workbench_types__cut_datasets>`
 
 * :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 

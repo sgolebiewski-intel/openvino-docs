@@ -50,7 +50,7 @@ Import Dataset
 
 Validation datasets can be either annotated or not annotated. This document, unlike the Create Project video, describes 
 how to import not annotated dataset. If you want to learn about importing annotated datasets, see the 
-:ref:`Obtain Datasets <doxid-workbench_docs__workbench__d_g__generate__datasets>` page.
+:ref:`Obtain Datasets <workbench_dataset__obtain_datasets>` page.
 
 On the **Create Project** page, go to the **Select a Validation Dataset** tab and click **Import Dataset** :
 

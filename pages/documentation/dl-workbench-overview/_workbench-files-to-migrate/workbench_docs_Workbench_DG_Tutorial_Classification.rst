@@ -35,7 +35,7 @@ has become, and check the difference between original and optimized model accura
       - `Classification <https://paperswithcode.com/task/image-classification>`__
       - `Caffe <https://caffe.berkeleyvision.org/>`__
       - `Open Model Zoo <https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/public/mobilenet-v2>`__
-      - :ref:`Not Annotated <doxid-workbench_docs__workbench__d_g__dataset__types>`
+      - :ref:`Not Annotated <workbench_dataset__types>`
 
 You can learn how to :ref:`import the model <workbench_start__import_model>` and 
 :ref:`create a not annotated dataset <workbench_start__create_project>` in the DL Workbench 
@@ -137,7 +137,7 @@ Next Step
 After evaluating the accuracy, you can decide whether the difference between imported and optimized models predictions 
 is critical or not:
 
-* If the tradeoff between accuracy and performance is too big, :ref:`import an annotated dataset <doxid-workbench_docs__workbench__d_g__generate__datasets>` and use `AccuracyAware optimization method <Int-8_Quantization.md#accuracyaware>`__, then repeat the steps from this tutorial.
+* If the tradeoff between accuracy and performance is too big, :ref:`import an annotated dataset <workbench_dataset__obtain_datasets>` and use `AccuracyAware optimization method <Int-8_Quantization.md#accuracyaware>`__, then repeat the steps from this tutorial.
 
 * If the tradeoff is acceptable, :ref:`explore inference configurations <doxid-workbench_docs__workbench__d_g__deploy_and__integrate__performance__criteria_into__application>` to further enhance the performance. Then create a :ref:`deployment package <doxid-workbench_docs__workbench__d_g__deployment__package>` with your ready-to-deploy model.
 
