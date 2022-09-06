@@ -87,7 +87,7 @@ Workflow
 
 Overall flow for converting a model from FP32 to INT8:
 
-#. :ref:`Select an FP32 model <doxid-workbench_docs__workbench__d_g__select__models>`
+#. :ref:`Select an FP32 model <workbench_guide__obtain_models>`
 
 #. :ref:`Select an appropriate dataset <doxid-workbench_docs__workbench__d_g__generate__datasets>`
 

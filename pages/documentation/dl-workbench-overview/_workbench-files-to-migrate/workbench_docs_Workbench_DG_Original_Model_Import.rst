@@ -1,14 +1,18 @@
 .. index:: pair: page; Import Original Model
-.. _doxid-workbench_docs__workbench__d_g__original__model__import:
+.. _workbench_models__original_model:
+
+.. meta::
+   :description: Guide on how to import original models and convert them to 
+                 Intermediate Representation format.
+   :keywords: OpenVINO, Deep Learning Workbench, DL Workbench, original models, import model, 
+              convert model, Intermediate Representation, OpenVINO IR, upload model, create project, 
+              caffe, mxnet, onnx, tensorflow, input, advanced parameters
 
 
 Import Original Model
 =====================
 
-:target:`doxid-workbench_docs__workbench__d_g__original__model__import_1md_openvino_workbench_docs_workbench_dg_original_models`
-
-
-
+:target:`workbench_models__original_model_1md_openvino_workbench_docs_workbench_dg_original_models`
 
 
 .. toctree::
@@ -33,7 +37,8 @@ Click **Create Project** on the Start Page to import a model:
 
 .. image:: create_project_original.png
 
-Click **Import Model** and Select the Model Domain: Computer Vision (CV) or Natural Language Processing (NLP). The uploading process depends on the framework of your model. This section contains requirements for each supported framework:
+Click **Import Model** and Select the Model Domain: Computer Vision (CV) or Natural Language Processing (NLP). The 
+uploading process depends on the framework of your model. This section contains requirements for each supported framework:
 
 .. image:: _static/images/import_frameworks.png
 
@@ -48,7 +53,7 @@ Click **Import Model** and Select the Model Domain: Computer Vision (CV) or Natu
 
    To import a Caffe model, select the framework in the drop-down list, upload a `.prototxt` file and a `.caffemodel` file, and provide the name.
 
-   To learn more about Caffe\* models, refer to the `Caffe article`_.
+   To learn more about Caffe models, refer to the `Caffe article`_.
 
    .. _Caffe article: https://riptutorial.com/caffe/example/31619/prototxt-template
 
@@ -154,18 +159,24 @@ Click **Import Model** and Select the Model Domain: Computer Vision (CV) or Natu
 2. Prepare Environment
 ~~~~~~~~~~~~~~~~~~~~~~
 
-At the **Prepare Environment** stage, the DL Workbench installs the necessary packages to work with the model framework. For each framework, the download happens only once and takes from two to five minutes. If the environment setup is successful, you will automatically proceed to the next step. Otherwise, look for a solution in :ref:`Troubleshooting <dl_workbench__troubleshooting>`.
+At the **Prepare Environment** stage, the DL Workbench installs the necessary packages to work with the model framework. 
+For each framework, the download happens only once and takes from two to five minutes. If the environment setup is successful, 
+you will automatically proceed to the next step. Otherwise, look for a solution in 
+:ref:`Troubleshooting <dl_workbench__troubleshooting>`.
 
 3. Convert Models to Intermediate Representation (IR)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To work with OpenVINO tools, you need to obtain a model in the Intermediate Representation (IR) format. IR is the OpenVINO format of pre-trained model representation with two files:
+To work with OpenVINO tools, you need to obtain a model in the Intermediate Representation (IR) format. IR is the 
+OpenVINO format of pre-trained model representation with two files:
 
 * XML file describing the network topology
 
 * BIN file containing weights and biases
 
-.. note:: For details on converting process, refer to :ref:`Converting a Model to Intermediate Representation document <conv_prep__set_input_shapes>`.
+.. note::
+   For details on converting process, refer to 
+   :ref:`Converting a Model to Intermediate Representation document <conv_prep__set_input_shapes>`.
 
 General Parameters
 ------------------
@@ -181,15 +192,19 @@ Specify the converted model precision and select the original color space for Co
 Configuration Files
 -------------------
 
-You can upload a Model Conversion Configuration File that contains the description of the necessary transformations required to convert a model to IR. Learn more about configuration files in the Model Optimizer `documentation <https://docs.openvino.ai/latest/openvino_docs_MO_DG_prepare_model_customize_model_optimizer_Customize_Model_Optimizer.html#generic-transformations-config-front-phase-transformations>`__.
+You can upload a Model Conversion Configuration File that contains the description of the necessary transformations required 
+to convert a model to IR. Learn more about configuration files in the Model Optimizer 
+`documentation <https://docs.openvino.ai/latest/openvino_docs_MO_DG_prepare_model_customize_model_optimizer_Customize_Model_Optimizer.html#generic-transformations-config-front-phase-transformations>`__.
 
 .. note::  
-      When importing TensorFlow\* models, provide an additional pipeline configuration file and choose a model conversion configuration file.
+   When importing TensorFlow models, provide an additional pipeline configuration file and choose a model conversion 
+   configuration file.
 
 Inputs
 ------
 
-On this step you can specify the inputs of your model. This is an optional step, if your model does not require any additional conversion configurations or belongs to the NLP domain, just click **Convert** to proceed to the next step.
+On this step you can specify the inputs of your model. This is an optional step, if your model does not require any 
+additional conversion configurations or belongs to the NLP domain, just click **Convert** to proceed to the next step.
 
 Check **Specify Inputs (Optional)** box, if the model requires additional conversion settings, such as:
 
@@ -240,7 +255,8 @@ Check **Specify Inputs (Optional)** box, if the model requires additional conver
 Advanced Parameters
 -------------------
 
-In the Advanced Parameters, you can use default output layers or cut a model by specifying the layers you want to consider as output ones.
+In the Advanced Parameters, you can use default output layers or cut a model by specifying the layers you 
+want to consider as output ones.
 
 For details on converting models from the supported frameworks, refer to the corresponding documentation:
 
@@ -274,7 +290,9 @@ For details on converting models from the supported frameworks, refer to the cor
 4. Configure Model Inputs
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If the conversion step is completed successfully, you will obtain a model in the IR format. However, to use it in the OpenVINO tools (for example, benchmark the model, optimize it, and measure accuracy), you need to specify model layouts. Learn more about layouts in the `documentation <https://docs.openvinotoolkit.org/latest/omz_tools_downloader.html>`__.
+If the conversion step is completed successfully, you will obtain a model in the IR format. However, to use it in the 
+OpenVINO tools (for example, benchmark the model, optimize it, and measure accuracy), you need to specify model layouts. 
+Learn more about layouts in the `documentation <https://docs.openvinotoolkit.org/latest/omz_tools_downloader.html>`__.
 
 .. image:: configure_input.png
 
@@ -300,7 +318,8 @@ Computer Vision Models:
     * - Other
       - any other dimension role that does not refer to the number of channels or batch
 
-The role of dimensions may differ depending on the model and the way the data was fed to the model during training. Usually, NCHW is used for ONNX models, and NHWC for TensorFlow models. If you want to specify different dimension roles, select Custom.
+The role of dimensions may differ depending on the model and the way the data was fed to the model during training. Usually, 
+NCHW is used for ONNX models, and NHWC for TensorFlow models. If you want to specify different dimension roles, select Custom.
 
 Natural Language Processing Models:
 
@@ -316,9 +335,11 @@ Natural Language Processing Models:
     * - Other
       - any other dimension role that does not refer to the number of channels or batch
 
-The role of dimensions may differ depending on the model and the way the data was fed to the model during training. Usually, NCHW is used for ONNX models, and NHWC for TensorFlow models. If you want to specify different dimension roles, select Custom.
+The role of dimensions may differ depending on the model and the way the data was fed to the model during training. Usually, 
+NCHW is used for ONNX models, and NHWC for TensorFlow models. If you want to specify different dimension roles, select Custom.
 
-Once you click **Validate and Import**, you are redirected to the **Create Project** page, where you can select the model, analyze it and proceed to select a dataset.
+Once you click **Validate and Import**, you are redirected to the **Create Project** page, where you can select the model, 
+analyze it and proceed to select a dataset.
 
 See Also
 ~~~~~~~~

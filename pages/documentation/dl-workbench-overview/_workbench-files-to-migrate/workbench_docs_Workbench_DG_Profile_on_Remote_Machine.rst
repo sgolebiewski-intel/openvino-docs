@@ -23,7 +23,7 @@ To profile on a remote machine, follow the steps below:
 
 #. :ref:`Register the remote machine <doxid-workbench_docs__workbench__d_g__add__remote__target>` in the DL Workbench.
 
-#. :ref:`Add a model <doxid-workbench_docs__workbench__d_g__select__models>` to a project.
+#. :ref:`Add a model <workbench_guide__obtain_models>` to a project.
 
 #. `Add the remote machine <#add-target>`__ to the project.
 
@@ -42,7 +42,7 @@ After these steps, you can run single and group inference and compare performanc
 Add Remote Machine to Project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-On the **Create Project** page, :ref:`select a model <doxid-workbench_docs__workbench__d_g__select__models>` and move on to the **Select an Environment** tab.
+On the **Create Project** page, :ref:`select a model <workbench_guide__obtain_models>` and move on to the **Select an Environment** tab.
 
 Machines registered in the DL Workbench are added to the **Select an Environment** table. You can only select a machine that indicates **Available** state:
 

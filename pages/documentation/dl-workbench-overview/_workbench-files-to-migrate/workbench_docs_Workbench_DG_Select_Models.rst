@@ -1,14 +1,18 @@
 .. index:: pair: page; Obtain Models
-.. _doxid-workbench_docs__workbench__d_g__select__models:
+.. _workbench_guide__obtain_models:
+
+.. meta::
+   :description: Introduction on how to obtain original and Open Model Zoo models to convert them to 
+                 Intermediate Representation format.
+   :keywords: OpenVINO, Deep Learning Workbench, DL Workbench, obtain model, models, import model, 
+              convert model, Open Model Zoo, OMZ, create project, supported frameworks, OpenVINO IR, 
+              Intermediate Representation
 
 
 Obtain Models
 =============
 
-:target:`doxid-workbench_docs__workbench__d_g__select__models_1md_openvino_workbench_docs_workbench_dg_select_models`
-
-
-
+:target:`workbench_guide__obtain_models_1md_openvino_workbench_docs_workbench_dg_select_models`
 
 
 .. toctree::
@@ -18,7 +22,8 @@ Obtain Models
    workbench_docs_Workbench_DG_OMZ_Models
    workbench_docs_Workbench_DG_Original_Model_Import
 
-In the DL Workbench, you can import original and the Open Model Zoo (OMZ) models. Click **Create Project** on the Start Page to import a model or select **Explore 100+ OMZ Models** to upload a model from Open Model Zoo.
+In the DL Workbench, you can import original and the Open Model Zoo (OMZ) models. Click **Create Project** on the Start Page 
+to import a model or select **Explore 100+ OMZ Models** to upload a model from Open Model Zoo.
 
 .. panels::
 
@@ -42,7 +47,8 @@ In the DL Workbench, you can import original and the Open Model Zoo (OMZ) models
         :text: Import OMZ models
         :classes: btn-outline-primary btn-block stretched-link
 
-Once you have imported a model, you are redirected to the **Create Project** page, where you can select the imported model and proceed to :ref:`select a dataset <doxid-workbench_docs__workbench__d_g__generate__datasets>`.
+Once you have imported a model, you are redirected to the **Create Project** page, where you can select the imported model 
+and proceed to :ref:`select a dataset <doxid-workbench_docs__workbench__d_g__generate__datasets>`.
 
 You can find all imported models on the **Start Page** :
 
@@ -62,19 +68,19 @@ DL Workbench supports the following frameworks whether uploaded from a local fol
     * - OpenVINO™
       - ✔
       - ✔
-    * - TensorFlow\*
+    * - TensorFlow
       - ✔
       - ✔
-    * - MXNet\*
+    * - MXNet
       - ✔
       - ✔
-    * - ONNX\*
+    * - ONNX
       - ✔
       - ✔
-    * - Caffe\*
+    * - Caffe
       - ✔
       - ✔
-    * - PyTorch\*
+    * - PyTorch
       - 
       - ✔
 

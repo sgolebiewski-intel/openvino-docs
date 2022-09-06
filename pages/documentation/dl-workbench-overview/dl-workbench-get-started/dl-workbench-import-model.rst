@@ -33,10 +33,10 @@ There are two ways to import a model in DL Workbench:
 
 * Select a model from the Open Model Zoo. Open Model Zoo includes a set of high-quality pretrained Deep Learning `public <https://docs.openvinotoolkit.org/latest/omz_models_group_public.html>`__ and `Intel-trained <https://docs.openvinotoolkit.org/latest/omz_models_group_intel.html>`__ models for different use cases, such as classification, object detection, segmentation and many others.
 
-* Import your :ref:`original model <doxid-workbench_docs__workbench__d_g__select__models>`. Upload the files and start the import if you have a model pretrained in one of the supported frameworks or you already have an Intermediate Representation(IR) model.
+* Import your :ref:`original model <workbench_guide__obtain_models>`. Upload the files and start the import if you have a model pretrained in one of the supported frameworks or you already have an Intermediate Representation(IR) model.
 
 This document focuses on importing a model from the Open Model Zoo. If you want to learn about importing original model, 
-see the :ref:`Obtain Models <doxid-workbench_docs__workbench__d_g__select__models>` page.
+see the :ref:`Obtain Models <workbench_guide__obtain_models>` page.
 
 Download Model
 ~~~~~~~~~~~~~~
