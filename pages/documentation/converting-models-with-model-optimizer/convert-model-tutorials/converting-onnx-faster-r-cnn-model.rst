@@ -1,13 +1,23 @@
-.. index:: pair: page; Converting an ONNX Faster R-CNN Model
-.. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_onnx_specific__convert__faster__r_c_n_n:
+.. index:: pair: page; Convert an ONNX Faster R-CNN Model
+.. _conv_prep__onnx_faster_rcnn:
 
+.. meta::
+   :description: This tutorial demonstrates how to convert a Faster R-CNN model 
+                 from ONNX to the OpenVINO Intermediate Representation.
+   :keywords: Model Optimizer, tutorial, convert a model, model conversion, 
+              --input_model, --input_model parameter, command-line parameter, 
+              OpenVINO™ toolkit, deep learning inference, OpenVINO Intermediate 
+              Representation, ONNX, Faster R-CNN, Faster R-CNN model, 
+              pre-trained model, convert a model to OpenVINO IR
 
-Converting an ONNX Faster R-CNN Model
-=====================================
+Convert an ONNX Faster R-CNN Model
+==================================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_onnx_specific__convert__faster__r_c_n_n_1md_openvino_docs_mo_dg_prepare_model_convert_model_onnx_specific_convert_faster_rcnn` The instructions below are applicable **only** to the Faster R-CNN model converted to the ONNX file format from the `maskrcnn-benchmark model <https://github.com/facebookresearch/maskrcnn-benchmark>`__ :
+:target:`conv_prep__onnx_faster_rcnn_1md_openvino_docs_mo_dg_prepare_model_convert_model_onnx_specific_convert_faster_rcnn` 
 
-#. Download the pretrained model file from `onnx/models <https://github.com/onnx/models/tree/master/vision/object_detection_segmentation/faster-rcnn>`__ :
+The instructions below are applicable **only** to the Faster R-CNN model converted to the ONNX file format from the `maskrcnn-benchmark model <https://github.com/facebookresearch/maskrcnn-benchmark>`__ :
+
+#. Download the pre=trained model file from `onnx/models <https://github.com/onnx/models/tree/master/vision/object_detection_segmentation/faster-rcnn>`__ :
    
    * (commit-SHA: 8883e49e68de7b43e263d56b9ed156dfa1e03117).
 
