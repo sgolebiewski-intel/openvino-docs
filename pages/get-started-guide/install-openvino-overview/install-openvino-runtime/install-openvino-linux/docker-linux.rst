@@ -107,13 +107,13 @@ By default, the distributed Docker image for OpenVINO has the recommended versio
 	
 	RUN apt-get update && \
 	    apt-get install -y --no-install-recommends ocl-icd-libopencl1 && \
-	    rm -rf /var/lib/apt/lists/\* && \
+	    rm -rf /var/lib/apt/lists/* && \
 	    curl -L "https://github.com/intel/compute-runtime/releases/download/19.41.14441/intel-gmmlib_19.3.2_amd64.deb" --output "intel-gmmlib_19.3.2_amd64.deb" && \
 	    curl -L "https://github.com/intel/compute-runtime/releases/download/19.41.14441/intel-igc-core_1.0.2597_amd64.deb" --output "intel-igc-core_1.0.2597_amd64.deb" && \
 	    curl -L "https://github.com/intel/compute-runtime/releases/download/19.41.14441/intel-igc-opencl_1.0.2597_amd64.deb" --output "intel-igc-opencl_1.0.2597_amd64.deb" && \
 	    curl -L "https://github.com/intel/compute-runtime/releases/download/19.41.14441/intel-opencl_19.41.14441_amd64.deb" --output "intel-opencl_19.41.14441_amd64.deb" && \
 	    curl -L "https://github.com/intel/compute-runtime/releases/download/19.41.14441/intel-ocloc_19.41.14441_amd64.deb" --output "intel-ocloc_19.04.12237_amd64.deb" && \
-	    dpkg -i /tmp/opencl/\*.deb && \
+	    dpkg -i /tmp/opencl/*.deb && \
 	    ldconfig && \
 	    rm /tmp/opencl
 
@@ -135,7 +135,7 @@ By default, the distributed Docker image for OpenVINO has the recommended versio
 	    curl -L https://sourceforge.net/projects/intel-compute-runtime/files/19.41.14441/centos-7/intel-igc-opencl-1.0.2597-1.el7.x86_64.rpm/download -o intel-igc-opencl-1.0.2597-1.el7.x86_64.rpm && \
 	    curl -L https://sourceforge.net/projects/intel-compute-runtime/files/19.41.14441/centos-7/intel-igc-opencl-devel-1.0.2597-1.el7.x86_64.rpm/download -o  intel-igc-opencl-devel-1.0.2597-1.el7.x86_64.rpm && \
 	    curl -L https://sourceforge.net/projects/intel-compute-runtime/files/19.41.14441/centos-7/intel-opencl-19.41.14441-1.el7.x86_64.rpm/download -o intel-opencl-19.41.14441-1.el7.x86_64.rpm \
-	    rpm -ivh ${TEMP_DIR}/\*.rpm && \
+	    rpm -ivh ${TEMP_DIR}/*.rpm && \
 	    ldconfig && \
 	    rm -rf ${TEMP_DIR} && \
 	    yum remove -y epel-release
@@ -225,7 +225,7 @@ Run the Docker image with the following command:
 
 .. ref-code-block:: cpp
 
-	docker run -it --rm --device-cgroup-rule='c 189:\* rmw' -v /dev/bus/usb:/dev/bus/usb <image_name>
+	docker run -it --rm --device-cgroup-rule='c 189:* rmw' -v /dev/bus/usb:/dev/bus/usb <image_name>
 
 While the command above is not working, you can also run container in the privileged mode, enable the Docker network configuration as host, and mount all devices to the container. Run the following command:
 
@@ -309,7 +309,7 @@ To run the ``Hello Classification Sample`` on a specific inference device, run t
 
 .. ref-code-block:: cpp
 
-	docker run -itu root:root --rm --device-cgroup-rule='c 189:\* rmw' -v /dev/bus/usb:/dev/bus/usb <image_name>
+	docker run -itu root:root --rm --device-cgroup-rule='c 189:* rmw' -v /dev/bus/usb:/dev/bus/usb <image_name>
 	/bin/bash -c "omz_downloader --name googlenet-v1 --precisions FP16 && omz_converter --name googlenet-v1 --precision FP16 && curl -O https://storage.openvinotoolkit.org/data/test_data/images/car_1.bmp && python3 samples/python/hello_classification/hello_classification.py public/googlenet-v1/FP16/googlenet-v1.xml car_1.bmp MYRIAD"
 
 **HDDL** :
