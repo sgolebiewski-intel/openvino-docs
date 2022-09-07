@@ -1,11 +1,21 @@
-.. index:: pair: page; Converting TensorFlow YOLO Models
-.. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__y_o_l_o__from__tensorflow:
+.. index:: pair: page; Convert TensorFlow YOLO Models
+.. _conv_prep__conv_tensorflow_yolo:
 
+.. meta::
+   :description: This tutorial demonstrates how to convert YOLO models from 
+                 TensorFlow to the OpenVINO Intermediate Representation.
+   :keywords: Model Optimizer, tutorial, convert a model, model conversion, 
+              --input_model, --input_model parameter, command-line parameter, 
+              OpenVINO™ toolkit, deep learning inference, OpenVINO Intermediate 
+              Representation, TensorFlow, YOLO, YOLO model, YOLOv1 model, 
+              YOLOv2 model, YOLOv3 model, YOLOv4 model, convert a model to 
+              OpenVINO IR, convert from Keras to TensorFlow 2, DarkFlow, DarkNet, 
+              convert a DarkNet model to TensorFlow, install DarkFlow
 
-Converting TensorFlow YOLO Models
-=================================
+Convert TensorFlow YOLO Models
+==============================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__y_o_l_o__from__tensorflow_1md_openvino_docs_mo_dg_prepare_model_convert_model_tf_specific_convert_yolo_from_tensorflow` This document explains how to convert real-time object detection YOLOv1, YOLOv2, YOLOv3 and YOLOv4 public models to the Intermediate Representation (IR). All YOLO models are originally implemented in the DarkNet framework and consist of two files:
+:target:`conv_prep__conv_tensorflow_yolo_1md_openvino_docs_mo_dg_prepare_model_convert_model_tf_specific_convert_yolo_from_tensorflow` This document explains how to convert real-time object detection YOLOv1, YOLOv2, YOLOv3 and YOLOv4 public models to the Intermediate Representation (IR). All YOLO models are originally implemented in the DarkNet framework and consist of two files:
 
 * The ``.cfg`` file with model configurations
 
@@ -21,8 +31,8 @@ Depending on a YOLO model version, the Model Optimizer converts it differently:
 
 .. _yolov4-to-ir:
 
-Converting a YOLOv4 Model to IR
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Convert a YOLOv4 Model to IR
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This section explains how to convert the YOLOv4 Keras model from the `repository <https://github.com/david8862/keras-YOLOv3-model-set>`__ to an IR. To convert the YOLOv4 model, follow the instructions below:
 
@@ -74,8 +84,8 @@ This section explains how to convert the YOLOv4 Keras model from the `repository
 
 .. _yolov3-to-ir:
 
-Converting YOLOv3 Model to the OpenVINO format
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Convert YOLOv3 Model to the OpenVINO format
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 There are several public versions of TensorFlow YOLOv3 model implementation available on GitHub. This section explains how to convert YOLOv3 model from the `repository <https://github.com/mystic123/tensorflow-yolo-v3>`__ (commit ed60b90) to an IR , but the process is similar for other versions of TensorFlow YOLOv3 model.
 
@@ -88,8 +98,8 @@ Originally, YOLOv3 model includes feature extractor called ``Darknet-53`` with t
 
 ``Region`` layer was first introduced in the DarkNet framework. Other frameworks, including TensorFlow, do not have the ``Region`` implemented as a single layer, so every author of public YOLOv3 model creates it using simple layers. This badly affects performance. For this reason, the main idea of YOLOv3 model conversion to IR is to cut off these custom ``Region`` -like parts of the model and complete the model with the ``Region`` layers where required.
 
-Dumping a YOLOv3 TensorFlow Model
----------------------------------
+Dump a YOLOv3 TensorFlow Model
+------------------------------
 
 To dump TensorFlow model out of `https://github.com/mystic123/tensorflow-yolo-v3 <https://github.com/mystic123/tensorflow-yolo-v3>`__ GitHub repository (commit ed60b90), follow the instructions below:
 
@@ -152,8 +162,8 @@ If you have YOLOv3 weights trained for an input image with the size different fr
 
 	python3 convert_weights_pb.py --class_names coco.names --data_format NHWC --weights_file yolov3_608.weights --size 608
 
-Converting a YOLOv3 TensorFlow Model to the OpenVINO format
------------------------------------------------------------
+Convert a YOLOv3 TensorFlow Model to the OpenVINO format
+--------------------------------------------------------
 
 To solve the problems explained in the `YOLOv3 architecture overview <#yolov3-overview>`__ section, use the ``yolo_v3.json`` or ``yolo_v3_tiny.json`` (depending on a model) configuration file with custom operations located in the ``<OPENVINO_INSTALL_DIR>/tools/model_optimizer/extensions/front/tf`` repository.
 
@@ -232,8 +242,8 @@ where:
 
 OpenVINO toolkit provides a demo that uses YOLOv3 model. Refer to the Object Detection C++ Demo for more information.
 
-Converting YOLOv1 and YOLOv2 Models to the IR
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Convert YOLOv1 and YOLOv2 Models to the IR
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Before converting, choose a YOLOv1 or YOLOv2 model version that best suits your task. Download model configuration file and corresponding weight file:
 
@@ -251,8 +261,8 @@ To convert DarkNet YOLOv1 and YOLOv2 models to the OpenVINO format, follow these
 
 .. _install-darkflow:
 
-Installing DarkFlow
-+++++++++++++++++++
+Install DarkFlow
+++++++++++++++++
 
 You need DarkFlow to convert YOLOv1 and YOLOv2 models to TensorFlow. To install DarkFlow:
 
@@ -278,7 +288,7 @@ You need DarkFlow to convert YOLOv1 and YOLOv2 models to TensorFlow. To install 
 
 .. _yolov1-v2-to-tf:
 
-Converting a DarkNet YOLOv1 or YOLOv2 Model to TensorFlow
+Convert a DarkNet YOLOv1 or YOLOv2 Model to TensorFlow
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 To convert YOLOv1 or YOLOv2 model to TensorFlow, go to the root directory of the cloned DarkFlow repository, place the previously downloaded \*.cfg and \*.weights files in the current directory and run the following command:
@@ -311,8 +321,8 @@ File ``<model_name>.pb`` is a TensorFlow representation of the YOLO model.
 
 .. _yolov1-v2-to-ir:
 
-Converting a TensorFlow YOLOv1 or YOLOv2 Model to the IR
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Convert a TensorFlow YOLOv1 or YOLOv2 Model to the IR
++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Converted TensorFlow YOLO model is missing ``Region`` layer and its parameters. Original YOLO ``Region`` layer parameters are stored in the configuration ``<path_to_model>/<model_name>.cfg`` file under the ``[region]`` title.
 

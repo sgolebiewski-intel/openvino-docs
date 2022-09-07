@@ -197,11 +197,11 @@ In this document, you learned:
 Additional Resources
 ~~~~~~~~~~~~~~~~~~~~
 
-For step-by-step instructions on how to convert specific TensorFlow models, see the :ref:`Model Conversion Tutorials <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tutorials>` page. Here are some examples:
+For step-by-step instructions on how to convert specific TensorFlow models, see the :ref:`Model Conversion Tutorials <conv_prep__conv_tutorials>` page. Here are some examples:
 
-* :ref:`Convert TensorFlow EfficientDet Models <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__efficient_det__models>`
+* :ref:`Convert TensorFlow EfficientDet Models <conv_prep__conv_tensorflow_efficient_det>`
 
-* :ref:`Convert TensorFlow FaceNet Models <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__face_net__from__tensorflow>`
+* :ref:`Convert TensorFlow FaceNet Models <conv_prep__conv_tensorflow_face_net>`
 
-* :ref:`Convert TensorFlow Object Detection API Models <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__object__detection__a_p_i__models>`
+* :ref:`Convert TensorFlow Object Detection API Models <conv_prep__conv_tensorflow_obj_detection>`
 

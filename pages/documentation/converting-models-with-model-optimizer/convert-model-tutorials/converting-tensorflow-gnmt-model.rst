@@ -1,18 +1,27 @@
-.. index:: pair: page; Converting a TensorFlow GNMT Model
-.. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__g_n_m_t__from__tensorflow:
+.. index:: pair: page; Convert a TensorFlow GNMT Model
+.. _conv_prep__conv_tensorflow_gnmt:
 
+.. meta::
+   :description: This tutorial demonstrates how to convert a GNMT model 
+                 from TensorFlow to the OpenVINO Intermediate Representation.
+   :keywords: Model Optimizer, tutorial, convert a model, model conversion, 
+              --input_model, --input_model parameter, command-line parameter, 
+              OpenVINO™ toolkit, deep learning inference, OpenVINO Intermediate 
+              Representation, TensorFlow, GNMT, GNMT model, patch file, 
+              pre-trained model, TensorFlow Neural Machine Translation, NMT, 
+              convert a model to OpenVINO IR
 
-Converting a TensorFlow GNMT Model
-==================================
+Convert a TensorFlow GNMT Model
+===============================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__g_n_m_t__from__tensorflow_1md_openvino_docs_mo_dg_prepare_model_convert_model_tf_specific_convert_gnmt_from_tensorflow` This tutorial explains how to convert Google Neural Machine Translation (GNMT) model to the Intermediate Representation (IR).
+:target:`conv_prep__conv_tensorflow_gnmt_1md_openvino_docs_mo_dg_prepare_model_convert_model_tf_specific_convert_gnmt_from_tensorflow` This tutorial explains how to convert Google Neural Machine Translation (GNMT) model to the Intermediate Representation (IR).
 
 There are several public versions of TensorFlow GNMT model implementation available on GitHub. This tutorial explains how to convert the GNMT model from the `TensorFlow Neural Machine Translation (NMT) repository <https://github.com/tensorflow/nmt>`__ to the IR.
 
 .. _patch-file:
 
-Creating a Patch File
-~~~~~~~~~~~~~~~~~~~~~
+Create a Patch File
+~~~~~~~~~~~~~~~~~~~
 
 Before converting the model, you need to create a patch file for the repository. The patch modifies the framework code by adding a special command-line argument to the framework options that enables inference graph dumping:
 
@@ -147,8 +156,8 @@ Before converting the model, you need to create a patch file for the repository.
 
 #. Save and close the file.
 
-Converting a GNMT Model to the IR
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Convert a GNMT Model to the IR
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -238,8 +247,8 @@ For more information about model cutting, refer to the :ref:`Cutting Off Parts o
 
 .. _run_GNMT:
 
-Using a GNMT Model
-~~~~~~~~~~~~~~~~~~
+Use a GNMT Model
+~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -265,8 +274,8 @@ Outputs of the model:
   
   
   
-  Running GNMT IR
-  +++++++++++++++
+  Run GNMT IR
+  +++++++++++
 
 #. With benchmark app:
    

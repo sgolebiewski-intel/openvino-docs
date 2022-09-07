@@ -1,11 +1,19 @@
-.. index:: pair: page; Converting a TensorFlow CRNN Model
-.. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__c_r_n_n__from__tensorflow:
+.. index:: pair: page; Convert a TensorFlow CRNN Model
+.. _conv_prep__conv_tensorflow_crnn:
 
+.. meta::
+   :description: This tutorial demonstrates how to convert a CRNN model 
+                 from TensorFlow to the OpenVINO Intermediate Representation.
+   :keywords: Model Optimizer, tutorial, convert a model, model conversion, 
+              --input_model, --input_model parameter, command-line parameter, 
+              OpenVINO™ toolkit, deep learning inference, OpenVINO Intermediate 
+              Representation, TensorFlow, CRNN, CRNN model, pre-trained model, 
+              inference graph
 
-Converting a TensorFlow CRNN Model
-==================================
+Convert a TensorFlow CRNN Model
+===============================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__c_r_n_n__from__tensorflow_1md_openvino_docs_mo_dg_prepare_model_convert_model_tf_specific_convert_crnn_from_tensorflow` This tutorial explains how to convert a CRNN model to Intermediate Representation (IR).
+:target:`conv_prep__conv_tensorflow_crnn_1md_openvino_docs_mo_dg_prepare_model_convert_model_tf_specific_convert_crnn_from_tensorflow` This tutorial explains how to convert a CRNN model to Intermediate Representation (IR).
 
 There are several public versions of TensorFlow CRNN model implementation available on GitHub. This tutorial explains how to convert the model from the `https://github.com/MaybeShewill-CV/CRNN_Tensorflow <https://github.com/MaybeShewill-CV/CRNN_Tensorflow>`__ repository to IR. If you have another implementation of CRNN model, it can be converted to OpenVINO IR in a similar way. You need to get inference graph and run Model Optimizer on it.
 
@@ -25,7 +33,7 @@ There are several public versions of TensorFlow CRNN model implementation availa
    
    	git checkout 64f1f1867bffaacfeacc7a80eebf5834a5726122
 
-**Step 2.** Train the model, using framework or use the pretrained checkpoint provided in this repository.
+**Step 2.** Train the model, using framework or use the pre-trained checkpoint provided in this repository.
 
 **Step 3.** Create an inference graph:
 

@@ -1,11 +1,22 @@
-.. index:: pair: page; Converting TensorFlow Object Detection API Models
-.. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__object__detection__a_p_i__models:
+.. index:: pair: page; Convert TensorFlow Object Detection API Models
+.. _conv_prep__conv_tensorflow_obj_detection:
 
+.. meta::
+   :description: This tutorial demonstrates how to convert a Object Detection 
+                 API Models from TensorFlow to the OpenVINO Intermediate 
+                 Representation.
+   :keywords: Model Optimizer, tutorial, convert a model, model conversion, 
+              --input_model, --input_model parameter, command-line parameter, 
+              OpenVINO™ toolkit, deep learning inference, OpenVINO Intermediate 
+              Representation, TensorFlow, convert a model to OpenVINO IR, 
+              frozen model, TensorFlow 1 Detection, keep_aspect_ratio_resizer, 
+              Model Zoo, TensorFlow 2 Detection Model Zoo, custom input shape, 
+              fixed shape, --input_shape
 
-Converting TensorFlow Object Detection API Models
-=================================================
+Convert TensorFlow Object Detection API Models
+==============================================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__object__detection__a_p_i__models_1md_openvino_docs_mo_dg_prepare_model_convert_model_tf_specific_convert_object_detection_api_models`	**NOTES** :
+:target:`conv_prep__conv_tensorflow_obj_detection_1md_openvino_docs_mo_dg_prepare_model_convert_model_tf_specific_convert_object_detection_api_models`	**NOTES** :
 
 * Starting with the 2022.1 release, Model Optimizer can convert the TensorFlow Object Detection API Faster and Mask RCNNs topologies differently. By default, Model Optimizer adds operation "Proposal" to the generated IR. This operation needs an additional input to the model with name "image_info" which should be fed with several values describing the preprocessing applied to the input image (refer to the :ref:`Proposal <doxid-openvino_docs_ops_detection__proposal_4>` operation specification for more information). However, this input is redundant for the models trained and inferred with equal size images. Model Optimizer can generate IR for such models and insert operation :ref:`DetectionOutput <doxid-openvino_docs_ops_detection__detection_output_1>` instead of ``Proposal``. The ``DetectionOutput`` operation does not require additional model input "image_info". Moreover, for some models the produced inference results are closer to the original TensorFlow model. In order to trigger new behavior, the attribute "operation_to_add" in the corresponding JSON transformation configuration file should be set to value "DetectionOutput" instead of default one "Proposal".
 
@@ -13,10 +24,8 @@ Converting TensorFlow Object Detection API Models
 
 * To generate IRs for TF 1 SSD topologies, Model Optimizer creates a number of ``PriorBoxClustered`` operations instead of a constant node with prior boxes calculated for the particular input image size. This change allows you to reshape the topology in the OpenVINO Runtime using dedicated API. The reshaping is supported for all SSD topologies except FPNs, which contain hardcoded shapes for some operations preventing from changing topology input shape.
 
-
-
-Converting a Model
-~~~~~~~~~~~~~~~~~~
+Convert a Model
+~~~~~~~~~~~~~~~
 
 You can download TensorFlow Object Detection API models from the `TensorFlow 1 Detection Model Zoo <https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf1_detection_zoo.md>`__ or `TensorFlow 2 Detection Model Zoo <https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md>`__.
 
@@ -121,8 +130,8 @@ OpenVINO comes with a number of samples to demonstrate use of OpenVINO Runtime A
 
 * Open Model Zoo Demos
 
-Feeding Input Images to the Samples
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Feed Input Images to the Samples
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 There are several important notes about feeding input images to the samples:
 
@@ -134,7 +143,7 @@ There are several important notes about feeding input images to the samples:
 
 #. Read carefully the messages printed by Model Optimizer during a model conversion. They contain important instructions on how to prepare input data before running the inference and how to interpret the output.
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__object__detection__a_p_i__models_1custom-input-shape`
+:target:`conv_prep__conv_tensorflow_obj_detection_custom_input_shape`
 
 Custom Input Shape
 ~~~~~~~~~~~~~~~~~~
@@ -176,8 +185,8 @@ Fixed Shape Resizer Replacement
   
   * Custom input shape is too small. For example, if you specify ``--input_shape [1,100,100,3]`` to convert a SSD Inception V2 model, one of convolution or pooling nodes decreases input tensor spatial dimensions to non-positive values. In this case, Model Optimizer shows error message like this: '[ ERROR ] Shape [ 1 -1 -1 256] is not fully defined for output X of "node_name".'
 
-Keeping Aspect Ratio Resizer Replacement
-----------------------------------------
+Keep Aspect Ratio Resizer Replacement
+-------------------------------------
 
 * If the ``--input_shape`` command line parameter is not specified, Model Optimizer generates an input operation with both height and width equal to the value of parameter ``min_dimension`` in the ``keep_aspect_ratio_resizer``.
 
@@ -199,8 +208,6 @@ Models with ``keep_aspect_ratio_resizer`` were trained to recognize object in re
 
    It is highly recommended to specify the ``--input_shape`` command line parameter 
    for the models with ``keep_aspect_ratio_resizer``, if the input image dimensions are known in advance.
-
-
 
 Model Conversion Process in Detail
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

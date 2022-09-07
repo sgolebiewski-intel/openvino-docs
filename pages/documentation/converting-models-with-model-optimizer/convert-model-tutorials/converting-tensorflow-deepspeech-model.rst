@@ -1,23 +1,31 @@
-.. index:: pair: page; Converting a TensorFlow DeepSpeech Model
-.. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__deep_speech__from__tensorflow:
+.. index:: pair: page; Convert a TensorFlow DeepSpeech Model
+.. _conv_prep__conv_tensorflow_deep_speech:
 
+.. meta::
+   :description: This tutorial demonstrates how to convert a DeepSpeech model 
+                 from TensorFlow to the OpenVINO Intermediate Representation.
+   :keywords: Model Optimizer, tutorial, convert a model, model conversion, 
+              --input_model, --input_model parameter, command-line parameter, 
+              OpenVINO™ toolkit, deep learning inference, OpenVINO Intermediate 
+              Representation, TensorFlow, DeepSpeech, DeepSpeech model, 
+              pre-trained model, freeze a model
 
-Converting a TensorFlow DeepSpeech Model
-========================================
+Convert a TensorFlow DeepSpeech Model
+=====================================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__deep_speech__from__tensorflow_1md_openvino_docs_mo_dg_prepare_model_convert_model_tf_specific_convert_deepspeech_from_tensorflow` `DeepSpeech project <https://github.com/mozilla/DeepSpeech>`__ provides an engine to train speech-to-text models.
+:target:`conv_prep__conv_tensorflow_deep_speech_1md_openvino_docs_mo_dg_prepare_model_convert_model_tf_specific_convert_deepspeech_from_tensorflow` `DeepSpeech project <https://github.com/mozilla/DeepSpeech>`__ provides an engine to train speech-to-text models.
 
-Downloading the Pretrained DeepSpeech Model
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Download the Pre-trained DeepSpeech Model
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Create a directory where model and metagraph with pretrained weights will be stored:
+Create a directory where model and metagraph with pre-trained weights will be stored:
 
 .. ref-code-block:: cpp
 
 	mkdir deepspeech
 	cd deepspeech
 
-`Pretrained English speech-to-text model <https://github.com/mozilla/DeepSpeech/releases/tag/v0.8.2>`__ is publicly available. To download the model, follow the instruction below:
+`Pre-trained English speech-to-text model <https://github.com/mozilla/DeepSpeech/releases/tag/v0.8.2>`__ is publicly available. To download the model, follow the instruction below:
 
 * For UNIX-like systems, run the following command:
   
@@ -30,12 +38,12 @@ Create a directory where model and metagraph with pretrained weights will be sto
   
   #. Download `the archive with the model <https://github.com/mozilla/DeepSpeech/archive/v0.8.2.tar.gz>`__.
   
-  #. Download the `TensorFlow MetaGraph with pretrained weights <https://github.com/mozilla/DeepSpeech/releases/download/v0.8.2/deepspeech-0.8.2-checkpoint.tar.gz>`__.
+  #. Download the `TensorFlow MetaGraph with pre-trained weights <https://github.com/mozilla/DeepSpeech/releases/download/v0.8.2/deepspeech-0.8.2-checkpoint.tar.gz>`__.
   
   #. Unpack it with a file archiver application.
 
-Freezing the Model into a \*.pb File
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Freeze the Model into a \*.pb File
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After unpacking the archives above, you have to freeze the model. This requires TensorFlow version 1, which is not available under Python 3.8, so you need Python 3.7 or lower. Before freezing, deploy a virtual environment and install the required packages:
 
@@ -52,7 +60,7 @@ Freeze the model with the following command:
 
 	python3 DeepSpeech.py --checkpoint_dir ../deepspeech-0.8.2-checkpoint --export_dir ../
 
-After that, you will get the pretrained frozen model file ``output_graph.pb`` in the directory ``deepspeech`` created at the beginning. The model contains the preprocessing and main parts. The first preprocessing part performs conversion of input spectrogram into a form useful for speech recognition (mel). This part of the model is not convertible into the IR because it contains unsupported operations ``AudioSpectrogram`` and ``Mfcc``.
+After that, you will get the pre-trained frozen model file ``output_graph.pb`` in the directory ``deepspeech`` created at the beginning. The model contains the preprocessing and main parts. The first preprocessing part performs conversion of input spectrogram into a form useful for speech recognition (mel). This part of the model is not convertible into the IR because it contains unsupported operations ``AudioSpectrogram`` and ``Mfcc``.
 
 The main and most computationally expensive part of the model converts the preprocessed audio into text. There are two specificities with the supported part of the model.
 
@@ -65,8 +73,8 @@ The second is that the frozen model still has two variables: ``previous_state_c`
 
 At the first inference, the variables are initialized with zero tensors. After execution, the results of the BlockLSTM are assigned to cell state and hidden state, which are these two variables.
 
-Converting the Main Part of DeepSpeech Model into OpenVINO IR
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Convert the Main Part of DeepSpeech Model into OpenVINO IR
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Model Optimizer assumes that the output model is for inference only. That is why you should cut ``previous_state_c`` and ``previous_state_h`` variables off and resolve keeping cell and hidden states on the application level.
 

@@ -1,18 +1,29 @@
-.. index:: pair: page; Converting a TensorFlow BERT Model
-.. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__b_e_r_t__from__tensorflow:
+.. index:: pair: page; Convert a TensorFlow BERT Model
+.. _conv_prep__conv_tensorflow_bert:
+
+.. meta::
+   :description: This tutorial demonstrates how to convert a BERT model 
+                 from TensorFlow to the OpenVINO Intermediate Representation.
+   :keywords: Model Optimizer, tutorial, convert a model, model conversion, 
+              --input_model, --input_model parameter, command-line parameter, 
+              OpenVINO™ toolkit, deep learning inference, OpenVINO Intermediate 
+              Representation, TensorFlow, BERT, BERT model, pre-trained model,
+              Bidirectional Encoder Representations from Transformers
 
 
-Converting a TensorFlow BERT Model
-==================================
+Convert a TensorFlow BERT Model
+===============================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__b_e_r_t__from__tensorflow_1md_openvino_docs_mo_dg_prepare_model_convert_model_tf_specific_convert_bert_from_tensorflow` Pretrained models for BERT (Bidirectional Encoder Representations from Transformers) are `publicly available <https://github.com/google-research/bert>`__.
+:target:`conv_prep__conv_tensorflow_bert_1md_openvino_docs_mo_dg_prepare_model_convert_model_tf_specific_convert_bert_from_tensorflow` 
+
+Pre-trained models for BERT (Bidirectional Encoder Representations from Transformers) are `publicly available <https://github.com/google-research/bert>`__.
 
 .. _supported_models:
 
 Supported Models
 ~~~~~~~~~~~~~~~~
 
-The following models from the pretrained `BERT model list <https://github.com/google-research/bert#pre-trained-models>`__ are currently supported:
+The following models from the pre-trained `BERT model list <https://github.com/google-research/bert#pre-trained-models>`__ are currently supported:
 
 * ``BERT-Base, Cased``
 
@@ -28,8 +39,8 @@ The following models from the pretrained `BERT model list <https://github.com/go
 
 * ``BERT-Large, Uncased``
 
-Downloading the Pretrained BERT Model
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Download the Pre-trained BERT Model
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Download and unzip an archive with the `BERT-Base, Multilingual Uncased Model <https://storage.googleapis.com/bert_models/2018_11_03/multilingual_L-12_H-768_A-12.zip>`__.
 
@@ -45,10 +56,10 @@ After the archive is unzipped, the directory ``uncased_L-12_H-768_A-12`` is crea
 
 * ``vocab.txt``
 
-Pretrained model meta-graph files are ``bert_model.ckpt.\*``.
+Pre-trained model meta-graph files are ``bert_model.ckpt.\*``.
 
-Converting a TensorFlow BERT Model to IR
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Convert a TensorFlow BERT model to IR
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To generate the BERT Intermediate Representation (IR) of the model, run Model Optimizer with the following parameters:
 

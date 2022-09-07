@@ -868,7 +868,7 @@ There are multiple ways to avoid cycles:
 
 For Tensorflow:
 
-* :ref:`Convert models, created with TensorFlow Object Detection API <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__object__detection__a_p_i__models>`
+* :ref:`Convert models, created with TensorFlow Object Detection API <conv_prep__conv_tensorflow_obj_detection>`
 
 For all frameworks:
 

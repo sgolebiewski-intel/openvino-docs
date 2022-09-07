@@ -1,11 +1,19 @@
-.. index:: pair: page; Converting TensorFlow Wide and Deep Family Models
-.. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__wide_and_deep__family__models:
+.. index:: pair: page; Convert TensorFlow Wide and Deep Family Models
+.. _conv_prep__conv_tensorflow_wide_and_deep:
 
+.. meta::
+   :description: This tutorial demonstrates how to convert Wide and Deep Family 
+                 models from TensorFlow to the OpenVINO Intermediate Representation.
+   :keywords: Model Optimizer, tutorial, convert a model, model conversion, 
+              --input_model, --input_model parameter, command-line parameter, 
+              OpenVINO™ toolkit, deep learning inference, OpenVINO Intermediate 
+              Representation, TensorFlow, Wide and Deep Family models, convert a 
+              model to OpenVINO IR, Wide and Deep model, train a model
 
-Converting TensorFlow Wide and Deep Family Models
-=================================================
+Convert TensorFlow Wide and Deep Family Models
+==============================================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__wide_and_deep__family__models_1md_openvino_docs_mo_dg_prepare_model_convert_model_tf_specific_convert_wideanddeep_family_models` The Wide and Deep models is a combination of wide and deep parts for memorization and generalization of object features respectively. These models can contain different types of object features such as numerical, categorical, sparse and sequential features. These feature types are specified through Tensorflow tf.feature_column API. Table below presents what feature types are supported by the OpenVINO toolkit.
+:target:`conv_prep__conv_tensorflow_wide_and_deep_1md_openvino_docs_mo_dg_prepare_model_convert_model_tf_specific_convert_wideanddeep_family_models` The Wide and Deep models is a combination of wide and deep parts for memorization and generalization of object features respectively. These models can contain different types of object features such as numerical, categorical, sparse and sequential features. These feature types are specified through Tensorflow tf.feature_column API. Table below presents what feature types are supported by the OpenVINO toolkit.
 
 .. list-table::
     :header-rows: 1
@@ -25,12 +33,8 @@ Converting TensorFlow Wide and Deep Family Models
 
 .. note:: The categorical with hash and crossed features are currently unsupported since OpenVINO does not cover tensors of the ``string`` type and operations with them.
 
-
-
-
-
-Preparing an Example of Wide and Deep Model
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Prepare an Example of Wide and Deep Model
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Step 1**. Clone the GitHub repository with TensorFlow models and move to the directory with an example of Wide and Deep model:
 
@@ -105,8 +109,8 @@ After that, start training with the following command:
 
 	python census_main.py
 
-Converting the Wide and Deep Model to IR
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Convert the Wide and Deep Model to IR
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use the following command line to convert the saved model file with the checkpoint:
 

@@ -1,29 +1,40 @@
-.. index:: pair: page; Converting a TensorFlow XLNet Model
-.. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__x_l_net__from__tensorflow:
+.. index:: pair: page; Convert a TensorFlow XLNet Model
+.. _conv_prep__conv_tensorflow_xl_net:
 
+.. meta::
+   :description: This tutorial demonstrates how to convert XLNet model from 
+                 TensorFlow to the OpenVINO Intermediate Representation.
+   :keywords: Model Optimizer, tutorial, convert a model, model conversion, 
+              --input_model, --input_model parameter, command-line parameter, 
+              OpenVINO™ toolkit, deep learning inference, OpenVINO Intermediate 
+              Representation, TensorFlow, XLNet, XLNet model, convert a 
+              model to OpenVINO IR, pre-trained model, freeze a model, frozen 
+              model
 
-Converting a TensorFlow XLNet Model
-===================================
+Convert a TensorFlow XLNet Model
+================================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__x_l_net__from__tensorflow_1md_openvino_docs_mo_dg_prepare_model_convert_model_tf_specific_convert_xlnet_from_tensorflow` Pretrained models for XLNet (Bidirectional Encoder Representations from Transformers) are `publicly available <https://github.com/zihangdai/xlnet>`__.
+:target:`conv_prep__conv_tensorflow_xl_net_1md_openvino_docs_mo_dg_prepare_model_convert_model_tf_specific_convert_xlnet_from_tensorflow` 
+
+Pre-trained models for XLNet (Bidirectional Encoder Representations from Transformers) are `publicly available <https://github.com/zihangdai/xlnet>`__.
 
 Supported Models
 ~~~~~~~~~~~~~~~~
 
-The following models from the pretrained `XLNet model list <https://github.com/zihangdai/xlnet#pre-trained-models>`__ are currently supported:
+The following models from the pre-trained `XLNet model list <https://github.com/zihangdai/xlnet#pre-trained-models>`__ are currently supported:
 
 * \*\* ` <https://storage.googleapis.com/xlnet/released_models/cased_L-24_H-1024_A-16.zip>`__ \*\*
 
 * \*\* ` <https://storage.googleapis.com/xlnet/released_models/cased_L-12_H-768_A-12.zip>`__ \*\*
 
-Downloading the Pretrained Base XLNet Model
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Download the Pre-trained Base XLNet Model
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Download and unzip an archive with the `XLNet-Base, Cased <https://storage.googleapis.com/xlnet/released_models/cased_L-12_H-768_A-12.zip>`__.
 
 After the archive is unzipped, the directory ``cased_L-12_H-768_A-12`` is created and contains the following files:
 
-* TensorFlow checkpoint (``xlnet_model.ckpt``), containing the pretrained weights (which is actually 3 files)
+* TensorFlow checkpoint (``xlnet_model.ckpt``), containing the pre-trained weights (which is actually 3 files)
 
 * sentence piece model (``spiece.model``) used for (de)tokenization
 
@@ -105,14 +116,14 @@ To get pb-file from the archive contents, you need to do the following.
 	    with tf.compat.v1.summary.FileWriter(logdir=OUTPUT_DIR, graph_def=graph_def_freezed) as writer:
 	        writer.flush()
 
-Downloading the Pretrained Large XLNet Model
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Download the Pre-trained Large XLNet Model
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Download and unzip an archive with the `XLNet-Large, Cased <https://storage.googleapis.com/xlnet/released_models/cased_L-24_H-1024_A-16.zip>`__.
 
 After unzipping the archive, the directory ``cased_L-12_H-1024_A-16`` is created and contains the following files:
 
-* TensorFlow checkpoint (``xlnet_model.ckpt``) containing the pretrained weights (which is actually 3 files)
+* TensorFlow checkpoint (``xlnet_model.ckpt``) containing the pre-trained weights (which is actually 3 files)
 
 * sentence piece model (``spiece.model``) used for (de)tokenization
 
@@ -191,8 +202,8 @@ To get ``pb-file`` from the archive contents, follow the instructions below:
 
 The script should save into ``~/XLNet-Large/xlnet``.
 
-Converting a frozen TensorFlow XLNet Model to IR
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Convert a frozen TensorFlow XLNet Model to IR
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To generate the XLNet Intermediate Representation (IR) of the model, run Model Optimizer with the following parameters:
 

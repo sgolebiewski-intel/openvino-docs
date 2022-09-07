@@ -1201,7 +1201,7 @@ which could be obtained using ``match.output_node(i)`` call. The order of elemen
 Model Optimizer uses this order to connect output edges if the sub-graph is replaced with a single node.
 
 For more examples of this type of transformation, refer to the 
-:ref:`Converting TensorFlow Object Detection API Models <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__object__detection__a_p_i__models>` guide.
+:ref:`Converting TensorFlow Object Detection API Models <conv_prep__conv_tensorflow_obj_detection>` guide.
 
 .. _start-end-points-front-phase-transformations:
 
@@ -1284,7 +1284,7 @@ respectively.
 
 
 For other examples of transformations with points, refer to the 
-:ref:`Converting TensorFlow Object Detection API Models <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__object__detection__a_p_i__models>` guide.
+:ref:`Converting TensorFlow Object Detection API Models <conv_prep__conv_tensorflow_obj_detection>` guide.
 
 .. _generic-transformations-config-front-phase-transformations:
 

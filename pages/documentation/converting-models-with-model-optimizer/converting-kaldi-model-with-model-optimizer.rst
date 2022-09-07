@@ -117,5 +117,5 @@ For the list of supported standard layers, refer to the :ref:`Supported Framewor
 See Also
 ~~~~~~~~
 
-:ref:`Model Conversion Tutorials <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tutorials>`
+:ref:`Model Conversion Tutorials <conv_prep__conv_tutorials>`
 

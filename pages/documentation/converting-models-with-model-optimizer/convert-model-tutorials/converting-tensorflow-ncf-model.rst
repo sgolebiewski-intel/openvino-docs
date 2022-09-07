@@ -1,11 +1,21 @@
-.. index:: pair: page; Converting a TensorFlow Neural Collaborative Filtering Model
-.. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__n_c_f__from__tensorflow:
+.. index:: pair: page; Convert a TensorFlow Neural Collaborative Filtering Model
+.. _conv_prep__conv_tensorflow_ncf:
 
+.. meta::
+   :description: This tutorial demonstrates how to convert a Neural Collaborative 
+                 Filtering Model model from TensorFlow to the OpenVINO Intermediate 
+                 Representation.
+   :keywords: Model Optimizer, tutorial, convert a model, model conversion, 
+              --input_model, --input_model parameter, command-line parameter, 
+              OpenVINO™ toolkit, deep learning inference, OpenVINO Intermediate 
+              Representation, TensorFlow, NCF, NCF model, Neural Collaborative 
+              Filtering Model, convert a model to OpenVINO IR, freeze an inference 
+              graph, frozen model
 
-Converting a TensorFlow Neural Collaborative Filtering Model
-============================================================
+Convert a TensorFlow Neural Collaborative Filtering Model
+=========================================================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__n_c_f__from__tensorflow_1md_openvino_docs_mo_dg_prepare_model_convert_model_tf_specific_convert_ncf_from_tensorflow` This tutorial explains how to convert Neural Collaborative Filtering (NCF) model to the OpenVINO Intermediate Representation.
+:target:`conv_prep__conv_tensorflow_ncf_1md_openvino_docs_mo_dg_prepare_model_convert_model_tf_specific_convert_ncf_from_tensorflow` This tutorial explains how to convert Neural Collaborative Filtering (NCF) model to the OpenVINO Intermediate Representation.
 
 `Public TensorFlow NCF model <https://github.com/tensorflow/models/tree/master/official/recommendation>`__ does not contain pre-trained weights. To convert this model to the IR:
 

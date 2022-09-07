@@ -156,7 +156,7 @@ Below is a list of separate examples for different frameworks and Model Optimize
 
 
 
-* To get conversion recipes for specific TensorFlow, ONNX, PyTorch, Apache MXNet, and Kaldi models, refer to the :ref:`Model Conversion Tutorials <doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tutorials>`.
+* To get conversion recipes for specific TensorFlow, ONNX, PyTorch, Apache MXNet, and Kaldi models, refer to the :ref:`Model Conversion Tutorials <conv_prep__conv_tutorials>`.
 
 * For more information about IR, see :ref:`Deep Learning Network Intermediate Representation and Operation Sets in OpenVINO™ <doxid-openvino_docs__m_o__d_g__i_r_and_opsets>`.
 

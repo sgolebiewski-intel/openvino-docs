@@ -1,15 +1,19 @@
 .. index:: pair: page; Model Conversion Tutorials
-.. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tutorials:
+.. _conv_prep__conv_tutorials:
 
+.. meta::
+   :description: A set of tutorials that demonstrate conversion methods for 
+                 specific TensorFlow, ONNX, PyTorch, MXNet, and Kaldi models, 
+                 that unnecessarily cover your case.
+   :keywords: Model Optimizer, tutorials, conversion methods, TensorFlow, ONNX, 
+              Kaldi, deep learning models, convert a model, model conversion, 
+              --input_model, --input_model parameter, command-line parameter, 
+              OpenVINO™ toolkit, deep learning inference, PyTorch, MXNet
 
 Model Conversion Tutorials
 ==========================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tutorials_1md_openvino_docs_mo_dg_prepare_model_convert_model_convert_model_tutorials`
-
-
-
-
+:target:`conv_prep__conv_tutorials_1md_openvino_docs_mo_dg_prepare_model_convert_model_convert_model_tutorials`
 
 .. toctree::
    :maxdepth: 1

@@ -1,14 +1,24 @@
-.. index:: pair: page; Converting a TensorFlow Attention OCR Model
-.. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__attention_o_c_r__from__tensorflow:
+.. index:: pair: page; Convert a TensorFlow Attention OCR Model
+.. _conv_prep__conv_tensorflow_attention_ocr:
 
+.. meta::
+   :description: This tutorial demonstrates how to convert the Attention OCR 
+                 model from the TensorFlow Attention OCR repository to the 
+                 OpenVINO Intermediate Representation.
+   :keywords: Model Optimizer, tutorial, convert a model, model conversion, 
+              --input_model, --input_model parameter, command-line parameter, 
+              OpenVINO™ toolkit, deep learning inference, OpenVINO Intermediate 
+              Representation, TensorFlow, AOCR, TensorFlow Attention OCR, 
 
-Converting a TensorFlow Attention OCR Model
-===========================================
+Convert a TensorFlow Attention OCR Model
+========================================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__attention_o_c_r__from__tensorflow_1md_openvino_docs_mo_dg_prepare_model_convert_model_tf_specific_convert_attentionocr_from_tensorflow` This tutorial explains how to convert the Attention OCR (AOCR) model from the `TensorFlow Attention OCR repository <https://github.com/emedvedev/attention-ocr>`__ to the Intermediate Representation (IR).
+:target:`conv_prep__conv_tensorflow_attention_ocr_1md_openvino_docs_mo_dg_prepare_model_convert_model_tf_specific_convert_attentionocr_from_tensorflow` 
 
-Extracting a Model from  Library
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This tutorial explains how to convert the Attention OCR (AOCR) model from the `TensorFlow Attention OCR repository <https://github.com/emedvedev/attention-ocr>`__ to the Intermediate Representation (IR).
+
+Extract a model from library
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To get an AOCR model, download ``aocr`` Python library:
 
@@ -16,7 +26,7 @@ To get an AOCR model, download ``aocr`` Python library:
 
 	pip install git+https://github.com/emedvedev/attention-ocr.git@master#egg=aocr
 
-This library contains a pretrained model and allows training and running AOCR, using the command line. After installation of ``aocr``, extract the model:
+This library contains a pre-trained model and allows training and running AOCR, using the command line. After installation of ``aocr``, extract the model:
 
 .. ref-code-block:: cpp
 
@@ -24,8 +34,8 @@ This library contains a pretrained model and allows training and running AOCR, u
 
 Once extracted, the model can be found in ``model/path/`` folder.
 
-Converting the TensorFlow AOCR Model to IR
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Convert the TensorFlow AOCR model to IR
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The original AOCR model includes the preprocessing data, which contains:
 

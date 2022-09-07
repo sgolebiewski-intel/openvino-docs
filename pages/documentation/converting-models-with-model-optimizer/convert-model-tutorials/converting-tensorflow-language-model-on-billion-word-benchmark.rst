@@ -1,16 +1,26 @@
-.. index:: pair: page; Converting a TensorFlow Language Model on One Billion Word Benchmark
-.. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert_lm_1b__from__tensorflow:
+.. index:: pair: page; Convert a TensorFlow Language Model on One Billion Word Benchmark
+.. _conv_prep__conv_tensorflow_one_billion_word:
 
+.. meta::
+   :description: This tutorial demonstrates how to convert a TensorFlow Language 
+                 Model on One Billion Word Benchmark to the OpenVINO Intermediate 
+                 Representation.
+   :keywords: Model Optimizer, tutorial, convert a model, model conversion, 
+              --input_model, --input_model parameter, command-line parameter, 
+              OpenVINO™ toolkit, deep learning inference, OpenVINO Intermediate 
+              Representation, TensorFlow, Language Model on One Billion Word 
+              Benchmark, pre-trained model, freeze a model, frozen model, 
+              convert a model to OpenVINO IR
 
-Converting a TensorFlow Language Model on One Billion Word Benchmark
-====================================================================
+Convert a TensorFlow Language Model on One Billion Word Benchmark
+=================================================================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert_lm_1b__from__tensorflow_1md_openvino_docs_mo_dg_prepare_model_convert_model_tf_specific_convert_lm_1b_from_tensorflow`
+:target:`conv_prep__conv_tensorflow_one_billion_word_1md_openvino_docs_mo_dg_prepare_model_convert_model_tf_specific_convert_lm_1b_from_tensorflow`
 
-Downloading a Pre-trained Language Model on One Billion Word Benchmark
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Download a Pre-trained Language Model on One Billion Word Benchmark
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-TensorFlow provides a pretrained `Language Model on One Billion Word Benchmark <https://github.com/tensorflow/models/tree/r2.3.0/research/lm_1b>`__.
+TensorFlow provides a pre-trained `Language Model on One Billion Word Benchmark <https://github.com/tensorflow/models/tree/r2.3.0/research/lm_1b>`__.
 
 To download the model for IR conversion, follow the instructions:
 
@@ -61,7 +71,7 @@ To download the model for IR conversion, follow the instructions:
    	wget http://download.tensorflow.org/models/LM_LSTM_CNN/all_shards-2016-09-10/ckpt-softmax7
    	wget http://download.tensorflow.org/models/LM_LSTM_CNN/all_shards-2016-09-10/ckpt-softmax8
 
-Once you have downloaded the pretrained model files, you will have the ``lm_1b`` directory with the following hierarchy:
+Once you have downloaded the pre-trained model files, you will have the ``lm_1b`` directory with the following hierarchy:
 
 .. ref-code-block:: cpp
 
@@ -92,8 +102,8 @@ With each inference of the ``lm_1b`` graph, ``lstm`` initial states data is take
 
 It helps the model to remember the context of the words that it takes as input.
 
-Converting a TensorFlow Language Model on One Billion Word Benchmark to IR
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Convert a TensorFlow Language Model on One Billion Word Benchmark to IR
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Model Optimizer assumes that output model is for inference only. Therefore, you should cut those variables off and resolve keeping cell and hidden states on application level.
 

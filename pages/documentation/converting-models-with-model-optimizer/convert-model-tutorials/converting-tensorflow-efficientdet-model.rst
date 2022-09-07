@@ -1,21 +1,30 @@
-.. index:: pair: page; Converting TensorFlow EfficientDet Models
-.. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__efficient_det__models:
+.. index:: pair: page; Convert TensorFlow EfficientDet Models
+.. _conv_prep__conv_tensorflow_efficient_det:
 
+.. meta::
+   :description: This tutorial demonstrates how to convert a EfficientDet model 
+                 from TensorFlow to the OpenVINO Intermediate Representation.
+   :keywords: Model Optimizer, tutorial, convert a model, model conversion, 
+              --input_model, --input_model parameter, command-line parameter, 
+              OpenVINO™ toolkit, deep learning inference, OpenVINO Intermediate 
+              Representation, TensorFlow, EfficientDet, EfficientDet model, 
+              EfficientDet-D4, pre-trained model, freeze a model, frozen model, 
+              convert a model to OpenVINO IR
 
-Converting TensorFlow EfficientDet Models
-=========================================
+Convert TensorFlow EfficientDet Models
+======================================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_tf_specific__convert__efficient_det__models_1md_openvino_docs_mo_dg_prepare_model_convert_model_tf_specific_convert_efficientdet_models` This tutorial explains how to convert EfficientDet public object detection models to the Intermediate Representation (IR).
+:target:`conv_prep__conv_tensorflow_efficient_det_1md_openvino_docs_mo_dg_prepare_model_convert_model_tf_specific_convert_efficientdet_models` This tutorial explains how to convert EfficientDet public object detection models to the Intermediate Representation (IR).
 
 .. _efficientdet-to-ir:
 
-Converting EfficientDet Model to the IR
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Convert EfficientDet Model to the IR
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 There are several public versions of EfficientDet model implementation available on GitHub. This tutorial explains how to convert models from the `repository <https://github.com/google/automl/tree/master/efficientdet>`__ (commit 96e1fee) to the OpenVINO format.
 
-Getting a Frozen TensorFlow Model
----------------------------------
+Get a Frozen TensorFlow Model
+-----------------------------
 
 Follow the instructions below to get frozen TensorFlow EfficientDet model. EfficientDet-D4 model is an example:
 
@@ -77,8 +86,8 @@ Follow the instructions below to get frozen TensorFlow EfficientDet model. Effic
    `, apply the fix from the `patch <https://github.com/google/automl/pull/846>`__.
 
 
-Converting an EfficientDet TensorFlow Model to the IR
------------------------------------------------------
+Convert an EfficientDet TensorFlow Model to the IR
+--------------------------------------------------
 
 To generate the IR of the EfficientDet TensorFlow model, run:
 
@@ -110,8 +119,8 @@ OpenVINO toolkit provides samples that can be used to infer EfficientDet model. 
 
 .. _efficientdet-ir-results-interpretation:
 
-Interpreting Results of the TensorFlow Model and the IR
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Interpret Results of the TensorFlow Model and the IR
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The TensorFlow model produces as output a list of 7-element tuples: ``[image_id, y_min, x_min, y_max, x_max, confidence, class_id]``, where:
 
