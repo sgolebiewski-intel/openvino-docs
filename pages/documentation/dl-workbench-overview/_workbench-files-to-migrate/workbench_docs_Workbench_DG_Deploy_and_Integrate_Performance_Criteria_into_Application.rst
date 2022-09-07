@@ -1,11 +1,20 @@
 .. index:: pair: page; Deploy and Integrate Performance Criteria into Application
-.. _doxid-workbench_docs__workbench__d_g__deploy_and__integrate__performance__criteria_into__application:
+.. _workbench_deployment__deploy_and_integrate_performance_criteria_into_app:
+
+.. meta::
+   :description: OpenVINO Deep Learning Workbench guide on how to incorporate the optimal configuration of inferences, 
+                 batch and target for a model settings into the inference engine deployed in application.
+   :keywords: OpenVINO, Deep Learning Workbench, DL Workbench, guide, user guide, deploy and integrate performance criteria, 
+              Performance criteria, optimal configuration of inferences, batch, target, model setting, inference engine, 
+              optimal combination of streams and batches, inference, results, latency threshold, request, integrate otpimal combination
 
 
 Deploy and Integrate Performance Criteria into Application
 ==========================================================
 
-:target:`doxid-workbench_docs__workbench__d_g__deploy_and__integrate__performance__criteria_into__application_1md_openvino_workbench_docs_workbench_dg_deploy_and_integrate_performance_criteria_into_application` Once you identify the optimal configuration of inferences, batch and target for a model, you can incorporate those settings into the inference engine deployed with your application.
+:target:`workbench_deployment__deploy_and_integrate_performance_criteria_into_app_1md_openvino_workbench_docs_workbench_dg_deploy_and_integrate_performance_criteria_into_application` 
+Once you identify the optimal configuration of inferences, batch and target for a model, you can incorporate those 
+settings into the inference engine deployed with your application.
 
 .. raw:: html
 
@@ -16,13 +25,17 @@ Deploy and Integrate Performance Criteria into Application
 Discover Optimal Combination of Streams and Batches with DL Workbench
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To find an optimal combination of inference requests and batches, follow the steps described in :ref:`Run Range of Inferences <doxid-workbench_docs__workbench__d_g__run__single__inference>`.
+To find an optimal combination of inference requests and batches, follow the steps described in 
+:ref:`Run Range of Inferences <doxid-workbench_docs__workbench__d_g__run__single__inference>`.
 
-The optimal combination is the highest point on the **Inference Results** graph. However, you can choose to limit latency values by specifying the **Latency Threshold** value and select an optimal inference among the limited number of inferences:
+The optimal combination is the highest point on the **Inference Results** graph. However, you can choose to 
+limit latency values by specifying the **Latency Threshold** value and select an optimal inference among the 
+limited number of inferences:
 
 .. image:: deployment_package_01.png
 
-To view information about latency, throughput, batch, and parallel requests of a specific job, hover your cursor over the corresponding point on the graph:
+To view information about latency, throughput, batch, and parallel requests of a specific job, hover your cursor 
+over the corresponding point on the graph:
 
 .. image:: deployment_package_02.png
 
@@ -34,7 +47,9 @@ Integrate Optimal Combination into Sample Application
 Use Streams and Batches in Your Application
 -------------------------------------------
 
-Learn how to use batches and streams in your application with DL Workbench C++ Sample Application. To access the sample, open the **Learn OpenVINO** tab, select **Model Inference with OpenVINO API**, then select **C++ API** and click **Open**.
+Learn how to use batches and streams in your application with DL Workbench C++ Sample Application. To access the 
+sample, open the **Learn OpenVINO** tab, select **Model Inference with OpenVINO API**, then select **C++ API** and 
+click **Open**.
 
 .. image:: csample.png
 
@@ -42,7 +57,9 @@ The notebook with the C++ Sample Application opens:
 
 .. image:: sample_jupyter.png
 
-This notebook is created for educational purposes and does not guarantee the immediate creation of a highly efficient application. You can build your own application based on the code from this tutorial. The tutorial guides you through the following steps:
+This notebook is created for educational purposes and does not guarantee the immediate creation of a highly efficient ,
+application. You can build your own application based on the code from this tutorial. The tutorial guides you through 
+the following steps:
 
 #. Learn about OpenVINO™ inference
    
@@ -77,7 +94,7 @@ This notebook is created for educational purposes and does not guarantee the imm
 See Also
 ~~~~~~~~
 
-* :ref:`Build Your Application with Deployment Package <doxid-workbench_docs__workbench__d_g__deployment__package>`
+* :ref:`Build Your Application with Deployment Package <workbench_guide__deployment_package>`
 
 * :ref:`Deployment Manager Guide <deploy_infer__deploy_manager>`
 

@@ -152,7 +152,7 @@ Deployment
 
 Deployment is the process of putting your model into a real-life application. DL Workbench enables you to download 
 a deployment package with your model optimized for particular devices, including required libraries, API, and scripts. 
-See :ref:`Build Your Application with Deployment Package <doxid-workbench_docs__workbench__d_g__deployment__package>` 
+See :ref:`Build Your Application with Deployment Package <workbench_guide__deployment_package>` 
 for details.
 
 Deployment Target

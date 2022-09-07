@@ -86,7 +86,7 @@ See Also
 
 * :ref:`Visualize Model Output <workbench_guide__visualize_accuracy>`
 
-* :ref:`Deploy and Integrate Performance Criteria into Application <doxid-workbench_docs__workbench__d_g__deploy_and__integrate__performance__criteria_into__application>`
+* :ref:`Deploy and Integrate Performance Criteria into Application <workbench_deployment__deploy_and_integrate_performance_criteria_into_app>`
 
 * :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 

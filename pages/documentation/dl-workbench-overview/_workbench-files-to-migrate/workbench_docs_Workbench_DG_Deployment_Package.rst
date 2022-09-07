@@ -1,14 +1,18 @@
 .. index:: pair: page; Build Your Application with Deployment Package
-.. _doxid-workbench_docs__workbench__d_g__deployment__package:
+.. _workbench_guide__deployment_package:
+
+.. meta::
+   :description: Guide for OpenVINO Deep Learning Workbench on how to build application with 
+                 Deployment Package and how to use batches and streams in it.
+   :keywords: OpenVINO, Deep Learning Workbench, DL Workbench, guide, user guide, deployment package, 
+              build application, donwload deployment package, python api, installation scripts, create binary, 
+              compile application, deploy application
 
 
 Build Your Application with Deployment Package
 ==============================================
 
-:target:`doxid-workbench_docs__workbench__d_g__deployment__package_1md_openvino_workbench_docs_workbench_dg_deployment_package`
-
-
-
+:target:`workbench_guide__deployment_package_1md_openvino_workbench_docs_workbench_dg_deployment_package`
 
 
 .. toctree::
@@ -17,34 +21,42 @@ Build Your Application with Deployment Package
 
    workbench_docs_Workbench_DG_Deploy_and_Integrate_Performance_Criteria_into_Application
 
-When you find an optimal configuration for your model, the next step is to use this model with optimal parameters in your own application on a target device. OpenVINO™ toolkit includes all you need to run the application on the target. However, the target might have a limited drive space to store all OpenVINO™ components. OpenVINO™ :ref:`Deployment Manager <deploy_infer__deploy_manager>` available inside the DL Workbench extracts the minimum set of libraries required for a target device.
+When you find an optimal configuration for your model, the next step is to use this model with optimal parameters in 
+your own application on a target device. OpenVINO™ toolkit includes all you need to run the application on the target. 
+However, the target might have a limited drive space to store all OpenVINO™ components. OpenVINO™ 
+:ref:`Deployment Manager <deploy_infer__deploy_manager>` available inside the DL Workbench extracts the minimum set of 
+libraries required for a target device.
 
-.. warning:: Deployment Manager available inside the DL Workbench provides libraries compatible with Ubuntu 18.04 and 20.04.
-
-
-
-Refer to the section below to learn how to download a deployment package for your configuration. Once you download the package, see how to `create a binary with your application <#sample>`__ on your developer machine and `deploy it on a target device <#deploy>`__.
-
-.. note:: *Developer machine* is the machine where you use the DL Workbench to download the package and where you prepare your own application. *Target machine* is the machine where you deploy the application.
-
+.. warning::
+   Deployment Manager available inside the DL Workbench provides libraries compatible with Ubuntu 18.04 and 20.04.
 
 
+Refer to the section below to learn how to download a deployment package for your configuration. Once you download the 
+package, see how to `create a binary with your application <#sample>`__ on your developer machine and 
+`deploy it on a target device <#deploy>`__.
+
+.. note::
+   *Developer machine* is the machine where you use the DL Workbench to download the package and where you prepare your 
+   own application. *Target machine* is the machine where you deploy the application.
 
 
 Download Deployment Package
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note:: Perform these steps on your developer machine.
-
-
+.. note::
+   Perform these steps on your developer machine.
 
 Go to the **Perform** tab on the **Projects** page and open the **Create Deployment Package** subtab.
 
 .. image:: export_package.png
 
-In this tab, select all the targets you want to apply your model to. You can also opt whether to include the model, Python API, and installation scripts. Python API enables the OpenVINO™ Runtime to work in Python scripts. You can then import the Python API into your own scripts and use IE via it. Installation scripts install OpenVINO™ dependencies and drivers for selected targets, if needed.
+In this tab, select all the targets you want to apply your model to. You can also opt whether to include the model, 
+Python API, and installation scripts. Python API enables the OpenVINO™ Runtime to work in Python scripts. You can then 
+import the Python API into your own scripts and use IE via it. Installation scripts install OpenVINO™ dependencies and 
+drivers for selected targets, if needed.
 
-The package size displayed at the bottom of the form changes depending on your selection. If you do not include the model in the package, the archive contains only libraries for selected plugins.
+The package size displayed at the bottom of the form changes depending on your selection. If you do not include the 
+model in the package, the archive contains only libraries for selected plugins.
 
 Once you click **Pack**, the packaging process starts on the server followed by an automatic archive download:
 
@@ -52,31 +64,32 @@ Once you click **Pack**, the packaging process starts on the server followed by 
 
 Now you have an archive that contains the required libraries and your model.
 
-.. warning:: * The archive does not contain your application, and copying the archive to the target device does not mean deployment.
+.. warning::
+   * The archive does not contain your application, and copying the archive to the target device does not mean deployment.
 
-* The archive contains C++\* libraries, so your application can be written in C++ only. A Python\* application cannot use these libraries directly and Python bindings are not included in the deployment package. This document does not contain instructions on how to prepare a Python application for deployment.
+   * The archive contains C++ libraries, so your application can be written in C++ only. A Python application cannot use these libraries directly and Python bindings are not included in the deployment package. This document does not contain instructions on how to prepare a Python application for deployment.
 
 
-
-Your application should be compiled into a binary file. If you do not have an application, see `Create Binary Sample <#sample>`__. The next step is `moving a binary to the target device and deploying it there <#deploy>`__.
+Your application should be compiled into a binary file. If you do not have an application, see 
+`Create Binary Sample <#sample>`__. The next step is 
+`moving a binary to the target device and deploying it there <#deploy>`__.
 
 .. _sample:
 
 Create Binary Sample
 ~~~~~~~~~~~~~~~~~~~~
 
-You can learn how to use batches and streams in your application with DL Workbench :ref:`C++ Sample Application <doxid-workbench_docs__workbench__d_g__deploy_and__integrate__performance__criteria_into__application>`.
+You can learn how to use batches and streams in your application with DL Workbench 
+:ref:`C++ Sample Application <workbench_deployment__deploy_and_integrate_performance_criteria_into_app>`.
 
-.. note:: Perform these steps on your developer machine.
-
-
-
-
+.. note::
+   Perform these steps on your developer machine.
 
 Prerequisite
 ------------
 
-:ref:`Install the Intel® Distribution of OpenVINO™ toolkit for Linux\* <install__linux_installer>` on your developer machine. OpenVINO™ toolkit and DL Workbench should be of the same release version.
+:ref:`Install the Intel® Distribution of OpenVINO™ toolkit for Linux\* <install__linux_installer>` on your developer 
+machine. OpenVINO™ toolkit and DL Workbench should be of the same release version.
 
 Step 1. Create main.cpp
 -----------------------
@@ -168,7 +181,8 @@ Create a file named ``main.cpp`` with the source code of your application:
 Step 2. Create CMakeLists.txt
 -----------------------------
 
-In the same folder as ``main.cpp``, create a file named ``CMakeLists.txt`` with the following commands to compile ``main.cpp`` into an executable file:
+In the same folder as ``main.cpp``, create a file named ``CMakeLists.txt`` with the following commands 
+to compile ``main.cpp`` into an executable file:
 
 .. raw:: html
 
@@ -211,7 +225,9 @@ Open a terminal in the directory with ``main.cpp`` and ``CMakeLists.txt``, and r
 
 
 
-.. note:: Replace ``<INSTALL_OPENVINO_DIR>`` with the directory where you installed the OpenVINO™ package. By default, the package is installed in ``/opt/intel/openvino`` or ``~/intel/openvino``.
+.. note::
+   Replace ``<INSTALL_OPENVINO_DIR>`` with the directory where you installed the OpenVINO™ package. By default, the 
+   package is installed in ``/opt/intel/openvino`` or ``~/intel/openvino``.
 
 
 
@@ -245,8 +261,8 @@ Deploy Your Application on Target Machine
 
 **Step 3.** Archive the ``deployment_package`` folder and copy it to the target machine.
 
-.. note:: Perform the steps below on your target machine.
-
+.. note::
+   Perform the steps below on your target machine.
 
 
 **Step 4.** Open a terminal in the ``deployment_package`` folder on the target machine.
@@ -286,7 +302,7 @@ Install dependencies by running the ``install_openvino_dependencies.sh`` script:
 See Also
 ~~~~~~~~
 
-* :ref:`Deploy and Integrate Performance Criteria into Application <doxid-workbench_docs__workbench__d_g__deploy_and__integrate__performance__criteria_into__application>`
+* :ref:`Deploy and Integrate Performance Criteria into Application <workbench_deployment__deploy_and_integrate_performance_criteria_into_app>`
 
 * :ref:`Deployment Manager Guide <deploy_infer__deploy_manager>`
 
