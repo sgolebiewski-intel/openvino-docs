@@ -1,0 +1,56 @@
+name: New Docs Deploy
+
+# Dummy workflow for development on branches
+
+on:
+  workflow_dispatch:
+    inputs:
+      job1:
+        description: 'Run job 1'
+        required: true
+        type: boolean
+      job2:
+        description: 'Run job 2'
+        required: true
+        type: boolean
+      job3:
+        description: 'Run job 2'
+        required: true
+        type: boolean
+
+jobs:
+  job1:
+    runs-on: ubuntu-20.04
+    if: ${{ inputs.job1 }}
+    steps:
+    - uses: actions/checkout@v2
+    - name: Dummy step 1
+      run: |
+        hostname
+        
+  job2:
+    runs-on: ubuntu-20.04
+    if: ${{ inputs.job2 }}
+    steps:
+    - uses: actions/checkout@v2
+    - name: Dummy step 2
+      run: |
+        hostname
+        
+  job3:
+    runs-on: ubuntu-20.04
+    if: ${{ inputs.job3 }}
+    steps:
+    - uses: actions/checkout@v2
+    - name: Dummy step 3
+      run: |
+        hostname
+  
+  final:
+    needs: [job1, job2, job3]
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: Final step
+      run: |
+        hostname
