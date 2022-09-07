@@ -127,7 +127,7 @@ To see how the Multi-Device execution is used in practice and test its performan
 
 	./benchmark_app –d MULTI:HDDL,GPU –m <model> -i <input> -niter 1000
 
-For more information, refer to the :ref:`C++ <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>` or :ref:`Python <doxid-openvino_inference_engine_tools_benchmark_tool__r_e_a_d_m_e>` version instructions.
+For more information, refer to the :ref:`C++ <get_started__samples_cpp_benchmark>` or :ref:`Python <get_started__samples_python_benchmark>` version instructions.
 
 .. note::
 

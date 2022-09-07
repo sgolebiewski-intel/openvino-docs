@@ -1,11 +1,22 @@
 .. index:: pair: page; Hello Query Device C++ Sample
-.. _doxid-openvino_inference_engine_samples_hello_query_device__r_e_a_d_m_e:
+.. _get_started__samples_cpp_query_device:
 
+.. meta::
+   :description: This sample demonstrates how to show metrics and default 
+                 configuration values of inference devices using Query 
+                 Device (C++) API feature.
+   :keywords: OpenVINO toolkit, code sample, OpenVINO sample, C++ sample, C++ 
+              API, OpenVINO™ Runtime API, available devices, build a sample, 
+              supported metrics, configuration parameters, default values, 
+              OpenVINO Runtime, get_available_devices, get_property, query 
+              inference device, inference device, Intel CPU, Intel GNA
 
 Hello Query Device C++ Sample
 =============================
 
-:target:`doxid-openvino_inference_engine_samples_hello_query_device__r_e_a_d_m_e_1md_openvino_samples_cpp_hello_query_device_readme` This sample demonstrates how to execute an query OpenVINO™ Runtime devices, prints their metrics and default configuration values, using :ref:`Properties API <deploy_infer__query_device_properties>`.
+:target:`get_started__samples_cpp_query_device_1md_openvino_samples_cpp_hello_query_device_readme` 
+
+This sample demonstrates how to execute an query OpenVINO™ Runtime devices, prints their metrics and default configuration values, using :ref:`Properties API <deploy_infer__query_device_properties>`.
 
 The following C++ API is used in the application:
 
@@ -19,7 +30,7 @@ The following C++ API is used in the application:
       - ``:ref:`ov::Core::get_available_devices <doxid-classov_1_1_core_1aabd82bca4826ee53893f7b5fc9bce813>``` , ``:ref:`ov::Core::get_property <doxid-classov_1_1_core_1a4fb9fc7375d04f744a27a9588cbcff1a>```
       - Get available devices information and configuration for inference
 
-Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification C++ sample <doxid-openvino_inference_engine_samples_hello_classification__r_e_a_d_m_e>`.
+Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification C++ sample <get_started__samples_cpp_hello_class>`.
 
 .. list-table::
     :header-rows: 1
@@ -29,7 +40,7 @@ Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification C++ sampl
     * - Supported devices
       - :ref:`All <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
     * - Other language realization
-      - :ref:`Python <doxid-openvino_inference_engine_ie_bridges_python_sample_hello_query_device__r_e_a_d_m_e>`
+      - :ref:`Python <get_started__samples_python_query_device>`
 
 How It Works
 ~~~~~~~~~~~~
@@ -39,7 +50,7 @@ The sample queries all available OpenVINO™ Runtime devices, prints their suppo
 Building
 ~~~~~~~~
 
-To build the sample, please use instructions available at :ref:`Build the Sample Applications <get_started__samples_overview>` section in OpenVINO™ Toolkit Samples guide.
+To build the sample, use instructions available at :ref:`Build the Sample Applications <get_started__samples_overview>` section in OpenVINO™ Toolkit Samples guide.
 
 Running
 ~~~~~~~

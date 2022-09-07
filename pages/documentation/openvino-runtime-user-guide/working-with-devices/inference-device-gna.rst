@@ -59,7 +59,7 @@ Choose a compile target with priority on: cross-platform execution, performance,
 
 Use the following properties to check interoperability in your application: ``:ref:`ov::intel_gna::execution_target <doxid-group__ov__runtime__gna__prop__cpp__api_1ga4ecfa3938d07be52618f606bb54ac429>``` and ``:ref:`ov::intel_gna::compile_target <doxid-group__ov__runtime__gna__prop__cpp__api_1gad9a766500212ccb6826b47aedde9e825>```.
 
-:ref:`Speech C++ Sample <doxid-openvino_inference_engine_samples_speech_sample__r_e_a_d_m_e>` can be used for experiments (see the ``-exec_target`` and ``-compile_target`` command line options).
+:ref:`Speech C++ Sample <get_started__samples_cpp_speech>` can be used for experiments (see the ``-exec_target`` and ``-compile_target`` command line options).
 
 Software Emulation Mode
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -179,7 +179,7 @@ Unlike other plugins supporting low-precision execution, the GNA plugin can calc
 
 GNA plugin supports the ``i16`` and ``i8`` quantized data types as inference precision of internal primitives.
 
-:ref:`Hello Query Device C++ Sample <doxid-openvino_inference_engine_samples_hello_query_device__r_e_a_d_m_e>` can be used to print out supported data types for all detected devices.
+:ref:`Hello Query Device C++ Sample <get_started__samples_cpp_query_device>` can be used to print out supported data types for all detected devices.
 
 :ref:`POT API Usage sample for GNA <optim_perf__pot_api_example_gna>` demonstrates how a model can be quantized for GNA, using POT API in two modes:
 
@@ -336,7 +336,7 @@ Import model:
 
 
 
-To compile a model, use either :ref:`compile Tool <doxid-openvino_inference_engine_tools_compile_tool__r_e_a_d_m_e>` or :ref:`Speech C++ Sample <doxid-openvino_inference_engine_samples_speech_sample__r_e_a_d_m_e>`.
+To compile a model, use either :ref:`compile Tool <doxid-openvino_inference_engine_tools_compile_tool__r_e_a_d_m_e>` or :ref:`Speech C++ Sample <get_started__samples_cpp_speech>`.
 
 Stateful Models
 ---------------

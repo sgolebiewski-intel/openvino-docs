@@ -81,7 +81,7 @@ Performance Benchmarking of Full-Precision Models
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Check the performance of the full-precision model in the IR format using 
-:ref:`Deep Learning Benchmark <doxid-openvino_inference_engine_tools_benchmark_tool__r_e_a_d_m_e>` 
+:ref:`Deep Learning Benchmark <get_started__samples_python_benchmark>` 
 tool:
 
 .. ref-code-block:: cpp
@@ -252,7 +252,7 @@ Performance Benchmarking of Quantized Model
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Check the performance of the quantized model using 
-:ref:`Deep Learning Benchmark <doxid-openvino_inference_engine_tools_benchmark_tool__r_e_a_d_m_e>` 
+:ref:`Deep Learning Benchmark <get_started__samples_python_benchmark>` 
 tool:
 
 .. ref-code-block:: cpp

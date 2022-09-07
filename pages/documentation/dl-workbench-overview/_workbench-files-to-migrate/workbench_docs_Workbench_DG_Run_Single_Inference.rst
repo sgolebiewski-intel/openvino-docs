@@ -110,7 +110,7 @@ See Also
 
 * :ref:`View Inference Results <doxid-workbench_docs__workbench__d_g__view__inference__results>`
 
-* :ref:`Benchmark Tool <doxid-openvino_inference_engine_tools_benchmark_tool__r_e_a_d_m_e>`
+* :ref:`Benchmark Tool <get_started__samples_python_benchmark>`
 
 * :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 

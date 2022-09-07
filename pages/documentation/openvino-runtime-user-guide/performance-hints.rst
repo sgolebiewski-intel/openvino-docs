@@ -155,7 +155,7 @@ While sacrificing the portability to some extent, it is possible to combine the 
 Testing Performance of the Hints with the Benchmark_App
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ``benchmark_app``, that exists in both :ref:`C++ <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>` and :ref:`Python <doxid-openvino_inference_engine_tools_benchmark_tool__r_e_a_d_m_e>` versions, is the best way to evaluate the functionality of the performance hints for a particular device:
+The ``benchmark_app``, that exists in both :ref:`C++ <get_started__samples_cpp_benchmark>` and :ref:`Python <get_started__samples_python_benchmark>` versions, is the best way to evaluate the functionality of the performance hints for a particular device:
 
 * benchmark_app **-hint tput** -d 'device' -m 'path to your model'
 

@@ -156,7 +156,7 @@ Enumerating Available Devices
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The OpenVINO Runtime API features dedicated methods of enumerating devices and 
-their capabilities. See the :ref:`Hello Query Device C++ Sample <doxid-openvino_inference_engine_samples_hello_query_device__r_e_a_d_m_e>`. 
+their capabilities. See the :ref:`Hello Query Device C++ Sample <get_started__samples_cpp_query_device>`. 
 This is an example output from the sample (truncated to device names only):
 
 .. ref-code-block:: cpp

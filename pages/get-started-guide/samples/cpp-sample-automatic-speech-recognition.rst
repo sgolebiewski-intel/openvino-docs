@@ -1,11 +1,26 @@
 .. index:: pair: page; Automatic Speech Recognition C++ Sample
-.. _doxid-openvino_inference_engine_samples_speech_sample__r_e_a_d_m_e:
+.. _get_started__samples_cpp_speech:
 
+.. meta::
+   :description: A demonstration of how to infer acoustic model based on Kaldi 
+                 neural networks and speech feature vectors using Asynchronous 
+                 Inference Request (C++) API.
+   :keywords: OpenVINO toolkit, code sample, build a sample, build OpenVINO 
+              samples, OpenVINO sample, run inference, do inference, 
+              inference, model inference, infer a model, infer a sample,  
+              Asynchronous Inference Request API, Async API, C++ sample, 
+              C++ API, OpenVINO™ Runtime API, Kaldi ARK, Numpy, uncompressed 
+              NPZ, acoustic model, automatic speech recognition, speech 
+              recognition, speech to text, speech inference, Model Optimizer, 
+              convert a model, OpenVINO IR, Kaldi nnet1, Kaldi nnet2, neural 
+              model, GNA plugin, Intel GNA, Intel CPU, Intel GPU, MYRIAD
 
 Automatic Speech Recognition C++ Sample
 =======================================
 
-:target:`doxid-openvino_inference_engine_samples_speech_sample__r_e_a_d_m_e_1md_openvino_samples_cpp_speech_sample_readme` This sample demonstrates how to execute an Asynchronous Inference of acoustic model based on Kaldi neural networks and speech feature vectors.
+:target:`get_started__samples_cpp_speech_1md_openvino_samples_cpp_speech_sample_readme` 
+
+This sample demonstrates how to execute an Asynchronous Inference of acoustic model based on Kaldi neural networks and speech feature vectors.
 
 The sample works with Kaldi ARK or Numpy uncompressed NPZ files, so it does not cover an end-to-end speech recognition scenario (speech to text), requiring additional preprocessing (feature extraction) to get a feature vector from a speech signal, as well as postprocessing (decoding) to produce text from scores.
 
@@ -42,7 +57,7 @@ The following C++ API is used in the application:
       - ``:ref:`ov::InferRequest::get_profiling_info <doxid-classov_1_1_infer_request_1a4d276f12e264dd32aa6a0b7086375d5a>```
       - Get infer request profiling info
 
-Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification C++ sample <doxid-openvino_inference_engine_samples_hello_classification__r_e_a_d_m_e>`.
+Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification C++ sample <get_started__samples_cpp_hello_class>`.
 
 .. list-table::
     :header-rows: 1
@@ -298,7 +313,7 @@ See Also
 
 * :ref:`Using OpenVINO™ Toolkit Samples <get_started__samples_overview>`
 
-* Model Downloader
+* `Model Downloader <https://github.com/openvinotoolkit/open_model_zoo/blob/master/tools/model_tools/README.md>`__
 
 * :ref:`Model Optimizer <conv_prep__conv_with_model_optimizer>`
 

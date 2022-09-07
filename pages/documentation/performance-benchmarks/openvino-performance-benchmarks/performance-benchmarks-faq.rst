@@ -45,8 +45,8 @@ Q5: How can I run the benchmark results on my own?
 
 **A** : All of the performance benchmarks were generated using the open-source 
 tool within the Intel® Distribution of OpenVINO™ toolkit called ``benchmark_app``. 
-This tool is available in both :ref:`C++ <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>` 
-and :ref:`Python <doxid-openvino_inference_engine_tools_benchmark_tool__r_e_a_d_m_e>`.
+This tool is available in both :ref:`C++ <get_started__samples_cpp_benchmark>` 
+and :ref:`Python <get_started__samples_python_benchmark>`.
 
 Q6: What image sizes are used for the classification network models?
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

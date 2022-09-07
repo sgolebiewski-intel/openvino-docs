@@ -60,7 +60,7 @@ time for final projections:
 Using benchmark_app to Measure Reference Performance Numbers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To get performance numbers, use the dedicated :ref:`OpenVINO Benchmark app <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>` sample, which is the most-recommended solution to produce performance reference. It includes a lot of device-specific knobs, but the primary usage is as simple as in the following command to measure the performance of the model on GPU:
+To get performance numbers, use the dedicated :ref:`OpenVINO Benchmark app <get_started__samples_cpp_benchmark>` sample, which is the most-recommended solution to produce performance reference. It includes a lot of device-specific knobs, but the primary usage is as simple as in the following command to measure the performance of the model on GPU:
 
 .. ref-code-block:: cpp
 
@@ -74,7 +74,7 @@ to measure the performance of the model on the GPU. Or
 
 to execute on the CPU instead.
 
-Each of the :ref:`OpenVINO supported devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>` offers performance settings that contain command-line equivalents in the :ref:`Benchmark app <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>`. While these settings provide really low-level control and allow leveraging the optimal model performance on the *specific* device, it is recommended to always start the performance evaluation with the :ref:`OpenVINO High-Level Performance Hints <deploy_infer__performance_hints>` first:
+Each of the :ref:`OpenVINO supported devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>` offers performance settings that contain command-line equivalents in the :ref:`Benchmark app <get_started__samples_cpp_benchmark>`. While these settings provide really low-level control and allow leveraging the optimal model performance on the *specific* device, it is recommended to always start the performance evaluation with the :ref:`OpenVINO High-Level Performance Hints <deploy_infer__performance_hints>` first:
 
 * benchmark_app **-hint tput** -d 'device' -m 'path to your model'
 
@@ -87,7 +87,7 @@ When comparing the OpenVINO Runtime performance with the framework or another
 reference code, make sure that both versions are as similar as possible:
 
 * Wrap the exact inference execution (refer to the 
-  :ref:`Benchmark app <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>` 
+  :ref:`Benchmark app <get_started__samples_cpp_benchmark>` 
   for examples).
 
 * Do not include model loading time.
@@ -110,8 +110,8 @@ Data from Internal Inference Performance Counters and Execution Graphs
 
 More detailed insights into inference performance breakdown can be achieved with 
 device-specific performance counters and/or execution graphs. Both 
-:ref:`C++ <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>` 
-and :ref:`Python <doxid-openvino_inference_engine_tools_benchmark_tool__r_e_a_d_m_e>` 
+:ref:`C++ <get_started__samples_cpp_benchmark>` 
+and :ref:`Python <get_started__samples_python_benchmark>` 
 versions of the ``benchmark_app`` support a ``-pc`` command-line parameter that 
 outputs internal execution breakdown.
 

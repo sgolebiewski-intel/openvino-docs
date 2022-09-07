@@ -195,6 +195,6 @@ API 2.0
 Additional Resources
 ~~~~~~~~~~~~~~~~~~~~
 
-* :ref:`Hello Model Creation C++ Sample <doxid-openvino_inference_engine_samples_model_creation_sample__r_e_a_d_m_e>`
+* :ref:`Hello Model Creation C++ Sample <get_started__samples_cpp_model_creation>`
 
-* :ref:`Hello Model Creation Python Sample <doxid-openvino_inference_engine_ie_bridges_python_sample_model_creation_sample__r_e_a_d_m_e>`
+* :ref:`Hello Model Creation Python Sample <get_started__samples_python_model_creation>`

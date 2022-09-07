@@ -1,11 +1,23 @@
 .. index:: pair: page; Image Classification Async Python\* Sample
 .. _doxid-openvino_inference_engine_ie_bridges_python_sample_classification_sample_async__r_e_a_d_m_e:
 
+.. meta::
+   :description: An example of doing inference of image classification models 
+                 using Asynchronous Inference Request (Python) API.
+   :keywords: OpenVINO toolkit, code sample, build a sample, build OpenVINO 
+              samples, OpenVINO sample, run inference, do inference, 
+              inference, Model Downloader, Model Optimizer, convert a model, 
+              convert a model to OpenVINO IR, model inference, infer a model, 
+              infer a sample, image classification, image classification model, 
+              Asynchronous Inference Request API, Async API, Python sample, 
+              Python API, OpenVINO™ Runtime API
 
 Image Classification Async Python Sample
 ==========================================
 
-:target:`doxid-openvino_inference_engine_ie_bridges_python_sample_classification_sample_async__r_e_a_d_m_e_1md_openvino_samples_python_classification_sample_async_readme` This sample demonstrates how to do inference of image classification models using Asynchronous Inference Request API.
+:target:`doxid-openvino_inference_engine_ie_bridges_python_sample_classification_sample_async__r_e_a_d_m_e_1md_openvino_samples_python_classification_sample_async_readme` 
+
+This sample demonstrates how to do inference of image classification models using Asynchronous Inference Request API.
 
 Models with only 1 input and output are supported.
 
@@ -21,7 +33,7 @@ The following Python API is used in the application:
       - [openvino.runtime.AsyncInferQueue], `openvino.runtime.AsyncInferQueue.set_callback <[openvino.runtime.AsyncInferQueue.start_async]:>`__ , [openvino.runtime.AsyncInferQueue.start_async], [openvino.runtime.AsyncInferQueue.wait_all], [openvino.runtime.InferRequest.results]
       - Do asynchronous inference
 
-Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification Python Sample <doxid-openvino_inference_engine_ie_bridges_python_sample_hello_classification__r_e_a_d_m_e>`.
+Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification Python Sample <get_started__samples_python_hello_class>`.
 
 .. list-table::
     :header-rows: 1
@@ -35,7 +47,7 @@ Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification Python Sa
     * - Supported devices
       - :ref:`All <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
     * - Other language realization
-      - :ref:`C++ <doxid-openvino_inference_engine_samples_classification_sample_async__r_e_a_d_m_e>`
+      - :ref:`C++ <get_started__samples_cpp_img_class_async>`
 
 How It Works
 ~~~~~~~~~~~~
@@ -166,7 +178,7 @@ See Also
 
 * :ref:`Using OpenVINO™ Toolkit Samples <get_started__samples_overview>`
 
-* Model Downloader
+* `Model Downloader <https://github.com/openvinotoolkit/open_model_zoo/blob/master/tools/model_tools/README.md>`__
 
 * :ref:`Model Optimizer <conv_prep__conv_with_model_optimizer>`
 

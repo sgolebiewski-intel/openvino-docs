@@ -1,11 +1,25 @@
 .. index:: pair: page; Model Creation C++ Sample
-.. _doxid-openvino_inference_engine_samples_model_creation_sample__r_e_a_d_m_e:
+.. _get_started__samples_cpp_model_creation:
 
+.. meta::
+   :description: A demonstration of how to create a model on the fly with a 
+                 provided weights file and infer it later using Synchronous 
+                 Inference Request (C++) API.
+   :keywords: OpenVINO toolkit, code sample, build a sample, build OpenVINO 
+              samples, OpenVINO sample, run inference, do inference, 
+              inference, Model Optimizer, convert a model, model inference, 
+              infer a sample, infer a model, image classification, image 
+              classification model, Synchronous Inference Request API, C++ 
+              sample, C++ API, LeNet, Intel GPU, Caffe, Caffe model, 
+              pre-trained model, model weights, weights file, model weights 
+              file, FP32 weights
 
 Model Creation C++ Sample
 =========================
 
-:target:`doxid-openvino_inference_engine_samples_model_creation_sample__r_e_a_d_m_e_1md_openvino_samples_cpp_model_creation_sample_readme` This sample demonstrates how to execute an synchronous inference using :ref:`model <deploy_infer__model_representation>` built on the fly which uses weights from LeNet classification model, which is known to work well on digit classification tasks.
+:target:`get_started__samples_cpp_model_creation_1md_openvino_samples_cpp_model_creation_sample_readme` 
+
+This sample demonstrates how to execute an synchronous inference using :ref:`model <deploy_infer__model_representation>` built on the fly which uses weights from LeNet classification model, which is known to work well on digit classification tasks.
 
 You do not need an XML file to create a model. The API of :ref:`ov::Model <doxid-classov_1_1_model>` allows creating a model on the fly from the source code.
 
@@ -36,7 +50,7 @@ The following C++ API is used in the application:
       - ``ov::opset8::Parameter`` , ``:ref:`ov::Node::output <doxid-classov_1_1_node_1ac99614dc0669915105d5681cf3873251>``` , ``ov::opset8::Constant`` , ``ov::opset8::Convolution`` , ``ov::opset8::Add`` , ``ov::opset1::MaxPool`` , ``ov::opset8::Reshape`` , ``ov::opset8::MatMul`` , ``ov::opset8::Relu`` , ``ov::opset8::Softmax`` , ``:ref:`ov::descriptor::Tensor::set_names <doxid-classov_1_1descriptor_1_1_tensor_1a5f21c3cb845cbee0b7350163644776a0>``` , ``ov::opset8::Result`` , ``:ref:`ov::Model <doxid-classov_1_1_model>``` , ``ov::ParameterVector::vector``
       - Used to construct an OpenVINO model
 
-Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification C++ sample <doxid-openvino_inference_engine_samples_hello_classification__r_e_a_d_m_e>`.
+Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification C++ sample <get_started__samples_cpp_hello_class>`.
 
 .. list-table::
     :header-rows: 1
@@ -52,7 +66,7 @@ Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification C++ sampl
     * - Supported devices
       - :ref:`All <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
     * - Other language realization
-      - :ref:`Python <doxid-openvino_inference_engine_ie_bridges_python_sample_model_creation_sample__r_e_a_d_m_e>`
+      - :ref:`Python <get_started__samples_python_model_creation>`
 
 How It Works
 ~~~~~~~~~~~~

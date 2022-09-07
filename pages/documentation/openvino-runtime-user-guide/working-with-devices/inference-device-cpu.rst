@@ -81,7 +81,7 @@ CPU plugin supports the following data types as inference precision of internal 
   
   * u1
 
-:ref:`Hello Query Device C++ Sample <doxid-openvino_inference_engine_samples_hello_query_device__r_e_a_d_m_e>` 
+:ref:`Hello Query Device C++ Sample <get_started__samples_cpp_query_device>` 
 can be used to print out supported data types for all detected devices.
 
 Quantized Data Types Specifics

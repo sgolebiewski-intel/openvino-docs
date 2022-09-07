@@ -35,5 +35,5 @@ Open Model Zoo for OpenVINO™ toolkit delivers a wide variety of free, pre-trai
 
 Browse through over 200 neural network models, both public and from Intel, and pick the right one for your solution. Types include object detection, classification, image segmentation, handwriting recognition, text to speech, pose estimation, and others. The Intel models have already been converted to work with OpenVINO™ toolkit, while public models can easily be converted using the :ref:`Model Optimizer <conv_prep__conv_with_model_optimizer>` utility.
 
-Get started with simple :ref:`step-by-step procedures <doxid-openvino_docs_get_started_get_started_demos>` to learn how to build and run demo applications or discover the full set of demos and adapt them for implementing specific deep learning scenarios in your applications.
+Get started with simple :ref:`step-by-step procedures <get_started__samples_basic_workflow>` to learn how to build and run demo applications or discover the full set of demos and adapt them for implementing specific deep learning scenarios in your applications.
 

@@ -1,11 +1,25 @@
 .. index:: pair: page; Model Creation Python\* Sample
-.. _doxid-openvino_inference_engine_ie_bridges_python_sample_model_creation_sample__r_e_a_d_m_e:
+.. _get_started__samples_python_model_creation:
 
+.. meta::
+   :description: A demonstration of how to create a model on the fly with a 
+                 provided weights file and infer it later using Synchronous 
+                 Inference Request (Python) API.
+   :keywords: OpenVINO toolkit, code sample, build a sample, build OpenVINO 
+              samples, OpenVINO sample, run inference, do inference, 
+              inference, Model Optimizer, convert a model, model inference, 
+              infer a sample, infer a model, image classification, image 
+              classification model, Synchronous Inference Request API, Python 
+              sample, Python API, LeNet, Intel GPU, Caffe, Caffe model, 
+              pre-trained model, model weights, weights file, model weights 
+              file, FP32 weights
 
 Model Creation Python Sample
 ==============================
 
-:target:`doxid-openvino_inference_engine_ie_bridges_python_sample_model_creation_sample__r_e_a_d_m_e_1md_openvino_samples_python_model_creation_sample_readme` This sample demonstrates how to run inference using a :ref:`model <deploy_infer__model_representation>` built on the fly that uses weights from the LeNet classification model, which is known to work well on digit classification tasks. You do not need an XML file, the model is created from the source code on the fly.
+:target:`get_started__samples_python_model_creation_1md_openvino_samples_python_model_creation_sample_readme` 
+
+This sample demonstrates how to run inference using a :ref:`model <deploy_infer__model_representation>` built on the fly that uses weights from the LeNet classification model, which is known to work well on digit classification tasks. You do not need an XML file, the model is created from the source code on the fly.
 
 The following OpenVINO Python API is used in the application:
 
@@ -22,7 +36,7 @@ The following OpenVINO Python API is used in the application:
       - `openvino.runtime.op.Parameter <[openvino.runtime.op.Constant]:>`__ , [openvino.runtime.op.Constant], `openvino.runtime.opset8.convolution <[openvino.runtime.opset8.add]:>`__ , [openvino.runtime.opset8.add], `openvino.runtime.opset1.max_pool <[openvino.runtime.opset8.reshape]:>`__ , [openvino.runtime.opset8.reshape], `openvino.runtime.opset8.matmul <[openvino.runtime.opset8.relu]:>`__ , [openvino.runtime.opset8.relu], [openvino.runtime.opset8.softmax]
       - Description of a model topology using OpenVINO Python API
 
-Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification Python Sample <doxid-openvino_inference_engine_ie_bridges_python_sample_hello_classification__r_e_a_d_m_e>`.
+Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification Python Sample <get_started__samples_python_hello_class>`.
 
 .. list-table::
     :header-rows: 1
@@ -36,7 +50,7 @@ Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification Python Sa
     * - Supported devices
       - :ref:`All <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
     * - Other language realization
-      - :ref:`C++ <doxid-openvino_inference_engine_samples_model_creation_sample__r_e_a_d_m_e>`
+      - :ref:`C++ <get_started__samples_cpp_model_creation>`
 
 How It Works
 ~~~~~~~~~~~~
@@ -157,7 +171,7 @@ See Also
 
 * :ref:`Using OpenVINO™ Toolkit Samples <get_started__samples_overview>`
 
-* Model Downloader
+* `Model Downloader <https://github.com/openvinotoolkit/open_model_zoo/blob/master/tools/model_tools/README.md>`__
 
 * :ref:`Model Optimizer <conv_prep__conv_with_model_optimizer>`
 

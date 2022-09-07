@@ -1,11 +1,23 @@
-.. index:: pair: page; Hello Classification Python\* Sample
-.. _doxid-openvino_inference_engine_ie_bridges_python_sample_hello_classification__r_e_a_d_m_e:
+.. index:: pair: page; Hello Classification Python Sample
+.. _get_started__samples_python_hello_class:
 
+.. meta::
+   :description: A demonstration of how to do inference of image classification 
+                 models using Synchronous Inference Request (Python) API.
+   :keywords: OpenVINO toolkit, code sample, build a sample, build OpenVINO 
+              samples, OpenVINO sample, run inference, do inference, 
+              inference, Model Downloader, Model Optimizer, convert a model, 
+              convert a model to OpenVINO IR, model inference, infer a model, 
+              infer a sample, image classification, image classification model, 
+              Synchronous Inference Request API, Python sample, Python API, 
+              OpenVINO™ Runtime API
 
 Hello Classification Python Sample
 ====================================
 
-:target:`doxid-openvino_inference_engine_ie_bridges_python_sample_hello_classification__r_e_a_d_m_e_1md_openvino_samples_python_hello_classification_readme` This sample demonstrates how to do inference of image classification models using Synchronous Inference Request API.
+:target:`get_started__samples_python_hello_class_1md_openvino_samples_python_hello_classification_readme` 
+
+This sample demonstrates how to do inference of image classification models using Synchronous Inference Request API.
 
 Models with only 1 input and output are supported.
 
@@ -42,7 +54,7 @@ The following Python API is used in the application:
     * - Supported devices
       - :ref:`All <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
     * - Other language realization
-      - :ref:`C++ <doxid-openvino_inference_engine_samples_hello_classification__r_e_a_d_m_e>` , :ref:`C <doxid-openvino_inference_engine_ie_bridges_c_samples_hello_classification__r_e_a_d_m_e>`
+      - :ref:`C++ <get_started__samples_cpp_hello_class>` , :ref:`C <get_started__samples_c_hello_class>`
 
 How It Works
 ~~~~~~~~~~~~
@@ -136,7 +148,7 @@ See Also
 
 * :ref:`Using OpenVINO™ Toolkit Samples <get_started__samples_overview>`
 
-* Model Downloader
+* `Model Downloader <https://github.com/openvinotoolkit/open_model_zoo/blob/master/tools/model_tools/README.md>`__
 
 * :ref:`Model Optimizer <conv_prep__conv_with_model_optimizer>`
 

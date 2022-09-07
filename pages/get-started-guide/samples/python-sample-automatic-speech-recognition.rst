@@ -1,11 +1,24 @@
-.. index:: pair: page; Automatic Speech Recognition Python\* Sample
-.. _doxid-openvino_inference_engine_ie_bridges_python_sample_speech_sample__r_e_a_d_m_e:
+.. index:: pair: page; Automatic Speech Recognition Python Sample
+.. _get_started__samples_python_speech:
 
+.. meta::
+   :description: A demonstration of how to infer acoustic model based on Kaldi 
+                 neural networks and speech feature vectors using Asynchronous 
+                 Inference Request (Python) API.
+   :keywords: OpenVINO toolkit, code sample, build a sample, build OpenVINO 
+              samples, OpenVINO sample, run inference, do inference, 
+              inference, model inference, infer a model, infer a sample,  
+              Asynchronous Inference Request API, Async API, Python sample, 
+              Python API, OpenVINO™ Runtime API, Kaldi ARK, Numpy, uncompressed 
+              NPZ, acoustic model, automatic speech recognition, speech 
+              recognition, speech to text, speech inference, Model Optimizer, 
+              convert a model, OpenVINO IR, Kaldi nnet1, Kaldi nnet2, neural 
+              model, GNA plugin, Intel GNA, Intel CPU, Intel GPU, MYRIAD
 
 Automatic Speech Recognition Python Sample
 ============================================
 
-:target:`doxid-openvino_inference_engine_ie_bridges_python_sample_speech_sample__r_e_a_d_m_e_1md_openvino_samples_python_speech_sample_readme` This sample demonstrates how to do a Synchronous Inference of acoustic model based on Kaldi neural models and speech feature vectors.
+:target:`get_started__samples_python_speech_1md_openvino_samples_python_speech_sample_readme` This sample demonstrates how to do a Synchronous Inference of acoustic model based on Kaldi neural models and speech feature vectors.
 
 The sample works with Kaldi ARK or Numpy uncompressed NPZ files, so it does not cover an end-to-end speech recognition scenario (speech to text), requiring additional preprocessing (feature extraction) to get a feature vector from a speech signal, as well as postprocessing (decoding) to produce text from scores.
 
@@ -36,7 +49,7 @@ Automatic Speech Recognition Python sample application demonstrates how to use t
       - [openvino.runtime.InferRequest.profiling_info], [openvino.runtime.ProfilingInfo.real_time]
       - Get infer request profiling info
 
-Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification Python Sample <doxid-openvino_inference_engine_ie_bridges_python_sample_hello_classification__r_e_a_d_m_e>`.
+Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification Python Sample <get_started__samples_python_hello_class>`.
 
 .. list-table::
     :header-rows: 1
@@ -50,7 +63,7 @@ Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification Python Sa
     * - Supported devices
       - See `Execution Modes <#execution-modes>`__ section below and :ref:`List Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
     * - Other language realization
-      - :ref:`C++ <doxid-openvino_inference_engine_samples_speech_sample__r_e_a_d_m_e>`
+      - :ref:`C++ <get_started__samples_cpp_speech>`
 
 How It Works
 ~~~~~~~~~~~~
@@ -386,7 +399,7 @@ See Also
 
 * :ref:`Using OpenVINO™ Toolkit Samples <get_started__samples_overview>`
 
-* Model Downloader
+* `Model Downloader <https://github.com/openvinotoolkit/open_model_zoo/blob/master/tools/model_tools/README.md>`__
 
 * :ref:`Model Optimizer <conv_prep__conv_with_model_optimizer>`
 

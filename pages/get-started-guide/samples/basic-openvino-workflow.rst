@@ -1,11 +1,21 @@
 .. index:: pair: page; Basic OpenVINO™ Workflow
-.. _doxid-openvino_docs_get_started_get_started_demos:
+.. _get_started__samples_basic_workflow:
 
+.. meta::
+   :description: A basic workflow for Intel® Distribution of OpenVINO™ toolkit, 
+                 including information on how to run inference using provided 
+                 code samples.
+   :keywords: Intel® Distribution of OpenVINO™ toolkit, OpenVINO toolkit, 
+              basic workflow, code samples, run inference, do inference, 
+              inference, Model Downloader, Model Optimizer, convert a model, 
+              OpenVINO samples, OpenVINO demos, convert a model to OpenVINO IR, 
+              build OpenVINO samples, model inference, infer a model, infer a 
+              sample
 
 Basic OpenVINO™ Workflow
 ==========================
 
-:target:`doxid-openvino_docs_get_started_get_started_demos_1md_openvino_docs_get_started_get_started_demos` 
+:target:`get_started__samples_basic_workflow_1md_openvino_docs_get_started_get_started_demos` 
 
 This guide will walk you through a basic workflow for Intel® Distribution of 
 OpenVINO™ toolkit, including how to use code samples.

@@ -51,9 +51,9 @@ The applications include:
 * **Speech Sample** - Acoustic model inference based on Kaldi neural networks 
   and speech feature vectors.
 
-  * :ref:`Automatic Speech Recognition C++ Sample <doxid-openvino_inference_engine_samples_speech_sample__r_e_a_d_m_e>`
+  * :ref:`Automatic Speech Recognition C++ Sample <get_started__samples_cpp_speech>`
 
-  * :ref:`Automatic Speech Recognition Python Sample <doxid-openvino_inference_engine_ie_bridges_python_sample_speech_sample__r_e_a_d_m_e>`
+  * :ref:`Automatic Speech Recognition Python Sample <get_started__samples_python_speech>`
 
 * **Hello Classification Sample** - Inference of image classification networks 
   like AlexNet and GoogLeNet using Synchronous Inference Request API. Input of 
@@ -61,60 +61,60 @@ The applications include:
   automatically during inference (the sample supports only images as inputs and 
   supports Unicode paths).
 
-  * :ref:`Hello Classification C++ Sample <doxid-openvino_inference_engine_samples_hello_classification__r_e_a_d_m_e>`
+  * :ref:`Hello Classification C++ Sample <get_started__samples_cpp_hello_class>`
 
-  * :ref:`Hello Classification C Sample <doxid-openvino_inference_engine_ie_bridges_c_samples_hello_classification__r_e_a_d_m_e>`
+  * :ref:`Hello Classification C Sample <get_started__samples_c_hello_class>`
 
-  * :ref:`Hello Classification Python Sample <doxid-openvino_inference_engine_ie_bridges_python_sample_hello_classification__r_e_a_d_m_e>`
+  * :ref:`Hello Classification Python Sample <get_started__samples_python_hello_class>`
 
 * **Hello NV12 Input Classification Sample** - Input of any size and layout can 
   be provided to an infer request. The sample transforms the input to the NV12 
   color format and pre-process it automatically during inference. The sample 
   supports only images as inputs.
 
-  * :ref:`Hello NV12 Input Classification C++ Sample <doxid-openvino_inference_engine_samples_hello_nv12_input_classification__r_e_a_d_m_e>`
+  * :ref:`Hello NV12 Input Classification C++ Sample <get_started__samples_cpp_nv12_img_class>`
 
-  * :ref:`Hello NV12 Input Classification C Sample <doxid-openvino_inference_engine_ie_bridges_c_samples_hello_nv12_input_classification__r_e_a_d_m_e>`
+  * :ref:`Hello NV12 Input Classification C Sample <get_started__samples_c_nv12_img_class>`
 
 * **Hello Query Device Sample** - Query of available OpenVINO devices and their 
   metrics, configuration values.
   
-  * :ref:`Hello Query Device C++ Sample <doxid-openvino_inference_engine_samples_hello_query_device__r_e_a_d_m_e>`
+  * :ref:`Hello Query Device C++ Sample <get_started__samples_cpp_query_device>`
   
-  * :ref:`Hello Query Device Python Sample <doxid-openvino_inference_engine_ie_bridges_python_sample_hello_query_device__r_e_a_d_m_e>`
+  * :ref:`Hello Query Device Python Sample <get_started__samples_python_query_device>`
 
 * **Hello Reshape SSD Sample** - Inference of SSD networks resized by ShapeInfer 
   API according to an input size.
 
-  * :ref:`Hello Reshape SSD C++ Sample <doxid-openvino_inference_engine_samples_hello_reshape_ssd__r_e_a_d_m_e>`
+  * :ref:`Hello Reshape SSD C++ Sample <get_started__samples_cpp_hello_reshape>`
 
-  * :ref:`Hello Reshape SSD Python Sample <doxid-openvino_inference_engine_ie_bridges_python_sample_hello_reshape_ssd__r_e_a_d_m_e>`
+  * :ref:`Hello Reshape SSD Python Sample <get_started__samples_python_hello_reshape>`
 
 * **Image Classification Sample Async** - Inference of image classification 
   networks like AlexNet and GoogLeNet using Asynchronous Inference Request API 
   (the sample supports only images as inputs).
 
-  * :ref:`Image Classification Async C++ Sample <doxid-openvino_inference_engine_samples_classification_sample_async__r_e_a_d_m_e>`
+  * :ref:`Image Classification Async C++ Sample <get_started__samples_cpp_img_class_async>`
 
   * :ref:`Image Classification Async Python Sample <doxid-openvino_inference_engine_ie_bridges_python_sample_classification_sample_async__r_e_a_d_m_e>`
 
 * **OpenVINO Model Creation Sample** - Construction of the LeNet model using 
   the OpenVINO model creation sample.
 
-  * :ref:`OpenVINO Model Creation C++ Sample <doxid-openvino_inference_engine_samples_model_creation_sample__r_e_a_d_m_e>`
+  * :ref:`OpenVINO Model Creation C++ Sample <get_started__samples_cpp_model_creation>`
 
-  * :ref:`OpenVINO Model Creation Python Sample <doxid-openvino_inference_engine_ie_bridges_python_sample_model_creation_sample__r_e_a_d_m_e>`
+  * :ref:`OpenVINO Model Creation Python Sample <get_started__samples_python_model_creation>`
 
 * **Benchmark Application** - Estimates deep learning inference performance on 
   supported devices for synchronous and asynchronous modes.
 
-  * :ref:`Benchmark C++ Tool <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>`
+  * :ref:`Benchmark C++ Tool <get_started__samples_cpp_benchmark>`
 
   Note that the Python version of the benchmark tool is currently available only 
   through the :ref:`OpenVINO Development Tools installation <install_openvino_dev_tools>`. 
   It is not created in the samples directory but can be launched with the following 
   command: ``benchmark_app -m <model> -i <input> -d <device>`` For more information, 
-  check the :ref:`Benchmark Python Tool <doxid-openvino_inference_engine_tools_benchmark_tool__r_e_a_d_m_e>` 
+  check the :ref:`Benchmark Python Tool <get_started__samples_python_benchmark>` 
   documentation.
 
 .. note:: All C++ samples support input paths containing only ASCII characters, 

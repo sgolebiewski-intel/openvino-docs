@@ -154,7 +154,7 @@ method to set a callback which is called upon completion of the request:
    ``std::weal_ptr<:ref:`ov::InferRequest <doxid-classov_1_1_infer_request>`>``, 
    etc.) in the callback. It is necessary to avoid cyclic references.
 
-For more details, see the :ref:`Classification Async Sample <doxid-openvino_inference_engine_samples_classification_sample_async__r_e_a_d_m_e>`.
+For more details, see the :ref:`Classification Async Sample <get_started__samples_cpp_img_class_async>`.
 
 You can use the ``:ref:`ov::InferRequest::cancel <doxid-classov_1_1_infer_request_1aa100b080271f057ab5f98d1832af414d>``` 
 method if you want to abort execution of the current inference request:

@@ -122,7 +122,7 @@ you can do inference and simultaneously encode the resulting or previous
 frames or run further inference, like emotion detection on top of the face 
 detection results. Refer to the Object Detection C++ Demo, Object Detection 
 Python Demo(latency-oriented Async API showcase) and 
-:ref:`Benchmark App Sample <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>` 
+:ref:`Benchmark App Sample <get_started__samples_cpp_benchmark>` 
 for complete examples of the Async API in action.
 
 .. note:: Using the Asynchronous API is a must for 

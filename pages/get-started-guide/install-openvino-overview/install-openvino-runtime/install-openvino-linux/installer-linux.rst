@@ -246,11 +246,11 @@ Developing in Python:
 
 Developing in C++:
 
-* :ref:`Image Classification Async C++ Sample <doxid-openvino_inference_engine_samples_classification_sample_async__r_e_a_d_m_e>`
+* :ref:`Image Classification Async C++ Sample <get_started__samples_cpp_img_class_async>`
 
-* :ref:`Hello Classification C++ Sample <doxid-openvino_inference_engine_samples_hello_classification__r_e_a_d_m_e>`
+* :ref:`Hello Classification C++ Sample <get_started__samples_cpp_hello_class>`
 
-* :ref:`Hello Reshape SSD C++ Sample <doxid-openvino_inference_engine_samples_hello_reshape_ssd__r_e_a_d_m_e>`
+* :ref:`Hello Reshape SSD C++ Sample <get_started__samples_cpp_hello_reshape>`
 
 .. _uninstall:
 

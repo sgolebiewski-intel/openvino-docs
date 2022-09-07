@@ -73,5 +73,5 @@ How to Run the example
    * ``-o``, ``--output`` option. Defines output folder for quantized model.
 
 #. Validate your INT8 model using ``./speech_example`` from the Inference 
-   Engine examples. Follow the :ref:`speech example description link <doxid-openvino_inference_engine_samples_speech_sample__r_e_a_d_m_e>` 
+   Engine examples. Follow the :ref:`speech example description link <get_started__samples_cpp_speech>` 
    for details.

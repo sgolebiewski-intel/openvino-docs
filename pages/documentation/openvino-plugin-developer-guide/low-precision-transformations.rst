@@ -530,7 +530,7 @@ Inference
 ---------
 
 The simplest way to infer the model and collect performance counters is 
-:ref:`Benchmark Application <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>`.
+:ref:`Benchmark Application <get_started__samples_cpp_benchmark>`.
 
 .. ref-code-block:: cpp
 

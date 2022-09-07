@@ -36,7 +36,7 @@ Example: Running ASpIRE Chain TDNN Model with the Speech Recognition Sample
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note:: Before you continue with this part of the article, get familiar with 
-   the :ref:`Speech Recognition sample <doxid-openvino_inference_engine_samples_speech_sample__r_e_a_d_m_e>`.
+   the :ref:`Speech Recognition sample <get_started__samples_cpp_speech>`.
 
 
 In this example, the input data contains one utterance from one speaker.
@@ -161,6 +161,4 @@ Run the Speech Recognition sample with the created ivector ``.ark`` file:
 
    speech_sample -i feats.ark,ivector_online_ie.ark -m final.xml -d CPU -o prediction.ark -cw_l 17 -cw_r 12
 
-Results can be decoded as described in "Use of Sample in Kaldi Speech 
-Recognition Pipeline" in the :ref:`Speech Recognition Sample description <doxid-openvino_inference_engine_samples_speech_sample__r_e_a_d_m_e>` 
-article.
+Results can be decoded as described in "Use of Sample in Kaldi Speech Recognition Pipeline" in the :ref:`Speech Recognition Sample description <get_started__samples_cpp_speech>` article.

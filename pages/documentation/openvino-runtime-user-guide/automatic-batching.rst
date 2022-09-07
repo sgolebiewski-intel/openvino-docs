@@ -242,8 +242,8 @@ Testing Performance with Benchmark_app
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ``benchmark_app`` sample, that has both 
-:ref:`C++ <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>` 
-and :ref:`Python <doxid-openvino_inference_engine_tools_benchmark_tool__r_e_a_d_m_e>` 
+:ref:`C++ <get_started__samples_cpp_benchmark>` 
+and :ref:`Python <get_started__samples_python_benchmark>` 
 versions, is the best way to evaluate the performance of Automatic Batching:
 
 * The most straightforward way is using the performance hints:

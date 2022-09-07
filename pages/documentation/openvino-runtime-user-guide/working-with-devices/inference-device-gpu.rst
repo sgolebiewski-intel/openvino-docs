@@ -60,7 +60,7 @@ Device Naming Convention
   ``X`` - id of the GPU device, ``Y`` - id of the tile within device ``X``
 
 For demonstration purposes, see the 
-:ref:`Hello Query Device C++ Sample <doxid-openvino_inference_engine_samples_hello_query_device__r_e_a_d_m_e>` 
+:ref:`Hello Query Device C++ Sample <get_started__samples_cpp_query_device>` 
 that can print out the list of available devices with associated indices. Below 
 is an example output (truncated to the device names only):
 
@@ -173,7 +173,7 @@ which is executed in the ``f16`` precision.
    be queried via the ``:ref:`ov::device::capabilities <doxid-group__ov__runtime__cpp__prop__api_1gadb13d62787fc4485733329f044987294>``` 
    property.
 
-:ref:`Hello Query Device C++ Sample <doxid-openvino_inference_engine_samples_hello_query_device__r_e_a_d_m_e>` 
+:ref:`Hello Query Device C++ Sample <get_started__samples_cpp_query_device>` 
 can be used to print out the supported data types for all detected devices.
 
 Supported Features

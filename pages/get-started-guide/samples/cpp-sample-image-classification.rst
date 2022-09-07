@@ -1,11 +1,24 @@
 .. index:: pair: page; Image Classification Async C++ Sample
-.. _doxid-openvino_inference_engine_samples_classification_sample_async__r_e_a_d_m_e:
+.. _get_started__samples_cpp_img_class_async:
 
+.. meta::
+   :description: The sample demonstrates how to do inference of image 
+                 classification models using Asynchronous Inference Request 
+                 (C++) API.
+   :keywords: OpenVINO toolkit, code sample, build a sample, build OpenVINO 
+              samples, OpenVINO sample, run inference, do inference, 
+              inference, Model Downloader, Model Optimizer, convert a model, 
+              convert a model to OpenVINO IR, model inference, infer a model, 
+              infer a sample, image classification, image classification model, 
+              Asynchronous Inference Request API, Async API, C++ sample, 
+              C++ API, OpenVINO™ Runtime API
 
 Image Classification Async C++ Sample
 =====================================
 
-:target:`doxid-openvino_inference_engine_samples_classification_sample_async__r_e_a_d_m_e_1md_openvino_samples_cpp_classification_sample_async_readme` This sample demonstrates how to do inference of image classification models using Asynchronous Inference Request API.
+:target:`get_started__samples_cpp_img_class_async_1md_openvino_samples_cpp_classification_sample_async_readme` 
+
+This sample demonstrates how to do inference of image classification models using Asynchronous Inference Request API.
 
 Models with only one input and output are supported.
 
@@ -32,7 +45,7 @@ The following C++ API is used in the application:
       - ``:ref:`ov::shape_size <doxid-group__ov__model__cpp__api_1gafe8cdd6477ae9810c2bf368602d35883>``` , ``:ref:`ov::Tensor::data <doxid-classov_1_1_tensor_1aaf6d1cd69a759b31c65fed8b3e7d66fb>```
       - Get a tensor shape size and its data.
 
-Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification C++ sample <doxid-openvino_inference_engine_samples_hello_classification__r_e_a_d_m_e>`.
+Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification C++ sample <get_started__samples_cpp_hello_class>`.
 
 .. list-table::
     :header-rows: 1
@@ -207,7 +220,7 @@ See Also
 
 * :ref:`Using OpenVINO™ Toolkit Samples <get_started__samples_overview>`
 
-* Model Downloader
+* `Model Downloader <https://github.com/openvinotoolkit/open_model_zoo/blob/master/tools/model_tools/README.md>`__
 
 * :ref:`Model Optimizer <conv_prep__conv_with_model_optimizer>`
 

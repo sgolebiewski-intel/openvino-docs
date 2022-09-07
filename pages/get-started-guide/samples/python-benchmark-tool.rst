@@ -1,10 +1,21 @@
 .. index:: pair: page; Benchmark Python Tool
-.. _doxid-openvino_inference_engine_tools_benchmark_tool__r_e_a_d_m_e:
+.. _get_started__samples_python_benchmark:
+
+.. meta::
+   :description: A demonstration of how to use the Benchmark Python Tool to 
+                 measure performance of inference of convolutional networks on 
+                 supported devices.
+   :keywords: OpenVINO, Python benchmark_app, benchmark Python tool, OpenVINO IR, 
+              ONNX, PaddlePaddle, execution parameters, performance hints, 
+              latency, throughput, Intel CPU, Intel GPU, MYRIAD VPU, AUTO 
+              plugin, Automatic Device selection, model inference, infer a 
+              model, statistics, performance measurement, inference request, 
+              benchmark application, iteration
 
 Benchmark Python Tool
 =======================
 
-:target:`doxid-openvino_inference_engine_tools_benchmark_tool__r_e_a_d_m_e_1md_openvino_tools_benchmark_tool_readme` 
+:target:`get_started__samples_python_benchmark_1md_openvino_tools_benchmark_tool_readme` 
 
 This topic demonstrates how to run the Benchmark Python Tool, which performs 
 inference using convolutional networks. Performance can be measured for two 
@@ -12,7 +23,7 @@ inference modes: latency- and throughput-oriented.
 
 .. note:: This topic describes usage of Python implementation of the Benchmark 
    Tool. For the C++ implementation, refer to 
-   :ref:`Benchmark C++ Tool <doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e>`. 
+   :ref:`Benchmark C++ Tool <get_started__samples_cpp_benchmark>`. 
    The Python version is recommended for benchmarking models that will be used 
    in Python applications, and the C++ version is recommended for benchmarking 
    models that will be used in C++ applications. Both tools have a similar 

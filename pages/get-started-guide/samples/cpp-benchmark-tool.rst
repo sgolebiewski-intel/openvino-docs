@@ -1,15 +1,26 @@
 .. index:: pair: page; Benchmark C++ Tool
-.. _doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e:
+.. _get_started__samples_cpp_benchmark:
+
+.. meta::
+   :description: A demonstration of how to use the Benchmark C++ Tool to 
+                 estimate deep learning inference performance on supported 
+                 devices.
+   :keywords: OpenVINO, C++ benchmark_app, benchmark C++ tool, OpenVINO IR, 
+              ONNX, PaddlePaddle, execution parameters, performance hints, 
+              latency, throughput, Intel CPU, Intel GPU, MYRIAD VPU, AUTO 
+              plugin, Automatic Device selection, model inference, infer a 
+              model, statistics, performance measurement, inference request, 
+              benchmark application, iteration
 
 Benchmark C++ Tool
 ==================
 
-:target:`doxid-openvino_inference_engine_samples_benchmark_app__r_e_a_d_m_e_1md_openvino_samples_cpp_benchmark_app_readme` 
+:target:`get_started__samples_cpp_benchmark_1md_openvino_samples_cpp_benchmark_app_readme` 
 
 This page demonstrates how to use the Benchmark C++ Tool to estimate deep learning inference performance on supported devices.
 
 .. note:: This page describes usage of the C++ implementation of the Benchmark 
-   Tool. For the Python implementation, refer to the :ref:`Benchmark Python Tool <doxid-openvino_inference_engine_tools_benchmark_tool__r_e_a_d_m_e>`.
+   Tool. For the Python implementation, refer to the :ref:`Benchmark Python Tool <get_started__samples_python_benchmark>`.
    The Python version is recommended for benchmarking models that will be used 
    in Python applications, and the C++ version is recommended for benchmarking 
    models that will be used in C++ applications. Both tools have a similar 
@@ -26,7 +37,7 @@ instructions. Navigate to the directory where the benchmark_app C++ sample
 binary was built.
 
 .. note:: If you installed OpenVINO Runtime using PyPI or Anaconda Cloud, only 
-   the :ref:`Benchmark Python Tool <doxid-openvino_inference_engine_tools_benchmark_tool__r_e_a_d_m_e>` 
+   the :ref:`Benchmark Python Tool <get_started__samples_python_benchmark>` 
    is available, and you should follow the usage instructions on that page 
    instead. 
 

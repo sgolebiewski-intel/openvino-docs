@@ -1,11 +1,22 @@
-.. index:: pair: page; Hello Query Device Python\* Sample
-.. _doxid-openvino_inference_engine_ie_bridges_python_sample_hello_query_device__r_e_a_d_m_e:
+.. index:: pair: page; Hello Query Device Python Sample
+.. _get_started__samples_python_query_device:
 
+.. meta::
+   :description: A demonstration of how to show metrics and default 
+                 configuration values of inference devices using Query 
+                 Device (Python) API feature.
+   :keywords: OpenVINO toolkit, code sample, OpenVINO sample, Python sample, 
+              Python API, OpenVINO™ Runtime API, available devices, build a 
+              sample, supported metrics, configuration parameters, default 
+              values, OpenVINO Runtime, get_available_devices, get_property, 
+              query inference device, inference device, Intel CPU, Intel GNA
 
 Hello Query Device Python Sample
 ==================================
 
-:target:`doxid-openvino_inference_engine_ie_bridges_python_sample_hello_query_device__r_e_a_d_m_e_1md_openvino_samples_python_hello_query_device_readme` This sample demonstrates how to show OpenVINO™ Runtime devices and prints their metrics and default configuration values using :ref:`Query Device API feature <deploy_infer__query_device_properties>`.
+:target:`get_started__samples_python_query_device_1md_openvino_samples_python_hello_query_device_readme` 
+
+This sample demonstrates how to show OpenVINO™ Runtime devices and prints their metrics and default configuration values using :ref:`Query Device API feature <deploy_infer__query_device_properties>`.
 
 The following Python API is used in the application:
 
@@ -30,7 +41,7 @@ The following Python API is used in the application:
     * - Supported devices
       - :ref:`All <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
     * - Other language realization
-      - :ref:`C++ <doxid-openvino_inference_engine_samples_hello_query_device__r_e_a_d_m_e>`
+      - :ref:`C++ <get_started__samples_cpp_query_device>`
 
 How It Works
 ~~~~~~~~~~~~
