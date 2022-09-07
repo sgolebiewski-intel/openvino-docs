@@ -112,7 +112,7 @@
       <div class="navbar-center-item">
         <ul id="navbar-main-elements" class="navbar-nav">
     <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../pages/get_started.html">
+ <a class="reference internal nav-link" href="../pages/get-started-guide.html">
   Get Started
  </a>
 </li>
@@ -183,11 +183,11 @@
   <div class="dropdown-menu" aria-labelledby="language-selector">
     
       
-        <a class="dropdown-item font-weight-bold" href="/latest/notebooks/204-named-entity-recognition-with-output.html">English</a>
+        <a class="dropdown-item font-weight-bold" href="/openvino-docs/index.html">English</a>
       
     
       
-        <a  class="dropdown-item" href="/cn/latest/notebooks/204-named-entity-recognition-with-output.html">Chinese</a>
+        <a  class="dropdown-item" href="/cn/openvino-docs/index.html">Chinese</a>
       
     
   </div>
@@ -682,6 +682,11 @@ in that case, you can see random results.</p>
             <span class="s2">&quot;Score&quot;</span><span class="p">:</span> <span class="s2">&quot;0.51&quot;</span>
         <span class="p">},</span>
         <span class="p">{</span>
+            <span class="s2">&quot;Entity&quot;</span><span class="p">:</span> <span class="s2">&quot;Intel&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;persons&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Score&quot;</span><span class="p">:</span> <span class="s2">&quot;0.45&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
             <span class="s2">&quot;Entity&quot;</span><span class="p">:</span> <span class="s2">&quot;Santa Clara&quot;</span><span class="p">,</span>
             <span class="s2">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;city&quot;</span><span class="p">,</span>
             <span class="s2">&quot;Score&quot;</span><span class="p">:</span> <span class="s2">&quot;0.96&quot;</span>
@@ -692,7 +697,7 @@ in that case, you can see random results.</p>
             <span class="s2">&quot;Score&quot;</span><span class="p">:</span> <span class="s2">&quot;0.99&quot;</span>
         <span class="p">}</span>
     <span class="p">],</span>
-    <span class="s2">&quot;Time&quot;</span><span class="p">:</span> <span class="s2">&quot;0.12s&quot;</span>
+    <span class="s2">&quot;Time&quot;</span><span class="p">:</span> <span class="s2">&quot;0.07s&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -734,7 +739,7 @@ in that case, you can see random results.</p>
             <span class="s2">&quot;Score&quot;</span><span class="p">:</span> <span class="s2">&quot;0.98&quot;</span>
         <span class="p">}</span>
     <span class="p">],</span>
-    <span class="s2">&quot;Time&quot;</span><span class="p">:</span> <span class="s2">&quot;0.12s&quot;</span>
+    <span class="s2">&quot;Time&quot;</span><span class="p">:</span> <span class="s2">&quot;0.05s&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -759,17 +764,17 @@ in that case, you can see random results.</p>
         <span class="p">{</span>
             <span class="s2">&quot;Entity&quot;</span><span class="p">:</span> <span class="s2">&quot;Robert Noyce Building&quot;</span><span class="p">,</span>
             <span class="s2">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;building&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Score&quot;</span><span class="p">:</span> <span class="s2">&quot;0.61&quot;</span>
+            <span class="s2">&quot;Score&quot;</span><span class="p">:</span> <span class="s2">&quot;0.46&quot;</span>
         <span class="p">},</span>
         <span class="p">{</span>
             <span class="s2">&quot;Entity&quot;</span><span class="p">:</span> <span class="s2">&quot;Intel Corporation&quot;</span><span class="p">,</span>
             <span class="s2">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;company&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Score&quot;</span><span class="p">:</span> <span class="s2">&quot;0.56&quot;</span>
+            <span class="s2">&quot;Score&quot;</span><span class="p">:</span> <span class="s2">&quot;0.62&quot;</span>
         <span class="p">},</span>
         <span class="p">{</span>
             <span class="s2">&quot;Entity&quot;</span><span class="p">:</span> <span class="s2">&quot;Santa Clara&quot;</span><span class="p">,</span>
             <span class="s2">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;city&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Score&quot;</span><span class="p">:</span> <span class="s2">&quot;0.63&quot;</span>
+            <span class="s2">&quot;Score&quot;</span><span class="p">:</span> <span class="s2">&quot;0.50&quot;</span>
         <span class="p">},</span>
         <span class="p">{</span>
             <span class="s2">&quot;Entity&quot;</span><span class="p">:</span> <span class="s2">&quot;California&quot;</span><span class="p">,</span>
@@ -779,12 +784,7 @@ in that case, you can see random results.</p>
         <span class="p">{</span>
             <span class="s2">&quot;Entity&quot;</span><span class="p">:</span> <span class="s2">&quot;22.20 meters&quot;</span><span class="p">,</span>
             <span class="s2">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;height&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Score&quot;</span><span class="p">:</span> <span class="s2">&quot;0.55&quot;</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="s2">&quot;Entity&quot;</span><span class="p">:</span> <span class="s2">&quot;6 floors above ground&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;floor&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;Score&quot;</span><span class="p">:</span> <span class="s2">&quot;0.48&quot;</span>
+            <span class="s2">&quot;Score&quot;</span><span class="p">:</span> <span class="s2">&quot;0.72&quot;</span>
         <span class="p">},</span>
         <span class="p">{</span>
             <span class="s2">&quot;Entity&quot;</span><span class="p">:</span> <span class="s2">&quot;2200 Mission College Boulevard - 95054&quot;</span><span class="p">,</span>
@@ -792,7 +792,7 @@ in that case, you can see random results.</p>
             <span class="s2">&quot;Score&quot;</span><span class="p">:</span> <span class="s2">&quot;0.86&quot;</span>
         <span class="p">}</span>
     <span class="p">],</span>
-    <span class="s2">&quot;Time&quot;</span><span class="p">:</span> <span class="s2">&quot;0.14s&quot;</span>
+    <span class="s2">&quot;Time&quot;</span><span class="p">:</span> <span class="s2">&quot;0.05s&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>

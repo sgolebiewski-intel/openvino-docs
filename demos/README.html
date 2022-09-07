@@ -114,7 +114,7 @@
       <div class="navbar-center-item">
         <ul id="navbar-main-elements" class="navbar-nav">
     <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../pages/get_started.html">
+ <a class="reference internal nav-link" href="../pages/get-started-guide.html">
   Get Started
  </a>
 </li>
@@ -185,11 +185,11 @@
   <div class="dropdown-menu" aria-labelledby="language-selector">
     
       
-        <a class="dropdown-item font-weight-bold" href="/latest/demos/README.html">English</a>
+        <a class="dropdown-item font-weight-bold" href="/openvino-docs/index.html">English</a>
       
     
       
-        <a  class="dropdown-item" href="/cn/latest/demos/README.html">Chinese</a>
+        <a  class="dropdown-item" href="/cn/openvino-docs/index.html">Chinese</a>
       
     
   </div>
@@ -2208,9 +2208,7 @@
 -->
 <p>The Open Model Zoo demo applications are console applications that provide robust application templates to help you implement specific deep learning scenarios. These applications involve increasingly complex processing pipelines that gather analysis data from several models that run inference simultaneously, such as detecting a person in a video stream along with detecting the person’s physical attributes, such as age, gender, and emotional state</p>
 <p>Source code of the demos can be obtained from the Open Model Zoo <a class="reference external" href="https://github.com/openvinotoolkit/open_model_zoo/">GitHub repository</a>.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/openvinotoolkit/open_model_zoo.git
-<span class="nb">cd</span> open_model_zoo
-git submodule update --init --recursive
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone --recurse-submodules https://github.com/openvinotoolkit/open_model_zoo.git
 </pre></div>
 </div>
 <p>C++, C++ G-API and Python* versions are located in the <code class="docutils literal notranslate"><span class="pre">cpp</span></code>, <code class="docutils literal notranslate"><span class="pre">cpp_gapi</span></code> and <code class="docutils literal notranslate"><span class="pre">python</span></code> subdirectories respectively.</p>
@@ -2294,10 +2292,9 @@ git submodule update --init --recursive
 </section>
 <section id="build-the-demo-applications">
 <h2>Build the Demo Applications<a class="headerlink" href="#build-the-demo-applications" title="Permalink to this headline">¶</a></h2>
-<p>To build the demos, you need to source OpenVINO™ and OpenCV environment. You can install the OpenVINO™ toolkit using the installation package for <a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit-download.html">Intel® Distribution of OpenVINO™ toolkit</a> or build the open-source version available in the <a class="reference external" href="https://github.com/openvinotoolkit/openvino">OpenVINO GitHub repository</a> using the <a class="reference external" href="https://github.com/openvinotoolkit/openvino/wiki/BuildingCode">build instructions</a>.
+<p>To build the demos, you need to source OpenVINO™ environment and <a class="reference external" href="https://github.com/opencv/opencv/wiki/BuildOpenCV4OpenVINO">get OpenCV</a>. You can install the OpenVINO™ toolkit using the installation package for <a class="reference external" href="https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit-download.html">Intel® Distribution of OpenVINO™ toolkit</a> or build the open-source version available in the <a class="reference external" href="https://github.com/openvinotoolkit/openvino">OpenVINO GitHub repository</a> using the <a class="reference external" href="https://github.com/openvinotoolkit/openvino/wiki/BuildingCode">build instructions</a>.
 For the Intel® Distribution of OpenVINO™ toolkit installed to the <code class="docutils literal notranslate"><span class="pre">&lt;INSTALL_DIR&gt;</span></code> directory on your machine, run the following commands to download prebuilt OpenCV and set environment variables before building the demos:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>&lt;INSTALL_DIR&gt;/extras/scripts/download_opencv.sh
-<span class="nb">source</span> &lt;INSTALL_DIR&gt;/setupvars.sh
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> &lt;INSTALL_DIR&gt;/setupvars.sh
 </pre></div>
 </div>
 <blockquote>
@@ -2383,7 +2380,7 @@ version is: <code class="docutils literal notranslate"><span class="pre">VS2019<
 </pre></div>
 </div>
 <p>By default, the demo applications binaries are build into the <code class="docutils literal notranslate"><span class="pre">C:\Users\&lt;username&gt;\Documents\Intel\OpenVINO\omz_demos_build\intel64\Release</span></code> directory.
-The default build folder can be changed with <code class="docutils literal notranslate"><span class="pre">-b</span></code> option. For example, following command will buid Open Model Zoo demos into <code class="docutils literal notranslate"><span class="pre">c:\temp\omz-demos-build</span></code> folder:</p>
+The default build folder can be changed with <code class="docutils literal notranslate"><span class="pre">-b</span></code> option. For example, following command will build Open Model Zoo demos into <code class="docutils literal notranslate"><span class="pre">c:\temp\omz-demos-build</span></code> folder:</p>
 <div class="highlight-bat notranslate"><div class="highlight"><pre><span></span>build_demos_msvc.bat -b c:\temp\omz-demos-build
 </pre></div>
 </div>

@@ -112,7 +112,7 @@
       <div class="navbar-center-item">
         <ul id="navbar-main-elements" class="navbar-nav">
     <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../pages/get_started.html">
+ <a class="reference internal nav-link" href="../../pages/get-started-guide.html">
   Get Started
  </a>
 </li>
@@ -183,11 +183,11 @@
   <div class="dropdown-menu" aria-labelledby="language-selector">
     
       
-        <a class="dropdown-item font-weight-bold" href="/latest/api/groups/classngraph_1_1Mask.html">English</a>
+        <a class="dropdown-item font-weight-bold" href="/openvino-docs/index.html">English</a>
       
     
       
-        <a  class="dropdown-item" href="/cn/latest/api/groups/classngraph_1_1Mask.html">Chinese</a>
+        <a  class="dropdown-item" href="/cn/openvino-docs/index.html">Chinese</a>
       
     
   </div>
@@ -344,7 +344,14 @@
     <span class="kt">void</span> <span class="doxyrest-code-target target" id="doxid-classngraph-1-1-mask-1a1da68da87fe7483bebf1f77a1e29ccd1"><span></span><span class="n">set_shape_like</span></span><span></span><span class="p">(</span><span class="kt">bool</span> <span class="n">flag</span><span class="p">);</span>
     <span class="kt">void</span> <span class="doxyrest-code-target target" id="doxid-classngraph-1-1-mask-1aea1e8f612892ec55b8d27346185ff6bd"><span></span><span class="n">copy_value_from_mask</span></span><span></span><span class="p">(</span><span class="n">Mask</span> <span class="err">\</span><span class="o">*</span><span class="k">const</span> <span class="n">mask</span><span class="p">);</span>
     <span class="kt">void</span> <span class="doxyrest-code-target target" id="doxid-classngraph-1-1-mask-1ad7bdb401ffede2e02d137dab4facc3d8"><span></span><span class="n">copy_value_from_mask_reversed</span></span><span></span><span class="p">(</span><span class="n">Mask</span> <span class="err">\</span><span class="o">*</span><span class="k">const</span> <span class="n">mask</span><span class="p">);</span>
-    <a class="reference internal" href="#doxid-classngraph-1-1-mask-1a630cd1649de5c00bdff3faf0845e15b2"><span class="std std-ref">Mask::Ptr</span></a><span></span> <span class="doxyrest-code-target target" id="doxid-classngraph-1-1-mask-1aa0a9522eb2de28abae116b6cff2f2e8f"><span></span><span class="n">intersect_masks_reversed</span></span><span></span><span class="p">(</span><span class="n">Mask</span> <span class="err">\</span><span class="o">*</span><span class="k">const</span> <span class="n">mask</span><span class="p">);</span>
+
+    <span class="kt">void</span> <span class="doxyrest-code-target target" id="doxid-classngraph-1-1-mask-1a18f325d2b04691f7f74ebeeae2dc3050"><span></span><span class="n">copy_value_from_mask_reversed_masked</span></span><span></span><span class="p">(</span>
+        <span class="n">Mask</span> <span class="err">\</span><span class="o">*</span><span class="k">const</span> <span class="n">mask</span><span class="p">,</span>
+        <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">set</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="o">&gt;&amp;</span> <span class="n">idx_mask</span><span class="p">,</span>
+        <span class="k">const</span> <span class="kt">bool</span> <span class="n">invert_mask</span> <span class="o">=</span> <span class="nb">false</span>
+        <span class="p">);</span>
+
+    <a class="reference internal" href="#doxid-classngraph-1-1-mask-1a630cd1649de5c00bdff3faf0845e15b2"><span class="std std-ref">Mask::Ptr</span></a><span></span> <span class="doxyrest-code-target target" id="doxid-classngraph-1-1-mask-1ab3038c884c1022e3d30fdee69d8be551"><span></span><span class="n">intersect_masks_reversed</span></span><span></span><span class="p">(</span><span class="n">Mask</span> <span class="err">\</span><span class="o">*</span><span class="k">const</span> <span class="n">mask</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
     <a class="reference internal" href="#doxid-classngraph-1-1-mask-1a630cd1649de5c00bdff3faf0845e15b2"><span class="std std-ref">Mask::Ptr</span></a><span></span> <span class="doxyrest-code-target target" id="doxid-classngraph-1-1-mask-1aaf5b03294bd1654f30fcde1eb325e75f"><span></span><span class="n">union_masks_reversed</span></span><span></span><span class="p">(</span><span class="n">Mask</span> <span class="err">\</span><span class="o">*</span><span class="k">const</span> <span class="n">mask</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
 
     <span class="kt">bool</span> <span class="doxyrest-code-target target" id="doxid-classngraph-1-1-mask-1a0ea0d0ab67a2c229adad71b35c06f49e"><span></span><span class="n">add_callback</span></span><span></span><span class="p">(</span>

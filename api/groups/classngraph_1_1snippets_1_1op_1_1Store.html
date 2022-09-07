@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>class ngraph::snippets::op::Store &#8212; OpenVINO™  documentation</title>
+    <title>interface ngraph::snippets::op::Store &#8212; OpenVINO™  documentation</title>
     
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
@@ -112,7 +112,7 @@
       <div class="navbar-center-item">
         <ul id="navbar-main-elements" class="navbar-nav">
     <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../pages/get_started.html">
+ <a class="reference internal nav-link" href="../../pages/get-started-guide.html">
   Get Started
  </a>
 </li>
@@ -183,11 +183,11 @@
   <div class="dropdown-menu" aria-labelledby="language-selector">
     
       
-        <a class="dropdown-item font-weight-bold" href="/latest/api/groups/classngraph_1_1snippets_1_1op_1_1Store.html">English</a>
+        <a class="dropdown-item font-weight-bold" href="/openvino-docs/index.html">English</a>
       
     
       
-        <a  class="dropdown-item" href="/cn/latest/api/groups/classngraph_1_1snippets_1_1op_1_1Store.html">Chinese</a>
+        <a  class="dropdown-item" href="/cn/openvino-docs/index.html">Chinese</a>
       
     
   </div>
@@ -1116,8 +1116,23 @@
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="classngraph_1_1pass_1_1ConvertReduceLogicalAndToReshape.html">
+       ConvertReduceLogicalAndToReshape
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="classngraph_1_1pass_1_1ConvertReduceLogicalOrToReshape.html">
+       ConvertReduceLogicalOrToReshape
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="classngraph_1_1pass_1_1ConvertReduceMaxToPooling.html">
        ConvertReduceMaxToPooling
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="classngraph_1_1pass_1_1ConvertReduceMaxToReshape.html">
+       ConvertReduceMaxToReshape
       </a>
      </li>
      <li class="toctree-l3">
@@ -1126,13 +1141,33 @@
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="classngraph_1_1pass_1_1ConvertReduceMeanToReshape.html">
+       ConvertReduceMeanToReshape
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="classngraph_1_1pass_1_1ConvertReduceMinToReshape.html">
+       ConvertReduceMinToReshape
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="classngraph_1_1pass_1_1ConvertReduceSumToPooling.html">
        ConvertReduceSumToPooling
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="classngraph_1_1pass_1_1ConvertReduceSumToReshape.html">
+       ConvertReduceSumToReshape
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="classngraph_1_1pass_1_1ConvertReduceToPooling.html">
        ConvertReduceToPooling
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="classngraph_1_1pass_1_1ConvertReduceToReshape.html">
+       ConvertReduceToReshape
       </a>
      </li>
      <li class="toctree-l3">
@@ -1666,16 +1701,6 @@
       </label>
       <ul class="current">
        <li class="toctree-l4">
-        <a class="reference internal" href="classngraph_1_1snippets_1_1op_1_1BlockedLoad.html">
-         BlockedLoad
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="classngraph_1_1snippets_1_1op_1_1BlockedParameter.html">
-         BlockedParameter
-        </a>
-       </li>
-       <li class="toctree-l4">
         <a class="reference internal" href="classngraph_1_1snippets_1_1op_1_1BroadcastLoad.html">
          BroadcastLoad
         </a>
@@ -1683,6 +1708,16 @@
        <li class="toctree-l4">
         <a class="reference internal" href="classngraph_1_1snippets_1_1op_1_1BroadcastMove.html">
          BroadcastMove
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="classngraph_1_1snippets_1_1op_1_1ConvertSaturation.html">
+         ConvertSaturation
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="classngraph_1_1snippets_1_1op_1_1ConvertTruncation.html">
+         ConvertTruncation
         </a>
        </li>
        <li class="toctree-l4">
@@ -1710,14 +1745,9 @@
          Scalar
         </a>
        </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="classngraph_1_1snippets_1_1op_1_1ScalarLoad.html">
-         ScalarLoad
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="classngraph_1_1snippets_1_1op_1_1ScalarStore.html">
-         ScalarStore
+       <li class="toctree-l4 current active">
+        <a class="current reference internal" href="#">
+         Store
         </a>
        </li>
        <li class="toctree-l4">
@@ -1731,18 +1761,8 @@
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="classngraph_1_1snippets_1_1op_1_1VectorLoad.html">
-         VectorLoad
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="classngraph_1_1snippets_1_1op_1_1VectorStore.html">
-         VectorStore
-        </a>
-       </li>
-       <li class="toctree-l4 current active">
-        <a class="current reference internal" href="#">
-         Store
+        <a class="reference internal" href="classngraph_1_1snippets_1_1op_1_1TileScheduler.html">
+         TileScheduler
         </a>
        </li>
       </ul>
@@ -1778,6 +1798,11 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="classngraph_1_1snippets_1_1pass_1_1InsertConvertOnInputs.html">
+         InsertConvertOnInputs
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="classngraph_1_1snippets_1_1pass_1_1InsertLoad.html">
          InsertLoad
         </a>
@@ -1798,13 +1823,18 @@
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="classngraph_1_1snippets_1_1pass_1_1ReplaceLoadsWithScalarLoads.html">
-         ReplaceLoadsWithScalarLoads
+        <a class="reference internal" href="classngraph_1_1snippets_1_1pass_1_1ResetTypeRelaxedNodePrecision.html">
+         ResetTypeRelaxedNodePrecision
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="classngraph_1_1snippets_1_1pass_1_1ReplaceStoresWithScalarStores.html">
-         ReplaceStoresWithScalarStores
+        <a class="reference internal" href="classngraph_1_1snippets_1_1pass_1_1SetScalarCountForLoad.html">
+         SetScalarCountForLoad
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="classngraph_1_1snippets_1_1pass_1_1SetScalarCountForStore.html">
+         SetScalarCountForStore
         </a>
        </li>
        <li class="toctree-l4">
@@ -1815,6 +1845,11 @@
        <li class="toctree-l4">
         <a class="reference internal" href="classngraph_1_1snippets_1_1pass_1_1ConvertPowerToPowerStatic.html">
          ConvertPowerToPowerStatic
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="classngraph_1_1snippets_1_1pass_1_1TransformConvertToConvertTruncation.html">
+         TransformConvertToConvertTruncation
         </a>
        </li>
       </ul>
@@ -2331,6 +2366,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="classov_1_1pass_1_1EyeDecomposition.html">
+   EyeDecomposition
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="classngraph_1_1pass_1_1FakeQuantizeDecomposition.html">
    FakeQuantizeDecomposition
   </a>
@@ -2560,6 +2600,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="classngraph_1_1pass_1_1LSTMCellDecomposition.html">
    LSTMCellDecomposition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="classov_1_1pass_1_1LSTMStatesBroadcast.html">
+   LSTMStatesBroadcast
   </a>
  </li>
  <li class="toctree-l1 has-children">
@@ -2966,6 +3011,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="classov_1_1pass_1_1ReshapeSinkingMatMul.html">
+   ReshapeSinkingMatMul
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="classngraph_1_1pass_1_1ReshapeTo1D.html">
    ReshapeTo1D
   </a>
@@ -3338,23 +3388,25 @@
             
                 <div>
                   
-  <section id="class-ngraph-snippets-op-store">
-<span id="doxid-classngraph-1-1snippets-1-1op-1-1-store"></span><span id="index-0"></span><h1>class ngraph::snippets::op::Store<a class="headerlink" href="#class-ngraph-snippets-op-store" title="Permalink to this headline">¶</a></h1>
+  <section id="interface-ngraph-snippets-op-store">
+<span id="doxid-classngraph-1-1snippets-1-1op-1-1-store"></span><span id="index-0"></span><h1>interface ngraph::snippets::op::Store<a class="headerlink" href="#interface-ngraph-snippets-op-store" title="Permalink to this headline">¶</a></h1>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Generated by Canonicalization step where explicit instructions should be emitted for data storing where number of elements to store is determined by “count” Default value is “1” - to store one element. <a class="reference internal" href="#details-classngraph-1-1snippets-1-1op-1-1-store"><span class="std std-ref">More…</span></a></p>
 <div class="highlight doxyrest-overview-code-block"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;store.hpp&gt;</span><span class="cp"></span>
 
-<span class="k">class</span> <span class="nl">Store</span><span class="p">:</span> <span class="k">public</span> <a class="reference internal" href="classov_1_1op_1_1Op.html#doxid-classov-1-1op-1-1-op"><span class="std std-ref">ov::op::Op</span></a><span></span>
+<span class="k">template</span> <span class="nl">Store</span><span class="p">:</span> <span class="k">public</span> <a class="reference internal" href="classov_1_1op_1_1Op.html#doxid-classov-1-1op-1-1-op"><span class="std std-ref">ov::op::Op</span></a><span></span>
 <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
     <span class="c1">// construction</span>
 
-    <span class="doxyrest-code-target target" id="doxid-classngraph-1-1snippets-1-1op-1-1-store-1a9399dc72e555c77f9f138a0760d89875"><span></span><span class="n">Store</span></span><span></span><span class="p">(</span><span class="k">const</span> <a class="reference internal" href="classov_1_1Output.html#doxid-classov-1-1-output"><span class="std std-ref">Output</span></a><span></span><span class="o">&lt;</span><a class="reference internal" href="classov_1_1Node.html#doxid-classov-1-1-node"><span class="std std-ref">Node</span></a><span></span><span class="o">&gt;&amp;</span> <span class="n">x</span><span class="p">);</span>
+    <span class="doxyrest-code-target target" id="doxid-classngraph-1-1snippets-1-1op-1-1-store-1a96492031af1da9e3c277f6b7723a3640"><span></span><span class="n">Store</span></span><span></span><span class="p">(</span><span class="k">const</span> <a class="reference internal" href="classov_1_1Output.html#doxid-classov-1-1-output"><span class="std std-ref">Output</span></a><span></span><span class="o">&lt;</span><a class="reference internal" href="classov_1_1Node.html#doxid-classov-1-1-node"><span class="std std-ref">Node</span></a><span></span><span class="o">&gt;&amp;</span> <span class="n">x</span><span class="p">,</span> <span class="k">const</span> <span class="kt">size_t</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">1lu</span><span class="p">);</span>
     <span class="doxyrest-code-target target" id="doxid-classngraph-1-1snippets-1-1op-1-1-store-1aec287d296f293a3d0005ed92be8ad34e"><span></span><span class="n">Store</span></span><span></span><span class="p">();</span>
 
     <span class="c1">// methods</span>
 
     <span class="doxyrest-code-target target" id="doxid-classngraph-1-1snippets-1-1op-1-1-store-1afa2296c75c20e8b0a16cd3f88020b3d7"><span></span><span class="n">OPENVINO_OP</span></span><span></span><span class="p">(</span><span class="s">&quot;Store&quot;</span><span class="p">,</span> <span class="s">&quot;SnippetsOpset&quot;</span><span class="p">);</span>
+    <span class="kt">size_t</span> <span class="doxyrest-code-target target" id="doxid-classngraph-1-1snippets-1-1op-1-1-store-1a458d7233845bd98ce8092affc801ec58"><span></span><span class="n">get_count</span></span><span></span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="doxyrest-code-target target" id="doxid-classngraph-1-1snippets-1-1op-1-1-store-1abcbbd31587edf78a63f9f1abadc7e366"><span></span><span class="n">set_count</span></span><span></span><span class="p">(</span><span class="k">const</span> <span class="kt">size_t</span> <span class="n">count</span><span class="p">);</span>
     <span class="k">virtual</span> <span class="kt">bool</span> <span class="doxyrest-code-target target" id="doxid-classngraph-1-1snippets-1-1op-1-1-store-1aae062a8e5241adbba4d8a7c5b3988b7a"><span></span><span class="n">visit_attributes</span></span><span></span><span class="p">(</span><a class="reference internal" href="classov_1_1AttributeVisitor.html#doxid-classov-1-1-attribute-visitor"><span class="std std-ref">AttributeVisitor</span></a><span></span><span class="o">&amp;</span> <span class="n">visitor</span><span class="p">);</span>
     <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><a class="reference internal" href="classov_1_1Node.html#doxid-classov-1-1-node"><span class="std std-ref">Node</span></a><span></span><span class="o">&gt;</span> <span class="doxyrest-code-target target" id="doxid-classngraph-1-1snippets-1-1op-1-1-store-1ab9366ed8a86e828633aaaf8cbc60579e"><span></span><span class="n">clone_with_new_inputs</span></span><span></span><span class="p">(</span><span class="k">const</span> <a class="reference internal" href="classngraph.html#doxid-classngraph-1a161d36c81df2d1949272f525a8d73605"><span class="std std-ref">OutputVector</span></a><span></span><span class="o">&amp;</span> <span class="n">new_args</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
     <span class="k">virtual</span> <span class="kt">void</span> <a class="reference internal" href="#doxid-classngraph-1-1snippets-1-1op-1-1-store-1a36de11ce03b4c864791c1d09b4826c56"><span class="std std-ref">validate_and_infer_types</span></a><span></span><span class="p">();</span>
@@ -3363,12 +3415,7 @@
         <span class="k">const</span> <a class="reference internal" href="classngraph.html#doxid-classngraph-1a4c69b1e96e984658be3a087d0610e67b"><span class="std std-ref">HostTensorVector</span></a><span></span><span class="o">&amp;</span> <span class="n">output_values</span><span class="p">,</span>
         <span class="k">const</span> <a class="reference internal" href="classngraph.html#doxid-classngraph-1a4c69b1e96e984658be3a087d0610e67b"><span class="std std-ref">HostTensorVector</span></a><span></span><span class="o">&amp;</span> <span class="n">input_values</span>
         <span class="p">)</span> <span class="k">const</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="c1">// direct descendants</span>
-
-<span class="k">template</span> <a class="reference internal" href="classngraph_1_1snippets_1_1op_1_1ScalarStore.html#doxid-classngraph-1-1snippets-1-1op-1-1-scalar-store"><span class="std std-ref">ScalarStore</span></a><span></span><span class="p">;</span>
-<span class="k">template</span> <a class="reference internal" href="classngraph_1_1snippets_1_1op_1_1VectorStore.html#doxid-classngraph-1-1snippets-1-1op-1-1-vector-store"><span class="std std-ref">VectorStore</span></a><span></span><span class="p">;</span></pre></div></div><section id="inherited-members">
+<span class="p">};</span></pre></div></div><section id="inherited-members">
 <h3>Inherited Members<a class="headerlink" href="#inherited-members" title="Permalink to this headline">¶</a></h3>
 <div class="highlight doxyrest-overview-inherited-code-block"><div class="highlight"><pre><span></span><span class="k">public</span><span class="o">:</span>
     <span class="c1">// typedefs</span>
@@ -3516,6 +3563,7 @@
 </section>
 <section id="detailed-documentation">
 <span id="details-classngraph-1-1snippets-1-1op-1-1-store"></span><h2>Detailed Documentation<a class="headerlink" href="#detailed-documentation" title="Permalink to this headline">¶</a></h2>
+<p>Generated by Canonicalization step where explicit instructions should be emitted for data storing where number of elements to store is determined by “count” Default value is “1” - to store one element.</p>
 <section id="methods">
 <h3>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h3>
 <span class="target" id="doxid-classngraph-1-1snippets-1-1op-1-1-store-1a36de11ce03b4c864791c1d09b4826c56"></span><div class="highlight doxyrest-title-code-block"><div class="highlight"><pre><span></span><span class="k">virtual</span> <span class="kt">void</span> <span class="n">validate_and_infer_types</span><span class="p">()</span></pre></div></div><p>Verifies that attributes and inputs are consistent and computes output shapes and element types. Must be implemented by concrete child classes so that it can be run any number of times.</p>
