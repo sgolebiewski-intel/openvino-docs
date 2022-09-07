@@ -1,21 +1,27 @@
-.. index:: pair: page; Converting an MXNet Style Transfer Model
-.. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_mxnet_specific__convert__style__transfer__from__m_x_net:
+.. index:: pair: page; Convert an MXNet Style Transfer Model
+.. _conv_prep__mxnet_style_transfer:
 
+.. meta::
+   :description: This tutorial demonstrates how to convert Style Transfer 
+                 model from MXNet to the OpenVINO Intermediate Representation.
+   :keywords: Model Optimizer, tutorial, convert a model, model conversion, 
+              --input_model, --input_model parameter, command-line parameter, 
+              OpenVINO™ toolkit, deep learning inference, OpenVINO Intermediate 
+              Representation, MXNet, Style Transfer, Style Transfer model, 
+              convert a model to OpenVINO IR, pre-trained model
 
-Converting an MXNet Style Transfer Model
-========================================
+Convert an MXNet Style Transfer Model
+=====================================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_mxnet_specific__convert__style__transfer__from__m_x_net_1md_openvino_docs_mo_dg_prepare_model_convert_model_mxnet_specific_convert_style_transfer_from_mxnet` This article provides instructions on how to generate a model for style transfer, using the public MXNet neural style transfer sample.
+:target:`conv_prep__mxnet_style_transfer_1md_openvino_docs_mo_dg_prepare_model_convert_model_mxnet_specific_convert_style_transfer_from_mxnet` 
+
+This article provides instructions on how to generate a model for style transfer, using the public MXNet neural style transfer sample.
 
 **Step 1** : Download or clone the repository `Zhaw's Neural Style Transfer repository <https://github.com/zhaw/neural_style>`__ with an MXNet neural style transfer sample.
 
 **Step 2** : Prepare the environment required to work with the cloned repository:
 
 .. note:: Python-tk installation is needed only for Linux. Python for Windows includes it by default.
-
-
-
-
 
 #. Install packages dependency.
    
@@ -33,7 +39,7 @@ Converting an MXNet Style Transfer Model
    	pip3 install --user matplotlib
    	pip3 install --user scikit-image
 
-**Step 3** : Download the pretrained `VGG19 model <https://github.com/dmlc/web-data/raw/master/mxnet/neural-style/model/vgg19.params>`__ and save it to the root directory of the cloned repository. The sample expects the model ``vgg19.params`` file to be in that directory.
+**Step 3** : Download the pre-trained `VGG19 model <https://github.com/dmlc/web-data/raw/master/mxnet/neural-style/model/vgg19.params>`__ and save it to the root directory of the cloned repository. The sample expects the model ``vgg19.params`` file to be in that directory.
 
 **Step 4** : Modify source code files of style transfer sample from the cloned repository:
 
@@ -78,7 +84,7 @@ Converting an MXNet Style Transfer Model
    
    	decoder = symbol.decoder_symbol_with_vgg(vgg_symbol)
 
-#. To join the pretrained weights with the decoder weights, make the following changes: After the code lines for loading the decoder weights:
+#. To join the pre-trained weights with the decoder weights, make the following changes: After the code lines for loading the decoder weights:
    
    
    
@@ -122,7 +128,7 @@ Converting an MXNet Style Transfer Model
 
 #. Save and close the ``make_image.py`` file.
 
-**Step 5** : Follow the instructions from the ``README.md`` file in the ``fast_mrf_cnn`` directory of the cloned repository and run the sample with a decoder model. For example, use the following code to run the sample with the pretrained decoder weights from the ``models`` folder and output shape:
+**Step 5** : Follow the instructions from the ``README.md`` file in the ``fast_mrf_cnn`` directory of the cloned repository and run the sample with a decoder model. For example, use the following code to run the sample with the pre-trained decoder weights from the ``models`` folder and output shape:
 
 
 
@@ -134,7 +140,7 @@ Converting an MXNet Style Transfer Model
 
 The ``models/13`` string in the code above is composed of the following substrings:
 
-* ``models/`` path to the folder that contains ``.nd`` files with pretrained styles weights.
+* ``models/`` path to the folder that contains ``.nd`` files with pre-trained styles weights.
 
 * ``13`` prefix pointing to the default decoder for the repository, ``13_decoder``.
 
@@ -142,7 +148,7 @@ The ``models/13`` string in the code above is composed of the following substrin
 
 
 
-Any style can be selected from `collection of pretrained weights <https://pan.baidu.com/s/1skMHqYp>`__. On the Chinese-language page, click the down arrow next to a size in megabytes. Then wait for an overlay box to appear, and click the blue button in it to download. The ``generate()`` function generates ``nst_vgg19-symbol.json`` and ``vgg19-symbol.json`` files for the specified shape. In the code, it is [1024 x 768] for a 4:3 ratio. You can specify another, for example, [224,224] for a square ratio.
+Any style can be selected from `collection of pre-trained weights <https://pan.baidu.com/s/1skMHqYp>`__. On the Chinese-language page, click the down arrow next to a size in megabytes. Then wait for an overlay box to appear, and click the blue button in it to download. The ``generate()`` function generates ``nst_vgg19-symbol.json`` and ``vgg19-symbol.json`` files for the specified shape. In the code, it is [1024 x 768] for a 4:3 ratio. You can specify another, for example, [224,224] for a square ratio.
 
 **Step 6** : Run the Model Optimizer to generate an Intermediate Representation (IR):
 
@@ -154,7 +160,7 @@ Any style can be selected from `collection of pretrained weights <https://pan.ba
    
    	mkdir nst_model
 
-#. Copy the initial and generated model files to the created directory. For example, to copy the pretrained decoder weights from the ``models`` folder to the ``nst_model`` directory, run the following commands:
+#. Copy the initial and generated model files to the created directory. For example, to copy the pre-trained decoder weights from the ``models`` folder to the ``nst_model`` directory, run the following commands:
    
    
    

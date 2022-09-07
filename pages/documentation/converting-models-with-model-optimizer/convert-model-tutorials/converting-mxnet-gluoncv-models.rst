@@ -1,11 +1,19 @@
-.. index:: pair: page; Converting MXNet GluonCV Models
-.. _doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_mxnet_specific__convert__gluon_c_v__models:
+.. index:: pair: page; Convert MXNet GluonCV Models
+.. _conv_prep__mxnet_gluon_cv:
 
+.. meta::
+   :description: This tutorial demonstrates how to convert GluonCV models
+                 from MXNet to the OpenVINO Intermediate Representation.
+   :keywords: Model Optimizer, tutorial, convert a model, model conversion, 
+              --input_model, --input_model parameter, command-line parameter, 
+              OpenVINO™ toolkit, deep learning inference, OpenVINO Intermediate 
+              Representation, MXNet, GluonCV, GluonCV model, pre-trained model, 
+              convert a model to OpenVINO IR
 
 Converting MXNet GluonCV Models
 ===============================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model_convert_model_mxnet_specific__convert__gluon_c_v__models_1md_openvino_docs_mo_dg_prepare_model_convert_model_mxnet_specific_convert_gluoncv_models` This article provides the instructions and examples on how to use Model Optimizer to convert `GluonCV SSD and YOLO-v3 models <https://gluon-cv.mxnet.io/model_zoo/detection.html>`__ to IR.
+:target:`conv_prep__mxnet_gluon_cv_1md_openvino_docs_mo_dg_prepare_model_convert_model_mxnet_specific_convert_gluoncv_models` This article provides the instructions and examples on how to use Model Optimizer to convert `GluonCV SSD and YOLO-v3 models <https://gluon-cv.mxnet.io/model_zoo/detection.html>`__ to IR.
 
 #. Choose the topology available from the `GluonCV Model Zoo <https://gluon-cv.mxnet.io/model_zoo/detection.html>`__ and export to the MXNet format using the GluonCV API. For example, for the ``ssd_512_mobilenet1.0`` topology:
    
