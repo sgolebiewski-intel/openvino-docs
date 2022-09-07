@@ -1,16 +1,25 @@
 .. index:: pair: page; Restore DL Workbench State
-.. _doxid-workbench_docs__workbench__d_g__persist__database:
+.. _workbench_guide__restore_state:
+
+.. meta::
+   :description: Guide on how to enable performing multiple experiments 
+                 to analyze performance and accuracy data in OpenVINO Deep Learning Workbench.
+   :keywords: OpenVINO, Deep Learning Workbench, DL Workbench, Restore State, analyze performance, 
+              accuracy data, state preservation, Windows, Linux, macOS, Share Profiling Data, 
+              persist database, restore state troubleshooting
 
 
 Restore DL Workbench State
 ==========================
 
-:target:`doxid-workbench_docs__workbench__d_g__persist__database_1md_openvino_workbench_docs_workbench_dg_persist_database`
+:target:`workbench_guide__restore_state_1md_openvino_workbench_docs_workbench_dg_persist_database`
 
-DL Workbench enables performing multiple experiments to analyze performance and accuracy data. To always have access to your data in the DL Workbench, use additional parameters when you :ref:`run the DL Workbench <workbench_install__run_locally>` that enable DL Workbench state preservation.
+DL Workbench enables performing multiple experiments to analyze performance and accuracy data. To always have access to 
+your data in the DL Workbench, use additional parameters when you 
+:ref:`run the DL Workbench <workbench_install__run_locally>` that enable DL Workbench state preservation.
 
-.. note:: It is highly recommended to enable DL Workbench state preservation.
-
+.. note::
+   It is highly recommended to enable DL Workbench state preservation.
 
 
 Why you need to preserve DL Workbench state:
@@ -31,15 +40,19 @@ Ignore state preservation if:
 
 * You just want to get acquainted with the DL Workbench and understand its key offerings.
 
-Even if you do not enable state preservation, your data is secured as long as there is a container on your machine. When you stop a container, you still have access to your data when you resume the container as described in the *Pause and Resume Docker Container* section of :ref:`Work with Docker Container <workbench_run__docker_container>`. However, if you remove a container that you ran without enabling state preservation, all your data is lost with that removed container.
+Even if you do not enable state preservation, your data is secured as long as there is a container on your machine. 
+When you stop a container, you still have access to your data when you resume the container as described in the 
+*Pause and Resume Docker Container* section of :ref:`Work with Docker Container <workbench_run__docker_container>`. 
+However, if you remove a container that you ran without enabling state preservation, all your data is lost with that 
+removed container.
 
 To restore the DL Workbench data:
 
 #. Follow instructions for you operating system to enable state preservation:
    
-   * `Preserve the DL Workbench state on Linux\* and macOS\*  <#preserve-linux-macos>`__
+   * `Preserve the DL Workbench state on Linux and macOS  <#preserve-linux-macos>`__
    
-   * `Preserve the DL Workbench state on Windows\*  <#preserve-windows>`__
+   * `Preserve the DL Workbench state on Windows  <#preserve-windows>`__
 
 #. When you remove a container, all data is present in the mounted host folder. To continue working with the data in a new DL Workbench container, start the DL Workbench with the mounted folder or volume using ``--assets-directory`` or ``--volume``.
 
@@ -48,7 +61,10 @@ To restore the DL Workbench data:
 Preserve DL Workbench State on Linux and macOS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To enable DL Workbench state preservation, mount a host directory to a Docker container. The example below shows how to mount a local folder while running a Docker container on Linux\* with a CPU enabled as a profiling target and in detached mode. To learn how to run the application on different targets, operating system, or in a different mode, see :ref:`Advanced Configurations <workbench_run__advanced_configurations>` page.
+To enable DL Workbench state preservation, mount a host directory to a Docker container. The example below shows how 
+to mount a local folder while running a Docker container on Linux with a CPU enabled as a profiling target and in 
+detached mode. To learn how to run the application on different targets, operating system, or in a different mode, 
+see :ref:`Advanced Configurations <workbench_run__advanced_configurations>` page.
 
 #. To run DL Workbench with Python Starter on your OS, use the first command from :ref:`installation form <workbench_install__run_locally>` :
    
@@ -86,7 +102,8 @@ All your data is placed in the mounted directory once you mount it and run the D
 Preserve DL Workbench State on Windows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Due to `problems of mounting a local folder to a Docker container on Windows <https://github.com/docker/for-win/issues/77>`__, the best way to preserve the state on Windows is to use Docker `volumes <https://docs.docker.com/storage/volumes/>`__ :
+Due to `problems of mounting a local folder to a Docker container on Windows <https://github.com/docker/for-win/issues/77>`__, 
+the best way to preserve the state on Windows is to use Docker `volumes <https://docs.docker.com/storage/volumes/>`__ :
 
 #. Get a Docker image as described in the **Install DL Workbench** section of :ref:`Install DL Workbench <workbench_install__run_locally>`.
 
@@ -121,7 +138,9 @@ All your data is placed in the mounted volume once you mount it and run the DL W
 Share Profiling Data
 ~~~~~~~~~~~~~~~~~~~~
 
-DL Workbench ``--assets-directory`` contains sensitive data such as a token, models, and datasets. Share this data only in a trusted environment. DL Workbench supports a scenario when you share only system files with profiling data, and not models and datasets.
+DL Workbench ``--assets-directory`` contains sensitive data such as a token, models, and datasets. Share this data only 
+in a trusted environment. DL Workbench supports a scenario when you share only system files with profiling data, and not 
+models and datasets.
 
 Choose instructions for your operating system:
 
@@ -129,7 +148,9 @@ Choose instructions for your operating system:
 
 * `Share profiling data on Windows <#share-windows>`__
 
-When you share only profiling data, the DL Workbench marks models, datasets, and projects as *Read-only*. *Read-only* means that it is not possible to run optimizations, profiling, or measurements on removed assets, while you can continue with importing new models and datasets.
+When you share only profiling data, the DL Workbench marks models, datasets, and projects as *Read-only*. *Read-only* 
+means that it is not possible to run optimizations, profiling, or measurements on removed assets, while you can continue 
+with importing new models and datasets.
 
 Read-only model:
 
@@ -211,7 +232,10 @@ Share Profiling Data on Windows
 Troubleshooting
 ~~~~~~~~~~~~~~~
 
-When importing assets, DL Workbench validates their consistency. If any assets have different checksum to what the DL Workbench stores, these artifacts are considered as threatening security of the DL Workbench. Remove these assets and try to run the DL Workbench again.
+When importing assets, DL Workbench validates their consistency. If any assets have different checksum to what the DL 
+Workbench stores, these artifacts are considered as threatening security of the DL Workbench. Remove these assets and 
+try to run the DL Workbench again.
 
-DL Workbench fails to start if the provided assets cannot be imported due to aforementioned versioning policy. In that case, create new assets directory and mount it instead of the existing one.
+DL Workbench fails to start if the provided assets cannot be imported due to aforementioned versioning policy. In that 
+case, create new assets directory and mount it instead of the existing one.
 

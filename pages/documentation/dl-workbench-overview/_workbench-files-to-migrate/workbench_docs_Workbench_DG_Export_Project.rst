@@ -1,11 +1,17 @@
 .. index:: pair: page; Export Project
-.. _doxid-workbench_docs__workbench__d_g__export__project:
+.. _workbench_guide__export_project:
+
+.. meta::
+   :description: Guide on how to download an archive with artifacts of project in OpenVINO 
+                 Deep Learning Workbench.
+   :keywords: OpenVINO, Deep Learning Workbench, DL Workbench, export project, download archive, 
+              project archive, project artifacts, accuracy checker
 
 
 Export Project
 ==============
 
-:target:`doxid-workbench_docs__workbench__d_g__export__project_1md_openvino_workbench_docs_workbench_dg_export_project`
+:target:`workbench_guide__export_project_1md_openvino_workbench_docs_workbench_dg_export_project`
 
 You can download an archive with artifacts of your project:
 
@@ -150,7 +156,8 @@ The example is for the ``mobilenet-ssd`` model calibrated on a COCO dataset with
 
     </div>
 
-The example of description.txt with information on the project, best model performance, corresponding performance reports, and the execution graph of the model on the device that you used in the project.
+The example of description.txt with information on the project, best model performance, corresponding performance 
+reports, and the execution graph of the model on the device that you used in the project.
 
 .. raw:: html
 
@@ -176,7 +183,8 @@ The example of description.txt with information on the project, best model perfo
 
     </div>
 
-If you submit a ticket about model support to the `OpenVINO™ team <https://github.com/openvinotoolkit/openvino/issues>`__, it is highly recommended to attach the model and its execution graph, which you can obtain on this tab.
+If you submit a ticket about model support to the `OpenVINO™ team <https://github.com/openvinotoolkit/openvino/issues>`__, 
+it is highly recommended to attach the model and its execution graph, which you can obtain on this tab.
 
 To export a project, follow the steps below.
 
@@ -186,7 +194,8 @@ To export a project, follow the steps below.
 
 #. Click Export. The exporting process starts on the server followed by an automatic archive download.
 
-Below is an example of a project being ready for export. In this example, the model, accuracy configuration, and calibration configuration will be included in the export package, while the package will not contain the dataset.
+Below is an example of a project being ready for export. In this example, the model, accuracy configuration, and 
+calibration configuration will be included in the export package, while the package will not contain the dataset.
 
 .. image:: export_project.png
 

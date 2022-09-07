@@ -145,7 +145,7 @@ Calibration
 Calibration is the process of lowering the precision of a model from FP32 to INT8. Calibration accelerates the 
 performance of certain models on hardware that supports INT8 precision. An INT8 model takes up less memory footprint 
 and speeds up inference time at the cost of a small reduction in accuracy. See 
-:ref:`INT8 Calibration <doxid-workbench_docs__workbench__d_g__int_8__quantization>` for details.
+:ref:`INT8 Calibration <workbench_guide__quantization>` for details.
 
 Deployment
 ~~~~~~~~~~

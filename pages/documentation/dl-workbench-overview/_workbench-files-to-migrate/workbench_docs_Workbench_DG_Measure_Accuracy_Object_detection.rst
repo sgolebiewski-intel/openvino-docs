@@ -31,7 +31,7 @@ is crucial for assessing model quality.
 
 Refer to the :ref:`Get Started with DL Workbench <dl_workbench__get_started>` to learn how to import the model and dataset.
 
-.. tip:: If you have optimized the model using :ref:`INT8 Calibration <doxid-workbench_docs__workbench__d_g__int_8__quantization>`, you can use a Not Annotated dataset to compare original and optimized model predictions.
+.. tip:: If you have optimized the model using :ref:`INT8 Calibration <workbench_guide__quantization>`, you can use a Not Annotated dataset to compare original and optimized model predictions.
 
 
 
@@ -93,7 +93,7 @@ the image contains 4 objects of this class. 2 matches show that only 2 of the 3 
 In the image, you can see that the model detected 3 people. While one person in the distance is detected precisely, 
 the other bounding boxes are noticeably different from the annotation. Two other people are not detected by the model.
 
-.. tip:: You can enhance your model performance while ensuring that the model accuracy has not decreased dramatically. For that, :ref:`optimize your model <doxid-workbench_docs__workbench__d_g__int_8__quantization>` and create an Accuracy Report that allows you to visualize and :ref:`compare Optimized and Parent model predictions <workbench_tutorial__yolov4>`.
+.. tip:: You can enhance your model performance while ensuring that the model accuracy has not decreased dramatically. For that, :ref:`optimize your model <workbench_guide__quantization>` and create an Accuracy Report that allows you to visualize and :ref:`compare Optimized and Parent model predictions <workbench_tutorial__yolov4>`.
 
 
 

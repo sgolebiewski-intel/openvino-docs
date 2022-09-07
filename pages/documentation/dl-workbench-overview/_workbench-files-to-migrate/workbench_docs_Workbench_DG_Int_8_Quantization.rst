@@ -1,82 +1,105 @@
 .. index:: pair: page; INT8 Calibration
-.. _doxid-workbench_docs__workbench__d_g__int_8__quantization:
+.. _workbench_guide__quantization:
+
+.. meta::
+   :description: Deep Learning Workbench can lower the precision of a model from FP32 to INT8 
+                 with a process called calibration. This process accelerates the performance 
+                 of certain models on hardware that supports INT8. 
+   :keywords: OpenVINO, Deep Learning Workbench, DL Workbench, INT8, FP32, calibration, throughput capacity, 
+              inference, calibration methods, AccuracyAware, Performance Preset, Mixed Preset, workflow, 
+              Calibration Dataset, remote calibration, Calibration Scheme, devcloud calibration
 
 
 INT8 Calibration
 ================
 
-:target:`doxid-workbench_docs__workbench__d_g__int_8__quantization_1md_openvino_workbench_docs_workbench_dg_int_8_quantization` DL Workbench can lower the precision of a model from FP32 to INT8 with a process called calibration. Calibration accelerates the performance of certain models on hardware that supports INT8. A model in INT8 precision takes up less memory and has higher throughput capacity. Often this performance boost is achieved at the cost of a small accuracy reduction. With the DL Workbench, you can calibrate your model locally, on a `remote target <#remote-calibration>`__, or in the `Intel® DevCloud for the Edge <#devcloud-calibration>`__.
+:target:`workbench_guide__quantization_1md_openvino_workbench_docs_workbench_dg_int_8_quantization` 
+DL Workbench can lower the precision of a model from FP32 to INT8 with a process called calibration. Calibration 
+accelerates the performance of certain models on hardware that supports INT8. A model in INT8 precision takes up 
+less memory and has higher throughput capacity. Often this performance boost is achieved at the cost of a small 
+accuracy reduction. With the DL Workbench, you can calibrate your model locally, on a `remote target <#remote-calibration>`__, 
+or in the `Intel® DevCloud for the Edge <#devcloud-calibration>`__.
 
-To read more about INT8 inference, see :ref:`Using Low-Precision INT8 Integer Inference <optim_perf__model_optim_guide>` and :ref:`Post-Training Optimization Toolkit <optim_perf__pot_intro>`.
+To read more about INT8 inference, see :ref:`Using Low-Precision INT8 Integer Inference <optim_perf__model_optim_guide>` 
+and :ref:`Post-Training Optimization Toolkit <optim_perf__pot_intro>`.
 
-.. note:: INT8 calibration is **not** available in the following cases:
+.. note::
+   INT8 calibration is **not** available in the following cases:
 
-#. The model belongs to Natural Language Processing domain.
+   #. The model belongs to Natural Language Processing domain.
 
-#. You run the configuration on an Intel® Movidius™ Neural Compute Stick 2, or Intel® Vision Accelerator Design with Intel® Movidius™ VPUs plugin.
+   #. You run the configuration on an Intel® Movidius™ Neural Compute Stick 2, or Intel® Vision Accelerator Design with Intel® Movidius™ VPUs plugin.
 
-#. AccuracyAware method is disabled if your configuration uses a not annotated dataset.
-
-
-
+   #. AccuracyAware method is disabled if your configuration uses a not annotated dataset.
 
 
 INT8 Calibration Methods
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-DL Workbench supports two calibration methods: `Default method <#default>`__ and `AccuracyAware <#accuracyaware>`__. Each method is further configured with a calibration scheme configuration: the `performance-oriented preset <#performance-preset>`__, which is the default scheme, or the `mixed preset <#mixed-preset>`__. Calibration schemes do not depend on a selected calibration method.
+DL Workbench supports two calibration methods: `Default method <#default>`__ and `AccuracyAware <#accuracyaware>`__. 
+Each method is further configured with a calibration scheme configuration: the 
+`performance-oriented preset <#performance-preset>`__, which is the default scheme, or the 
+`mixed preset <#mixed-preset>`__. Calibration schemes do not depend on a selected calibration method.
 
 .. _default:
 
-.. tip:: As a rule, the smaller the calibration subset, the less time the algorithms take. It is recommended to use at least a 3-5% subset of the validation dataset (300-1000 images).
+.. tip::
+   As a rule, the smaller the calibration subset, the less time the algorithms take. It is recommended to use at least 
+   a 3-5% subset of the validation dataset (300-1000 images).
 
 
-
-
-
-.. note:: A model optimized by the Default method translates all layers that support INT8 execution into INT8 precision, while the AccuracyAware method translates only those layers that both can be executed in INT8 precision and almost do not increase accuracy drop.
-
-
-
+.. note::
+   A model optimized by the Default method translates all layers that support INT8 execution into INT8 precision, 
+   while the AccuracyAware method translates only those layers that both can be executed in INT8 precision and almost 
+   do not increase accuracy drop.
 
 
 Default Method
 --------------
 
-Default method optimizes your model to achieve best performance. The algorithm usually produces the fastest model and usually but not always results in accuracy drop within 1%. Also, this algorithm takes less time than the AccuracyAware optimization method.
+Default method optimizes your model to achieve best performance. The algorithm usually produces the fastest model and 
+usually but not always results in accuracy drop within 1%. Also, this algorithm takes less time than the AccuracyAware 
+optimization method.
 
 .. _accuracyaware:
 
-.. note:: This method supports both annotated and not annotated datasets. See :ref:`Dataset Types <workbench_dataset__types>` for details.
-
-
-
+.. note::
+   This method supports both annotated and not annotated datasets. See :ref:`Dataset Types <workbench_dataset__types>` for 
+   details.
 
 
 AccuracyAware method
 --------------------
 
-AccuracyAware calibration optimizes your model to achieve best performance possible with the specified maximum acceptable accuracy drop. The AccuracyAware method might result in lower performance compared to the Default method, while the accuracy drop is predictable. Accuracy drop is the difference between the parent model accuracy and the optimized model accuracy. Accuracy of the optimized model is guaranteed to be not smaller than the difference between the parent model accuracy and the accuracy drop.
+AccuracyAware calibration optimizes your model to achieve best performance possible with the specified maximum acceptable 
+accuracy drop. The AccuracyAware method might result in lower performance compared to the Default method, while the 
+accuracy drop is predictable. Accuracy drop is the difference between the parent model accuracy and the optimized model 
+accuracy. Accuracy of the optimized model is guaranteed to be not smaller than the difference between the parent model 
+accuracy and the accuracy drop.
 
 .. _performance-preset:
 
-.. note:: This method supports only annotated datasets. See :ref:`Dataset Types <workbench_dataset__types>` for details.
-
-
-
+.. note::
+   This method supports only annotated datasets. See :ref:`Dataset Types <workbench_dataset__types>` for details.
 
 
 Performance Preset
 ------------------
 
-Performance preset guarantees uncompromising performance of a selected calibration method, as with this preset both weights and activations are calibrated in a symmetric mode. Performance preset is a default option because it provides maximum performance speedup and is independent from a target platform.
+Performance preset guarantees uncompromising performance of a selected calibration method, as with this preset both 
+weights and activations are calibrated in a symmetric mode. Performance preset is a default option because it provides 
+maximum performance speedup and is independent from a target platform.
 
 .. _mixed-preset:
 
 Mixed Preset
 ------------
 
-Mixed preset is a tradeoff between accuracy and performance, and with this preset weights and activations are calibrated in symmetric and asymmetric modes correspondingly. Compared to the performance preset, the mixed preset may result in a more accurate model at the cost of performance drop. Depending on a target platform and a model, performance drop usually varies from 5 to 15%. For example, use this preset if a model has convolutional or fully-connected layers with both negative and positive activations, like a model with non-ReLU activations.
+Mixed preset is a tradeoff between accuracy and performance, and with this preset weights and activations are calibrated 
+in symmetric and asymmetric modes correspondingly. Compared to the performance preset, the mixed preset may result in a 
+more accurate model at the cost of performance drop. Depending on a target platform and a model, performance drop usually 
+varies from 5 to 15%. For example, use this preset if a model has convolutional or fully-connected layers with both 
+negative and positive activations, like a model with non-ReLU activations.
 
 Workflow
 ~~~~~~~~
@@ -103,18 +126,21 @@ Overall flow for converting a model from FP32 to INT8:
 
 #. :ref:`Compare the calibrated model with the original FP32 model <doxid-workbench_docs__workbench__d_g__compare__performance_between__two__versions_of__models>`
 
-Use the links above to walk through the steps and workflow for creating a calibrated model. Topics specific *only* to the INT8 calibration process (steps 4-6) are described below.
+Use the links above to walk through the steps and workflow for creating a calibrated model. Topics specific *only* to 
+the INT8 calibration process (steps 4-6) are described below.
 
 .. _8-bit-config:
 
 Configure INT8 Calibration Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Once a model has been profiled by the DL Workbench, you can convert it from FP32 to to INT8. For non-FP32 models, the INT8 option is grayed out. Go to the **Perform** tab on the **Projects** page and open the **Optimize** subtab.
+Once a model has been profiled by the DL Workbench, you can convert it from FP32 to to INT8. For non-FP32 models, 
+the INT8 option is grayed out. Go to the **Perform** tab on the **Projects** page and open the **Optimize** subtab.
 
 .. image:: optimize_options.png
 
-**NOTE:** Using INT8 calibration, you can tune only an original (top-level) model.
+.. note::
+   Using INT8 calibration, you can tune only an original (top-level) model.
 
 Check **INT8** and click **Optimize**. It takes you to the **Optimize INT8** page where you need to:
 
@@ -131,19 +157,22 @@ Check **INT8** and click **Optimize**. It takes you to the **Optimize INT8** pag
 Select Calibration Dataset (Optional)
 -------------------------------------
 
-.. note:: During the calibration process, a model tends to overfit the dataset its being calibrated on. To avoid overfitting, use separate datasets for calibration and validation.
-
+.. note::
+   During the calibration process, a model tends to overfit the dataset its being calibrated on. To avoid overfitting, 
+   use separate datasets for calibration and validation.
 
 
 Select a dataset you want to calibrate the model on, or import a calibration dataset by clicking **Select** :
 
 .. image:: calibration_dataset_01.png
 
-The **Import Calibration Dataset** page appears. Select the file with a dataset, enter the dataset name, and click **Import** :
+The **Import Calibration Dataset** page appears. Select the file with a dataset, enter the dataset name, and 
+click **Import** :
 
 .. image:: calibration_dataset_02.png
 
-You are directed back to the **Optimize INT8** page. Specify the percentage of images you will use during the calibration procedure in the **Subset Size** box. The default value is 100%.
+You are directed back to the **Optimize INT8** page. Specify the percentage of images you will use during the 
+calibration procedure in the **Subset Size** box. The default value is 100%.
 
 .. image:: subset_size.png
 
@@ -156,12 +185,12 @@ Select an optimization method: `Default Method <#default>`__ or `AccuracyAware M
 
 .. image:: calibration_options.png
 
-For the AccuracyAware option, specify the **Maximum Accuracy Drop** to instruct the DL Workbench to only convert layers that do not exceed the maximum accuracy drop you can tolerate. If a layer is estimated to exceed this value, it is not calibrated and remains at the original precision.
+For the AccuracyAware option, specify the **Maximum Accuracy Drop** to instruct the DL Workbench to only convert layers 
+that do not exceed the maximum accuracy drop you can tolerate. If a layer is estimated to exceed this value, it is not 
+calibrated and remains at the original precision.
 
-.. note:: See :ref:`Configure Accuracy Settings <doxid-workbench_docs__workbench__d_g__accuracy__configuration>` for details.
-
-
-
+.. note::
+   See :ref:`Configure Accuracy Settings <doxid-workbench_docs__workbench__d_g__accuracy__configuration>` for details.
 
 
 .. image:: configure_calibration_01-b.png
@@ -171,7 +200,8 @@ For the AccuracyAware option, specify the **Maximum Accuracy Drop** to instruct 
 Select Calibration Scheme (Advanced)
 ------------------------------------
 
-Calibration scheme is a collection of optimization algorithm parameters that improve a certain metric of an algorithm. See :ref:`optimization parameters <optim_perf__def_quant_algorithm>` for details.
+Calibration scheme is a collection of optimization algorithm parameters that improve a certain metric of an algorithm. 
+See :ref:`optimization parameters <optim_perf__def_quant_algorithm>` for details.
 
 .. image:: calibration_scheme.png
 
@@ -180,7 +210,8 @@ Calibration scheme is a collection of optimization algorithm parameters that imp
 View INT8 Calibration
 ~~~~~~~~~~~~~~~~~~~~~
 
-Click **Calibrate**, and a new project for your model appears. You can work with other projects while the calibration is performed.
+Click **Calibrate**, and a new project for your model appears. You can work with other projects while the calibration 
+is performed.
 
 .. image:: calibration_process.png
 
@@ -193,18 +224,24 @@ Optimized model project is available at the Model Page:
 
 .. image:: optimized_model_project.png
 
-Once the job is done, you can compare an optimized model with the original model. For more details, go to :ref:`Compare Performance between Two Versions of Models <doxid-workbench_docs__workbench__d_g__compare__performance_between__two__versions_of__models>`.
+Once the job is done, you can compare an optimized model with the original model. For more details, go to 
+:ref:`Compare Performance between Two Versions of Models <doxid-workbench_docs__workbench__d_g__compare__performance_between__two__versions_of__models>`.
 
-The value of the **outputPrecisions** parameter in the **Layer Name** table for layers of INT8 optimized models is U8 (INT8 unsigned integer value).
+The value of the **outputPrecisions** parameter in the **Layer Name** table for layers of INT8 optimized models is 
+U8 (INT8 unsigned integer value).
 
 .. _remote-calibration:
 
 Remote Calibration
 ~~~~~~~~~~~~~~~~~~
 
-Remote calibration is available only for configurations that use remote machines. To calibrate on a remote machine, follow the same workflow as for local calibration. However, remote calibration usually takes some more time due to data exchange between a host machine and a remote machine. Once inference on the remote machine is complete, the DL Workbench sends the calibrated model to the host machine and saves it there.
+Remote calibration is available only for configurations that use remote machines. To calibrate on a remote machine, 
+follow the same workflow as for local calibration. However, remote calibration usually takes some more time due to 
+data exchange between a host machine and a remote machine. Once inference on the remote machine is complete, the DL 
+Workbench sends the calibrated model to the host machine and saves it there.
 
-When you calibrate on a remote system, the progress bar first shows the progress for asset preparation and upload, and then for calibration and inference:
+When you calibrate on a remote system, the progress bar first shows the progress for asset preparation and upload, 
+and then for calibration and inference:
 
 
 
@@ -215,9 +252,12 @@ When you calibrate on a remote system, the progress bar first shows the progress
 Calibration in the Intel® DevCloud for the Edge
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To calibrate on a platform from the :ref:`Intel® DevCloud for the Edge <workbench_install__dev_cloud>`, follow the same workflow as for local calibration. However, calibration in the DevCloud usually takes some more time due to data exchange between a host machine and a remote machine.
+To calibrate on a platform from the :ref:`Intel® DevCloud for the Edge <workbench_install__dev_cloud>`, follow the same 
+workflow as for local calibration. However, calibration in the DevCloud usually takes some more time due to data exchange 
+between a host machine and a remote machine.
 
-When you calibrate in the DevCloud, the progress bar first shows the progress for asset preparation and upload, and then for calibration and inference:
+When you calibrate in the DevCloud, the progress bar first shows the progress for asset preparation and upload, and then 
+for calibration and inference:
 
 
 

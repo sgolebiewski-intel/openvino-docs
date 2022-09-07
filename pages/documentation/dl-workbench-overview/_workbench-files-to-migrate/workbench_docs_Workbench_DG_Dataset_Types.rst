@@ -718,7 +718,7 @@ Learn more about the dataset preparation and evaluation at the `Cityscapes datas
 Not Annotated Dataset
 ~~~~~~~~~~~~~~~~~~~~~
 
-Not annotated datasets are sets of images and do not contain annotations. Models in projects that use not annotated datasets can be calibrated only with the :ref:`Default Calibration method <doxid-workbench_docs__workbench__d_g__int_8__quantization>` and cannot be used for accuracy measurements.
+Not annotated datasets are sets of images and do not contain annotations. Models in projects that use not annotated datasets can be calibrated only with the :ref:`Default Calibration method <workbench_guide__quantization>` and cannot be used for accuracy measurements.
 
 Download Not Annotated Dataset
 ------------------------------

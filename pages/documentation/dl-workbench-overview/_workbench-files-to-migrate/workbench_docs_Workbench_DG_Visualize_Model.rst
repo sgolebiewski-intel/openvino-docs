@@ -84,7 +84,7 @@ See Also
 
 * :ref:`View Inference Results <doxid-workbench_docs__workbench__d_g__view__inference__results>`
 
-* :ref:`Visualize Model Output <doxid-workbench_docs__workbench__d_g__visualize__accuracy>`
+* :ref:`Visualize Model Output <workbench_guide__visualize_accuracy>`
 
 * :ref:`Deploy and Integrate Performance Criteria into Application <doxid-workbench_docs__workbench__d_g__deploy_and__integrate__performance__criteria_into__application>`
 
