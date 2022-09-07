@@ -27,7 +27,7 @@ with the ``-p 127.0.0.1:5665:5665`` command . Refer to
 Authentication Security
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-DL Workbench uses :ref:`authentication tokens <doxid-workbench_docs__workbench__d_g__authentication>` to access the application. 
+DL Workbench uses :ref:`authentication tokens <workbench_security__authentication>` to access the application. 
 The script starting the DL Workbench creates an authentication token each time the DL Workbench starts. Anyone who has 
 the authentication token can use the DL Workbench.
 
@@ -40,6 +40,6 @@ To invalidate the authentication token completely,
 Use TLS to Protect Communications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-:ref:`Configure Transport Layer Security (TLS) <doxid-workbench_docs__workbench__d_g__configure__t_l_s>` to keep 
+:ref:`Configure Transport Layer Security (TLS) <workbench_security__tls>` to keep 
 the authentication token encrypted.
 

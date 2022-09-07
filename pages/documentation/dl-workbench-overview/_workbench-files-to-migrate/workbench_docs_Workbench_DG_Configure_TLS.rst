@@ -1,11 +1,19 @@
 .. index:: pair: page; Configure Transport Layer Security (TLS)
-.. _doxid-workbench_docs__workbench__d_g__configure__t_l_s:
+.. _workbench_security__tls:
 
+.. meta::
+   :description: Guide on how to configure Transprt Layer Security (TLS) in OpenVINO Deep 
+                 Learning Workbench. Guide includes information on certification status for Linux, 
+                 Windows and macOS systems.
+   :keywords: OpenVINO, Deep Learning Workbench, DL Workbench, security, guide, transport layer security, 
+              tls, configure tls, configure transport layer security, self-signed certificate, trusted certificate, 
+              linux, windows, macos
 
 Configure Transport Layer Security (TLS)
 ========================================
 
-:target:`doxid-workbench_docs__workbench__d_g__configure__t_l_s_1md_openvino_workbench_docs_workbench_dg_configure_tls` Three environment variables below enable you to use a self-signed certificate with OpenSSL\* for the DL Workbench:
+:target:`workbench_security__tls_1md_openvino_workbench_docs_workbench_dg_configure_tls` Three environment variables 
+below enable you to use a self-signed certificate with OpenSSL for the DL Workbench:
 
 Docker ``docker run`` command:
 
@@ -37,10 +45,10 @@ Python Starter ``openvino-workbench`` command:
 
 Follow instructions for your system and certificate status in the sections below.
 
-Trusted Certificate on Linux\*
+Trusted Certificate on Linux
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When installing from Docker Hub\* with the ``openvino-workbench`` script :
+When installing from Docker Hub with the ``openvino-workbench`` script :
 
 #. In the directory with the script, create the ``assets`` folder with read, write, and execute permissions:
    
@@ -61,12 +69,13 @@ When installing from Docker Hub\* with the ``openvino-workbench`` script :
    
    
    
-   .. note:: Replace the placeholders in angle brackets the full path to the ``assets`` folder.
+   .. note::
+      Replace the placeholders in angle brackets the full path to the ``assets`` folder.
 
 Self-Signed Certificate on Linux
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When installing from Docker Hub\* with the ``openvino-workbench`` script :
+When installing from Docker Hub with the ``openvino-workbench`` script :
 
 #. In the directory with the ``openvino-workbench`` script, create the ``assets`` folder with read, write, and execute permissions:
    
@@ -94,14 +103,15 @@ When installing from Docker Hub\* with the ``openvino-workbench`` script :
    
    
    
-   .. note:: Replace the placeholders in angle brackets the full path to the ``assets`` folder.
+   .. note::
+      Replace the placeholders in angle brackets the full path to the ``assets`` folder.
    
    
    
    
    
-   Trusted Certificate on Windows\*
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Trusted Certificate on Windows
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Open a terminal and create the ``workbench_volume`` volume:
    
@@ -169,7 +179,7 @@ Self-Signed Certificate on Windows
 	           -e SSL_VERIFY off
 	           -it openvino/workbench:latest
 
-Trusted Certificate on macOS\*
+Trusted Certificate on macOS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. In the ``home`` directory, create the ``assets`` folder with read, write, and execute permissions:
@@ -223,9 +233,9 @@ Self-Signed Certificate on macOS
 See Also
 ~~~~~~~~
 
-* :ref:`Deep Learning Workbench Security <doxid-workbench_docs_security__workbench>`
+* :ref:`Deep Learning Workbench Security <workbench_guide__security>`
 
-* :ref:`Enable Authentication in DL Workbench <doxid-workbench_docs__workbench__d_g__authentication>`
+* :ref:`Enable Authentication in DL Workbench <workbench_security__authentication>`
 
 * :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 

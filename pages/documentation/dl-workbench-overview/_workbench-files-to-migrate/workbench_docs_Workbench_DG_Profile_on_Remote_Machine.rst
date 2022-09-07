@@ -67,7 +67,7 @@ SSH keys are sensitive data and using them in the DL Workbench is at your own ri
 
 DL Workbench takes control of a remote machine to perform a limited set of tasks, like installing dependencies and OpenVINO™ tools. Connect a machine at your own risk and according to the security policy of your organization.
 
-:ref:`Run the DL Workbench with Transport Layer Security (TLS) <doxid-workbench_docs__workbench__d_g__configure__t_l_s>` to ensure data protection.
+:ref:`Run the DL Workbench with Transport Layer Security (TLS) <workbench_security__tls>` to ensure data protection.
 
 Sensitive data is removed when you remove a machine from the DL Workbench or remove the Docker container with the DL Workbench.
 

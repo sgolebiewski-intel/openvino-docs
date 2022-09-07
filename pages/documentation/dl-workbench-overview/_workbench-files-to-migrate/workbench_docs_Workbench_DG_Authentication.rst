@@ -1,16 +1,26 @@
 .. index:: pair: page; Enable Authentication in DL Workbench
-.. _doxid-workbench_docs__workbench__d_g__authentication:
+.. _workbench_security__authentication:
+
+.. meta::
+   :description: Guide on how to enable and configure authentication settings for OpenVINO Deep Learning 
+                 Workbench. Information include details on how to use authentication token.
+   :keywords: OpenVINO, Deep Learning Workbench, DL Workbench, security, authentication, token, guide, 
+              enable authentication, configure authentication, ont-time link with token, one-time token, 
+              login token, jupyterlab, jupyterlab token
 
 
 Enable Authentication in DL Workbench
 =====================================
 
-:target:`doxid-workbench_docs__workbench__d_g__authentication_1md_openvino_workbench_docs_workbench_dg_authentication` By default, the DL Workbench is started without authentication settings. This can cause problems with sensitive data, like your model or performance information. It is recommended to enable authentication when starting the DL Workbench.
+:target:`workbench_security__authentication_1md_openvino_workbench_docs_workbench_dg_authentication` By default, 
+the DL Workbench is started without authentication settings. This can cause problems with sensitive data, like your 
+model or performance information. It is recommended to enable authentication when starting the DL Workbench.
 
 Enable Authentication
 ~~~~~~~~~~~~~~~~~~~~~
 
-To enable authentication, use ``-e ENABLE_AUTH=1`` when you start the DL Workbench with the ``docker run`` command or ``--enable-auth`` with the ``openvino-workbench`` script:
+To enable authentication, use ``-e ENABLE_AUTH=1`` when you start the DL Workbench with the ``docker run`` command 
+or ``--enable-auth`` with the ``openvino-workbench`` script:
 
 * Example ``docker run`` command:
   
@@ -26,20 +36,22 @@ To enable authentication, use ``-e ENABLE_AUTH=1`` when you start the DL Workben
   
   	openvino-workbench --image openvino/workbench:2022.1 --enable-authentication
 
-When you enable authentication, the terminal displays the following when the Docker container with the DL Workbench is up and running:
+When you enable authentication, the terminal displays the following when the Docker container with the DL Workbench 
+is up and running:
 
 #. `One-time link with token <#url-token>`__
 
 #. `Login token <#login-token>`__
 
-#. `JupyterLab\* token <#jupyter-token>`__
+#. `JupyterLab token <#jupyter-token>`__
 
 .. image:: auth2.png
 
 Configure Authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-To set up your own login token, use ``-e CUSTOM_TOKEN=<token>`` when you start the DL Workbench with the ``docker run`` command or ``--custom-token <token>`` with the ``openvino-workbench`` script:
+To set up your own login token, use ``-e CUSTOM_TOKEN=<token>`` when you start the DL Workbench with the ``docker run`` 
+command or ``--custom-token <token>`` with the ``openvino-workbench`` script:
 
 * Example ``docker run`` command:
   
@@ -63,7 +75,10 @@ How to Use Tokens
 One-Time Link with Token
 ------------------------
 
-The link is provided to make it easy for you to go to the DL Workbench for the first time. For each new container, a unique one-time link is generated and expires once you click it. Use this link to access the DL Workbench for the first time. When you click the link, the DL Workbench **Active Projects** page appears, and you can move on to :ref:`work with models and sample datasets <dl_workbench__get_started>` by clicking **Create Project** :
+The link is provided to make it easy for you to go to the DL Workbench for the first time. For each new container, 
+a unique one-time link is generated and expires once you click it. Use this link to access the DL Workbench for the 
+first time. When you click the link, the DL Workbench **Active Projects** page appears, and you can move on to 
+:ref:`work with models and sample datasets <dl_workbench__get_started>` by clicking **Create Project** :
 
 .. image:: start_page_crop.png
 
@@ -76,21 +91,23 @@ Accept or block cookies in the pop-up window. You can change your decision later
 Login Token
 -----------
 
-The login token is valid as long as you do not remove the current Docker container, so treat the token as a password for the current DL Workbench session. Use it whenever you see the **Enter OpenVINO DL Workbench** window.
+The login token is valid as long as you do not remove the current Docker container, so treat the token as a password 
+for the current DL Workbench session. Use it whenever you see the **Enter OpenVINO DL Workbench** window.
 
-Open the `http://127.0.0.1:5665 <http://127.0.0.1:5665>`__ link without the URL token, and the **Enter OpenVINO DL Workbench** page appears. Copy the login token from the console and paste it into the field:
+Open the `http://127.0.0.1:5665 <http://127.0.0.1:5665>`__ link without the URL token, and the 
+**Enter OpenVINO DL Workbench** page appears. Copy the login token from the console and paste it into the field:
 
 
 
 .. image:: auth1.png
 
-.. note:: The token is also saved to a folder inside a Docker container, and you can obtain it with the command below:
+.. note::
+   The token is also saved to a folder inside a Docker container, and you can obtain it with the command below:
+   
+   ```bash docker cp workbench:/home/workbench/.workbench/token.txt token.txt `` ``<blockquote>If you do not want to save the token inside a Docker container, use`` SAVE_TOKEN_TO_FILE=0 ``when you start the DL Workbench with the`` docker run ``command or`` disable-token-saving ``with the`` openvino-workbench` script.
 
-
-
-```bash docker cp workbench:/home/workbench/.workbench/token.txt token.txt `` ``<blockquote>If you do not want to save the token inside a Docker container, use`` SAVE_TOKEN_TO_FILE=0 ``when you start the DL Workbench with the`` docker run ``command or`` disable-token-saving ``with the`` openvino-workbench` script.
-
-Press **Start**. The **Start Page** appears, and you can move on to :ref:`work with models and sample datasets <dl_workbench__get_started>` by clicking **Create Project**.
+Press **Start**. The **Start Page** appears, and you can move on to 
+:ref:`work with models and sample datasets <dl_workbench__get_started>` by clicking **Create Project**.
 
 .. image:: start_page_crop.png
 
@@ -103,16 +120,17 @@ Accept or block cookies in the pop-up window. You can change your decision later
 JupyterLab Token
 ----------------
 
-Use this token when you access the :ref:`JupyterLab Environment <workbench_jupyter__api>` delivered by the DL Workbench. This token is valid as long as you do not remove the current Docker container.
+Use this token when you access the :ref:`JupyterLab Environment <workbench_jupyter__api>` delivered by the DL Workbench. 
+This token is valid as long as you do not remove the current Docker container.
 
 .. image:: auth4.png
 
 See Also
 ~~~~~~~~
 
-* :ref:`Deep Learning Workbench Security <doxid-workbench_docs_security__workbench>`
+* :ref:`Deep Learning Workbench Security <workbench_guide__security>`
 
-* :ref:`Configure Transport Layer Security (TLS) <doxid-workbench_docs__workbench__d_g__configure__t_l_s>`
+* :ref:`Configure Transport Layer Security (TLS) <workbench_security__tls>`
 
 * :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 
