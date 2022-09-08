@@ -5,6 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta content="OpenVINO Deep Learning Workbench can collect performance data not only on the machine on which it runs, but also on other machines in local network." name="description" />
+<meta content="OpenVINO, Deep Learning Workbench, DL Workbench, guide, user guide, remote targets, performance data, collect performance data, remote machine" name="keywords" />
 
     <title>Work with Remote Targets &#8212; OpenVINO™  documentation</title>
     
@@ -1827,12 +1829,15 @@
             
                 <div>
                   
-  <section id="work-with-remote-targets">
-<span id="doxid-workbench-docs-workbench-d-g-remote-profiling"></span><span id="index-0"></span><h1>Work with Remote Targets<a class="headerlink" href="#work-with-remote-targets" title="Permalink to this headline">¶</a></h1>
-<p><span class="target" id="doxid-workbench-docs-workbench-d-g-remote-profiling-1md-openvino-workbench-docs-workbench-dg-remote-profiling"></span></p>
+  <span class="target" id="workbench-environment-remote-profiling"><span id="index-0"></span></span><section id="work-with-remote-targets">
+<h1>Work with Remote Targets<a class="headerlink" href="#work-with-remote-targets" title="Permalink to this headline">¶</a></h1>
+<p><span class="target" id="workbench-environment-remote-profiling-1md-openvino-workbench-docs-workbench-dg-remote-profiling"></span></p>
 <div class="toctree-wrapper compound">
 </div>
-<p>DL Workbench can collect performance data not only on the machine on which you run it, but also on other machines in your local network. This helps when you cannot run the DL Workbench on a machine due to security or network issues or because it is impossible to install Docker. If this is the case, run the DL Workbench on another machine and collect performance data on a remote machine in your local network.</p>
+<p>DL Workbench can collect performance data not only on the machine on which you run it, but also on other machines in your
+local network. This helps when you cannot run the DL Workbench on a machine due to security or network issues or because
+it is impossible to install Docker. If this is the case, run the DL Workbench on another machine and collect performance
+data on a remote machine in your local network.</p>
 <p>When connected to a remote machine, you can currently use a limited set of DL Workbench features:</p>
 <table class="table">
 <colgroup>
@@ -1864,20 +1869,21 @@
 </table>
 <p>Follow the steps below to profile your model on a remote target:</p>
 <ol class="arabic simple">
-<li><p><a class="reference internal" href="workbench_docs_Workbench_DG_Setup_Remote_Target.html#doxid-workbench-docs-workbench-d-g-setup-remote-target"><span class="std std-ref">Set up the target machine</span></a></p></li>
-<li><p><a class="reference internal" href="workbench_docs_Workbench_DG_Add_Remote_Target.html#doxid-workbench-docs-workbench-d-g-add-remote-target"><span class="std std-ref">Register the remote target in the DL Workbench</span></a></p></li>
-<li><p><a class="reference internal" href="workbench_docs_Workbench_DG_Profile_on_Remote_Machine.html#doxid-workbench-docs-workbench-d-g-profile-on-remote-machine"><span class="std std-ref">Profile on the remote machine</span></a></p></li>
+<li><p><a class="reference internal" href="workbench_docs_Workbench_DG_Setup_Remote_Target.html#workbench-remote-setup"><span class="std std-ref">Set up the target machine</span></a></p></li>
+<li><p><a class="reference internal" href="workbench_docs_Workbench_DG_Add_Remote_Target.html#workbench-remote-add-remote-target"><span class="std std-ref">Register the remote target in the DL Workbench</span></a></p></li>
+<li><p><a class="reference internal" href="workbench_docs_Workbench_DG_Profile_on_Remote_Machine.html#workbench-remote-profile"><span class="std std-ref">Profile on the remote machine</span></a></p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Working with machines in your local network is not available when you run the DL Workbench in the <a class="reference internal" href="../dl-workbench-install/run-dl-workbench-in-devcloud.html#workbench-install-dev-cloud"><span class="std std-ref">Intel® DevCloud for the Edge</span></a>.</p>
+<p>Working with machines in your local network is not available when you run the DL Workbench in the
+<a class="reference internal" href="../dl-workbench-install/run-dl-workbench-in-devcloud.html#workbench-install-dev-cloud"><span class="std std-ref">Intel® DevCloud for the Edge</span></a>.</p>
 </div>
 <section id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="workbench_docs_Workbench_DG_Remote_Machines.html#doxid-workbench-docs-workbench-d-g-remote-machines"><span class="std std-ref">Manipulate Remote Machines</span></a></p></li>
+<li><p><a class="reference internal" href="workbench_docs_Workbench_DG_Remote_Machines.html#workbench-remote-machines"><span class="std std-ref">Manipulate Remote Machines</span></a></p></li>
 <li><p><a class="reference external" href="workbench_docs_Workbench_DG_Setup_Remote_Target.html">Set Up Remote Target</a></p></li>
-<li><p><a class="reference internal" href="workbench_docs_Workbench_DG_Profile_on_Remote_Machine.html#doxid-workbench-docs-workbench-d-g-profile-on-remote-machine"><span class="std std-ref">Profile on a Remote Machine</span></a></p></li>
+<li><p><a class="reference internal" href="workbench_docs_Workbench_DG_Profile_on_Remote_Machine.html#workbench-remote-profile"><span class="std std-ref">Profile on a Remote Machine</span></a></p></li>
 <li><p><a class="reference internal" href="../dl-workbench-troubleshooting.html#dl-workbench-troubleshooting"><span class="std std-ref">Troubleshooting</span></a></p></li>
 </ul>
 </section>

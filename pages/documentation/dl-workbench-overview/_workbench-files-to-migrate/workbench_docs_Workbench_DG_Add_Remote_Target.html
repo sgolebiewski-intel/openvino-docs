@@ -5,6 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta content="Guide on how to register a remote target in OpenVINO Deep Learning Workbench." name="description" />
+<meta content="OpenVINO, Deep Learning Workbench, DL Workbench, guide, user guide, remote target, register remote target, proxy" name="keywords" />
 
     <title>Register Remote Target in DL Workbench &#8212; OpenVINO™  documentation</title>
     
@@ -1827,12 +1829,14 @@
             
                 <div>
                   
-  <section id="register-remote-target-in-dl-workbench">
-<span id="doxid-workbench-docs-workbench-d-g-add-remote-target"></span><span id="index-0"></span><h1>Register Remote Target in DL Workbench<a class="headerlink" href="#register-remote-target-in-dl-workbench" title="Permalink to this headline">¶</a></h1>
-<p><span class="target" id="doxid-workbench-docs-workbench-d-g-add-remote-target-1md-openvino-workbench-docs-workbench-dg-add-remote-target"></span> <a class="reference internal" href="workbench_docs_Workbench_DG_Setup_Remote_Target.html#doxid-workbench-docs-workbench-d-g-setup-remote-target"><span class="std std-ref">Set up your remote target</span></a>, then follow the instructions below:</p>
+  <span class="target" id="workbench-remote-add-remote-target"><span id="index-0"></span></span><section id="register-remote-target-in-dl-workbench">
+<h1>Register Remote Target in DL Workbench<a class="headerlink" href="#register-remote-target-in-dl-workbench" title="Permalink to this headline">¶</a></h1>
+<p><span class="target" id="workbench-remote-add-remote-target-1md-openvino-workbench-docs-workbench-dg-add-remote-target"></span>
+<a class="reference internal" href="workbench_docs_Workbench_DG_Setup_Remote_Target.html#workbench-remote-setup"><span class="std std-ref">Set up your remote target</span></a>, then follow the instructions below:</p>
 <p><strong>Step 1</strong> : Go to the <strong>Create Project</strong> page.</p>
 <p><strong>Step 2</strong> : Select <strong>Add Remote Target</strong> next to the <strong>Environment</strong> table.</p>
-<p><strong>Step 3</strong> : Fill in the fields shown in the figure and table below. If you are behind a corporate proxy, select the <strong>Use Proxy</strong> box and provide proxy information.</p>
+<p><strong>Step 3</strong> : Fill in the fields shown in the figure and table below. If you are behind a corporate proxy, select
+the <strong>Use Proxy</strong> box and provide proxy information.</p>
 <img alt="../../../../_images/add_target-001.png" src="../../../../_images/add_target-001.png" />
 <table class="table">
 <colgroup>
@@ -1876,22 +1880,24 @@
 </table>
 <p><strong>Step 4</strong> : Click <strong>Add</strong>. The machine is listed to the <strong>Target Machines</strong> table with a status of <strong>Configuring</strong> :</p>
 <img alt="../../../../_images/configuring-001.png" src="../../../../_images/configuring-001.png" />
-<p>The <strong>Configuration Status</strong> and <strong>Connection Status</strong> tables show you the configuration progress. Click <strong>Details</strong> to review a log at each stage.</p>
+<p>The <strong>Configuration Status</strong> and <strong>Connection Status</strong> tables show you the configuration progress.
+Click <strong>Details</strong> to review a log at each stage.</p>
 <img alt="../../../../_images/success-001.png" src="../../../../_images/success-001.png" />
 <p>See <a class="reference internal" href="../dl-workbench-troubleshooting.html#dl-workbench-troubleshooting"><span class="std std-ref">Troubleshooting</span></a> to address a <strong>Warning</strong> or <strong>Failure</strong> :</p>
 <ul>
 <li><p><strong>Warning</strong> indicates issues that might limit your actions. Warnings do not prevent work with remote targets. Refer to <a class="reference internal" href="../dl-workbench-troubleshooting.html#dl-workbench-troubleshooting"><span class="std std-ref">Troubleshooting</span></a> to fix an issue:</p>
 <img alt="../../../../_images/warning-001.png" src="../../../../_images/warning-001.png" />
 </li>
-</ul>
-<p><strong>Failure</strong> indicates issues that prevent using the remote target. Refer to <a class="reference internal" href="../dl-workbench-troubleshooting.html#dl-workbench-troubleshooting"><span class="std std-ref">Troubleshooting</span></a> to fix an issue:</p>
+<li><p><strong>Failure</strong> indicates issues that prevent using the remote target. Refer to <a class="reference internal" href="../dl-workbench-troubleshooting.html#dl-workbench-troubleshooting"><span class="std std-ref">Troubleshooting</span></a> to fix an issue:</p>
 <img alt="../../../../_images/failure-001.png" src="../../../../_images/failure-001.png" />
+</li>
+</ul>
 <section id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="workbench_docs_Workbench_DG_Remote_Profiling.html#doxid-workbench-docs-workbench-d-g-remote-profiling"><span class="std std-ref">Work with Remote Targets</span></a></p></li>
-<li><p><a class="reference internal" href="workbench_docs_Workbench_DG_Remote_Machines.html#doxid-workbench-docs-workbench-d-g-remote-machines"><span class="std std-ref">Manipulate Remote Machines</span></a></p></li>
-<li><p><a class="reference internal" href="workbench_docs_Workbench_DG_Profile_on_Remote_Machine.html#doxid-workbench-docs-workbench-d-g-profile-on-remote-machine"><span class="std std-ref">Profile on a Remote Machine</span></a></p></li>
+<li><p><a class="reference internal" href="workbench_docs_Workbench_DG_Remote_Profiling.html#workbench-environment-remote-profiling"><span class="std std-ref">Work with Remote Targets</span></a></p></li>
+<li><p><a class="reference internal" href="workbench_docs_Workbench_DG_Remote_Machines.html#workbench-remote-machines"><span class="std std-ref">Manipulate Remote Machines</span></a></p></li>
+<li><p><a class="reference internal" href="workbench_docs_Workbench_DG_Profile_on_Remote_Machine.html#workbench-remote-profile"><span class="std std-ref">Profile on a Remote Machine</span></a></p></li>
 <li><p><a class="reference internal" href="../dl-workbench-troubleshooting.html#dl-workbench-troubleshooting"><span class="std std-ref">Troubleshooting</span></a></p></li>
 </ul>
 </section>
