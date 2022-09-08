@@ -165,7 +165,7 @@ Incompatible Model and Dataset
 
 This error appears due to model and dataset type incompatibility.
 
-* Make sure you select a correct model task in the :ref:`Accuracy Settings step <doxid-workbench_docs__workbench__d_g__configure__accuracy__settings>`.
+* Make sure you select a correct model task in the :ref:`Accuracy Settings step <workbench_accuracy__config_settings>`.
 
 .. image:: ./_assets/configurator_usage-b.png
 
