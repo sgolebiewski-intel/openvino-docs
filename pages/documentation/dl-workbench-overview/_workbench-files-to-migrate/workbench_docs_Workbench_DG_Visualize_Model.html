@@ -5,6 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta content="Information on model visualization in OpenVINO Deep Learning Workbench. Details on what it is included in visualization." name="description" />
+<meta content="OpenVINO, Deep Learning Workbench, DL Workbench, user guide, guide, visualization, visualize model, visualize graph, visualize original ir, Intermediate Representation, runtime graph, coloring, reading model graph, vpu, plugin," name="keywords" />
 
     <title>Visualize Model &#8212; OpenVINO™  documentation</title>
     
@@ -1851,27 +1853,41 @@
             
                 <div>
                   
-  <section id="visualize-model">
-<span id="doxid-workbench-docs-workbench-d-g-visualize-model"></span><span id="index-0"></span><h1>Visualize Model<a class="headerlink" href="#visualize-model" title="Permalink to this headline">¶</a></h1>
-<p><span class="target" id="doxid-workbench-docs-workbench-d-g-visualize-model-1md-openvino-workbench-docs-workbench-dg-visualize-model"></span> After you have run an initial inference, and your performance data is visible on the dashboard, you can evaluate performance and tune your model. The data appears in the <strong>Model Performance Summary</strong> on the <strong>Projects</strong> page. When you have multiple inference results, you can click on specific data points to view model performance details.</p>
+  <span class="target" id="workbench-inference-visualize-model"><span id="index-0"></span></span><section id="visualize-model">
+<h1>Visualize Model<a class="headerlink" href="#visualize-model" title="Permalink to this headline">¶</a></h1>
+<p><span class="target" id="workbench-inference-visualize-model-1md-openvino-workbench-docs-workbench-dg-visualize-model"></span> After you have
+run an initial inference, and your performance data is visible on the dashboard, you can evaluate performance and tune
+your model. The data appears in the <strong>Model Performance Summary</strong> on the <strong>Projects</strong> page. When you have multiple
+inference results, you can click on specific data points to view model performance details.</p>
 <section id="visualize-graphs">
 <h2>Visualize Graphs<a class="headerlink" href="#visualize-graphs" title="Permalink to this headline">¶</a></h2>
 <img alt="../../../../_images/graphs_1.gif" src="../../../../_images/graphs_1.gif" />
-<p>On the right to the <strong>Layers</strong> table on the <strong>Kernel-Level Performance</strong> tab, find the visualization of your model when it is executed by the OpenVINO™ Runtime. Click <strong>Visualize Original IR</strong> to see the graph of the original model in the OpenVINO™ IR format before it is executed by the OpenVINO™ Runtime.</p>
+<p>On the right to the <strong>Layers</strong> table on the <strong>Kernel-Level Performance</strong> tab, find the visualization of your model when
+it is executed by the OpenVINO™ Runtime. Click <strong>Visualize Original IR</strong> to see the graph of the original model in the
+OpenVINO™ IR format before it is executed by the OpenVINO™ Runtime.</p>
 <img alt="../../../../_images/visualize_models_001.png" src="../../../../_images/visualize_models_001.png" />
-<p>Layers in the <em>runtime graph</em> and the <em>IR (Intermediate Representation) graph</em> have different meanings. The IR graph reflects the structure of a model, while the runtime graph shows how a specific version of the model was executed on a specific device. The runtime graphs usually have different structures for different model versions and for the same model run on different devices, because every device executes models in a certain way to achieve the best performance.</p>
-<p>To adjust the scale, use magnifying glass icons or your mouse scroll wheel. You can also make the graph larger by clicking <strong>Expand Graph</strong>.</p>
+<p>Layers in the <em>runtime graph</em> and the <em>IR (Intermediate Representation) graph</em> have different meanings. The IR graph
+reflects the structure of a model, while the runtime graph shows how a specific version of the model was executed on
+a specific device. The runtime graphs usually have different structures for different model versions and for the same
+model run on different devices, because every device executes models in a certain way to achieve the best performance.</p>
+<p>To adjust the scale, use magnifying glass icons or your mouse scroll wheel. You can also make the graph larger by
+clicking <strong>Expand Graph</strong>.</p>
 <p>To quickly find a layer, use the <strong>Search Layer</strong> field. Enter a layer name or input dimensions:</p>
 <img alt="../../../../_images/visualize_models_002.png" src="../../../../_images/visualize_models_002.png" />
 <p>To learn details about a layer, select the layer and click <strong>Details</strong>. The window with layer information appears on the right:</p>
 <img alt="../../../../_images/visualize_layer_001.png" src="../../../../_images/visualize_layer_001.png" />
-<p>DL Workbench supports layer mapping between the table, the runtime graph, and the original IR graph, which visually represents whether a layer was fused, tiled, or stayed intact. Once you click a layer in the table or in any of the graphs, the same layer or the layers corresponding to it are highlighted in other places:</p>
+<p>DL Workbench supports layer mapping between the table, the runtime graph, and the original IR graph, which visually
+represents whether a layer was fused, tiled, or stayed intact. Once you click a layer in the table or in any of the
+graphs, the same layer or the layers corresponding to it are highlighted in other places:</p>
 <img alt="../../../../_images/visualize_models_003.png" src="../../../../_images/visualize_models_003.png" />
-<p>If an original IR layer does not have a corresponding runtime layer, nothing in the table or in the <strong>Runtime Graph</strong> is highlighted and you get a warning:</p>
+<p>If an original IR layer does not have a corresponding runtime layer, nothing in the table or in the <strong>Runtime Graph</strong>
+is highlighted and you get a warning:</p>
 <img alt="../../../../_images/visualize_models_005.png" src="../../../../_images/visualize_models_005.png" />
 <section id="coloring">
 <h3>Coloring<a class="headerlink" href="#coloring" title="Permalink to this headline">¶</a></h3>
-<p>By default, layers are colored according to their type, but the DL Workbench also supports coloring by execution time and by runtime precision type for runtime graphs and output precision type for original IR graphs. Select the coloring logic in the <strong>Coloring</strong> drop-down list.</p>
+<p>By default, layers are colored according to their type, but the DL Workbench also supports coloring by execution
+time and by runtime precision type for runtime graphs and output precision type for original IR graphs. Select the
+coloring logic in the <strong>Coloring</strong> drop-down list.</p>
 <img alt="../../../../_images/visualize_models_006.png" src="../../../../_images/visualize_models_006.png" />
 <p>When you select coloring <strong>By Execution Time</strong>, the graph gets colored according to the scale that appears above it:</p>
 <img alt="../../../../_images/visualize_models_004.png" src="../../../../_images/visualize_models_004.png" />
@@ -1883,7 +1899,10 @@
 </section>
 <section id="recommendations-on-reading-model-graphs">
 <h2>Recommendations on Reading Model Graphs<a class="headerlink" href="#recommendations-on-reading-model-graphs" title="Permalink to this headline">¶</a></h2>
-<p>To learn about graph optimization algorithms supported on different plugins, see the OpenVINO™ Runtime <a class="reference internal" href="../../openvino-runtime-user-guide/working-with-devices/inference-device-cpu.html#deploy-infer-cpu-device"><span class="std std-ref">CPU</span></a>, <a class="reference internal" href="../../openvino-runtime-user-guide/working-with-devices/inference-device-vpu/myriad-device.html#deploy-infer-vpu-myriad-device"><span class="std std-ref">Intel® Movidius™ Neural Compute Stick 2</span></a> and <a class="reference internal" href="../../openvino-runtime-user-guide/working-with-devices/inference-device-vpu/hddl-device.html#deploy-infer-vpu-hddl-device"><span class="std std-ref">Intel® Vision Accelerator Design with Intel® Movidius™ VPUs</span></a> supported plugins documentation. For additional details on reading graphs of a model executed on a VPU plugin, see the section below.</p>
+<p>To learn about graph optimization algorithms supported on different plugins, see the OpenVINO™ Runtime
+<a class="reference internal" href="../../openvino-runtime-user-guide/working-with-devices/inference-device-cpu.html#deploy-infer-cpu-device"><span class="std std-ref">CPU</span></a>, <a class="reference internal" href="../../openvino-runtime-user-guide/working-with-devices/inference-device-vpu/myriad-device.html#deploy-infer-vpu-myriad-device"><span class="std std-ref">Intel® Movidius™ Neural Compute Stick 2</span></a>
+and <a class="reference internal" href="../../openvino-runtime-user-guide/working-with-devices/inference-device-vpu/hddl-device.html#deploy-infer-vpu-hddl-device"><span class="std std-ref">Intel® Vision Accelerator Design with Intel® Movidius™ VPUs</span></a> supported plugins
+documentation. For additional details on reading graphs of a model executed on a VPU plugin, see the section below.</p>
 <section id="models-executed-on-a-vpu-plugin">
 <h3>Models Executed on a VPU Plugin<a class="headerlink" href="#models-executed-on-a-vpu-plugin" title="Permalink to this headline">¶</a></h3>
 <p>If layers are joined, the <em>Runtime graph</em> displays an <em>HwOp</em> layer with two input and two output layers:</p>
@@ -1897,14 +1916,16 @@
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Intel® Neural Compute Stick 2 does not support asymmetrical paddings. Therefore, asymmetrical paddings in the Intermediate Representation (IR) graph result in several Pad layers in the Runtime Graph, which causes lower performance of a model.</p>
+<p>Intel® Neural Compute Stick 2 does not support asymmetrical paddings. Therefore, asymmetrical paddings in the
+Intermediate Representation (IR) graph result in several Pad layers in the Runtime Graph, which causes lower
+performance of a model.</p>
 </div>
 </section>
 </section>
 <section id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="workbench_docs_Workbench_DG_View_Inference_Results.html#doxid-workbench-docs-workbench-d-g-view-inference-results"><span class="std std-ref">View Inference Results</span></a></p></li>
+<li><p><span class="xref std std-ref">View Inference Results</span></p></li>
 <li><p><a class="reference internal" href="workbench_docs_Workbench_DG_Visualize_Accuracy.html#workbench-guide-visualize-accuracy"><span class="std std-ref">Visualize Model Output</span></a></p></li>
 <li><p><a class="reference internal" href="workbench_docs_Workbench_DG_Deploy_and_Integrate_Performance_Criteria_into_Application.html#workbench-deployment-deploy-and-integrate-performance-criteria-into-app"><span class="std std-ref">Deploy and Integrate Performance Criteria into Application</span></a></p></li>
 <li><p><a class="reference internal" href="../dl-workbench-troubleshooting.html#dl-workbench-troubleshooting"><span class="std std-ref">Troubleshooting</span></a></p></li>

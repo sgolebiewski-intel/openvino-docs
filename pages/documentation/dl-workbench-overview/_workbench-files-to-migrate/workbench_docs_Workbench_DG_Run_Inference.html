@@ -5,6 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta content="Introduction to run inference in OpenVINO Deep Learning Workbench. Inference is a single execution of the model that consists in feeding the data to the model and obtaining the results." name="description" />
+<meta content="OpenVINOW, Deep Learning Workbench, DL Workbench, guide, user guide, inference, run inference, latency, throughput, streams, batches" name="keywords" />
 
     <title>OpenVINO Inference &#8212; OpenVINO™  documentation</title>
     
@@ -1827,38 +1829,50 @@
             
                 <div>
                   
-  <section id="openvino-inference">
-<span id="doxid-workbench-docs-workbench-d-g-run-inference"></span><span id="index-0"></span><h1>OpenVINO Inference<a class="headerlink" href="#openvino-inference" title="Permalink to this headline">¶</a></h1>
-<p><span class="target" id="doxid-workbench-docs-workbench-d-g-run-inference-1md-openvino-workbench-docs-workbench-dg-run-inference"></span></p>
+  <span class="target" id="workbench-guide-inference"><span id="index-0"></span></span><section id="openvino-inference">
+<h1>OpenVINO Inference<a class="headerlink" href="#openvino-inference" title="Permalink to this headline">¶</a></h1>
+<p><span class="target" id="workbench-guide-inference-1md-openvino-workbench-docs-workbench-dg-run-inference"></span></p>
 <div class="toctree-wrapper compound">
 </div>
-<p>Inference is a single execution of the model that consists in feeding the data to the model and obtaining the results. Inferencing performance is a key characteristic of the model quality. OpenVINO has <a class="reference external" href="https://docs.openvino.ai/latest/openvino_docs_optimization_guide_dldt_optimization_guide.html#how-to-improve-performance">several techniques</a> to evaluate and accelerate model performance.</p>
+<p>Inference is a single execution of the model that consists in feeding the data to the model and obtaining the results.
+Inferencing performance is a key characteristic of the model quality. OpenVINO has
+<a class="reference external" href="https://docs.openvino.ai/latest/openvino_docs_optimization_guide_dldt_optimization_guide.html#how-to-improve-performance">several techniques</a>
+to evaluate and accelerate model performance.</p>
 <p>The DL Workbench allows users to assess the model performance in one of two inference modes:</p>
 <ul>
 <li><p><a class="reference external" href="https://docs.openvino.ai/latest/openvino_docs_optimization_guide_dldt_optimization_guide.html#what-is-performance">Latency</a></p>
-<p>Latency is the time required to complete a unit of work, for example, the time required to infer a single image. The lower the value, the better. The latency mode is typical for lightweight models and real-time services.</p>
+<p>Latency is the time required to complete a unit of work, for example, the time required to infer a single image. The
+lower the value, the better. The latency mode is typical for lightweight models and real-time services.</p>
 </li>
 <li><p><a class="reference external" href="https://docs.openvino.ai/latest/openvino_docs_deployment_optimization_guide_dldt_optimization_guide.html#throughput-mode">Throughput</a></p>
-<p>Throughput is the number of input data processed in a given amount of time. It is recommended to use the throughput mode for models designed for high-performant applications. For example, there are several surveillance cameras and they work simultaneously passing the video frames to the accelerator at once. Using <a class="reference external" href="https://docs.openvino.ai/latest/openvino_docs_deployment_optimization_guide_dldt_optimization_guide.html#inference-engine-async-api">asynchronous inference</a> can significantly improve performance and ensure that models process as many frames as possible.</p>
+<p>Throughput is the number of input data processed in a given amount of time. It is recommended to use the throughput
+mode for models designed for high-performant applications. For example, there are several surveillance cameras and
+they work simultaneously passing the video frames to the accelerator at once. Using
+<a class="reference external" href="https://docs.openvino.ai/latest/openvino_docs_deployment_optimization_guide_dldt_optimization_guide.html#inference-engine-async-api">asynchronous inference</a>
+can significantly improve performance and ensure that models process as many frames as possible.</p>
 </li>
 </ul>
-<img alt="../../../../_images/LATENCY_VS_THROUGHPUT.svg" src="../../../../_images/LATENCY_VS_THROUGHPUT.svg" /><p>OpenVINO allows users to parallelize the neural model and propagate several input data instances to speed up the model by specifying the following parameters:</p>
+<img alt="../../../../_images/LATENCY_VS_THROUGHPUT.svg" src="../../../../_images/LATENCY_VS_THROUGHPUT.svg" /><p>OpenVINO allows users to parallelize the neural model and propagate several input data instances to speed up the model
+by specifying the following parameters:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.openvino.ai/latest/openvino_docs_deployment_optimization_guide_dldt_optimization_guide.html#throughput-mode-for-cpu">Streams</a> : stream is the number of instances of your model running simultaneously. Inferring the same model in several streams simultaneously leads to higher model performance.</p></li>
 <li><p><a class="reference internal" href="../../../resources/openvino-glossary.html#doxid-openvino-docs-o-v-glossary"><span class="std std-ref">Batches</span></a> : batch is the number of input data instances propagated to the model at a time.</p></li>
 </ul>
-<p>Using one of the methods or a combination of them allows getting a noticeable performance boost (especially for lightweight topologies) without any accuracy loss. Another optimization technique is the <a class="reference external" href="https://docs.openvino.ai/latest/openvino_docs_IE_DG_Int8Inference.html#doxid-openvino-docs-i-e-d-g-int8-inference">INT8 Calibration</a> which results in a controllable accuracy drop.</p>
+<p>Using one of the methods or a combination of them allows getting a noticeable performance boost (especially for
+lightweight topologies) without any accuracy loss. Another optimization technique is the
+<a class="reference external" href="https://docs.openvino.ai/latest/openvino_docs_IE_DG_Int8Inference.html#doxid-openvino-docs-i-e-d-g-int8-inference">INT8 Calibration</a>
+which results in a controllable accuracy drop.</p>
 <p>The DL Workbench allows you to evaluate the performance of the model and provides a set of analytical capabilities which includes:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="workbench_docs_Workbench_DG_View_Inference_Results.html#doxid-workbench-docs-workbench-d-g-view-inference-results"><span class="std std-ref">detailed performance assessment</span></a>, including evaluation by layers, precision, kernel</p></li>
-<li><p><a class="reference internal" href="workbench_docs_Workbench_DG_Visualize_Model.html#doxid-workbench-docs-workbench-d-g-visualize-model"><span class="std std-ref">visualization of the computational graph</span></a> of the model with the detection of bottlenecks</p></li>
-<li><p><a class="reference internal" href="workbench_docs_Workbench_DG_Compare_Performance_between_Two_Versions_of_Models.html#doxid-workbench-docs-workbench-d-g-compare-performance-between-two-versions-of-models"><span class="std std-ref">comparison</span></a> within different configurations of the model (batches and streams), different versions of the model (optimized and parent) by a variety of criteria.</p></li>
+<li><p><span class="xref std std-ref">detailed performance assessment</span>, including evaluation by layers, precision, kernel</p></li>
+<li><p><a class="reference internal" href="workbench_docs_Workbench_DG_Visualize_Model.html#workbench-inference-visualize-model"><span class="std std-ref">visualization of the computational graph</span></a> of the model with the detection of bottlenecks</p></li>
+<li><p><a class="reference internal" href="workbench_docs_Workbench_DG_Compare_Performance_between_Two_Versions_of_Models.html#workbench-inference-compare-performance"><span class="std std-ref">comparison</span></a> within different configurations of the model (batches and streams), different versions of the model (optimized and parent) by a variety of criteria.</p></li>
 </ul>
 <section id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="workbench_docs_Workbench_DG_Run_Single_Inference.html#doxid-workbench-docs-workbench-d-g-run-single-inference"><span class="std std-ref">Run Inference</span></a></p></li>
-<li><p><a class="reference internal" href="workbench_docs_Workbench_DG_View_Inference_Results.html#doxid-workbench-docs-workbench-d-g-view-inference-results"><span class="std std-ref">View Inference Results</span></a></p></li>
+<li><p><a class="reference internal" href="workbench_docs_Workbench_DG_Run_Single_Inference.html#workbench-inference-run-inference"><span class="std std-ref">Run Inference</span></a></p></li>
+<li><p><span class="xref std std-ref">View Inference Results</span></p></li>
 <li><p><a class="reference internal" href="../../openvino-runtime-user-guide.html#deploy-infer-openvino-runtime-user-guide"><span class="std std-ref">OpenVINO™ Runtime documentation</span></a></p></li>
 <li><p><a class="reference internal" href="../../../get-started-guide/samples/python-benchmark-tool.html#get-started-samples-python-benchmark"><span class="std std-ref">Benchmark Tool</span></a></p></li>
 <li><p><a class="reference internal" href="../dl-workbench-troubleshooting.html#dl-workbench-troubleshooting"><span class="std std-ref">Troubleshooting</span></a></p></li>

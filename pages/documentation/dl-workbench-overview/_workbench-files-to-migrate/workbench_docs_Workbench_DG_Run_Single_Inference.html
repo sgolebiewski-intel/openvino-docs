@@ -5,6 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta content="Guide on how to run inference in OpenVINO Deep Learning Workbench." name="description" />
+<meta content="OpenVINO, Deep Learning Workbench, DL Workbench, guide, user guide, inference, run inference, run single inference, autobenchmarking, run group inference" name="keywords" />
 
     <title>Run Inference &#8212; OpenVINO™  documentation</title>
     
@@ -1851,12 +1853,14 @@
             
                 <div>
                   
-  <section id="run-inference">
-<span id="doxid-workbench-docs-workbench-d-g-run-single-inference"></span><span id="index-0"></span><h1>Run Inference<a class="headerlink" href="#run-inference" title="Permalink to this headline">¶</a></h1>
-<p><span class="target" id="doxid-workbench-docs-workbench-d-g-run-single-inference-1md-openvino-workbench-docs-workbench-dg-run-single-inference"></span></p>
+  <span class="target" id="workbench-inference-run-inference"><span id="index-0"></span></span><section id="run-inference">
+<h1>Run Inference<a class="headerlink" href="#run-inference" title="Permalink to this headline">¶</a></h1>
+<p><span class="target" id="workbench-inference-run-inference-1md-openvino-workbench-docs-workbench-dg-run-single-inference"></span></p>
 <section id="run-single-inference">
 <h2>Run Single Inference<a class="headerlink" href="#run-single-inference" title="Permalink to this headline">¶</a></h2>
-<div id="switcher-single" class="switcher-anchor">Run Single Inference</div><p>To trigger more inference jobs of an existing configuration, go to the <strong>Perform</strong> tab on the <strong>Projects</strong> page and open the <strong>Explore Inference Configurations</strong> subtab. Select <strong>Single Inference</strong>, specify the number of inferences per a stream and a batch, and click <strong>Execute</strong> :</p>
+<div id="switcher-single" class="switcher-anchor">Run Single Inference</div><p>To trigger more inference jobs of an existing configuration, go to the <strong>Perform</strong> tab on the <strong>Projects</strong> page and
+open the <strong>Explore Inference Configurations</strong> subtab. Select <strong>Single Inference</strong>, specify the number of inferences
+per a stream and a batch, and click <strong>Execute</strong> :</p>
 <img alt="../../../../_images/run_single_inference_1.png" src="../../../../_images/run_single_inference_1.png" />
 <p>The process starts and you cannot proceed until it is done:</p>
 <img alt="../../../../_images/banner1-b.png" src="../../../../_images/banner1-b.png" />
@@ -1866,20 +1870,28 @@
 <img alt="../../../../_images/inference_history.png" src="../../../../_images/inference_history.png" />
 <section id="autobenchmarking">
 <h3>Autobenchmarking<a class="headerlink" href="#autobenchmarking" title="Permalink to this headline">¶</a></h3>
-<p>During the baseline inference with Batch 1 Stream 1 configurations, DL Workbench runs another inference where the parameters are set automatically depending on the model topology to obtain near-optimal performance on the selected accelerator. While automatic selection typically provides near-optimal performance, experimenting with various Batch and Stream combinations might help you accelerate performance even further.</p>
+<p>During the baseline inference with Batch 1 Stream 1 configurations, DL Workbench runs another inference where
+the parameters are set automatically depending on the model topology to obtain near-optimal performance on the
+selected accelerator. While automatic selection typically provides near-optimal performance, experimenting with
+various Batch and Stream combinations might help you accelerate performance even further.</p>
 <img alt="../../../../_images/autobenchmarking.png" src="../../../../_images/autobenchmarking.png" />
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For details about inference processes, see the <a class="reference internal" href="../../openvino-runtime-user-guide.html#deploy-infer-openvino-runtime-user-guide"><span class="std std-ref">OpenVINO™ Runtime documentation</span></a>.</p>
+<p>For details about inference processes, see the
+<a class="reference internal" href="../../openvino-runtime-user-guide.html#deploy-infer-openvino-runtime-user-guide"><span class="std std-ref">OpenVINO™ Runtime documentation</span></a>.</p>
 </div>
 </section>
 </section>
 <section id="run-group-inference">
 <h2>Run Group Inference<a class="headerlink" href="#run-group-inference" title="Permalink to this headline">¶</a></h2>
-<div id="switcher-range" class="switcher-anchor"> Run Group Inference </div><p>DL Workbench provides a graphical interface to find the optimal configuration of batches and parallel requests on a certain machine.</p>
-<p>To run a range of inference streams, go to the <strong>Perform</strong> tab on the <strong>Projects</strong> page and open the <strong>Explore Inference Configurations</strong> subtab. Select <strong>Group Inference</strong> and click <strong>Configure Group Inference</strong>.</p>
+<div id="switcher-range" class="switcher-anchor"> Run Group Inference </div><p>DL Workbench provides a graphical interface to find the optimal configuration of batches and parallel requests on
+a certain machine.</p>
+<p>To run a range of inference streams, go to the <strong>Perform</strong> tab on the <strong>Projects</strong> page and open the
+<strong>Explore Inference Configurations</strong> subtab. Select <strong>Group Inference</strong> and click <strong>Configure Group Inference</strong>.</p>
 <img alt="../../../../_images/group_inference.png" src="../../../../_images/group_inference.png" />
-<p>On the <strong>Configure Group Inference</strong> page, select combinations of stream and batch parameters by clicking corresponding cells in the table. The cells you select are indicated with the check mark. Dark cells represent previously executed inferences. You can select them as well.</p>
+<p>On the <strong>Configure Group Inference</strong> page, select combinations of stream and batch parameters by clicking corresponding
+cells in the table. The cells you select are indicated with the check mark. Dark cells represent previously executed
+inferences. You can select them as well.</p>
 <img alt="../../../../_images/configure_group_inference.png" src="../../../../_images/configure_group_inference.png" />
 <p>Click <strong>Show Next 10 Columns and Rows</strong> to expand the table:</p>
 <img alt="../../../../_images/show_next_10-b.png" src="../../../../_images/show_next_10-b.png" />
@@ -1891,26 +1903,34 @@
 <img alt="../../../../_images/selected_inferences.png" src="../../../../_images/selected_inferences.png" />
 <p>Once you click <strong>Execute</strong>, the inference starts and you cannot proceed until it is done:</p>
 <img alt="../../../../_images/banner1-b.png" src="../../../../_images/banner1-b.png" />
-<p>Once the inference is completed, go to the <strong>Analyze</strong> tab. The table contains rows for each inference with a certain batch/parallel request configuration, and the graph indicates points corresponding to them:</p>
+<p>Once the inference is completed, go to the <strong>Analyze</strong> tab. The table contains rows for each inference with a certain
+batch/parallel request configuration, and the graph indicates points corresponding to them:</p>
 <img alt="../../../../_images/group_inference_results_01.png" src="../../../../_images/group_inference_results_01.png" />
-<p>Right above the graph, you can specify maximum latency to find the optimal configuration with the best throughput within the desired latency range. The point corresponding to this configuration turns blue:</p>
+<p>Right above the graph, you can specify maximum latency to find the optimal configuration with the best throughput
+within the desired latency range. The point corresponding to this configuration turns blue:</p>
 <img alt="../../../../_images/group_inference_results_02.png" src="../../../../_images/group_inference_results_02.png" />
-<p>To view information about latency, throughput, batch, and parallel requests of a specific job, hover your cursor over the corresponding point on the graph. Use <strong>Expand</strong> and <strong>Collapse</strong> buttons to change sizes of the chart and the table:</p>
+<p>To view information about latency, throughput, batch, and parallel requests of a specific job, hover your cursor
+over the corresponding point on the graph. Use <strong>Expand</strong> and <strong>Collapse</strong> buttons to change sizes of the chart
+and the table:</p>
 <img alt="../../../../_images/group_inference_results_03.png" src="../../../../_images/group_inference_results_03.png" />
 <section id="id1">
 <h3>Autobenchmarking<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>During the baseline inference with Batch 1 Stream 1 configurations, DL Workbench runs another inference where the parameters are set automatically depending on the model topology to obtain near-optimal performance on the selected accelerator. While automatic selection typically provides near-optimal performance, experimenting with various Batch and Stream combinations might help you accelerate performance even further.</p>
+<p>During the baseline inference with Batch 1 Stream 1 configurations, DL Workbench runs another inference where
+the parameters are set automatically depending on the model topology to obtain near-optimal performance on the
+selected accelerator. While automatic selection typically provides near-optimal performance, experimenting with
+various Batch and Stream combinations might help you accelerate performance even further.</p>
 <img alt="../../../../_images/autobenchmarking.png" src="../../../../_images/autobenchmarking.png" />
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For details about inference processes, see the <a class="reference internal" href="../../openvino-runtime-user-guide.html#deploy-infer-openvino-runtime-user-guide"><span class="std std-ref">OpenVINO™ Runtime documentation</span></a>.</p>
+<p>For details about inference processes, see the
+<a class="reference internal" href="../../openvino-runtime-user-guide.html#deploy-infer-openvino-runtime-user-guide"><span class="std std-ref">OpenVINO™ Runtime documentation</span></a>.</p>
 </div>
 </section>
 </section>
 <section id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="workbench_docs_Workbench_DG_View_Inference_Results.html#doxid-workbench-docs-workbench-d-g-view-inference-results"><span class="std std-ref">View Inference Results</span></a></p></li>
+<li><p><span class="xref std std-ref">View Inference Results</span></p></li>
 <li><p><a class="reference internal" href="../../../get-started-guide/samples/python-benchmark-tool.html#get-started-samples-python-benchmark"><span class="std std-ref">Benchmark Tool</span></a></p></li>
 <li><p><a class="reference internal" href="../dl-workbench-troubleshooting.html#dl-workbench-troubleshooting"><span class="std std-ref">Troubleshooting</span></a></p></li>
 </ul>

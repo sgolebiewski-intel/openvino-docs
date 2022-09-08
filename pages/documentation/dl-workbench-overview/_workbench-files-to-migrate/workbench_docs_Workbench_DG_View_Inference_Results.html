@@ -5,6 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta content="Guide on how to view inference results in OpenVINO Deep Learning Workbench with description of what information are included." name="description" />
+<meta content="OpenVINO, Deep Learning Workbench, DL Workbench, user guide, guide, inference, inference results, analyze, performance summary, precision-level-performance, kernel level performance, layers, filters" name="keywords" />
 
     <title>View Inference Results &#8212; OpenVINO™  documentation</title>
     
@@ -1854,12 +1856,13 @@
             
                 <div>
                   
-  <section id="view-inference-results">
-<span id="doxid-workbench-docs-workbench-d-g-view-inference-results"></span><span id="index-0"></span><h1>View Inference Results<a class="headerlink" href="#view-inference-results" title="Permalink to this headline">¶</a></h1>
+  <span class="target" id="workbench-inference-view-results"><span id="index-0"></span></span><section id="view-inference-results">
+<h1>View Inference Results<a class="headerlink" href="#view-inference-results" title="Permalink to this headline">¶</a></h1>
 <p><span class="target" id="doxid-workbench-docs-workbench-d-g-view-inference-results-1md-openvino-workbench-docs-workbench-dg-view-inference-results"></span></p>
 <section id="inference-results">
 <h2>Inference Results<a class="headerlink" href="#inference-results" title="Permalink to this headline">¶</a></h2>
-<p>Once an initial inference has been run with your project, you can view performance results on the <strong>Analyze</strong> tab of the <strong>Projects</strong> page.</p>
+<p>Once an initial inference has been run with your project, you can view performance results on the <strong>Analyze</strong>
+tab of the <strong>Projects</strong> page.</p>
 <img alt="../../../../_images/analyze_tab.png" src="../../../../_images/analyze_tab.png" />
 <ul class="simple">
 <li><p>Throughput/Latency graph</p></li>
@@ -1867,7 +1870,8 @@
 </ul>
 <p>If there are ways to improve the performance of your model, the DL Workbench notifies you in the <strong>Analyze</strong> tab:</p>
 <img alt="../../../../_images/performance_improvement.png" src="../../../../_images/performance_improvement.png" />
-<p>Clicking this button taken you to the bottom of the page with the detailed information on what can be improved and what steps you should take to get the most possible performance of this project.</p>
+<p>Clicking this button taken you to the bottom of the page with the detailed information on what can be improved
+and what steps you should take to get the most possible performance of this project.</p>
 <img alt="../../../../_images/precision_improvements.png" src="../../../../_images/precision_improvements.png" />
 <p>Scroll down to the three tabs below:</p>
 <ul class="simple">
@@ -1878,11 +1882,15 @@
 </section>
 <section id="performance-summary-tab">
 <span id="performance-summary"></span><h2>Performance Summary Tab<a class="headerlink" href="#performance-summary-tab" title="Permalink to this headline">¶</a></h2>
-<p>The tab contains the <strong>Per-layer Accumulated Metrics</strong> table and the <strong>Execution Attributes</strong> field, which includes throughput, latency, batch, and streams values of the selected inference.</p>
+<p>The tab contains the <strong>Per-layer Accumulated Metrics</strong> table and the <strong>Execution Attributes</strong> field, which includes
+throughput, latency, batch, and streams values of the selected inference.</p>
 <img alt="../../../../_images/performance_summary_tab.png" src="../../../../_images/performance_summary_tab.png" />
-<p>Click <strong>Expand Table</strong> to see the full <strong>Per-layer Accumulated Metrics</strong> table, which provides information on execution time of each layer type as well as the number layers in a certain precision. Layer types are arranged from the most to the least time taken.</p>
+<p>Click <strong>Expand Table</strong> to see the full <strong>Per-layer Accumulated Metrics</strong> table, which provides information on
+execution time of each layer type as well as the number layers in a certain precision. Layer types are arranged
+from the most to the least time taken.</p>
 <img alt="../../../../_images/perlayer_metrics.png" src="../../../../_images/perlayer_metrics.png" />
-<p>The table visually demonstrates the ratio of time taken by each layer type. Uncheck boxes in the <strong>Include to Distribution Chart</strong> column to filter out certain layers.</p>
+<p>The table visually demonstrates the ratio of time taken by each layer type. Uncheck boxes in the
+<strong>Include to Distribution Chart</strong> column to filter out certain layers.</p>
 <img alt="../../../../_images/perlayer_metrics_filter.png" src="../../../../_images/perlayer_metrics_filter.png" />
 </section>
 <section id="precision-level-performance-tab">
@@ -1890,14 +1898,18 @@
 <p>The tab contains the <strong>Precision Distribution</strong> table, <strong>Precision Transitions Matrix</strong>, and <strong>Execution Attributes</strong>.</p>
 <p>The <strong>Precision Distribution</strong> table provides information on execution time of layers in different precisions.</p>
 <img alt="../../../../_images/precision_distribution.png" src="../../../../_images/precision_distribution.png" />
-<p>The table visually demonstrates the ratio of time taken by each layer type. Uncheck boxes in the <strong>Include to Distribution Chart</strong> column to filter out certain layers.</p>
+<p>The table visually demonstrates the ratio of time taken by each layer type. Uncheck boxes in the
+<strong>Include to Distribution Chart</strong> column to filter out certain layers.</p>
 <img alt="../../../../_images/precision_distribution_filter.png" src="../../../../_images/precision_distribution_filter.png" />
-<p>The <strong>Precision Transitions Matrix</strong> shows how inference precision changed during model execution. For example, if the cell at the FP32 row and the FP16 column shows 8, this means that eight times there was a pattern of an FP32 layer being followed by an FP16 layer.</p>
+<p>The <strong>Precision Transitions Matrix</strong> shows how inference precision changed during model execution. For example,
+if the cell at the FP32 row and the FP16 column shows 8, this means that eight times there was a pattern of an FP32
+layer being followed by an FP16 layer.</p>
 <img alt="../../../../_images/precision_transitions.png" src="../../../../_images/precision_transitions.png" />
 </section>
 <section id="kernel-level-performance-tab">
 <span id="kernel-level-performance"></span><h2>Kernel-Level Performance Tab<a class="headerlink" href="#kernel-level-performance-tab" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>Kernel-Level Performance</strong> tab includes the <strong>Layers</strong> table and model graphs. See <a class="reference internal" href="workbench_docs_Workbench_DG_Visualize_Model.html#doxid-workbench-docs-workbench-d-g-visualize-model"><span class="std std-ref">Visualize Model</span></a> for details.</p>
+<p>The <strong>Kernel-Level Performance</strong> tab includes the <strong>Layers</strong> table and model graphs. See
+<a class="reference internal" href="workbench_docs_Workbench_DG_Visualize_Model.html#workbench-inference-visualize-model"><span class="std std-ref">Visualize Model</span></a> for details.</p>
 <p>The <strong>Layers</strong> table shows each layer of the executed graph of a model:</p>
 <img alt="../../../../_images/layer_table_00.png" src="../../../../_images/layer_table_00.png" />
 <p>For each layer, the table displays the following parameters:</p>
@@ -1911,8 +1923,10 @@
 <p>To see details about a layer:</p>
 <ol class="arabic simple">
 <li><p>Click the name of a layer. The layer gets highlighted on the <strong>Runtime Graph</strong> on the right.</p></li>
-<li><p>Click <strong>Details</strong> next to the layer name on the <strong>Runtime Graph</strong>. The details appear on the right to the table and provide information about execution parameters, layer parameters, and fusing information in case the layer was fused in the runtime.</p></li>
 </ol>
+<p>#. Click <strong>Details</strong> next to the layer name on the <strong>Runtime Graph</strong>. The details appear on the right to the table
+and provide information about execution parameters, layer parameters, and fusing information in case the layer was
+fused in the runtime.</p>
 <img alt="../../../../_images/layers_table_04.png" src="../../../../_images/layers_table_04.png" />
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1920,23 +1934,27 @@
 </div>
 <section id="sort-and-filter-layers">
 <h3>Sort and Filter Layers<a class="headerlink" href="#sort-and-filter-layers" title="Permalink to this headline">¶</a></h3>
-<p>You can sort layers by layer name, execution time, and execution order (layer information) by clicking the name of the corresponding column.</p>
-<p>To filter layers, select a column and a filter in the boxes above the table. Some filters by the <strong>Execution Order</strong> and <strong>Execution Time</strong> columns require providing a numerical value in the box that is opened automatically:</p>
+<p>You can sort layers by layer name, execution time, and execution order (layer information) by clicking the name of
+the corresponding column.</p>
+<p>To filter layers, select a column and a filter in the boxes above the table. Some filters by the <strong>Execution Order</strong>
+and <strong>Execution Time</strong> columns require providing a numerical value in the box that is opened automatically:</p>
 <img alt="../../../../_images/layers_table_02.png" src="../../../../_images/layers_table_02.png" />
-<p>To filter by multiple columns, click <strong>Add new filter</strong> after you specify all the data for the the current column. To remove a filter, click the red <em>remove</em> symbol on the left to it:</p>
+<p>To filter by multiple columns, click <strong>Add new filter</strong> after you specify all the data for the the current column.
+To remove a filter, click the red <em>remove</em> symbol on the left to it:</p>
 <img alt="../../../../_images/layers_table_03.png" src="../../../../_images/layers_table_03.png" />
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The filters you select are applied simultaneously.</p>
 </div>
-<p>Once you configure the filters, press <strong>Apply Filter</strong>. To apply a different filter, press <strong>Clear Filter</strong> and configure new filters.</p>
+<p>Once you configure the filters, press <strong>Apply Filter</strong>. To apply a different filter, press <strong>Clear Filter</strong> and
+configure new filters.</p>
 <img alt="../../../../_images/layers_table_05.png" src="../../../../_images/layers_table_05.png" />
 </section>
 </section>
 <section id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="workbench_docs_Workbench_DG_Visualize_Model.html#doxid-workbench-docs-workbench-d-g-visualize-model"><span class="std std-ref">Visualize Model Performance</span></a></p></li>
+<li><p><a class="reference internal" href="workbench_docs_Workbench_DG_Visualize_Model.html#workbench-inference-visualize-model"><span class="std std-ref">Visualize Model Performance</span></a></p></li>
 <li><p><a class="reference internal" href="workbench_docs_Workbench_DG_Int_8_Quantization.html#workbench-guide-quantization"><span class="std std-ref">INT8 Calibration</span></a></p></li>
 <li><p><a class="reference internal" href="../dl-workbench-troubleshooting.html#dl-workbench-troubleshooting"><span class="std std-ref">Troubleshooting</span></a></p></li>
 </ul>
