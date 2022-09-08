@@ -69,7 +69,7 @@ Compare Optimized and Parent Model Performance
 
 Go to the model page and check the performance of the imported and optimized models. Compare the throughput numbers 
 and click **Compare Projects**. Learn more about projects comparison on the 
-:ref:`Compare Performance <doxid-workbench_docs__workbench__d_g__compare__performance_between__two__versions_of__models>` page.
+:ref:`Compare Performance <workbench_inference__compare_performance>` page.
 
 .. note::
    Throughput is the number of images processed in a given amount of time. It is measured in frames per second (FPS). 

@@ -175,9 +175,9 @@ demonstration purposes only.*
 See Also
 ~~~~~~~~
 
-* :ref:`Visualize Model <doxid-workbench_docs__workbench__d_g__visualize__model>`
+* :ref:`Visualize Model <workbench_inference__visualize_model>`
 
-* :ref:`View Inference Results <doxid-workbench_docs__workbench__d_g__visualize__model>`
+* :ref:`View Inference Results <workbench_inference__view_results>`
 
 * :ref:`Troubleshooting <dl_workbench__troubleshooting>`
 
