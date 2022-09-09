@@ -1856,7 +1856,7 @@ can significantly improve performance and ensure that models process as many fra
 by specifying the following parameters:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.openvino.ai/latest/openvino_docs_deployment_optimization_guide_dldt_optimization_guide.html#throughput-mode-for-cpu">Streams</a> : stream is the number of instances of your model running simultaneously. Inferring the same model in several streams simultaneously leads to higher model performance.</p></li>
-<li><p><a class="reference internal" href="../../../resources/openvino-glossary.html#doxid-openvino-docs-o-v-glossary"><span class="std std-ref">Batches</span></a> : batch is the number of input data instances propagated to the model at a time.</p></li>
+<li><p><a class="reference internal" href="../../../resources/openvino-glossary.html#resources-glossary"><span class="std std-ref">Batches</span></a> : batch is the number of input data instances propagated to the model at a time.</p></li>
 </ul>
 <p>Using one of the methods or a combination of them allows getting a noticeable performance boost (especially for
 lightweight topologies) without any accuracy loss. Another optimization technique is the
