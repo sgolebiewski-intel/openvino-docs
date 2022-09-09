@@ -21,7 +21,7 @@ This example demonstrates the use of the
 to quantize an object detection model in the 
 :ref:`accuracy-aware mode <optim_perf__accuracy_quant_algorithm>`. 
 
-The `MobileNetV1 FPN <https://github.com/openvinotoolkit/open_model_zoo/blob/master/models/public/ssd_mobilenet_v1_fpn_coco/ssd_mobilenet_v1_fpn_coco.md>`__ 
+The `MobileNetV1 FPN <https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/public/ssd_mobilenet_v1_fpn_coco>`__ 
 model from TensorFlow for object detection task is used for this purpose. A custom 
 ``DataLoader`` is created to load the `COCO <https://cocodataset.org/>`__ dataset 
 for object detection task and the implementation of mAP COCO is used for the model 
@@ -45,10 +45,14 @@ How to Run the example
 
    .. ref-code-block:: cpp
 
-         omz_downloader --name ssd_mobilenet_v1_fpn_coco
-      2. Launch [Model Converter](@ref omz_tools_downloader) tool to generate Intermediate Representation (IR) files for the model:
-         ```sh
-         omz_converter --name ssd_mobilenet_v1_fpn_coco --mo <PATH_TO_MODEL_OPTIMIZER>/mo.py
+      omz_downloader --name ssd_mobilenet_v1_fpn_coco
+
+#. Launch `Model Converter <https://github.com/openvinotoolkit/open_model_zoo/blob/master/tools/model_tools/README.md#model-converter-usage>`__ 
+   tool to generate Intermediate Representation (IR) files for the model:
+
+   .. ref-code-block:: cpp
+
+      omz_converter --name ssd_mobilenet_v1_fpn_coco --mo <PATH_TO_MODEL_OPTIMIZER>/mo.py
 
 #. Launch the example script from the example directory:
 

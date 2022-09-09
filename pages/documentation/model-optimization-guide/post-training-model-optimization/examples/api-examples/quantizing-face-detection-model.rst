@@ -19,7 +19,7 @@ Quantizing Face Detection Model
 
 This example demonstrates the use of the :ref:`Post-training Optimization Tool API <optim_perf__pot_api>` 
 for the task of quantizing a face detection model. 
-The `MTCNN <https://github.com/openvinotoolkit/open_model_zoo/blob/master/models/public/mtcnn/mtcnn.md>`__ 
+The `MTCNN <https://github.com/openvinotoolkit/open_model_zoo/blob/master/models/public/mtcnn/>`__ 
 model from Caffe is used for this purpose. A custom ``DataLoader`` is created 
 to load `WIDER FACE <http://shuoyang1213.me/WIDERFACE/>`__ dataset for a face 
 detection task and the implementation of Recall metric is used for the model 

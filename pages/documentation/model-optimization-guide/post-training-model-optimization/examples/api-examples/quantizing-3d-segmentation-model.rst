@@ -21,7 +21,7 @@ Quantizing 3D Segmentation Model
 This example demonstrates the use of the 
 :ref:`Post-training Optimization Tool API <optim_perf__pot_api>` 
 for the task of quantizing a 3D segmentation model. The 
-`Brain Tumor Segmentation <https://github.com/openvinotoolkit/open_model_zoo/blob/master/models/public/brain-tumor-segmentation-0002/brain-tumor-segmentation-0002.md>`__ 
+`Brain Tumor Segmentation <https://github.com/openvinotoolkit/open_model_zoo/blob/master/models/public/brain-tumor-segmentation-0002/>`__ 
 model from PyTorch is used for this purpose. A custom ``DataLoader`` is created 
 to load images in NIfTI format from `Medical Segmentation Decathlon BRATS 2017 <http://medicaldecathlon.com/>`__ 
 dataset for 3D semantic segmentation task and the implementation of Dice Index 

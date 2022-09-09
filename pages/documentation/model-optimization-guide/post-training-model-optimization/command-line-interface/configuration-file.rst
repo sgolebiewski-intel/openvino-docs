@@ -80,8 +80,9 @@ used for model inference and validation (if supported):
   * ``"layout"`` - (Optional) Layout of input data. Supported values: 
     [``"NCHW"``, ``"NHWC"``, ``"CHW"``, ``"CWH"``]​.
 
-* **Accuracy Checker** engine. It relies on the Deep Learning Accuracy 
-  Validation Framework (Accuracy Checker) when inferencing DL models and 
+* **Accuracy Checker** engine. It relies on the 
+  `Deep Learning Accuracy Validation Framework <https://github.com/openvinotoolkit/open_model_zoo/blob/master/tools/accuracy_checker/README.md>`__ 
+  (Accuracy Checker) when inferencing DL models and 
   working with datasets. If you have annotations, you can benefit from this 
   mode by measuring accuracy. When this mode is selected, you can use the 
   accuracy-aware algorithms family. There are two options to define engine 

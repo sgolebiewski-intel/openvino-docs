@@ -31,10 +31,11 @@ Introduction
 Post-Training Optimization Tool command-line interface (CLI) is aimed at 
 optimizing models that are similar to the models from OpenVINO 
 `Model Zoo <https://github.com/openvinotoolkit/open_model_zoo>`__ 
-or if there is a valid AccuracyChecker Tool configuration file for the model. 
-Examples of AccuracyChecker configuration files can be found on 
-`GitHub <https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/public>`__. 
-Each model folder contains YAML configuration file that can be used with POT as is.
+or if there is a valid `AccuracyChecker Tool <https://github.com/openvinotoolkit/open_model_zoo/blob/master/tools/accuracy_checker/README.md>`__ 
+configuration file for the model. Examples of AccuracyChecker configuration 
+files can be found on `GitHub <https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/public>`__. 
+Each model folder contains YAML configuration file that can be used with POT 
+as is.
 
 .. note:: There is also the so-called :ref:`Simplified mode <optim_perf__pot_simplified>` 
    aimed at optimization of models from the Computer Vision domain and has a simple 

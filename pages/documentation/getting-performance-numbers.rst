@@ -34,7 +34,7 @@ to measure proper set of operations. Remember the following tips:
 .. note:: Some image pre-processing can be baked into OpenVINO IR and accelerated 
    accordingly. For more information, refer to 
    :ref:`Embedding the Pre-processing <conv_prep__add_optim_preprocess>` 
-   and `General Runtime Optimizations <../../optimization_guide/dldt_deployment_optimization_common>`__.
+   and :ref:`General Runtime Optimizations <optim_perf__deploy_general_optim>`.
 
 
 Tip 2: Try to Get Credible Data

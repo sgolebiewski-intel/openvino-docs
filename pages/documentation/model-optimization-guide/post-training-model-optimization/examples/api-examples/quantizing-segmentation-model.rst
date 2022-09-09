@@ -20,7 +20,7 @@ Quantizing Semantic Segmentation Model
 This example demonstrates the use of the 
 :ref:`Post-training Optimization Tool API <optim_perf__pot_api>` 
 for the task of quantizing a segmentation model. The 
-`DeepLabV3 <https://github.com/openvinotoolkit/open_model_zoo/blob/master/models/public/deeplabv3/deeplabv3.md>`__ 
+`DeepLabV3 <https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/public/deeplabv3>`__ 
 model from TensorFlow is used for this purpose. A custom ``DataLoader`` is 
 created to load the `Pascal VOC 2012 <http://host.robots.ox.ac.uk/pascal/VOC/voc2012/>`__ 
 dataset for semantic segmentation task and the implementation of Mean 
