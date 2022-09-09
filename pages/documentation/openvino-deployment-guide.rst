@@ -40,7 +40,7 @@ Once the :ref:`OpenVINO™ application development <deploy_infer__integrate_appl
   
   * using :ref:`OpenVINO Deployment Manager <deploy_infer__deploy_manager>` - providing a convenient way for creating a distribution package;
   
-  * using the advanced :ref:`local distribution <doxid-openvino_docs_deploy_local_distribution>` approach;
+  * using the advanced :ref:`local distribution <deploy_infer__deploy_local_distribution>` approach;
   
   * using `a static version of OpenVINO Runtime linked to the final app <https://github.com/openvinotoolkit/openvino/wiki/StaticLibraries>`__.
 
@@ -61,7 +61,7 @@ The table below shows which distribution type can be used for what target operat
       - See `https://pypi.org/project/openvino/ <https://pypi.org/project/openvino/>`__
     * - :ref:`OpenVINO Deployment Manager <deploy_infer__deploy_manager>`
       - All operating systems
-    * - :ref:`Local distribution <doxid-openvino_docs_deploy_local_distribution>`
+    * - :ref:`Local distribution <deploy_infer__deploy_local_distribution>`
       - All operating systems
     * - `Build OpenVINO statically and link to the final app <https://github.com/openvinotoolkit/openvino/wiki/StaticLibraries>`__
       - All operating systems
@@ -69,7 +69,7 @@ The table below shows which distribution type can be used for what target operat
 Granularity of Major Distribution Types
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The granularity of OpenVINO packages may vary for different distribution types. For example, the PyPI distribution of OpenVINO has a `single 'openvino' package <https://pypi.org/project/openvino/>`__ that contains all the runtime libraries and plugins, while a :ref:`local distribution <doxid-openvino_docs_deploy_local_distribution>` is a more configurable type providing higher granularity. Below are important details of the set of libraries included in the OpenVINO Runtime package:
+The granularity of OpenVINO packages may vary for different distribution types. For example, the PyPI distribution of OpenVINO has a `single 'openvino' package <https://pypi.org/project/openvino/>`__ that contains all the runtime libraries and plugins, while a :ref:`local distribution <deploy_infer__deploy_local_distribution>` is a more configurable type providing higher granularity. Below are important details of the set of libraries included in the OpenVINO Runtime package:
 
 .. image:: ./_assets/deployment_simplified.png
 
@@ -81,7 +81,7 @@ The granularity of OpenVINO packages may vary for different distribution types. 
 
 Here the term "optional" means that if the application does not use the capability enabled by the plugin, the plugin library or a package with the plugin is not needed in the final distribution.
 
-Building a local distribution will require more detailed information, and you will find it in the dedicated :ref:`Libraries for Local Distribution <doxid-openvino_docs_deploy_local_distribution>` article.
+Building a local distribution will require more detailed information, and you will find it in the dedicated :ref:`Libraries for Local Distribution <deploy_infer__deploy_local_distribution>` article.
 
 .. note:: Depending on your target OpenVINO devices, the following configurations 
    might be needed for deployed machines: :ref:`Configurations for GPU <install__config_gpu>`, 

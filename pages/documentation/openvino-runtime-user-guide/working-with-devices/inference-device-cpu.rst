@@ -266,8 +266,7 @@ To do so, set dynamic shapes explicitly, with defined upper bounds.
    .. ref-code-block:: cpp
 
       :ref:`ov::Core <doxid-classov_1_1_core>` core;
-      auto :ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>` = 
-      core.:ref:`read_model <doxid-classov_1_1_core_1ae0576a95f841c3a6f5e46e4802716981>`("model.xml");
+      auto :ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>` = core.:ref:`read_model <doxid-classov_1_1_core_1ae0576a95f841c3a6f5e46e4802716981>`("model.xml");
 
       :ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`->reshape({{:ref:`ov::Dimension <doxid-classov_1_1_dimension>`(1, 10), :ref:`ov::Dimension <doxid-classov_1_1_dimension>`(1, 20), :ref:`ov::Dimension <doxid-classov_1_1_dimension>`(1, 30), :ref:`ov::Dimension <doxid-classov_1_1_dimension>`(1, 40)}});
 
@@ -491,13 +490,13 @@ property must be set to `True`:
 
 .. tab:: C++
 
-   .. doxygensnippet:: ../../snippets/ov_denormals.cpp
+   .. doxygensnippet:: ../../../snippets/ov_denormals.cpp
       :language: cpp
       :fragment: [ov:intel_cpu:denormals_optimization:part0]
 
 .. tab:: Python
 
-   .. doxygensnippet:: ../../snippets/ov_denormals.py
+   .. doxygensnippet:: ../../../snippets/ov_denormals.py
       :language: python
       :fragment: [ov:intel_cpu:denormals_optimization:part0]
 

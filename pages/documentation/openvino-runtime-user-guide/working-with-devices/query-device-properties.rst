@@ -276,10 +276,10 @@ Or the current temperature of the ``MYRIAD`` device:
 
 .. tab:: C++
 
-.. ref-code-block:: cpp
+   .. ref-code-block:: cpp
 
-   auto compiled_model = core.:ref:`compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>`(:ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`, "MYRIAD");
-   float temperature = compiled_model.:ref:`get_property <doxid-classov_1_1_compiled_model_1a109d701ffe8b5de096961c7c98ff0bed>`(:ref:`ov::device::thermal <doxid-group__ov__runtime__cpp__prop__api_1ga821543ca749cd78a8ced9930e0fec466>`);
+      auto compiled_model = core.:ref:`compile_model <doxid-classov_1_1_core_1a46555f0803e8c29524626be08e7f5c5a>`(:ref:`model <doxid-group__ov__runtime__cpp__prop__api_1ga461856fdfb6d7533dc53355aec9e9fad>`, "MYRIAD");
+      float temperature = compiled_model.:ref:`get_property <doxid-classov_1_1_compiled_model_1a109d701ffe8b5de096961c7c98ff0bed>`(:ref:`ov::device::thermal <doxid-group__ov__runtime__cpp__prop__api_1ga821543ca749cd78a8ced9930e0fec466>`);
 
 .. tab:: Python
 

@@ -186,7 +186,7 @@ It is possible to build applications without the CMake interface by using: MSVC 
 Clearer Library Structure for Deployment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-OpenVINO 2022.1 introduced a reorganization of the libraries, to make deployment easier. In the previous versions, it was required to use several libraries to perform deployment steps. Now you can just use ``openvino`` or ``openvino_c`` based on your developing language, with the necessary plugins to complete your task. For example, ``openvino_intel_cpu_plugin`` and ``openvino_ir_frontend`` plugins will enable loading OpenVINO IRs and performing inference on the CPU device (for more details, see the :ref:`Local distribution with OpenVINO <doxid-openvino_docs_deploy_local_distribution>`).
+OpenVINO 2022.1 introduced a reorganization of the libraries, to make deployment easier. In the previous versions, it was required to use several libraries to perform deployment steps. Now you can just use ``openvino`` or ``openvino_c`` based on your developing language, with the necessary plugins to complete your task. For example, ``openvino_intel_cpu_plugin`` and ``openvino_ir_frontend`` plugins will enable loading OpenVINO IRs and performing inference on the CPU device (for more details, see the :ref:`Local distribution with OpenVINO <deploy_infer__deploy_local_distribution>`).
 
 Below are detailed comparisons of the library structure between OpenVINO 2022.1 and the previous versions:
 

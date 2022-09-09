@@ -188,7 +188,7 @@ Known Layers Limitation
   implemented via runtime reference.
 
 * ``FakeQuantize`` layer is supported via arm_compute library, in Low Precision 
-evaluation mode for suitable models, and via runtime reference otherwise.
+  evaluation mode for suitable models, and via runtime reference otherwise.
 
 Additional Resources
 ~~~~~~~~~~~~~~~~~~~~
