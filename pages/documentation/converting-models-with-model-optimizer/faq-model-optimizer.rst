@@ -85,7 +85,7 @@ You need the Caffe Python interface. In this case, do the following:
 3. What does the message "[ ERROR ]: Unable to create ports for node with id" mean?
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Most likely, Model Optimizer does not know how to infer output shapes of some layers in the given topology. To lessen the scope, compile the list of layers that are custom for Model Optimizer: present in the topology, absent in the :ref:`list of supported layers <doxid-openvino_docs__m_o__d_g_prepare_model__supported__frameworks__layers>` for the target framework. Then, refer to available options in the corresponding section in the :ref:`Custom Layers in Model Optimizer <extensibility__model_optimizer>` page.
+Most likely, Model Optimizer does not know how to infer output shapes of some layers in the given topology. To lessen the scope, compile the list of layers that are custom for Model Optimizer: present in the topology, absent in the :ref:`list of supported layers <resources__supp_fram_layers>` for the target framework. Then, refer to available options in the corresponding section in the :ref:`Custom Layers in Model Optimizer <extensibility__model_optimizer>` page.
 
 .. _question-4:
 

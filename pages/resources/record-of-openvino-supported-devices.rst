@@ -1,11 +1,23 @@
 .. index:: pair: page; Supported Devices
-.. _doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices:
+.. _resources__supp_devices:
+
+.. meta::
+   :description: OpenVINO Runtime can infer models in various formats and with 
+                 different configurations per device: CPU, GPU, VPU, or GNA, or 
+                 a combination of those devices.
+   :keywords: OpenVINO Runtime, inference, model inference, inference device, 
+              device configuration, Intel® Movidius™ Neural Compute Stick, 
+              Intel® processors, Intel CPU, Intel GPU, Intel GNA, VPU, 
+              vision processing unit, Gaussian neural accelerator coprocessor, 
+              HWC, NCHW, NCDHW, model formats, FP32 format, BF16 format, FP16 
+              format, I16 format, I8 format, U16 format, U8 format, CPU Plugin, 
+              GPU Plugin, VPU Plugins, GNA Plugin, ARM® CPU Plugin
 
 
 Supported Devices
 =================
 
-:target:`doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices_1md_openvino_docs_ov_runtime_ug_supported_plugins_supported_devices`
+:target:`resources__supp_devices_1md_openvino_docs_ov_runtime_ug_supported_plugins_supported_devices`
 
 The OpenVINO Runtime can infer models in different formats with various input and output formats. This section provides supported and optimal configurations per device. In OpenVINO™ documentation, "device" refers to an Intel® processors used for inference, which can be a supported CPU, GPU, VPU (vision processing unit), or GNA (Gaussian neural accelerator coprocessor), or a combination of those devices.
 
@@ -515,7 +527,7 @@ The following layers are supported by the plugins:
 | Upsampling                     | Supported     | Not Supported   | Not Supported | Not Supported | Not Supported     |
 +--------------------------------+---------------+-----------------+---------------+---------------+-------------------+
 
-\*- support is limited to the specific parameters. Refer to "Known Layers Limitation" section for the device :ref:`from the list of supported <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`.
+\*- support is limited to the specific parameters. Refer to "Known Layers Limitation" section for the device :ref:`from the list of supported <resources__supp_devices>`.
 
 \*\*- support is implemented via :ref:`Extensibility mechanism <extensibility__api_introduction>`.
 

@@ -1,11 +1,18 @@
 .. index:: pair: page; Glossary
-.. _doxid-openvino_docs__o_v__glossary:
+.. _resources__glossary:
 
+.. meta::
+   :description: Multiple lists of supported framework layers, divided by 
+                 frameworks.
+   :keywords: OpenVINO, resources, supported layers, supported framework 
+              layers, Caffe, Apache MXNet, supported symbols, TensorFlow, 
+              supported operations, TensorFlow 2, Keras, Kaldi, ONNX, ONNX 
+              Operators, supported operators, PaddlePaddle
 
 Glossary
 ========
 
-:target:`doxid-openvino_docs__o_v__glossary_1md_openvino_docs_glossary`
+:target:`resources__glossary_1md_openvino_docs_glossary`
 
 Acronyms and Abbreviations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -150,5 +157,5 @@ See Also
 
 * :ref:`Available Operations Sets <doxid-openvino_docs_ops_opset>`
 
-* :ref:`Terminology <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
+* :ref:`Terminology <resources__supp_devices>`
 

@@ -1,11 +1,19 @@
 .. index:: pair: page; Legal Information
-.. _doxid-openvino_docs__legal__information:
+.. _resources__info_legal:
 
+.. meta::
+   :description: Performance varies by use, configuration and other factors. 
+                 No product or component can be absolutely secure.
+   :keywords: OpenVINO™, legal information, OpenVINO logo, logo usage, Intel 
+              marks, Intel trademarks, Intel Corporation, OpenVINO toolkit, 
+              product safety, configuration
 
 Legal Information
 =================
 
-:target:`doxid-openvino_docs__legal__information_1md_openvino_docs_legal_information` Performance varies by use, configuration and other factors. Learn more at `www.intel.com/PerformanceIndex <https://www.intel.com/PerformanceIndex>`__.
+:target:`resources__info_legal_1md_openvino_docs_legal_information` 
+
+Performance varies by use, configuration and other factors. Learn more at `www.intel.com/PerformanceIndex <https://www.intel.com/PerformanceIndex>`__.
 
 Performance results are based on testing as of dates shown in configurations and may not reflect all publicly available updates. See backup for configuration details. No product or component can be absolutely secure.
 

@@ -153,7 +153,7 @@ For best performance when using the MULTI execution mode you should consider a f
 See Also
 ~~~~~~~~
 
-* :ref:`Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
+* :ref:`Supported Devices <resources__supp_devices>`
 
 * :ref:`Automatic Device Selection <deploy_infer__auto_plugin>`
 

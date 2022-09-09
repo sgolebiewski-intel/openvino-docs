@@ -52,7 +52,7 @@ Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification C++ sampl
     * - Validated images
       - An uncompressed image in the NV12 color format - \*.yuv
     * - Supported devices
-      - :ref:`All <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
+      - :ref:`All <resources__supp_devices>`
     * - Other language realization
       - :ref:`C <get_started__samples_c_nv12_img_class>`
 

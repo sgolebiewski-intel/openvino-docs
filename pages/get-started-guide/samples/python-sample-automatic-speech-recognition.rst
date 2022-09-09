@@ -61,7 +61,7 @@ Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification Python Sa
     * - Model Format
       - OpenVINO™ toolkit Intermediate Representation (.xml + .bin)
     * - Supported devices
-      - See `Execution Modes <#execution-modes>`__ section below and :ref:`List Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
+      - See `Execution Modes <#execution-modes>`__ section below and :ref:`List Supported Devices <resources__supp_devices>`
     * - Other language realization
       - :ref:`C++ <get_started__samples_cpp_speech>`
 

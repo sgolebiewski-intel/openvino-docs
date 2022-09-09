@@ -241,7 +241,7 @@ Troubleshooting
 
 **When running inference with the VPU plugin: "[VPU] Cannot convert layer <layer_name> due to unsupported layer type <layer_type>"**
 
-This means that the topology has a layer unsupported by the target VPU plugin. To resolve this issue, the custom layer can be implemented for the target device, using the :ref:`OpenVINO™ Extensibility mechanism <extensibility__api_introduction>`. To quickly get a working prototype, use the heterogeneous scenario with the default fallback policy (see the :ref:`Heterogeneous execution <deploy_infer__hetero_plugin>` section). Use the HETERO mode with a fallback device that supports this layer, for example, CPU: ``HETERO:MYRIAD,CPU``. For a list of VPU-supported layers, see the **Supported Layers** section of the :ref:`Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>` page.
+This means that the topology has a layer unsupported by the target VPU plugin. To resolve this issue, the custom layer can be implemented for the target device, using the :ref:`OpenVINO™ Extensibility mechanism <extensibility__api_introduction>`. To quickly get a working prototype, use the heterogeneous scenario with the default fallback policy (see the :ref:`Heterogeneous execution <deploy_infer__hetero_plugin>` section). Use the HETERO mode with a fallback device that supports this layer, for example, CPU: ``HETERO:MYRIAD,CPU``. For a list of VPU-supported layers, see the **Supported Layers** section of the :ref:`Supported Devices <resources__supp_devices>` page.
 
 Known Layers Limitations
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -261,7 +261,7 @@ Known Layers Limitations
 See Also
 ~~~~~~~~
 
-* :ref:`Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
+* :ref:`Supported Devices <resources__supp_devices>`
 
 * `Intel® Neural Compute Stick 2 Get Started <https://software.intel.com/en-us/neural-compute-stick/get-started>`__
 

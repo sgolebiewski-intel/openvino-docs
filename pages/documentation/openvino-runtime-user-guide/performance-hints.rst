@@ -168,5 +168,5 @@ Disabling the hints to emulate the pre-hints era (highly recommended before tryi
 See Also
 --------
 
-:ref:`Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
+:ref:`Supported Devices <resources__supp_devices>`
 

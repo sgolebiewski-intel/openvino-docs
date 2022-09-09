@@ -56,7 +56,7 @@ Hello Classification C sample application demonstrates how to use the following 
     * - Validated images
       - The sample uses OpenCV\* to `read input image <https://docs.opencv.org/master/d4/da8/group__imgcodecs.html#ga288b8b3da0892bd651fce07b3bbd3a56>`__ (\*.bmp, \*.png)
     * - Supported devices
-      - :ref:`All <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
+      - :ref:`All <resources__supp_devices>`
     * - Other language realization
       - :ref:`C++ <get_started__samples_cpp_hello_class>` , :ref:`Python <get_started__samples_python_hello_class>`
 

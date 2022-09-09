@@ -38,7 +38,7 @@ Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification C++ sampl
     * - Options
       - Values
     * - Supported devices
-      - :ref:`All <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
+      - :ref:`All <resources__supp_devices>`
     * - Other language realization
       - :ref:`Python <get_started__samples_python_query_device>`
 

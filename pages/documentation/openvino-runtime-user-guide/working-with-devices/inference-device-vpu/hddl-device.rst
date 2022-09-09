@@ -85,7 +85,7 @@ In addition to common parameters for both VPU plugins, the HDDL plugin accepts t
 Additional Resources
 ~~~~~~~~~~~~~~~~~~~~
 
-* :ref:`Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
+* :ref:`Supported Devices <resources__supp_devices>`
 
 * :ref:`VPU Plugins <deploy_infer__vpu_device>`
 

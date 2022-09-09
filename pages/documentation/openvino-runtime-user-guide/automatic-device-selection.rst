@@ -399,4 +399,4 @@ Additional Resources
 
 * :ref:`Running on Multiple Devices Simultaneously <deploy_infer__multi_plugin>`
 
-* :ref:`Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
+* :ref:`Supported Devices <resources__supp_devices>`

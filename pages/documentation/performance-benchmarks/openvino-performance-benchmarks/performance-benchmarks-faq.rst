@@ -195,7 +195,7 @@ Q7: Where can I purchase the specific hardware used in the benchmarking?
 
 **A** : Intel partners with vendors all over the world. For a list of Hardware 
 Manufacturers, see the `Intel® AI: In Production Partners & Solutions Catalog <https://www.intel.com/content/www/us/en/internet-of-things/ai-in-production/partners-solutions-catalog.html>`__. 
-For more details, see the :ref:`Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>` 
+For more details, see the :ref:`Supported Devices <resources__supp_devices>` 
 documentation. Before purchasing any hardware, you can test and run models 
 remotely, using `Intel® DevCloud for the Edge <http://devcloud.intel.com/edge/>`__.
 

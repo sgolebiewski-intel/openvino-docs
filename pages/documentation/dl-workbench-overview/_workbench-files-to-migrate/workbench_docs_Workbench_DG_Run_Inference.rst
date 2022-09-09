@@ -50,7 +50,7 @@ by specifying the following parameters:
 
 * `Streams <https://docs.openvino.ai/latest/openvino_docs_deployment_optimization_guide_dldt_optimization_guide.html#throughput-mode-for-cpu>`__ : stream is the number of instances of your model running simultaneously. Inferring the same model in several streams simultaneously leads to higher model performance.
 
-* :ref:`Batches <doxid-openvino_docs__o_v__glossary>` : batch is the number of input data instances propagated to the model at a time.
+* :ref:`Batches <resources__glossary>` : batch is the number of input data instances propagated to the model at a time.
 
 Using one of the methods or a combination of them allows getting a noticeable performance boost (especially for 
 lightweight topologies) without any accuracy loss. Another optimization technique is the 

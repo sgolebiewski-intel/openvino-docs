@@ -39,7 +39,7 @@ The following Python API is used in the application:
     * - Options
       - Values
     * - Supported devices
-      - :ref:`All <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
+      - :ref:`All <resources__supp_devices>`
     * - Other language realization
       - :ref:`C++ <get_started__samples_cpp_query_device>`
 

@@ -75,7 +75,7 @@ Single device cannot be shared across multiple processes.
 See Also
 ~~~~~~~~
 
-* :ref:`Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>`
+* :ref:`Supported Devices <resources__supp_devices>`
 
 * :ref:`VPU Plugins <deploy_infer__vpu_device>`
 

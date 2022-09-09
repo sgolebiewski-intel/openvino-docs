@@ -1,11 +1,19 @@
 .. index:: pair: page; Resources
-.. _doxid-resources:
+.. _resources__resources:
 
+.. meta::
+   :description: This section includes a variety of reference information: 
+                 additional resources, Intermediate Representation and 
+                 operation sets, as well as case studies.
+   :keywords: OpenVINO, resources, additional resources, Intermediate 
+              Representation, operation sets, opsets, case studies, reference, 
+              reference information, release notes, supported devices, 
+              glossary, legal information, OpenVINO IR
 
 Resources
 =========
 
-:target:`doxid-resources_1md_openvino_docs_resources_resources`
+:target:`resources__resources_1md_openvino_docs_resources_resources`
 
 .. toctree::
    :maxdepth: 1
@@ -40,9 +48,9 @@ Additional Resources
 
 `Release Notes <https://software.intel.com/content/www/us/en/develop/articles/openvino-relnotes.html>`__ contains change logs and notes for each OpenVINO release.
 
-:ref:`Supported Devices <doxid-openvino_docs__o_v__u_g_supported_plugins__supported__devices>` is compatibility information about supported hardware accelerators.
+:ref:`Supported Devices <resources__supp_devices>` is compatibility information about supported hardware accelerators.
 
-:ref:`Legal Information <doxid-openvino_docs__legal__information>` has trademark information and other legal statements.
+:ref:`Legal Information <resources__info_legal>` has trademark information and other legal statements.
 
 Intermediate Representation and Operations Sets
 -----------------------------------------------

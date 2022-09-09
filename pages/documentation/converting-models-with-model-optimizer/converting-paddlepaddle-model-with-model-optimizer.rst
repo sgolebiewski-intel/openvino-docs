@@ -28,7 +28,7 @@ Converting a PaddlePaddle Model
 Supported PaddlePaddle Layers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For the list of supported standard layers, refer to the :ref:`Supported Framework Layers <doxid-openvino_docs__m_o__d_g_prepare_model__supported__frameworks__layers>` page.
+For the list of supported standard layers, refer to the :ref:`Supported Framework Layers <resources__supp_fram_layers>` page.
 
 Officially Supported PaddlePaddle Models
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

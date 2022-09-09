@@ -1,11 +1,18 @@
 .. index:: pair: page; Supported Framework Layers
-.. _doxid-openvino_docs__m_o__d_g_prepare_model__supported__frameworks__layers:
+.. _resources__supp_fram_layers:
 
+.. meta::
+   :description: Multiple lists of supported framework layers, divided by 
+                 frameworks.
+   :keywords: OpenVINO, resources, supported layers, supported framework 
+              layers, Caffe, Apache MXNet, supported symbols, TensorFlow, 
+              supported operations, TensorFlow 2, Keras, Kaldi, ONNX, ONNX 
+              Operators, supported operators, PaddlePaddle
 
 Supported Framework Layers
 ==========================
 
-:target:`doxid-openvino_docs__m_o__d_g_prepare_model__supported__frameworks__layers_1md_openvino_docs_mo_dg_prepare_model_supported_frameworks_layers`
+:target:`resources__supp_fram_layers_1md_openvino_docs_mo_dg_prepare_model_supported_frameworks_layers`
 
 In this article, you can find lists of supported framework layers, divided by frameworks.
 
