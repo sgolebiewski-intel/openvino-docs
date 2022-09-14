@@ -1,0 +1,993 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>GPT-2 Text Prediction with OpenVINO &#8212; OpenVINO™  documentation</title>
+    
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/doxyrest-pygments.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <link href="../_static/css/media/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="../_static/css/openvino_sphinx_theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/button.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/input.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/textfield.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/tabs.css" type="text/css" />
+    <script src="../_static/js/openvino_sphinx_theme.js"></script>
+    <link rel="stylesheet" href="../_static/css/viewer.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-barchart-background@1.3.0/build/Plugin.Barchart.Background.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-deferred@1"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js"></script>
+    <script src="../_static/js/viewer.min.js"></script>
+    <script src="/assets/versions_raw.js"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/tabs.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/custom.js"></script>
+    <script src="../_static/js/graphs.js"></script>
+    <script src="../_static/js/graphs_ov_tf.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/target-highlight.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <link rel="canonical" href="https://docs.openvino.ai/latest/notebooks/223-gpt2-text-prediction-with-output.html" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Post-Training Quantization with TensorFlow Classification Model" href="301-tensorflow-training-openvino-pot-with-output.html" />
+    <link rel="prev" title="Image Colorization with OpenVINO" href="222-vision-image-colorization-with-output.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+      <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/logo.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../pages/get-started-guide.html">
+  Get Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../pages/documentation.html">
+  Documentation
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../tutorials.html">
+  Tutorials
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../api/api_reference.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../model_zoo.html">
+  Model Zoo
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../pages/resources.html">
+  Resources
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/openvinotoolkit/openvino" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="sst-github"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+</ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        
+<div class="dropdown sst-dropdown sst-dropdown-navbar">
+  <button class="btn sst-btn dropdown-toggle" type="button" id="version-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+  <div class="dropdown-menu" aria-labelledby="version-selector">
+  </div>
+</div>
+      </div>
+      
+      <div class="navbar-end-item">
+        
+
+<div class="dropdown sst-dropdown sst-dropdown-navbar">
+  <button class="btn sst-btn dropdown-toggle" type="button" id="language-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</button>
+  <div class="dropdown-menu" aria-labelledby="language-selector">
+    
+      
+        <a class="dropdown-item font-weight-bold" href="/openvino-docs/index.html">English</a>
+      
+    
+      
+        <a  class="dropdown-item" href="/cn/openvino-docs/index.html">Chinese</a>
+      
+    
+  </div>
+</div>
+
+      </div>
+      
+    </div>
+  </div>
+</div>
+        <div id="collapse-nav-wrapper" class="container-xl">
+          <button id="collapse-nav" class="button bttn-prm button-size-m" type="button" data-toggle="collapse" data-target="#nav-tree" aria-expanded="false" aria-controls="nav-tree">
+            Documentation navigation <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+      </nav>
+      <div class="transition-banner container-fluid alert alert-info alert-dismissible fade show" role="alert">
+        <p>OpenVINO 2022.1 introduces a new version of OpenVINO API (API 2.0). For more information on the changes and transition steps, see the <a href="https://docs.openvino.ai/latest/openvino_2_0_transition_guide.html">transition guide</a></p>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar" id="nav-tree"><form class="searchForm bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="icon fas fa-search"></i>
+    <input type="search" class="form-control" name="query" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notebooks
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks-installation.html">
+   Installation of OpenVINO™ Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="001-hello-world-with-output.html">
+   Hello Image Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="002-openvino-api-with-output.html">
+   OpenVINO™ Runtime API Tutorial
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="003-hello-segmentation-with-output.html">
+   Hello Image Segmentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="004-hello-detection-with-output.html">
+   Hello Object Detection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="101-tensorflow-to-openvino-with-output.html">
+   Convert a TensorFlow Model to OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="102-pytorch-onnx-to-openvino-with-output.html">
+   Convert a PyTorch Model to ONNX and OpenVINO™ IR
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="103-paddle-onnx-to-openvino-classification-with-output.html">
+   Convert a PaddlePaddle Model to ONNX and OpenVINO™ IR
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="104-model-tools-with-output.html">
+   Working with Open Model Zoo Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="105-language-quantize-bert-with-output.html">
+   Quantize NLP models with Post-Training Optimization Tool ​in OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="106-auto-device-with-output.html">
+   Automatic Device Selection with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="107-speech-recognition-quantization-with-output.html">
+   Quantize Speech Recognition Models with OpenVINO™ Post-Training Optimization Tool ​
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="110-ct-segmentation-quantize-nncf-with-output.html">
+   Quantize a Segmentation Model and Show Live Inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="110-ct-segmentation-quantize-with-output.html">
+   Quantize a Segmentation Model and Show Live Inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="111-detection-quantization-with-output.html">
+   Object Detection Quantization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="112-pytorch-post-training-quantization-nncf-with-output.html">
+   Post-Training Quantization of PyTorch models with NNCF
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="113-image-classification-quantization-with-output.html">
+   Quantization of Image Classification Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="114-quantization-simplified-mode-with-output.html">
+   INT8 Quantization with Post-training Optimization Tool (POT) in Simplified Mode tutorial
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="115-async-api-with-output.html">
+   Asynchronous Inference with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="201-vision-monodepth-with-output.html">
+   Monodepth Estimation with OpenVINO
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="202-vision-superresolution-image-with-output.html">
+   Single Image Super Resolution with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="202-vision-superresolution-video-with-output.html">
+   Video Super Resolution with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="203-meter-reader-with-output.html">
+   Industrial Meter Reader
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="204-named-entity-recognition-with-output.html">
+   Document Entity Extraction with OpenVINO
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="205-vision-background-removal-with-output.html">
+   Image Background Removal with U^2-Net and OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="206-vision-paddlegan-anime-with-output.html">
+   Photos to Anime with PaddleGAN and OpenVINO
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="207-vision-paddlegan-superresolution-with-output.html">
+   Super Resolution with PaddleGAN and OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="208-optical-character-recognition-with-output.html">
+   Optical Character Recognition (OCR) with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="209-handwritten-ocr-with-output.html">
+   Handwritten Chinese and Japanese OCR with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="210-ct-scan-live-inference-with-output.html">
+   Live Inference and Benchmark CT-scan Data with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="211-speech-to-text-with-output.html">
+   Speech to Text with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="212-onnx-style-transfer-with-output.html">
+   Style Transfer on ONNX Models with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="214-vision-paddle-classification-with-output.html">
+   PaddlePaddle Image Classification with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="215-image-inpainting-with-output.html">
+   Image In-painting with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="216-license-plate-recognition-with-output.html">
+   License Plate Recognition with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="217-vision-deblur-with-output.html">
+   Deblur Photos with DeblurGAN-v2 and OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="218-vehicle-detection-and-recognition-with-output.html">
+   Vehicle Detection And Recognition with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="219-knowledge-graphs-conve-with-output.html">
+   OpenVINO optimizations for Knowledge graphs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="220-yolov5-accuracy-check-and-quantization-with-output.html">
+   Quantize the Ultralytics YOLOv5 model and check accuracy using the OpenVINO POT API
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="221-machine-translation-with-output.html">
+   Machine translation demo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="222-vision-image-colorization-with-output.html">
+   Image Colorization with OpenVINO
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   GPT-2 Text Prediction with OpenVINO
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="301-tensorflow-training-openvino-pot-with-output.html">
+   Post-Training Quantization with TensorFlow Classification Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="301-tensorflow-training-openvino-with-output.html">
+   From Training to Deployment with TensorFlow and OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="302-pytorch-quantization-aware-training-with-output.html">
+   Quantization Aware Training with NNCF, using PyTorch framework
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="305-tensorflow-quantization-aware-training-with-output.html">
+   Quantization Aware Training with NNCF, using TensorFlow Framework
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="401-object-detection-with-output.html">
+   Live Object Detection with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="402-pose-estimation-with-output.html">
+   Live Human Pose Estimation with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="403-action-recognition-webcam-with-output.html">
+   Human Action Recognition with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="405-paddle-ocr-webcam-with-output.html">
+   PaddleOCR with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebook_utils-with-output.html">
+   Notebook Utils
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   GPT-2 Text Prediction with OpenVINO
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#imports">
+     Imports
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-model">
+     The model
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#download-gpt-2-from-open-model-zoo">
+       Download GPT-2 from Open Model Zoo
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#convert-gpt-2-to-openvino-ir">
+     Convert GPT-2 to OpenVINO IR
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#load-the-model">
+       Load the model
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pre-processing">
+     Pre-Processing
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#define-tokenizer">
+     Define tokenizer
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#define-softmax-layer">
+       Define Softmax layer
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#set-the-minimum-sequence-length">
+       Set the minimum sequence length
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#top-k-sampling">
+       Top-K sampling
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#main-processing-function">
+       Main Processing Function
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run">
+   Run
+  </a>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                <div class="tocsection download-docs">
+  <div class="dropdown sst-dropdown">
+    <button class="button bttn-prm button-size-m" data-display="static" type="button" id="download-options"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Download Docs
+    </button>
+    <div class="dropdown-menu" aria-labelledby="download-options">
+      <a class="dropdown-item" href="#" onclick="window.print()">.pdf</a>
+      <a id="download-zip-btn" class="dropdown-item" href="#">.zip</a>
+    </div>
+  </div>
+</div>
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+              
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+
+<div class="tocsection editthispage">
+    <a href="None">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+            
+                <div>
+                  
+  <section id="gpt-2-text-prediction-with-openvino">
+<h1>GPT-2 Text Prediction with OpenVINO<a class="headerlink" href="#gpt-2-text-prediction-with-openvino" title="Permalink to this headline">¶</a></h1>
+<p>This notebook shows a text prediction with OpenVINO. We use the
+<a class="reference external" href="https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/public/gpt-2">GPT-2</a>
+model, which is a part of the Generative Pre-trained Transformer (GPT)
+family. GPT-2 is pre-trained on a large corpus of English text using
+unsupervised training. The model is available from <a class="reference external" href="https://github.com/openvinotoolkit/open_model_zoo/">Open Model
+Zoo</a>, which we
+will use to download and convert the model to OpenVINO IR.</p>
+<section id="imports">
+<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">openvino.runtime</span> <span class="kn">import</span> <span class="n">Core</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Markdown</span><span class="p">,</span> <span class="n">display</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">GPT2Tokenizer</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;../utils&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="the-model">
+<h2>The model<a class="headerlink" href="#the-model" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># directory where the model will be downloaded.</span>
+<span class="n">base_model_dir</span> <span class="o">=</span> <span class="s2">&quot;model&quot;</span>
+
+<span class="c1"># name of the model</span>
+<span class="n">model_name</span> <span class="o">=</span> <span class="s1">&#39;gpt-2&#39;</span>
+
+<span class="c1"># desired precision</span>
+<span class="n">precision</span> <span class="o">=</span> <span class="s2">&quot;FP16&quot;</span>
+
+<span class="n">model_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;model/public/</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">precision</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2">.xml&quot;</span>
+<span class="n">model_weights_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;model/public/</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">precision</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2">.bin&quot;</span>
+</pre></div>
+</div>
+<section id="download-gpt-2-from-open-model-zoo">
+<h3>Download GPT-2 from Open Model Zoo<a class="headerlink" href="#download-gpt-2-from-open-model-zoo" title="Permalink to this headline">¶</a></h3>
+<p>We use <code class="docutils literal notranslate"><span class="pre">omz_downloader</span></code>, which is a command-line tool from the
+<code class="docutils literal notranslate"><span class="pre">openvino-dev</span></code> package. <code class="docutils literal notranslate"><span class="pre">omz_downloader</span></code> automatically creates a
+directory structure and downloads the selected model. Skip this step if
+the model is already downloaded. For this demo, we have to download and
+use <code class="docutils literal notranslate"><span class="pre">gpt-2</span></code> model.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download_command</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;omz_downloader &quot;</span> \
+                   <span class="sa">f</span><span class="s2">&quot;--name </span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2"> &quot;</span> \
+                   <span class="sa">f</span><span class="s2">&quot;--output_dir </span><span class="si">{</span><span class="n">base_model_dir</span><span class="si">}</span><span class="s2"> &quot;</span> \
+                   <span class="sa">f</span><span class="s2">&quot;--cache_dir </span><span class="si">{</span><span class="n">base_model_dir</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Download command: `</span><span class="si">{</span><span class="n">download_command</span><span class="si">}</span><span class="s2">`&quot;</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Downloading </span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2">... (This may take a few minutes depending on your connection.)&quot;</span><span class="p">))</span>
+
+<span class="o">!</span> <span class="nv">$download_command</span>
+</pre></div>
+</div>
+<p>Download command:
+<code class="docutils literal notranslate"><span class="pre">omz_downloader</span> <span class="pre">--name</span> <span class="pre">gpt-2</span> <span class="pre">--output_dir</span> <span class="pre">model</span> <span class="pre">--cache_dir</span> <span class="pre">model</span></code></p>
+<p>Downloading gpt-2… (This may take a few minutes depending on your
+connection.)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">################|| Downloading gpt-2 ||################</span>
+
+<span class="o">==========</span> <span class="n">Downloading</span> <span class="n">model</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">transformers</span><span class="o">-</span><span class="mf">4.9.1</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+
+
+<span class="o">==========</span> <span class="n">Downloading</span> <span class="n">model</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">gpt2</span><span class="o">/</span><span class="n">pytorch_model</span><span class="o">.</span><span class="n">bin</span>
+
+
+<span class="o">==========</span> <span class="n">Downloading</span> <span class="n">model</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">gpt2</span><span class="o">/</span><span class="n">config</span><span class="o">.</span><span class="n">json</span>
+
+
+<span class="o">==========</span> <span class="n">Downloading</span> <span class="n">model</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">gpt2</span><span class="o">/</span><span class="n">vocab</span><span class="o">.</span><span class="n">json</span>
+
+
+<span class="o">==========</span> <span class="n">Downloading</span> <span class="n">model</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">gpt2</span><span class="o">/</span><span class="n">merges</span><span class="o">.</span><span class="n">txt</span>
+
+
+<span class="o">==========</span> <span class="n">Downloading</span> <span class="n">model</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">packaging</span><span class="o">-</span><span class="mf">21.0</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+
+
+<span class="o">==========</span> <span class="n">Unpacking</span> <span class="n">model</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">transformers</span><span class="o">-</span><span class="mf">4.9.1</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+<span class="o">==========</span> <span class="n">Unpacking</span> <span class="n">model</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">packaging</span><span class="o">-</span><span class="mf">21.0</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+<span class="o">==========</span> <span class="n">Replacing</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">model</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">transformers</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
+<span class="o">==========</span> <span class="n">Replacing</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">model</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">transformers</span><span class="o">/</span><span class="n">file_utils</span><span class="o">.</span><span class="n">py</span>
+<span class="o">==========</span> <span class="n">Replacing</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">model</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">transformers</span><span class="o">/</span><span class="n">file_utils</span><span class="o">.</span><span class="n">py</span>
+<span class="o">==========</span> <span class="n">Replacing</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">model</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">transformers</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">datasets</span><span class="o">/</span><span class="n">glue</span><span class="o">.</span><span class="n">py</span>
+<span class="o">==========</span> <span class="n">Replacing</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">model</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">transformers</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">datasets</span><span class="o">/</span><span class="n">squad</span><span class="o">.</span><span class="n">py</span>
+<span class="o">==========</span> <span class="n">Replacing</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">model</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">transformers</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">datasets</span><span class="o">/</span><span class="n">language_modeling</span><span class="o">.</span><span class="n">py</span>
+<span class="o">==========</span> <span class="n">Replacing</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">model</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">transformers</span><span class="o">/</span><span class="n">file_utils</span><span class="o">.</span><span class="n">py</span>
+<span class="o">==========</span> <span class="n">Replacing</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">model</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">transformers</span><span class="o">/</span><span class="n">file_utils</span><span class="o">.</span><span class="n">py</span>
+<span class="o">==========</span> <span class="n">Replacing</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">model</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">transformers</span><span class="o">/</span><span class="n">modelcard</span><span class="o">.</span><span class="n">py</span>
+<span class="o">==========</span> <span class="n">Replacing</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">model</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">transformers</span><span class="o">/</span><span class="n">deepspeed</span><span class="o">.</span><span class="n">py</span>
+<span class="o">==========</span> <span class="n">Replacing</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">model</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">transformers</span><span class="o">/</span><span class="n">trainer</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="convert-gpt-2-to-openvino-ir">
+<h2>Convert GPT-2 to OpenVINO IR<a class="headerlink" href="#convert-gpt-2-to-openvino-ir" title="Permalink to this headline">¶</a></h2>
+<p>Since the downloaded GPT-2 model is not yet in OpenVINO IR format, we to
+perform an additional step to convert it. Use following command:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">Path</span><span class="p">(</span><span class="n">model_path</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+    <span class="n">convert_command</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;omz_converter --name </span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2"> --precisions </span><span class="si">{</span><span class="n">precision</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="sa">f</span><span class="s2">&quot; --download_dir </span><span class="si">{</span><span class="n">base_model_dir</span><span class="si">}</span><span class="s2"> --output_dir </span><span class="si">{</span><span class="n">base_model_dir</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Convert command: `</span><span class="si">{</span><span class="n">convert_command</span><span class="si">}</span><span class="s2">`&quot;</span><span class="p">))</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Converting </span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">))</span>
+
+    <span class="o">!</span> <span class="nv">$convert_command</span>
+</pre></div>
+</div>
+<p>Convert command:
+<code class="docutils literal notranslate"><span class="pre">omz_converter</span> <span class="pre">--name</span> <span class="pre">gpt-2</span> <span class="pre">--precisions</span> <span class="pre">FP16</span> <span class="pre">--download_dir</span> <span class="pre">model</span> <span class="pre">--output_dir</span> <span class="pre">model</span></code></p>
+<p>Converting gpt-2</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">==========</span> <span class="n">Converting</span> <span class="n">gpt</span><span class="o">-</span><span class="mi">2</span> <span class="n">to</span> <span class="n">ONNX</span>
+<span class="n">Conversion</span> <span class="n">to</span> <span class="n">ONNX</span> <span class="n">command</span><span class="p">:</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">k8sworker</span><span class="o">/</span><span class="n">cibuilds</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">OVNotebookOps</span><span class="o">-</span><span class="mi">231</span><span class="o">/.</span><span class="n">workspace</span><span class="o">/</span><span class="n">scm</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/.</span><span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python</span> <span class="o">--</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">k8sworker</span><span class="o">/</span><span class="n">cibuilds</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">OVNotebookOps</span><span class="o">-</span><span class="mi">231</span><span class="o">/.</span><span class="n">workspace</span><span class="o">/</span><span class="n">scm</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/.</span><span class="n">venv</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">openvino</span><span class="o">/</span><span class="n">model_zoo</span><span class="o">/</span><span class="n">internal_scripts</span><span class="o">/</span><span class="n">pytorch_to_onnx</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span><span class="o">=</span><span class="n">model</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mi">2</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span><span class="o">=/</span><span class="n">opt</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">k8sworker</span><span class="o">/</span><span class="n">cibuilds</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">OVNotebookOps</span><span class="o">-</span><span class="mi">231</span><span class="o">/.</span><span class="n">workspace</span><span class="o">/</span><span class="n">scm</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/.</span><span class="n">venv</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">openvino</span><span class="o">/</span><span class="n">model_zoo</span><span class="o">/</span><span class="n">models</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mi">2</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">name</span><span class="o">=</span><span class="n">create_model</span> <span class="o">--</span><span class="n">import</span><span class="o">-</span><span class="n">module</span><span class="o">=</span><span class="n">model</span> <span class="s1">&#39;--model-param=model_dir=r&quot;model/public/gpt-2/gpt2&quot;&#39;</span> <span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="n">names</span><span class="o">=</span><span class="nb">input</span> <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">names</span><span class="o">=</span><span class="n">output</span> <span class="s1">&#39;--input-shapes=[1,1024]&#39;</span> <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">file</span><span class="o">=</span><span class="n">model</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mf">2.</span><span class="n">onnx</span> <span class="o">--</span><span class="n">inputs</span><span class="o">-</span><span class="n">dtype</span><span class="o">=</span><span class="n">long</span> <span class="s1">&#39;--conversion-param=dynamic_axes={&quot;input&quot;: {0: &quot;batch_size&quot;, 1: &quot;sequence_len&quot;}, &quot;output&quot;: {0: &quot;batch_size&quot;, 1: &quot;sequence_len&quot;}}&#39;</span>
+
+<span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">k8sworker</span><span class="o">/</span><span class="n">cibuilds</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">OVNotebookOps</span><span class="o">-</span><span class="mi">231</span><span class="o">/.</span><span class="n">workspace</span><span class="o">/</span><span class="n">scm</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/.</span><span class="n">venv</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">transformers</span><span class="o">/</span><span class="n">models</span><span class="o">/</span><span class="n">gpt2</span><span class="o">/</span><span class="n">modeling_gpt2</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">196</span><span class="p">:</span> <span class="n">TracerWarning</span><span class="p">:</span> <span class="n">Converting</span> <span class="n">a</span> <span class="n">tensor</span> <span class="n">to</span> <span class="n">a</span> <span class="n">Python</span> <span class="nb">float</span> <span class="n">might</span> <span class="n">cause</span> <span class="n">the</span> <span class="n">trace</span> <span class="n">to</span> <span class="n">be</span> <span class="n">incorrect</span><span class="o">.</span> <span class="n">We</span> <span class="n">can</span><span class="s1">&#39;t record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!</span>
+  <span class="n">attn_weights</span> <span class="o">=</span> <span class="n">attn_weights</span> <span class="o">/</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ONNX</span> <span class="n">check</span> <span class="n">passed</span> <span class="n">successfully</span><span class="o">.</span>
+
+<span class="o">==========</span> <span class="n">Converting</span> <span class="n">gpt</span><span class="o">-</span><span class="mi">2</span> <span class="n">to</span> <span class="n">IR</span> <span class="p">(</span><span class="n">FP16</span><span class="p">)</span>
+<span class="n">Conversion</span> <span class="n">command</span><span class="p">:</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">k8sworker</span><span class="o">/</span><span class="n">cibuilds</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">OVNotebookOps</span><span class="o">-</span><span class="mi">231</span><span class="o">/.</span><span class="n">workspace</span><span class="o">/</span><span class="n">scm</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/.</span><span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python</span> <span class="o">--</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">k8sworker</span><span class="o">/</span><span class="n">cibuilds</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">OVNotebookOps</span><span class="o">-</span><span class="mi">231</span><span class="o">/.</span><span class="n">workspace</span><span class="o">/</span><span class="n">scm</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/.</span><span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">mo</span> <span class="o">--</span><span class="n">framework</span><span class="o">=</span><span class="n">onnx</span> <span class="o">--</span><span class="n">data_type</span><span class="o">=</span><span class="n">FP16</span> <span class="o">--</span><span class="n">output_dir</span><span class="o">=</span><span class="n">model</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">FP16</span> <span class="o">--</span><span class="n">model_name</span><span class="o">=</span><span class="n">gpt</span><span class="o">-</span><span class="mi">2</span> <span class="o">--</span><span class="nb">input</span><span class="o">=</span><span class="nb">input</span> <span class="o">--</span><span class="n">input_model</span><span class="o">=</span><span class="n">model</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mf">2.</span><span class="n">onnx</span> <span class="o">--</span><span class="n">output</span><span class="o">=</span><span class="n">output</span> <span class="s1">&#39;--layout=input(NS)&#39;</span>
+
+<span class="n">Model</span> <span class="n">Optimizer</span> <span class="n">arguments</span><span class="p">:</span>
+<span class="n">Common</span> <span class="n">parameters</span><span class="p">:</span>
+    <span class="o">-</span> <span class="n">Path</span> <span class="n">to</span> <span class="n">the</span> <span class="n">Input</span> <span class="n">Model</span><span class="p">:</span>  <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">k8sworker</span><span class="o">/</span><span class="n">cibuilds</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">OVNotebookOps</span><span class="o">-</span><span class="mi">231</span><span class="o">/.</span><span class="n">workspace</span><span class="o">/</span><span class="n">scm</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">notebooks</span><span class="o">/</span><span class="mi">223</span><span class="o">-</span><span class="n">gpt2</span><span class="o">-</span><span class="n">text</span><span class="o">-</span><span class="n">prediction</span><span class="o">/</span><span class="n">model</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mf">2.</span><span class="n">onnx</span>
+    <span class="o">-</span> <span class="n">Path</span> <span class="k">for</span> <span class="n">generated</span> <span class="n">IR</span><span class="p">:</span>    <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">k8sworker</span><span class="o">/</span><span class="n">cibuilds</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">OVNotebookOps</span><span class="o">-</span><span class="mi">231</span><span class="o">/.</span><span class="n">workspace</span><span class="o">/</span><span class="n">scm</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">notebooks</span><span class="o">/</span><span class="mi">223</span><span class="o">-</span><span class="n">gpt2</span><span class="o">-</span><span class="n">text</span><span class="o">-</span><span class="n">prediction</span><span class="o">/</span><span class="n">model</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">FP16</span>
+    <span class="o">-</span> <span class="n">IR</span> <span class="n">output</span> <span class="n">name</span><span class="p">:</span>   <span class="n">gpt</span><span class="o">-</span><span class="mi">2</span>
+    <span class="o">-</span> <span class="n">Log</span> <span class="n">level</span><span class="p">:</span>    <span class="n">ERROR</span>
+    <span class="o">-</span> <span class="n">Batch</span><span class="p">:</span>    <span class="n">Not</span> <span class="n">specified</span><span class="p">,</span> <span class="n">inherited</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">model</span>
+    <span class="o">-</span> <span class="n">Input</span> <span class="n">layers</span><span class="p">:</span>     <span class="nb">input</span>
+    <span class="o">-</span> <span class="n">Output</span> <span class="n">layers</span><span class="p">:</span>    <span class="n">output</span>
+    <span class="o">-</span> <span class="n">Input</span> <span class="n">shapes</span><span class="p">:</span>     <span class="n">Not</span> <span class="n">specified</span><span class="p">,</span> <span class="n">inherited</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">model</span>
+    <span class="o">-</span> <span class="n">Source</span> <span class="n">layout</span><span class="p">:</span>    <span class="n">Not</span> <span class="n">specified</span>
+    <span class="o">-</span> <span class="n">Target</span> <span class="n">layout</span><span class="p">:</span>    <span class="n">Not</span> <span class="n">specified</span>
+    <span class="o">-</span> <span class="n">Layout</span><span class="p">:</span>   <span class="nb">input</span><span class="p">(</span><span class="n">NS</span><span class="p">)</span>
+    <span class="o">-</span> <span class="n">Mean</span> <span class="n">values</span><span class="p">:</span>  <span class="n">Not</span> <span class="n">specified</span>
+    <span class="o">-</span> <span class="n">Scale</span> <span class="n">values</span><span class="p">:</span>     <span class="n">Not</span> <span class="n">specified</span>
+    <span class="o">-</span> <span class="n">Scale</span> <span class="n">factor</span><span class="p">:</span>     <span class="n">Not</span> <span class="n">specified</span>
+    <span class="o">-</span> <span class="n">Precision</span> <span class="n">of</span> <span class="n">IR</span><span class="p">:</span>  <span class="n">FP16</span>
+    <span class="o">-</span> <span class="n">Enable</span> <span class="n">fusing</span><span class="p">:</span>    <span class="kc">True</span>
+    <span class="o">-</span> <span class="n">User</span> <span class="n">transformations</span><span class="p">:</span>     <span class="n">Not</span> <span class="n">specified</span>
+    <span class="o">-</span> <span class="n">Reverse</span> <span class="nb">input</span> <span class="n">channels</span><span class="p">:</span>   <span class="kc">False</span>
+    <span class="o">-</span> <span class="n">Enable</span> <span class="n">IR</span> <span class="n">generation</span> <span class="k">for</span> <span class="n">fixed</span> <span class="nb">input</span> <span class="n">shape</span><span class="p">:</span>   <span class="kc">False</span>
+    <span class="o">-</span> <span class="n">Use</span> <span class="n">the</span> <span class="n">transformations</span> <span class="n">config</span> <span class="n">file</span><span class="p">:</span>  <span class="kc">None</span>
+<span class="n">Advanced</span> <span class="n">parameters</span><span class="p">:</span>
+    <span class="o">-</span> <span class="n">Force</span> <span class="n">the</span> <span class="n">usage</span> <span class="n">of</span> <span class="n">legacy</span> <span class="n">Frontend</span> <span class="n">of</span> <span class="n">Model</span> <span class="n">Optimizer</span> <span class="k">for</span> <span class="n">model</span> <span class="n">conversion</span> <span class="n">into</span> <span class="n">IR</span><span class="p">:</span>   <span class="kc">False</span>
+    <span class="o">-</span> <span class="n">Force</span> <span class="n">the</span> <span class="n">usage</span> <span class="n">of</span> <span class="n">new</span> <span class="n">Frontend</span> <span class="n">of</span> <span class="n">Model</span> <span class="n">Optimizer</span> <span class="k">for</span> <span class="n">model</span> <span class="n">conversion</span> <span class="n">into</span> <span class="n">IR</span><span class="p">:</span>  <span class="kc">False</span>
+<span class="n">OpenVINO</span> <span class="n">runtime</span> <span class="n">found</span> <span class="ow">in</span><span class="p">:</span>  <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">k8sworker</span><span class="o">/</span><span class="n">cibuilds</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">OVNotebookOps</span><span class="o">-</span><span class="mi">231</span><span class="o">/.</span><span class="n">workspace</span><span class="o">/</span><span class="n">scm</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/.</span><span class="n">venv</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">openvino</span>
+<span class="n">OpenVINO</span> <span class="n">runtime</span> <span class="n">version</span><span class="p">:</span>   <span class="mf">2022.1.0</span><span class="o">-</span><span class="mi">7019</span><span class="o">-</span><span class="n">cdb9bec7210</span><span class="o">-</span><span class="n">releases</span><span class="o">/</span><span class="mi">2022</span><span class="o">/</span><span class="mi">1</span>
+<span class="n">Model</span> <span class="n">Optimizer</span> <span class="n">version</span><span class="p">:</span>    <span class="mf">2022.1.0</span><span class="o">-</span><span class="mi">7019</span><span class="o">-</span><span class="n">cdb9bec7210</span><span class="o">-</span><span class="n">releases</span><span class="o">/</span><span class="mi">2022</span><span class="o">/</span><span class="mi">1</span>
+<span class="p">[</span> <span class="n">SUCCESS</span> <span class="p">]</span> <span class="n">Generated</span> <span class="n">IR</span> <span class="n">version</span> <span class="mi">11</span> <span class="n">model</span><span class="o">.</span>
+<span class="p">[</span> <span class="n">SUCCESS</span> <span class="p">]</span> <span class="n">XML</span> <span class="n">file</span><span class="p">:</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">k8sworker</span><span class="o">/</span><span class="n">cibuilds</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">OVNotebookOps</span><span class="o">-</span><span class="mi">231</span><span class="o">/.</span><span class="n">workspace</span><span class="o">/</span><span class="n">scm</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">notebooks</span><span class="o">/</span><span class="mi">223</span><span class="o">-</span><span class="n">gpt2</span><span class="o">-</span><span class="n">text</span><span class="o">-</span><span class="n">prediction</span><span class="o">/</span><span class="n">model</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">FP16</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mf">2.</span><span class="n">xml</span>
+<span class="p">[</span> <span class="n">SUCCESS</span> <span class="p">]</span> <span class="n">BIN</span> <span class="n">file</span><span class="p">:</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">k8sworker</span><span class="o">/</span><span class="n">cibuilds</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">OVNotebookOps</span><span class="o">-</span><span class="mi">231</span><span class="o">/.</span><span class="n">workspace</span><span class="o">/</span><span class="n">scm</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">notebooks</span><span class="o">/</span><span class="mi">223</span><span class="o">-</span><span class="n">gpt2</span><span class="o">-</span><span class="n">text</span><span class="o">-</span><span class="n">prediction</span><span class="o">/</span><span class="n">model</span><span class="o">/</span><span class="n">public</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">FP16</span><span class="o">/</span><span class="n">gpt</span><span class="o">-</span><span class="mf">2.</span><span class="n">bin</span>
+<span class="p">[</span> <span class="n">SUCCESS</span> <span class="p">]</span> <span class="n">Total</span> <span class="n">execution</span> <span class="n">time</span><span class="p">:</span> <span class="mf">4.40</span> <span class="n">seconds</span><span class="o">.</span>
+<span class="p">[</span> <span class="n">SUCCESS</span> <span class="p">]</span> <span class="n">Memory</span> <span class="n">consumed</span><span class="p">:</span> <span class="mi">1501</span> <span class="n">MB</span><span class="o">.</span>
+<span class="n">It</span><span class="s1">&#39;s been a while, check for a new version of Intel(R) Distribution of OpenVINO(TM) toolkit here https://software.intel.com/content/www/us/en/develop/tools/openvino-toolkit/download.html?cid=other&amp;source=prod&amp;campid=ww_2022_bu_IOTG_OpenVINO-2022-1&amp;content=upg_all&amp;medium=organic or on the GitHub*</span>
+<span class="p">[</span> <span class="n">INFO</span> <span class="p">]</span> <span class="n">The</span> <span class="n">model</span> <span class="n">was</span> <span class="n">converted</span> <span class="n">to</span> <span class="n">IR</span> <span class="n">v11</span><span class="p">,</span> <span class="n">the</span> <span class="n">latest</span> <span class="n">model</span> <span class="nb">format</span> <span class="n">that</span> <span class="n">corresponds</span> <span class="n">to</span> <span class="n">the</span> <span class="n">source</span> <span class="n">DL</span> <span class="n">framework</span> <span class="nb">input</span><span class="o">/</span><span class="n">output</span> <span class="nb">format</span><span class="o">.</span> <span class="n">While</span> <span class="n">IR</span> <span class="n">v11</span> <span class="ow">is</span> <span class="n">backwards</span> <span class="n">compatible</span> <span class="k">with</span> <span class="n">OpenVINO</span> <span class="n">Inference</span> <span class="n">Engine</span> <span class="n">API</span> <span class="n">v1</span><span class="mf">.0</span><span class="p">,</span> <span class="n">please</span> <span class="n">use</span> <span class="n">API</span> <span class="n">v2</span><span class="mf">.0</span> <span class="p">(</span><span class="k">as</span> <span class="n">of</span> <span class="mf">2022.1</span><span class="p">)</span> <span class="n">to</span> <span class="n">take</span> <span class="n">advantage</span> <span class="n">of</span> <span class="n">the</span> <span class="n">latest</span> <span class="n">improvements</span> <span class="ow">in</span> <span class="n">IR</span> <span class="n">v11</span><span class="o">.</span>
+<span class="n">Find</span> <span class="n">more</span> <span class="n">information</span> <span class="n">about</span> <span class="n">API</span> <span class="n">v2</span><span class="mf">.0</span> <span class="ow">and</span> <span class="n">IR</span> <span class="n">v11</span> <span class="n">at</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">docs</span><span class="o">.</span><span class="n">openvino</span><span class="o">.</span><span class="n">ai</span>
+</pre></div>
+</div>
+<section id="load-the-model">
+<h3>Load the model<a class="headerlink" href="#load-the-model" title="Permalink to this headline">¶</a></h3>
+<p>Converted models are located in a fixed directory structure, which
+indicates source, model name and precision. We start by building an
+Inference Engine object. Then we read the network architecture and model
+weights from the .xml and .bin files, respectively. Finally, we compile
+the model for the desired device. Because we use the dynamic shapes
+feature, which is only available on CPU, we must use <code class="docutils literal notranslate"><span class="pre">CPU</span></code> for the
+device. Dynamic shapes support on GPU is coming soon.</p>
+<p>Since the text recognition model has a dynamic input shape, you cannot
+directly switch device to <code class="docutils literal notranslate"><span class="pre">GPU</span></code> for inference on integrated or
+discrete Intel GPUs. In order to run inference on iGPU or dGPU with this
+model, you will need to resize the inputs to this model to use a fixed
+size and then try running the inference on <code class="docutils literal notranslate"><span class="pre">GPU</span></code> device.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># initialize inference engine</span>
+<span class="n">ie_core</span> <span class="o">=</span> <span class="n">Core</span><span class="p">()</span>
+
+<span class="c1"># read the model and corresponding weights from file</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">ie_core</span><span class="o">.</span><span class="n">read_model</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model_path</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">model_weights_path</span><span class="p">)</span>
+
+<span class="c1"># assign dynamic shapes to every input layer</span>
+<span class="k">for</span> <span class="n">input_layer</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">inputs</span><span class="p">:</span>
+    <span class="n">input_shape</span> <span class="o">=</span> <span class="n">input_layer</span><span class="o">.</span><span class="n">partial_shape</span>
+    <span class="n">input_shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="n">input_shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">reshape</span><span class="p">({</span><span class="n">input_layer</span><span class="p">:</span> <span class="n">input_shape</span><span class="p">})</span>
+
+<span class="c1"># compile the model for CPU devices</span>
+<span class="n">compiled_model</span> <span class="o">=</span> <span class="n">ie_core</span><span class="o">.</span><span class="n">compile_model</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">device_name</span><span class="o">=</span><span class="s2">&quot;CPU&quot;</span><span class="p">)</span>
+
+<span class="c1"># get input and output names of nodes</span>
+<span class="n">input_keys</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">compiled_model</span><span class="o">.</span><span class="n">inputs</span><span class="p">))</span>
+<span class="n">output_keys</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">compiled_model</span><span class="o">.</span><span class="n">outputs</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Input keys are the names of the input nodes and output keys contain
+names of the output nodes of the network. In the case of GPT-2, we have
+<code class="docutils literal notranslate"><span class="pre">batch</span> <span class="pre">size</span></code> and <code class="docutils literal notranslate"><span class="pre">sequence</span> <span class="pre">length</span></code> as inputs and <code class="docutils literal notranslate"><span class="pre">batch</span> <span class="pre">size</span></code>,
+<code class="docutils literal notranslate"><span class="pre">sequence</span> <span class="pre">length</span></code> and <code class="docutils literal notranslate"><span class="pre">vocab</span> <span class="pre">size</span></code> as outputs.</p>
+</section>
+</section>
+<section id="pre-processing">
+<h2>Pre-Processing<a class="headerlink" href="#pre-processing" title="Permalink to this headline">¶</a></h2>
+<p>NLP models often take a list of tokens as a standard input. A token is a
+single word mapped to an integer. To provide the proper input, we use a
+vocabulary file to handle the mapping. So first let’s load the
+vocabulary file.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">load_vocab_file</span><span class="p">(</span><span class="n">vocab_file_path</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">vocab_file_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">content</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vocal_file_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;model/public/</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2">/gpt2/vocab.json&quot;</span>
+<span class="n">vocab</span> <span class="o">=</span> <span class="n">load_vocab_file</span><span class="p">(</span><span class="n">vocal_file_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="define-tokenizer">
+<h2>Define tokenizer<a class="headerlink" href="#define-tokenizer" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tokenizer</span> <span class="o">=</span> <span class="n">GPT2Tokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;gpt2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this function converts text to tokens</span>
+<span class="k">def</span> <span class="nf">tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">input_ids</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">(</span><span class="n">text</span><span class="p">)[</span><span class="s1">&#39;input_ids&#39;</span><span class="p">]</span>
+    <span class="n">input_ids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">input_ids</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">input_ids</span>
+</pre></div>
+</div>
+<p>The last token in the vocabulary list is an <code class="docutils literal notranslate"><span class="pre">endoftext</span></code> token. We
+store the index of this token in order to use this index as padding at
+later stage.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eos_token_id</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">vocab</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">tokenizer</span><span class="o">.</span><span class="n">_convert_id_to_token</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vocab</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;&lt;|endoftext|&gt;&#39;</span>
+</pre></div>
+</div>
+<section id="define-softmax-layer">
+<h3>Define Softmax layer<a class="headerlink" href="#define-softmax-layer" title="Permalink to this headline">¶</a></h3>
+<p>A softmax function is used to convert top-k logits into a probability
+distribution.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">softmax</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">e_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+    <span class="n">summation</span> <span class="o">=</span> <span class="n">e_x</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">e_x</span> <span class="o">/</span> <span class="n">summation</span>
+</pre></div>
+</div>
+</section>
+<section id="set-the-minimum-sequence-length">
+<h3>Set the minimum sequence length<a class="headerlink" href="#set-the-minimum-sequence-length" title="Permalink to this headline">¶</a></h3>
+<p>If the minimum sequence length is not reached, the following code will
+reduce the probability of the <code class="docutils literal notranslate"><span class="pre">eos</span></code> token occurring. This continues
+the process of generating the next words.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">process_logits</span><span class="p">(</span><span class="n">input_ids</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">eos_token_id</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="n">cur_length</span> <span class="o">=</span> <span class="n">input_ids</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">cur_length</span> <span class="o">&lt;</span> <span class="n">min_length</span><span class="p">:</span>
+        <span class="n">scores</span><span class="p">[:,</span> <span class="n">eos_token_id</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">scores</span>
+</pre></div>
+</div>
+</section>
+<section id="top-k-sampling">
+<h3>Top-K sampling<a class="headerlink" href="#top-k-sampling" title="Permalink to this headline">¶</a></h3>
+<p>In Top-K sampling, we filter the K most likely next words and
+redistribute the probability mass among only those K next words.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_top_k_logits</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">top_k</span><span class="p">):</span>
+    <span class="n">filter_value</span> <span class="o">=</span> <span class="o">-</span><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span>
+    <span class="n">top_k</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">top_k</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">scores</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">top_k_scores</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="o">-</span><span class="n">scores</span><span class="p">)[:,</span> <span class="p">:</span><span class="n">top_k</span><span class="p">]</span>
+    <span class="n">indices_to_remove</span> <span class="o">=</span> <span class="n">scores</span> <span class="o">&lt;</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">top_k_scores</span><span class="p">)</span>
+    <span class="n">filtred_scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">indices_to_remove</span><span class="p">,</span>
+                                 <span class="n">fill_value</span><span class="o">=</span><span class="n">filter_value</span><span class="p">)</span><span class="o">.</span><span class="n">filled</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">filtred_scores</span>
+</pre></div>
+</div>
+</section>
+<section id="main-processing-function">
+<h3>Main Processing Function<a class="headerlink" href="#main-processing-function" title="Permalink to this headline">¶</a></h3>
+<p>Generating the predicted sequence.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_sequence</span><span class="p">(</span><span class="n">input_ids</span><span class="p">,</span> <span class="n">max_sequence_length</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span>
+                      <span class="n">eos_token_id</span><span class="o">=</span><span class="n">eos_token_id</span><span class="p">):</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">cur_input_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">input_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">pad_len</span> <span class="o">=</span> <span class="n">max_sequence_length</span> <span class="o">-</span> <span class="n">cur_input_len</span>
+        <span class="n">model_input</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">input_ids</span><span class="p">,</span>
+                                      <span class="p">[[</span><span class="n">eos_token_id</span><span class="p">]</span> <span class="o">*</span> <span class="n">pad_len</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="c1"># passing the padded sequnce into the model</span>
+        <span class="n">outputs</span> <span class="o">=</span> <span class="n">compiled_model</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="n">model_input</span><span class="p">])[</span><span class="n">output_keys</span><span class="p">]</span>
+        <span class="n">next_token_logits</span> <span class="o">=</span> <span class="n">outputs</span><span class="p">[:,</span> <span class="n">cur_input_len</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+        <span class="c1"># pre-process distribution</span>
+        <span class="n">next_token_scores</span> <span class="o">=</span> <span class="n">process_logits</span><span class="p">(</span><span class="n">input_ids</span><span class="p">,</span>
+                                           <span class="n">next_token_logits</span><span class="p">,</span> <span class="n">eos_token_id</span><span class="p">)</span>
+        <span class="n">top_k</span> <span class="o">=</span> <span class="mi">20</span>
+        <span class="n">next_token_scores</span> <span class="o">=</span> <span class="n">get_top_k_logits</span><span class="p">(</span><span class="n">next_token_scores</span><span class="p">,</span> <span class="n">top_k</span><span class="p">)</span>
+        <span class="c1"># get next token id</span>
+        <span class="n">probs</span> <span class="o">=</span> <span class="n">softmax</span><span class="p">(</span><span class="n">next_token_scores</span><span class="p">)</span>
+        <span class="n">next_tokens</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">probs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span>
+                                       <span class="n">p</span><span class="o">=</span><span class="n">probs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="c1"># break the loop if max length or end of text token is reached</span>
+        <span class="k">if</span> <span class="n">cur_input_len</span> <span class="o">==</span> <span class="n">max_sequence_length</span> <span class="ow">or</span> <span class="n">next_tokens</span> <span class="o">==</span> <span class="n">eos_token_id</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">input_ids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">input_ids</span><span class="p">,</span> <span class="p">[</span><span class="n">next_tokens</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">input_ids</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="run">
+<h1>Run<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">text</span></code> variable below is the input used to generate a predicted
+sequence.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Deep learning is a type of machine learning that uses neural networks&quot;</span>
+<span class="n">input_ids</span> <span class="o">=</span> <span class="n">tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="n">output_ids</span> <span class="o">=</span> <span class="n">generate_sequence</span><span class="p">(</span><span class="n">input_ids</span><span class="p">)</span>
+<span class="n">S</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span>
+<span class="c1"># Convert IDs to words and make the sentence from it</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">output_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+    <span class="n">S</span> <span class="o">+=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">convert_tokens_to_string</span><span class="p">(</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">_convert_id_to_token</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Input Text: &quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Predicted Sequence:</span><span class="si">{</span><span class="n">S</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Input</span> <span class="n">Text</span><span class="p">:</span>  <span class="n">Deep</span> <span class="n">learning</span> <span class="ow">is</span> <span class="n">a</span> <span class="nb">type</span> <span class="n">of</span> <span class="n">machine</span> <span class="n">learning</span> <span class="n">that</span> <span class="n">uses</span> <span class="n">neural</span> <span class="n">networks</span>
+
+<span class="n">Predicted</span> <span class="n">Sequence</span><span class="p">:</span> <span class="n">Deep</span> <span class="n">learning</span> <span class="ow">is</span> <span class="n">a</span> <span class="nb">type</span> <span class="n">of</span> <span class="n">machine</span> <span class="n">learning</span> <span class="n">that</span> <span class="n">uses</span> <span class="n">neural</span> <span class="n">networks</span> <span class="n">to</span> <span class="n">understand</span> <span class="n">information</span> <span class="ow">or</span> <span class="n">to</span> <span class="n">predict</span> <span class="n">behavior</span><span class="o">.</span> <span class="n">This</span> <span class="n">can</span> <span class="n">involve</span> <span class="n">large</span> <span class="n">amounts</span> <span class="n">of</span> <span class="n">data</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">use</span> <span class="n">of</span> <span class="n">algorithms</span> <span class="n">such</span> <span class="k">as</span> <span class="n">supervised</span> <span class="n">learning</span><span class="o">.</span> <span class="n">While</span> <span class="n">many</span> <span class="n">neural</span> <span class="n">networks</span> <span class="n">perform</span> <span class="n">very</span> <span class="n">well</span><span class="p">,</span> <span class="n">the</span> <span class="n">majority</span> <span class="n">are</span> <span class="n">quite</span> <span class="n">inefficient</span> <span class="n">because</span> <span class="n">they</span> <span class="n">can</span> <span class="n">only</span> <span class="n">perform</span> <span class="n">at</span> <span class="n">a</span> <span class="n">few</span> <span class="n">hundred</span> <span class="n">bits</span> <span class="ow">in</span> <span class="n">number</span><span class="o">.</span> <span class="n">To</span> <span class="n">understand</span> <span class="n">how</span> <span class="n">fast</span> <span class="n">the</span> <span class="n">machine</span> <span class="n">learning</span> <span class="n">will</span> <span class="n">take</span> <span class="n">to</span> <span class="n">learn</span> <span class="n">a</span> <span class="n">new</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">data</span><span class="p">,</span> <span class="n">I</span> <span class="n">would</span> <span class="n">like</span> <span class="n">to</span> <span class="n">review</span> <span class="n">how</span> <span class="n">fast</span> <span class="n">the</span> <span class="n">machine</span> <span class="n">learning</span> <span class="n">will</span> <span class="n">take</span> <span class="n">to</span> <span class="n">learn</span> <span class="n">data</span><span class="o">.</span> <span class="n">It</span> <span class="n">has</span> <span class="n">been</span> <span class="n">suggested</span> <span class="n">that</span> <span class="n">it</span> <span class="n">will</span> <span class="n">take</span> <span class="n">only</span> <span class="mi">30</span><span class="n">s</span> <span class="k">for</span> <span class="n">a</span> <span class="n">machine</span> <span class="n">to</span> <span class="n">learn</span> <span class="n">a</span> <span class="n">large</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">data</span><span class="p">,</span> <span class="ow">and</span> <span class="mi">60</span><span class="n">s</span> <span class="k">for</span> <span class="n">a</span> <span class="n">machine</span> <span class="n">to</span> <span class="n">learn</span> <span class="n">a</span> <span class="n">small</span>
+</pre></div>
+</div>
+</section>
+
+
+                </div>
+            
+            
+                <div class='prev-next-bottom'>
+                  
+    <a class='button bttn-sec button-size-l' id="prev-link" href="222-vision-image-colorization-with-output.html" title="previous page">Prev</a>
+    <a class='button bttn-sec button-size-l' id="next-link" href="301-tensorflow-training-openvino-pot-with-output.html" title="next page">Next</a>
+
+                </div>
+            
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Intel®.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

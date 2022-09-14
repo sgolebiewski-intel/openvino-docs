@@ -1,0 +1,1301 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Industrial Meter Reader &#8212; OpenVINO™  documentation</title>
+    
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/doxyrest-pygments.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <link href="../_static/css/media/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="../_static/css/openvino_sphinx_theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/button.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/input.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/textfield.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/tabs.css" type="text/css" />
+    <script src="../_static/js/openvino_sphinx_theme.js"></script>
+    <link rel="stylesheet" href="../_static/css/viewer.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-barchart-background@1.3.0/build/Plugin.Barchart.Background.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-deferred@1"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js"></script>
+    <script src="../_static/js/viewer.min.js"></script>
+    <script src="/assets/versions_raw.js"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/tabs.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/custom.js"></script>
+    <script src="../_static/js/graphs.js"></script>
+    <script src="../_static/js/graphs_ov_tf.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/target-highlight.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <link rel="canonical" href="https://docs.openvino.ai/latest/notebooks/203-meter-reader-with-output.html" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Document Entity Extraction with OpenVINO" href="204-named-entity-recognition-with-output.html" />
+    <link rel="prev" title="Video Super Resolution with OpenVINO™" href="202-vision-superresolution-video-with-output.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+      <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/logo.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../pages/get-started-guide.html">
+  Get Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../pages/documentation.html">
+  Documentation
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../tutorials.html">
+  Tutorials
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../api/api_reference.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../model_zoo.html">
+  Model Zoo
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../pages/resources.html">
+  Resources
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/openvinotoolkit/openvino" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="sst-github"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+</ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        
+<div class="dropdown sst-dropdown sst-dropdown-navbar">
+  <button class="btn sst-btn dropdown-toggle" type="button" id="version-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+  <div class="dropdown-menu" aria-labelledby="version-selector">
+  </div>
+</div>
+      </div>
+      
+      <div class="navbar-end-item">
+        
+
+<div class="dropdown sst-dropdown sst-dropdown-navbar">
+  <button class="btn sst-btn dropdown-toggle" type="button" id="language-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</button>
+  <div class="dropdown-menu" aria-labelledby="language-selector">
+    
+      
+        <a class="dropdown-item font-weight-bold" href="/openvino-docs/index.html">English</a>
+      
+    
+      
+        <a  class="dropdown-item" href="/cn/openvino-docs/index.html">Chinese</a>
+      
+    
+  </div>
+</div>
+
+      </div>
+      
+    </div>
+  </div>
+</div>
+        <div id="collapse-nav-wrapper" class="container-xl">
+          <button id="collapse-nav" class="button bttn-prm button-size-m" type="button" data-toggle="collapse" data-target="#nav-tree" aria-expanded="false" aria-controls="nav-tree">
+            Documentation navigation <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+      </nav>
+      <div class="transition-banner container-fluid alert alert-info alert-dismissible fade show" role="alert">
+        <p>OpenVINO 2022.1 introduces a new version of OpenVINO API (API 2.0). For more information on the changes and transition steps, see the <a href="https://docs.openvino.ai/latest/openvino_2_0_transition_guide.html">transition guide</a></p>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar" id="nav-tree"><form class="searchForm bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="icon fas fa-search"></i>
+    <input type="search" class="form-control" name="query" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notebooks
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks-installation.html">
+   Installation of OpenVINO™ Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="001-hello-world-with-output.html">
+   Hello Image Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="002-openvino-api-with-output.html">
+   OpenVINO™ Runtime API Tutorial
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="003-hello-segmentation-with-output.html">
+   Hello Image Segmentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="004-hello-detection-with-output.html">
+   Hello Object Detection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="101-tensorflow-to-openvino-with-output.html">
+   Convert a TensorFlow Model to OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="102-pytorch-onnx-to-openvino-with-output.html">
+   Convert a PyTorch Model to ONNX and OpenVINO™ IR
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="103-paddle-onnx-to-openvino-classification-with-output.html">
+   Convert a PaddlePaddle Model to ONNX and OpenVINO™ IR
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="104-model-tools-with-output.html">
+   Working with Open Model Zoo Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="105-language-quantize-bert-with-output.html">
+   Quantize NLP models with Post-Training Optimization Tool ​in OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="106-auto-device-with-output.html">
+   Automatic Device Selection with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="107-speech-recognition-quantization-with-output.html">
+   Quantize Speech Recognition Models with OpenVINO™ Post-Training Optimization Tool ​
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="110-ct-segmentation-quantize-nncf-with-output.html">
+   Quantize a Segmentation Model and Show Live Inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="110-ct-segmentation-quantize-with-output.html">
+   Quantize a Segmentation Model and Show Live Inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="111-detection-quantization-with-output.html">
+   Object Detection Quantization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="112-pytorch-post-training-quantization-nncf-with-output.html">
+   Post-Training Quantization of PyTorch models with NNCF
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="113-image-classification-quantization-with-output.html">
+   Quantization of Image Classification Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="114-quantization-simplified-mode-with-output.html">
+   INT8 Quantization with Post-training Optimization Tool (POT) in Simplified Mode tutorial
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="115-async-api-with-output.html">
+   Asynchronous Inference with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="201-vision-monodepth-with-output.html">
+   Monodepth Estimation with OpenVINO
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="202-vision-superresolution-image-with-output.html">
+   Single Image Super Resolution with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="202-vision-superresolution-video-with-output.html">
+   Video Super Resolution with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Industrial Meter Reader
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="204-named-entity-recognition-with-output.html">
+   Document Entity Extraction with OpenVINO
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="205-vision-background-removal-with-output.html">
+   Image Background Removal with U^2-Net and OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="206-vision-paddlegan-anime-with-output.html">
+   Photos to Anime with PaddleGAN and OpenVINO
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="207-vision-paddlegan-superresolution-with-output.html">
+   Super Resolution with PaddleGAN and OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="208-optical-character-recognition-with-output.html">
+   Optical Character Recognition (OCR) with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="209-handwritten-ocr-with-output.html">
+   Handwritten Chinese and Japanese OCR with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="210-ct-scan-live-inference-with-output.html">
+   Live Inference and Benchmark CT-scan Data with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="211-speech-to-text-with-output.html">
+   Speech to Text with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="212-onnx-style-transfer-with-output.html">
+   Style Transfer on ONNX Models with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="214-vision-paddle-classification-with-output.html">
+   PaddlePaddle Image Classification with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="215-image-inpainting-with-output.html">
+   Image In-painting with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="216-license-plate-recognition-with-output.html">
+   License Plate Recognition with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="217-vision-deblur-with-output.html">
+   Deblur Photos with DeblurGAN-v2 and OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="218-vehicle-detection-and-recognition-with-output.html">
+   Vehicle Detection And Recognition with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="219-knowledge-graphs-conve-with-output.html">
+   OpenVINO optimizations for Knowledge graphs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="220-yolov5-accuracy-check-and-quantization-with-output.html">
+   Quantize the Ultralytics YOLOv5 model and check accuracy using the OpenVINO POT API
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="221-machine-translation-with-output.html">
+   Machine translation demo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="222-vision-image-colorization-with-output.html">
+   Image Colorization with OpenVINO
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="223-gpt2-text-prediction-with-output.html">
+   GPT-2 Text Prediction with OpenVINO
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="301-tensorflow-training-openvino-pot-with-output.html">
+   Post-Training Quantization with TensorFlow Classification Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="301-tensorflow-training-openvino-with-output.html">
+   From Training to Deployment with TensorFlow and OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="302-pytorch-quantization-aware-training-with-output.html">
+   Quantization Aware Training with NNCF, using PyTorch framework
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="305-tensorflow-quantization-aware-training-with-output.html">
+   Quantization Aware Training with NNCF, using TensorFlow Framework
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="401-object-detection-with-output.html">
+   Live Object Detection with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="402-pose-estimation-with-output.html">
+   Live Human Pose Estimation with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="403-action-recognition-webcam-with-output.html">
+   Human Action Recognition with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="405-paddle-ocr-webcam-with-output.html">
+   PaddleOCR with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebook_utils-with-output.html">
+   Notebook Utils
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import">
+   Import
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prepare-the-model-and-test-image">
+   Prepare the Model and Test Image
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#configuration">
+   Configuration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-the-models">
+   Load the Models
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#predictor">
+   Predictor
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-process">
+   Data Process
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#main-function">
+   Main Function
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#intialize-the-model-and-parameters">
+     Intialize the model and parameters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#run-meter-detection-model">
+     Run meter detection model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#run-meter-segmentation-model">
+     Run meter segmentation model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#postprocess-the-models-result-and-calculate-the-final-readings">
+     Postprocess the models result and calculate the final readings
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-the-reading-result-on-the-meter-picture">
+     Get the reading result on the meter picture
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                <div class="tocsection download-docs">
+  <div class="dropdown sst-dropdown">
+    <button class="button bttn-prm button-size-m" data-display="static" type="button" id="download-options"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Download Docs
+    </button>
+    <div class="dropdown-menu" aria-labelledby="download-options">
+      <a class="dropdown-item" href="#" onclick="window.print()">.pdf</a>
+      <a id="download-zip-btn" class="dropdown-item" href="#">.zip</a>
+    </div>
+  </div>
+</div>
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+              
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+
+<div class="tocsection editthispage">
+    <a href="None">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+            
+                <div>
+                  
+  <section id="industrial-meter-reader">
+<h1>Industrial Meter Reader<a class="headerlink" href="#industrial-meter-reader" title="Permalink to this headline">¶</a></h1>
+<p>This notebook shows how to create a industrial meter reader with
+OpenVINO Runtime. We use the PaddlePaddle pre-trained model
+<a class="reference external" href="https://github.com/PaddlePaddle/PaddleDetection/tree/release/2.4/configs/ppyolo">PPYOLOv2</a>
+and
+<a class="reference external" href="https://github.com/PaddlePaddle/PaddleSeg/tree/release/2.5/configs/deeplabv3p">DeepLabV3P</a>
+to built-up a multiple inference task pipeline:</p>
+<ol class="arabic simple">
+<li><p>Run detection model to find the meters, and crop them from the origin
+photo.</p></li>
+<li><p>Run segmentation model on these cropped meters to get the pointer and
+scale instance.</p></li>
+<li><p>Find the location of the pointer in scale map.</p></li>
+</ol>
+<figure class="align-default" id="id1">
+<img alt="workflow" src="https://user-images.githubusercontent.com/91237924/166137115-67284fa5-f703-4468-98f4-c43d2c584763.png" />
+<figcaption>
+<p><span class="caption-text">workflow</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<section id="import">
+<h2>Import<a class="headerlink" href="#import" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">tarfile</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">openvino.runtime</span> <span class="kn">import</span> <span class="n">Core</span>
+
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;../utils&quot;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">notebook_utils</span> <span class="kn">import</span> <span class="n">download_file</span><span class="p">,</span> <span class="n">segmentation_map_to_image</span>
+</pre></div>
+</div>
+</section>
+<section id="prepare-the-model-and-test-image">
+<h2>Prepare the Model and Test Image<a class="headerlink" href="#prepare-the-model-and-test-image" title="Permalink to this headline">¶</a></h2>
+<p>Download PPYolov2 and DeepLabV3P pre-trained models from PaddlePaddle
+community.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MODEL_DIR</span> <span class="o">=</span> <span class="s2">&quot;model&quot;</span>
+<span class="n">DATA_DIR</span> <span class="o">=</span> <span class="s2">&quot;data&quot;</span>
+<span class="n">DET_MODEL_LINK</span> <span class="o">=</span> <span class="s2">&quot;https://bj.bcebos.com/paddlex/examples2/meter_reader/meter_det_model.tar.gz&quot;</span>
+<span class="n">SEG_MODEL_LINK</span> <span class="o">=</span> <span class="s2">&quot;https://bj.bcebos.com/paddlex/examples2/meter_reader/meter_seg_model.tar.gz&quot;</span>
+<span class="n">DET_FILE_NAME</span> <span class="o">=</span> <span class="n">DET_MODEL_LINK</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">SEG_FILE_NAME</span> <span class="o">=</span> <span class="n">SEG_MODEL_LINK</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">IMG_LINK</span> <span class="o">=</span> <span class="s2">&quot;https://user-images.githubusercontent.com/91237924/170696219-f68699c6-1e82-46bf-aaed-8e2fc3fa5f7b.jpg&quot;</span>
+<span class="n">IMG_FILE_NAME</span> <span class="o">=</span> <span class="n">IMG_LINK</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">IMG_PATH</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">IMG_FILE_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">MODEL_DIR</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">download_file</span><span class="p">(</span><span class="n">DET_MODEL_LINK</span><span class="p">,</span> <span class="n">directory</span><span class="o">=</span><span class="n">MODEL_DIR</span><span class="p">,</span> <span class="n">show_progress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">tarfile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;model/</span><span class="si">{</span><span class="n">DET_FILE_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="s2">&quot;model&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">res</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Detection Model Extracted to </span><span class="se">\&quot;</span><span class="s2">./</span><span class="si">{</span><span class="n">MODEL_DIR</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error Extracting the Detection model. Please check the network.&quot;</span><span class="p">)</span>
+
+<span class="n">download_file</span><span class="p">(</span><span class="n">SEG_MODEL_LINK</span><span class="p">,</span> <span class="n">directory</span><span class="o">=</span><span class="n">MODEL_DIR</span><span class="p">,</span> <span class="n">show_progress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">tarfile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;model/</span><span class="si">{</span><span class="n">SEG_FILE_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="s2">&quot;model&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">res</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Segmentation Model Extracted to </span><span class="se">\&quot;</span><span class="s2">./</span><span class="si">{</span><span class="n">MODEL_DIR</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error Extracting the Segmentation model. Please check the network.&quot;</span><span class="p">)</span>
+
+<span class="n">download_file</span><span class="p">(</span><span class="n">IMG_LINK</span><span class="p">,</span> <span class="n">directory</span><span class="o">=</span><span class="n">DATA_DIR</span><span class="p">,</span> <span class="n">show_progress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">IMG_PATH</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Test Image Saved to </span><span class="se">\&quot;</span><span class="s2">./</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error Downloading the Test Image. Please check the network.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>model/meter_det_model.tar.gz:   0%|          | 0.00/192M [00:00&lt;?, ?B/s]
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Detection</span> <span class="n">Model</span> <span class="n">Extracted</span> <span class="n">to</span> <span class="s2">&quot;./model&quot;</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>model/meter_seg_model.tar.gz:   0%|          | 0.00/94.9M [00:00&lt;?, ?B/s]
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Segmentation</span> <span class="n">Model</span> <span class="n">Extracted</span> <span class="n">to</span> <span class="s2">&quot;./model&quot;</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>data/170696219-f68699c6-1e82-46bf-aaed-8e2fc3fa5f7b.jpg:   0%|          | 0.00/183k [00:00&lt;?, ?B/s]
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Test</span> <span class="n">Image</span> <span class="n">Saved</span> <span class="n">to</span> <span class="s2">&quot;./data&quot;</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>Add parameter configuration for reading calculation.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">METER_SHAPE</span> <span class="o">=</span> <span class="p">[</span><span class="mi">512</span><span class="p">,</span> <span class="mi">512</span><span class="p">]</span>
+<span class="n">CIRCLE_CENTER</span> <span class="o">=</span> <span class="p">[</span><span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">]</span>
+<span class="n">CIRCLE_RADIUS</span> <span class="o">=</span> <span class="mi">250</span>
+<span class="n">PI</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">RECTANGLE_HEIGHT</span> <span class="o">=</span> <span class="mi">120</span>
+<span class="n">RECTANGLE_WIDTH</span> <span class="o">=</span> <span class="mi">1570</span>
+<span class="n">TYPE_THRESHOLD</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="n">COLORMAP</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">],</span> <span class="p">[</span><span class="mi">238</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">44</span><span class="p">],</span> <span class="p">[</span><span class="mi">250</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">250</span><span class="p">]])</span>
+
+<span class="c1"># There are 2 types of meters in test image datasets</span>
+<span class="n">METER_CONFIG</span> <span class="o">=</span> <span class="p">[{</span>
+    <span class="s1">&#39;scale_interval_value&#39;</span><span class="p">:</span> <span class="mf">25.0</span> <span class="o">/</span> <span class="mf">50.0</span><span class="p">,</span>
+    <span class="s1">&#39;range&#39;</span><span class="p">:</span> <span class="mf">25.0</span><span class="p">,</span>
+    <span class="s1">&#39;unit&#39;</span><span class="p">:</span> <span class="s2">&quot;(MPa)&quot;</span>
+<span class="p">},</span> <span class="p">{</span>
+    <span class="s1">&#39;scale_interval_value&#39;</span><span class="p">:</span> <span class="mf">1.6</span> <span class="o">/</span> <span class="mf">32.0</span><span class="p">,</span>
+    <span class="s1">&#39;range&#39;</span><span class="p">:</span> <span class="mf">1.6</span><span class="p">,</span>
+    <span class="s1">&#39;unit&#39;</span><span class="p">:</span> <span class="s2">&quot;(MPa)&quot;</span>
+<span class="p">}]</span>
+
+<span class="n">SEG_LABEL</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;background&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;pointer&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;scale&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="load-the-models">
+<h2>Load the Models<a class="headerlink" href="#load-the-models" title="Permalink to this headline">¶</a></h2>
+<p>Initialize the OpenVINO compiled model.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize OpenVINO Runtime</span>
+<span class="n">ie_core</span> <span class="o">=</span> <span class="n">Core</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">model_init</span><span class="p">(</span><span class="n">det_model_path</span><span class="p">,</span> <span class="n">seg_model_path</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Initialize the Detection and Segmentation models</span>
+
+<span class="sd">    :param:</span>
+<span class="sd">            model (str): model path *.pdmodel</span>
+<span class="sd">    :retuns:</span>
+<span class="sd">            detector: detection compiled model</span>
+<span class="sd">            segmenter: segmentation compiled model</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Load the PaddlePaddle detection model directly</span>
+    <span class="n">det_model</span> <span class="o">=</span> <span class="n">ie_core</span><span class="o">.</span><span class="n">read_model</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">det_model_path</span><span class="p">)</span>
+    <span class="n">det_model</span><span class="o">.</span><span class="n">reshape</span><span class="p">({</span><span class="s1">&#39;image&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">608</span><span class="p">,</span> <span class="mi">608</span><span class="p">],</span> <span class="s1">&#39;im_shape&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="s1">&#39;scale_factor&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]})</span>
+    <span class="n">detector</span> <span class="o">=</span> <span class="n">ie_core</span><span class="o">.</span><span class="n">compile_model</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">det_model</span><span class="p">,</span> <span class="n">device_name</span><span class="o">=</span><span class="s2">&quot;CPU&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Load the PaddlePaddle segmentation model directly, the input batch size is dynamic</span>
+    <span class="n">seg_model</span> <span class="o">=</span> <span class="n">ie_core</span><span class="o">.</span><span class="n">read_model</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">seg_model_path</span><span class="p">)</span>
+    <span class="n">seg_model</span><span class="o">.</span><span class="n">reshape</span><span class="p">({</span><span class="s1">&#39;image&#39;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">512</span><span class="p">,</span> <span class="mi">512</span><span class="p">]})</span>
+    <span class="n">segmenter</span> <span class="o">=</span> <span class="n">ie_core</span><span class="o">.</span><span class="n">compile_model</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">seg_model</span><span class="p">,</span> <span class="n">device_name</span><span class="o">=</span><span class="s2">&quot;CPU&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">detector</span><span class="p">,</span> <span class="n">segmenter</span>
+</pre></div>
+</div>
+</section>
+<section id="predictor">
+<h2>Predictor<a class="headerlink" href="#predictor" title="Permalink to this headline">¶</a></h2>
+<p>Define a common predictor function for both detection and segmentation
+models</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">predictor</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">compiled_model</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A predictor to run inference</span>
+
+<span class="sd">    :param:</span>
+<span class="sd">            input: input data</span>
+<span class="sd">            compiled_model: a IE detector or segmenter</span>
+<span class="sd">    :retuns:</span>
+<span class="sd">            result (np.array): model output data</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">output_layer</span> <span class="o">=</span> <span class="n">compiled_model</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">compiled_model</span><span class="p">(</span><span class="nb">input</span><span class="p">)[</span><span class="n">output_layer</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+</section>
+<section id="data-process">
+<h2>Data Process<a class="headerlink" href="#data-process" title="Permalink to this headline">¶</a></h2>
+<p>Including the preprocessing and postprocessing tasks of each model.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">det_preprocess</span><span class="p">(</span><span class="n">input_image</span><span class="p">,</span> <span class="n">target_size</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Preprocessing the input data for detection task</span>
+
+<span class="sd">    :param:</span>
+<span class="sd">            input_image (np.array): input data</span>
+<span class="sd">            size (int): the image size required by model input layer</span>
+<span class="sd">    :retuns:</span>
+<span class="sd">            img.astype (np.float32): preprocessed image</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">input_image</span><span class="p">,</span> <span class="p">(</span><span class="n">target_size</span><span class="p">,</span> <span class="n">target_size</span><span class="p">))</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mi">255</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">img_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.485</span><span class="p">,</span> <span class="mf">0.456</span><span class="p">,</span> <span class="mf">0.406</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">img_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.229</span><span class="p">,</span> <span class="mf">0.224</span><span class="p">,</span> <span class="mf">0.225</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">img</span> <span class="o">-=</span> <span class="n">img_mean</span>
+    <span class="n">img</span> <span class="o">/=</span> <span class="n">img_std</span>
+    <span class="k">return</span> <span class="n">img</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">filter_bboxes</span><span class="p">(</span><span class="n">det_results</span><span class="p">,</span> <span class="n">score_threshold</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    filter out the detection results with low confidence</span>
+
+<span class="sd">    :param：</span>
+<span class="sd">        det_results (list[dict]): detection results</span>
+<span class="sd">        score_threshold (float)： confidence threshold</span>
+
+<span class="sd">    :retuns：</span>
+<span class="sd">        filtered_results (list[dict]): filter detection results</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">filtered_results</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">det_results</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">det_results</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">score_threshold</span><span class="p">:</span>
+            <span class="n">filtered_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">det_results</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">filtered_results</span>
+
+
+<span class="k">def</span> <span class="nf">roi_crop</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">results</span><span class="p">,</span> <span class="n">scale_x</span><span class="p">,</span> <span class="n">scale_y</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    crop the area of detected meter of original image</span>
+
+<span class="sd">    :param：</span>
+<span class="sd">        img (np.array)：original image。</span>
+<span class="sd">        det_results (list[dict]): detection results</span>
+<span class="sd">        scale_x (float): the scale value in x axis</span>
+<span class="sd">        scale_y (float): the scale value in y axis</span>
+
+<span class="sd">    :retuns：</span>
+<span class="sd">        roi_imgs (list[np.array]): the list of meter images</span>
+<span class="sd">        loc (list[int]): the list of meter locations</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">roi_imgs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">loc</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+        <span class="n">bbox</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+        <span class="n">xmin</span><span class="p">,</span> <span class="n">ymin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">ymax</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">scale_x</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">scale_y</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">scale_x</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">bbox</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">*</span> <span class="n">scale_y</span><span class="p">)]</span>
+        <span class="n">sub_img</span> <span class="o">=</span> <span class="n">image</span><span class="p">[</span><span class="n">ymin</span><span class="p">:(</span><span class="n">ymax</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">xmin</span><span class="p">:(</span><span class="n">xmax</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="p">:]</span>
+        <span class="n">roi_imgs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sub_img</span><span class="p">)</span>
+        <span class="n">loc</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">xmin</span><span class="p">,</span> <span class="n">ymin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">ymax</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">roi_imgs</span><span class="p">,</span> <span class="n">loc</span>
+
+
+<span class="k">def</span> <span class="nf">roi_process</span><span class="p">(</span><span class="n">input_images</span><span class="p">,</span> <span class="n">target_size</span><span class="p">,</span> <span class="n">interp</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">INTER_LINEAR</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Prepare the roi image of detection results data</span>
+<span class="sd">    Preprocessing the input data for segmentation task</span>
+
+<span class="sd">    :param：</span>
+<span class="sd">        input_images (list[np.array])：the list of meter images</span>
+<span class="sd">        target_size (list|tuple)： height and width of resized image， e.g [heigh,width]</span>
+<span class="sd">        interp (int)：the interp method for image reszing</span>
+
+<span class="sd">    :retuns：</span>
+<span class="sd">        img_list (list[np.array])：the list of processed images</span>
+<span class="sd">        resize_img (list[np.array]): for visualization</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">img_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="n">resize_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">input_images</span><span class="p">:</span>
+        <span class="n">img_shape</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span>
+        <span class="n">scale_x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">target_size</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">img_shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">scale_y</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">target_size</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">img_shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">resize_img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">fx</span><span class="o">=</span><span class="n">scale_x</span><span class="p">,</span> <span class="n">fy</span><span class="o">=</span><span class="n">scale_y</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="n">interp</span><span class="p">)</span>
+        <span class="n">resize_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">resize_img</span><span class="p">)</span>
+        <span class="n">resize_img</span> <span class="o">=</span> <span class="n">resize_img</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">255</span>
+        <span class="n">img_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="n">img_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="n">resize_img</span> <span class="o">-=</span> <span class="n">img_mean</span>
+        <span class="n">resize_img</span> <span class="o">/=</span> <span class="n">img_std</span>
+        <span class="n">img_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">resize_img</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">img_list</span><span class="p">,</span> <span class="n">resize_list</span>
+
+
+<span class="k">def</span> <span class="nf">erode</span><span class="p">(</span><span class="n">seg_results</span><span class="p">,</span> <span class="n">erode_kernel</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    erode the segmentation result to get the more clear instance of pointer and scale</span>
+
+<span class="sd">    :param：</span>
+<span class="sd">        seg_results (list[dict])：segmentation results</span>
+<span class="sd">        erode_kernel (int): size of erode_kernel</span>
+
+<span class="sd">    :return：</span>
+<span class="sd">        eroded_results (list[dict])： the lab map of eroded_results</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">kernel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">erode_kernel</span><span class="p">,</span> <span class="n">erode_kernel</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+    <span class="n">eroded_results</span> <span class="o">=</span> <span class="n">seg_results</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">seg_results</span><span class="p">)):</span>
+        <span class="n">eroded_results</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">erode</span><span class="p">(</span><span class="n">seg_results</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">),</span> <span class="n">kernel</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">eroded_results</span>
+
+
+<span class="k">def</span> <span class="nf">circle_to_rectangle</span><span class="p">(</span><span class="n">seg_results</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    switch the shape of label_map from circle to rectangle</span>
+
+<span class="sd">    :param：</span>
+<span class="sd">        seg_results (list[dict])：segmentation results</span>
+
+<span class="sd">    :return：</span>
+<span class="sd">        rectangle_meters (list[np.array])：the rectangle of label map</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">rectangle_meters</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">seg_result</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">seg_results</span><span class="p">):</span>
+        <span class="n">label_map</span> <span class="o">=</span> <span class="n">seg_result</span>
+
+        <span class="c1"># The size of rectangle_meter is determined by RECTANGLE_HEIGHT and RECTANGLE_WIDTH</span>
+        <span class="n">rectangle_meter</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">RECTANGLE_HEIGHT</span><span class="p">,</span> <span class="n">RECTANGLE_WIDTH</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">RECTANGLE_HEIGHT</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">RECTANGLE_WIDTH</span><span class="p">):</span>
+                <span class="n">theta</span> <span class="o">=</span> <span class="n">PI</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">col</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">RECTANGLE_WIDTH</span>
+
+                <span class="c1"># The radius of meter circle will be mapped to the height of rectangle</span>
+                <span class="n">rho</span> <span class="o">=</span> <span class="n">CIRCLE_RADIUS</span> <span class="o">-</span> <span class="n">row</span> <span class="o">-</span> <span class="mi">1</span>
+                <span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">CIRCLE_CENTER</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">rho</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span>
+                <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">CIRCLE_CENTER</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">rho</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span>
+                <span class="n">rectangle_meter</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">label_map</span><span class="p">[</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">]</span>
+        <span class="n">rectangle_meters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rectangle_meter</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">rectangle_meters</span>
+
+
+<span class="k">def</span> <span class="nf">rectangle_to_line</span><span class="p">(</span><span class="n">rectangle_meters</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    switch the dimension of rectangle label map from 2D to 1D</span>
+
+<span class="sd">    :param：</span>
+<span class="sd">        rectangle_meters (list[np.array])：2D rectangle OF label_map。</span>
+
+<span class="sd">    :return：</span>
+<span class="sd">        line_scales (list[np.array])： the list of scales value</span>
+<span class="sd">        line_pointers (list[np.array])：the list of pointers value</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">line_scales</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="n">line_pointers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">rectangle_meter</span> <span class="ow">in</span> <span class="n">rectangle_meters</span><span class="p">:</span>
+        <span class="n">height</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">rectangle_meter</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">line_scale</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">width</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+        <span class="n">line_pointer</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">width</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">width</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">height</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">rectangle_meter</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">]</span> <span class="o">==</span> <span class="n">SEG_LABEL</span><span class="p">[</span><span class="s1">&#39;pointer&#39;</span><span class="p">]:</span>
+                    <span class="n">line_pointer</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">elif</span> <span class="n">rectangle_meter</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">]</span> <span class="o">==</span> <span class="n">SEG_LABEL</span><span class="p">[</span><span class="s1">&#39;scale&#39;</span><span class="p">]:</span>
+                    <span class="n">line_scale</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">line_scales</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line_scale</span><span class="p">)</span>
+        <span class="n">line_pointers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line_pointer</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">line_scales</span><span class="p">,</span> <span class="n">line_pointers</span>
+
+
+<span class="k">def</span> <span class="nf">mean_binarization</span><span class="p">(</span><span class="n">data_list</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    binarize the data</span>
+
+<span class="sd">    :param：</span>
+<span class="sd">        data_list (list[np.array])：input data</span>
+
+<span class="sd">    :return：</span>
+<span class="sd">        binaried_data_list (list[np.array])：output data。</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">batch_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_list</span><span class="p">)</span>
+    <span class="n">binaried_data_list</span> <span class="o">=</span> <span class="n">data_list</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">batch_size</span><span class="p">):</span>
+        <span class="n">mean_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data_list</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="n">data_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">width</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">data_list</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">col</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">mean_data</span><span class="p">:</span>
+                <span class="n">binaried_data_list</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">binaried_data_list</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">binaried_data_list</span>
+
+
+<span class="k">def</span> <span class="nf">locate_scale</span><span class="p">(</span><span class="n">line_scales</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    find out the location of center of each scale</span>
+
+<span class="sd">    :param：</span>
+<span class="sd">        line_scales (list[np.array])：the list of binaried scales value</span>
+
+<span class="sd">    :return：</span>
+<span class="sd">        scale_locations (list[list])：location of each scale</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">batch_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">line_scales</span><span class="p">)</span>
+    <span class="n">scale_locations</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">batch_size</span><span class="p">):</span>
+        <span class="n">line_scale</span> <span class="o">=</span> <span class="n">line_scales</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="n">line_scale</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">find_start</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">one_scale_start</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">one_scale_end</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">locations</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">width</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">line_scale</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">line_scale</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">find_start</span><span class="p">:</span>
+                    <span class="n">one_scale_start</span> <span class="o">=</span> <span class="n">j</span>
+                    <span class="n">find_start</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">if</span> <span class="n">find_start</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">line_scale</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">line_scale</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">one_scale_end</span> <span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span>
+                    <span class="n">one_scale_location</span> <span class="o">=</span> <span class="p">(</span><span class="n">one_scale_start</span> <span class="o">+</span> <span class="n">one_scale_end</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+                    <span class="n">locations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">one_scale_location</span><span class="p">)</span>
+                    <span class="n">one_scale_start</span> <span class="o">=</span> <span class="mi">0</span>
+                    <span class="n">one_scale_end</span> <span class="o">=</span> <span class="mi">0</span>
+                    <span class="n">find_start</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">scale_locations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">locations</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">scale_locations</span>
+
+
+<span class="k">def</span> <span class="nf">locate_pointer</span><span class="p">(</span><span class="n">line_pointers</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    find out the location of center of pointer</span>
+
+<span class="sd">    :param：</span>
+<span class="sd">        line_scales (list[np.array])：the list of binaried pointer value</span>
+
+<span class="sd">    :return：</span>
+<span class="sd">        scale_locations (list[list])：location of pointer</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">batch_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">line_pointers</span><span class="p">)</span>
+    <span class="n">pointer_locations</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">batch_size</span><span class="p">):</span>
+        <span class="n">line_pointer</span> <span class="o">=</span> <span class="n">line_pointers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">find_start</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">pointer_start</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">pointer_end</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">location</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="n">line_pointer</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">width</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">line_pointer</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">line_pointer</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">find_start</span><span class="p">:</span>
+                    <span class="n">pointer_start</span> <span class="o">=</span> <span class="n">j</span>
+                    <span class="n">find_start</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">if</span> <span class="n">find_start</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">line_pointer</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">line_pointer</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">:</span>
+                    <span class="n">pointer_end</span> <span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span>
+                    <span class="n">location</span> <span class="o">=</span> <span class="p">(</span><span class="n">pointer_start</span> <span class="o">+</span> <span class="n">pointer_end</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+                    <span class="n">find_start</span> <span class="o">=</span> <span class="kc">False</span>
+                    <span class="k">break</span>
+        <span class="n">pointer_locations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">location</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pointer_locations</span>
+
+
+<span class="k">def</span> <span class="nf">get_relative_location</span><span class="p">(</span><span class="n">scale_locations</span><span class="p">,</span> <span class="n">pointer_locations</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    match the location of pointer and scales</span>
+
+<span class="sd">    :param：</span>
+<span class="sd">        scale_locations (list[list])：location of each scale</span>
+<span class="sd">        pointer_locations (list[list])：location of pointer</span>
+
+<span class="sd">    :return：</span>
+<span class="sd">        pointed_scales (list[dict])： a list of dict with:</span>
+<span class="sd">                                     &#39;num_scales&#39;: total number of scales</span>
+<span class="sd">                                     &#39;pointed_scale&#39;: predicted number of scales</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">pointed_scales</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">scale_location</span><span class="p">,</span> <span class="n">pointer_location</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">scale_locations</span><span class="p">,</span>
+                                                <span class="n">pointer_locations</span><span class="p">):</span>
+        <span class="n">num_scales</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">scale_location</span><span class="p">)</span>
+        <span class="n">pointed_scale</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="k">if</span> <span class="n">num_scales</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_scales</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">scale_location</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">pointer_location</span> <span class="o">&lt;</span> <span class="n">scale_location</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
+                    <span class="n">pointed_scale</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="p">(</span><span class="n">pointer_location</span> <span class="o">-</span> <span class="n">scale_location</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">scale_location</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">scale_location</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mf">1e-05</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;num_scales&#39;</span><span class="p">:</span> <span class="n">num_scales</span><span class="p">,</span> <span class="s1">&#39;pointed_scale&#39;</span><span class="p">:</span> <span class="n">pointed_scale</span><span class="p">}</span>
+        <span class="n">pointed_scales</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pointed_scales</span>
+
+
+<span class="k">def</span> <span class="nf">calculate_reading</span><span class="p">(</span><span class="n">pointed_scales</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    calculate the value of meter according to the type of meter</span>
+
+<span class="sd">    :param：</span>
+<span class="sd">        pointed_scales (list[list])：predicted number of scales</span>
+
+<span class="sd">    :return：</span>
+<span class="sd">        readings (list[float])： the list of values read from meter</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">readings</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="n">batch_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pointed_scales</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">batch_size</span><span class="p">):</span>
+        <span class="n">pointed_scale</span> <span class="o">=</span> <span class="n">pointed_scales</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="c1"># find out the type of meter according the total number of scales</span>
+        <span class="k">if</span> <span class="n">pointed_scale</span><span class="p">[</span><span class="s1">&#39;num_scales&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">TYPE_THRESHOLD</span><span class="p">:</span>
+            <span class="n">reading</span> <span class="o">=</span> <span class="n">pointed_scale</span><span class="p">[</span><span class="s1">&#39;pointed_scale&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">METER_CONFIG</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;scale_interval_value&#39;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">reading</span> <span class="o">=</span> <span class="n">pointed_scale</span><span class="p">[</span><span class="s1">&#39;pointed_scale&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">METER_CONFIG</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;scale_interval_value&#39;</span><span class="p">]</span>
+        <span class="n">readings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">reading</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">readings</span>
+</pre></div>
+</div>
+</section>
+<section id="main-function">
+<h2>Main Function<a class="headerlink" href="#main-function" title="Permalink to this headline">¶</a></h2>
+<section id="intialize-the-model-and-parameters">
+<h3>Intialize the model and parameters<a class="headerlink" href="#intialize-the-model-and-parameters" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">img_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">IMG_FILE_NAME</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">det_model_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">MODEL_DIR</span><span class="si">}</span><span class="s2">/meter_det_model/model.pdmodel&quot;</span>
+<span class="n">seg_model_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">MODEL_DIR</span><span class="si">}</span><span class="s2">/meter_seg_model/model.pdmodel&quot;</span>
+<span class="n">erode_kernel</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">score_threshold</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">seg_batch_size</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">input_shape</span> <span class="o">=</span> <span class="mi">608</span>
+<span class="n">detector</span><span class="p">,</span> <span class="n">segmenter</span> <span class="o">=</span> <span class="n">model_init</span><span class="p">(</span><span class="n">det_model_path</span><span class="p">,</span> <span class="n">seg_model_path</span><span class="p">)</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">img_file</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">AxesImage</span> <span class="n">at</span> <span class="mh">0x7f06267cbc70</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<img alt="../_images/203-meter-reader-with-output_15_1.png" src="../_images/203-meter-reader-with-output_15_1.png" />
+</section>
+<section id="run-meter-detection-model">
+<h3>Run meter detection model<a class="headerlink" href="#run-meter-detection-model" title="Permalink to this headline">¶</a></h3>
+<p>Detect the location of the meter and prepare the ROI images for
+segmentation.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Prepare the input data for meter detection model</span>
+<span class="n">im_shape</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">input_shape</span><span class="p">,</span> <span class="n">input_shape</span><span class="p">]])</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float32&#39;</span><span class="p">)</span>
+<span class="n">scale_factor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float32&#39;</span><span class="p">)</span>
+<span class="n">input_image</span> <span class="o">=</span> <span class="n">det_preprocess</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">input_shape</span><span class="p">)</span>
+<span class="n">inputs_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;image&#39;</span><span class="p">:</span> <span class="n">input_image</span><span class="p">,</span> <span class="s2">&quot;im_shape&quot;</span><span class="p">:</span> <span class="n">im_shape</span><span class="p">,</span> <span class="s2">&quot;scale_factor&quot;</span><span class="p">:</span> <span class="n">scale_factor</span><span class="p">}</span>
+
+<span class="c1"># Run meter detection model</span>
+<span class="n">det_results</span> <span class="o">=</span> <span class="n">predictor</span><span class="p">(</span><span class="n">inputs_dict</span><span class="p">,</span> <span class="n">detector</span><span class="p">)</span>
+
+<span class="c1"># Filter out the bounding box with low confidence</span>
+<span class="n">filtered_results</span> <span class="o">=</span> <span class="n">filter_bboxes</span><span class="p">(</span><span class="n">det_results</span><span class="p">,</span> <span class="n">score_threshold</span><span class="p">)</span>
+
+<span class="c1"># Prepare the input data for meter segmentation model</span>
+<span class="n">scale_x</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">input_shape</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="n">scale_y</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">input_shape</span>
+
+<span class="c1"># Create the individual photo for each detected meter</span>
+<span class="n">roi_imgs</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="n">roi_crop</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">filtered_results</span><span class="p">,</span> <span class="n">scale_x</span><span class="p">,</span> <span class="n">scale_y</span><span class="p">)</span>
+<span class="n">roi_imgs</span><span class="p">,</span> <span class="n">resize_imgs</span> <span class="o">=</span> <span class="n">roi_process</span><span class="p">(</span><span class="n">roi_imgs</span><span class="p">,</span> <span class="n">METER_SHAPE</span><span class="p">)</span>
+
+<span class="c1"># Create the photos of detection results</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">resize_imgs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="n">roi_stack</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">resize_imgs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">resize_imgs</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">roi_stack</span> <span class="o">=</span> <span class="n">resize_imgs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="k">if</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/detection_results.jpg&quot;</span><span class="p">,</span> <span class="n">roi_stack</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The detection result image has been saved as </span><span class="se">\&quot;</span><span class="s2">detection_results.jpg</span><span class="se">\&quot;</span><span class="s2"> in data&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">roi_stack</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">detection</span> <span class="n">result</span> <span class="n">image</span> <span class="n">has</span> <span class="n">been</span> <span class="n">saved</span> <span class="k">as</span> <span class="s2">&quot;detection_results.jpg&quot;</span> <span class="ow">in</span> <span class="n">data</span>
+</pre></div>
+</div>
+<img alt="../_images/203-meter-reader-with-output_17_1.png" src="../_images/203-meter-reader-with-output_17_1.png" />
+</section>
+<section id="run-meter-segmentation-model">
+<h3>Run meter segmentation model<a class="headerlink" href="#run-meter-segmentation-model" title="Permalink to this headline">¶</a></h3>
+<p>Get the results of segmentation task on detected ROI.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seg_results</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="n">num_imgs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">roi_imgs</span><span class="p">)</span>
+
+<span class="c1"># Run meter segmentation model on all meters detected</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_imgs</span><span class="p">,</span> <span class="n">seg_batch_size</span><span class="p">):</span>
+    <span class="n">batch</span> <span class="o">=</span> <span class="n">roi_imgs</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="nb">min</span><span class="p">(</span><span class="n">num_imgs</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="n">seg_batch_size</span><span class="p">)]</span>
+    <span class="n">seg_result</span> <span class="o">=</span> <span class="n">predictor</span><span class="p">([</span><span class="n">batch</span><span class="p">],</span> <span class="n">segmenter</span><span class="p">)</span>
+    <span class="n">seg_results</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">seg_result</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">seg_results</span><span class="p">)):</span>
+    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">seg_results</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">seg_results</span> <span class="o">=</span> <span class="n">erode</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">erode_kernel</span><span class="p">)</span>
+
+<span class="c1"># Create the photos of segmentation results</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">resize_imgs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="n">mask_stack</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">segmentation_map_to_image</span><span class="p">(</span><span class="n">seg_results</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">COLORMAP</span><span class="p">),</span>
+                            <span class="n">segmentation_map_to_image</span><span class="p">(</span><span class="n">seg_results</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">COLORMAP</span><span class="p">)])</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">mask_stack</span> <span class="o">=</span> <span class="n">segmentation_map_to_image</span><span class="p">(</span><span class="n">seg_results</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">COLORMAP</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/segmentation_results.jpg&quot;</span><span class="p">,</span> <span class="n">mask_stack</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The segmentation result image has been saved as </span><span class="se">\&quot;</span><span class="s2">segmentation_results.jpg</span><span class="se">\&quot;</span><span class="s2"> in data&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mask_stack</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">segmentation</span> <span class="n">result</span> <span class="n">image</span> <span class="n">has</span> <span class="n">been</span> <span class="n">saved</span> <span class="k">as</span> <span class="s2">&quot;segmentation_results.jpg&quot;</span> <span class="ow">in</span> <span class="n">data</span>
+</pre></div>
+</div>
+<img alt="../_images/203-meter-reader-with-output_19_1.png" src="../_images/203-meter-reader-with-output_19_1.png" />
+</section>
+<section id="postprocess-the-models-result-and-calculate-the-final-readings">
+<h3>Postprocess the models result and calculate the final readings<a class="headerlink" href="#postprocess-the-models-result-and-calculate-the-final-readings" title="Permalink to this headline">¶</a></h3>
+<p>Use OpenCV function to find the location of the pointer in scale map.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find the pointer location in scale map and calculate the meters reading</span>
+<span class="n">rectangle_meters</span> <span class="o">=</span> <span class="n">circle_to_rectangle</span><span class="p">(</span><span class="n">seg_results</span><span class="p">)</span>
+<span class="n">line_scales</span><span class="p">,</span> <span class="n">line_pointers</span> <span class="o">=</span> <span class="n">rectangle_to_line</span><span class="p">(</span><span class="n">rectangle_meters</span><span class="p">)</span>
+<span class="n">binaried_scales</span> <span class="o">=</span> <span class="n">mean_binarization</span><span class="p">(</span><span class="n">line_scales</span><span class="p">)</span>
+<span class="n">binaried_pointers</span> <span class="o">=</span> <span class="n">mean_binarization</span><span class="p">(</span><span class="n">line_pointers</span><span class="p">)</span>
+<span class="n">scale_locations</span> <span class="o">=</span> <span class="n">locate_scale</span><span class="p">(</span><span class="n">binaried_scales</span><span class="p">)</span>
+<span class="n">pointer_locations</span> <span class="o">=</span> <span class="n">locate_pointer</span><span class="p">(</span><span class="n">binaried_pointers</span><span class="p">)</span>
+<span class="n">pointed_scales</span> <span class="o">=</span> <span class="n">get_relative_location</span><span class="p">(</span><span class="n">scale_locations</span><span class="p">,</span> <span class="n">pointer_locations</span><span class="p">)</span>
+<span class="n">meter_readings</span> <span class="o">=</span> <span class="n">calculate_reading</span><span class="p">(</span><span class="n">pointed_scales</span><span class="p">)</span>
+
+<span class="c1"># Plot the rectangle meters</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">rectangle_meters</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="n">rectangle_meters_stack</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">segmentation_map_to_image</span><span class="p">(</span><span class="n">rectangle_meters</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">COLORMAP</span><span class="p">),</span>
+                                        <span class="n">segmentation_map_to_image</span><span class="p">(</span><span class="n">rectangle_meters</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">COLORMAP</span><span class="p">)])</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">rectangle_meters_stack</span> <span class="o">=</span> <span class="n">segmentation_map_to_image</span><span class="p">(</span><span class="n">rectangle_meters</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">COLORMAP</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/rectangle_meters.jpg&quot;</span><span class="p">,</span> <span class="n">rectangle_meters_stack</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The rectangle_meters result image has been saved as </span><span class="se">\&quot;</span><span class="s2">rectangle_meters.jpg</span><span class="se">\&quot;</span><span class="s2"> in data&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">rectangle_meters_stack</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">rectangle_meters</span> <span class="n">result</span> <span class="n">image</span> <span class="n">has</span> <span class="n">been</span> <span class="n">saved</span> <span class="k">as</span> <span class="s2">&quot;rectangle_meters.jpg&quot;</span> <span class="ow">in</span> <span class="n">data</span>
+</pre></div>
+</div>
+<img alt="../_images/203-meter-reader-with-output_21_1.png" src="../_images/203-meter-reader-with-output_21_1.png" />
+</section>
+<section id="get-the-reading-result-on-the-meter-picture">
+<h3>Get the reading result on the meter picture<a class="headerlink" href="#get-the-reading-result-on-the-meter-picture" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create final result photo with meter value</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">meter_readings</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Meter </span><span class="si">{}</span><span class="s2">: </span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">meter_readings</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+
+<span class="n">result_image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">loc</span><span class="p">)):</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">result_image</span><span class="p">,(</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]),</span> <span class="p">(</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">3</span><span class="p">]),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="n">font</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">FONT_HERSHEY_SIMPLEX</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">result_image</span><span class="p">,</span> <span class="p">(</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]),</span> <span class="p">(</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span> <span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">40</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">putText</span><span class="p">(</span><span class="n">result_image</span><span class="p">,</span> <span class="s2">&quot;#</span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">meter_readings</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="p">(</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">25</span><span class="p">),</span> <span class="n">font</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="mi">2</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">LINE_AA</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s2">/reading_results.jpg&quot;</span><span class="p">,</span> <span class="n">result_image</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The reading results image has been saved as </span><span class="se">\&quot;</span><span class="s2">reading_results.jpg</span><span class="se">\&quot;</span><span class="s2"> in data&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">result_image</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Meter</span> <span class="mi">1</span><span class="p">:</span> <span class="mf">1.100</span>
+<span class="n">Meter</span> <span class="mi">2</span><span class="p">:</span> <span class="mf">6.185</span>
+<span class="n">The</span> <span class="n">reading</span> <span class="n">results</span> <span class="n">image</span> <span class="n">has</span> <span class="n">been</span> <span class="n">saved</span> <span class="k">as</span> <span class="s2">&quot;reading_results.jpg&quot;</span> <span class="ow">in</span> <span class="n">data</span>
+</pre></div>
+</div>
+<img alt="../_images/203-meter-reader-with-output_23_1.png" src="../_images/203-meter-reader-with-output_23_1.png" />
+<p>## Try it with your meter photos!</p>
+</section>
+</section>
+</section>
+
+
+                </div>
+            
+            
+                <div class='prev-next-bottom'>
+                  
+    <a class='button bttn-sec button-size-l' id="prev-link" href="202-vision-superresolution-video-with-output.html" title="previous page">Prev</a>
+    <a class='button bttn-sec button-size-l' id="next-link" href="204-named-entity-recognition-with-output.html" title="next page">Next</a>
+
+                </div>
+            
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Intel®.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

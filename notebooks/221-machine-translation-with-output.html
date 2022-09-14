@@ -1,0 +1,812 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Machine translation demo &#8212; OpenVINO™  documentation</title>
+    
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/doxyrest-pygments.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <link href="../_static/css/media/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="../_static/css/openvino_sphinx_theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/button.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/input.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/textfield.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/tabs.css" type="text/css" />
+    <script src="../_static/js/openvino_sphinx_theme.js"></script>
+    <link rel="stylesheet" href="../_static/css/viewer.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-barchart-background@1.3.0/build/Plugin.Barchart.Background.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-deferred@1"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js"></script>
+    <script src="../_static/js/viewer.min.js"></script>
+    <script src="/assets/versions_raw.js"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/tabs.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/custom.js"></script>
+    <script src="../_static/js/graphs.js"></script>
+    <script src="../_static/js/graphs_ov_tf.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/target-highlight.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <link rel="canonical" href="https://docs.openvino.ai/latest/notebooks/221-machine-translation-with-output.html" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Image Colorization with OpenVINO" href="222-vision-image-colorization-with-output.html" />
+    <link rel="prev" title="Quantize the Ultralytics YOLOv5 model and check accuracy using the OpenVINO POT API" href="220-yolov5-accuracy-check-and-quantization-with-output.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+      <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/logo.svg" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../pages/get-started-guide.html">
+  Get Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../pages/documentation.html">
+  Documentation
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../tutorials.html">
+  Tutorials
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../api/api_reference.html">
+  API Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../model_zoo.html">
+  Model Zoo
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../pages/resources.html">
+  Resources
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/openvinotoolkit/openvino" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="sst-github"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+</ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        
+<div class="dropdown sst-dropdown sst-dropdown-navbar">
+  <button class="btn sst-btn dropdown-toggle" type="button" id="version-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+  <div class="dropdown-menu" aria-labelledby="version-selector">
+  </div>
+</div>
+      </div>
+      
+      <div class="navbar-end-item">
+        
+
+<div class="dropdown sst-dropdown sst-dropdown-navbar">
+  <button class="btn sst-btn dropdown-toggle" type="button" id="language-selector" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</button>
+  <div class="dropdown-menu" aria-labelledby="language-selector">
+    
+      
+        <a class="dropdown-item font-weight-bold" href="/openvino-docs/index.html">English</a>
+      
+    
+      
+        <a  class="dropdown-item" href="/cn/openvino-docs/index.html">Chinese</a>
+      
+    
+  </div>
+</div>
+
+      </div>
+      
+    </div>
+  </div>
+</div>
+        <div id="collapse-nav-wrapper" class="container-xl">
+          <button id="collapse-nav" class="button bttn-prm button-size-m" type="button" data-toggle="collapse" data-target="#nav-tree" aria-expanded="false" aria-controls="nav-tree">
+            Documentation navigation <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+      </nav>
+      <div class="transition-banner container-fluid alert alert-info alert-dismissible fade show" role="alert">
+        <p>OpenVINO 2022.1 introduces a new version of OpenVINO API (API 2.0). For more information on the changes and transition steps, see the <a href="https://docs.openvino.ai/latest/openvino_2_0_transition_guide.html">transition guide</a></p>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar" id="nav-tree"><form class="searchForm bd-search d-flex align-items-center" action="../search.html" method="get">
+    <i class="icon fas fa-search"></i>
+    <input type="search" class="form-control" name="query" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Notebooks
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks-installation.html">
+   Installation of OpenVINO™ Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="001-hello-world-with-output.html">
+   Hello Image Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="002-openvino-api-with-output.html">
+   OpenVINO™ Runtime API Tutorial
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="003-hello-segmentation-with-output.html">
+   Hello Image Segmentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="004-hello-detection-with-output.html">
+   Hello Object Detection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="101-tensorflow-to-openvino-with-output.html">
+   Convert a TensorFlow Model to OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="102-pytorch-onnx-to-openvino-with-output.html">
+   Convert a PyTorch Model to ONNX and OpenVINO™ IR
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="103-paddle-onnx-to-openvino-classification-with-output.html">
+   Convert a PaddlePaddle Model to ONNX and OpenVINO™ IR
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="104-model-tools-with-output.html">
+   Working with Open Model Zoo Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="105-language-quantize-bert-with-output.html">
+   Quantize NLP models with Post-Training Optimization Tool ​in OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="106-auto-device-with-output.html">
+   Automatic Device Selection with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="107-speech-recognition-quantization-with-output.html">
+   Quantize Speech Recognition Models with OpenVINO™ Post-Training Optimization Tool ​
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="110-ct-segmentation-quantize-nncf-with-output.html">
+   Quantize a Segmentation Model and Show Live Inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="110-ct-segmentation-quantize-with-output.html">
+   Quantize a Segmentation Model and Show Live Inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="111-detection-quantization-with-output.html">
+   Object Detection Quantization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="112-pytorch-post-training-quantization-nncf-with-output.html">
+   Post-Training Quantization of PyTorch models with NNCF
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="113-image-classification-quantization-with-output.html">
+   Quantization of Image Classification Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="114-quantization-simplified-mode-with-output.html">
+   INT8 Quantization with Post-training Optimization Tool (POT) in Simplified Mode tutorial
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="115-async-api-with-output.html">
+   Asynchronous Inference with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="201-vision-monodepth-with-output.html">
+   Monodepth Estimation with OpenVINO
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="202-vision-superresolution-image-with-output.html">
+   Single Image Super Resolution with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="202-vision-superresolution-video-with-output.html">
+   Video Super Resolution with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="203-meter-reader-with-output.html">
+   Industrial Meter Reader
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="204-named-entity-recognition-with-output.html">
+   Document Entity Extraction with OpenVINO
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="205-vision-background-removal-with-output.html">
+   Image Background Removal with U^2-Net and OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="206-vision-paddlegan-anime-with-output.html">
+   Photos to Anime with PaddleGAN and OpenVINO
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="207-vision-paddlegan-superresolution-with-output.html">
+   Super Resolution with PaddleGAN and OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="208-optical-character-recognition-with-output.html">
+   Optical Character Recognition (OCR) with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="209-handwritten-ocr-with-output.html">
+   Handwritten Chinese and Japanese OCR with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="210-ct-scan-live-inference-with-output.html">
+   Live Inference and Benchmark CT-scan Data with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="211-speech-to-text-with-output.html">
+   Speech to Text with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="212-onnx-style-transfer-with-output.html">
+   Style Transfer on ONNX Models with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="214-vision-paddle-classification-with-output.html">
+   PaddlePaddle Image Classification with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="215-image-inpainting-with-output.html">
+   Image In-painting with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="216-license-plate-recognition-with-output.html">
+   License Plate Recognition with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="217-vision-deblur-with-output.html">
+   Deblur Photos with DeblurGAN-v2 and OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="218-vehicle-detection-and-recognition-with-output.html">
+   Vehicle Detection And Recognition with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="219-knowledge-graphs-conve-with-output.html">
+   OpenVINO optimizations for Knowledge graphs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="220-yolov5-accuracy-check-and-quantization-with-output.html">
+   Quantize the Ultralytics YOLOv5 model and check accuracy using the OpenVINO POT API
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Machine translation demo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="222-vision-image-colorization-with-output.html">
+   Image Colorization with OpenVINO
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="223-gpt2-text-prediction-with-output.html">
+   GPT-2 Text Prediction with OpenVINO
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="301-tensorflow-training-openvino-pot-with-output.html">
+   Post-Training Quantization with TensorFlow Classification Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="301-tensorflow-training-openvino-with-output.html">
+   From Training to Deployment with TensorFlow and OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="302-pytorch-quantization-aware-training-with-output.html">
+   Quantization Aware Training with NNCF, using PyTorch framework
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="305-tensorflow-quantization-aware-training-with-output.html">
+   Quantization Aware Training with NNCF, using TensorFlow Framework
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="401-object-detection-with-output.html">
+   Live Object Detection with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="402-pose-estimation-with-output.html">
+   Live Human Pose Estimation with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="403-action-recognition-webcam-with-output.html">
+   Human Action Recognition with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="405-paddle-ocr-webcam-with-output.html">
+   PaddleOCR with OpenVINO™
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebook_utils-with-output.html">
+   Notebook Utils
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inputs">
+   Inputs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ouput">
+   Ouput
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#downloading-model">
+     Downloading model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-and-configure-the-model">
+     Load and configure the model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-tokenizers">
+     Load tokenizers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#perform-translation">
+     Perform translation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#translate-the-sentence">
+     Translate the sentence
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#test-your-translation">
+       Test your translation
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                <div class="tocsection download-docs">
+  <div class="dropdown sst-dropdown">
+    <button class="button bttn-prm button-size-m" data-display="static" type="button" id="download-options"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Download Docs
+    </button>
+    <div class="dropdown-menu" aria-labelledby="download-options">
+      <a class="dropdown-item" href="#" onclick="window.print()">.pdf</a>
+      <a id="download-zip-btn" class="dropdown-item" href="#">.zip</a>
+    </div>
+  </div>
+</div>
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+              
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+
+<div class="tocsection editthispage">
+    <a href="None">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+            
+                <div>
+                  
+  <section id="machine-translation-demo">
+<h1>Machine translation demo<a class="headerlink" href="#machine-translation-demo" title="Permalink to this headline">¶</a></h1>
+<p>This demo utilizes Intel’s pre-trained model that translates from
+English to German. More information about the model can be found
+<a class="reference external" href="https://github.com/openvinotoolkit/open_model_zoo/blob/master/models/intel/machine-translation-nar-en-de-0002/README.md">here</a>.</p>
+<p>This model encodes sentences using the SentecePieceBPETokenizer from
+HuggingFace. The tokenizer vocabulary is downloaded automatically with
+the OMZ tool.</p>
+<section id="inputs">
+<h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
+<p>The model’s input is a sequence of up to 150 tokens with the following
+structure: <code class="docutils literal notranslate"><span class="pre">&lt;s&gt;</span></code> + <em>tokenized sentence</em> + <code class="docutils literal notranslate"><span class="pre">&lt;s&gt;</span></code> + <code class="docutils literal notranslate"><span class="pre">&lt;pad&gt;</span></code>
+(<code class="docutils literal notranslate"><span class="pre">&lt;pad&gt;</span></code> tokens pad the remaining blank spaces).</p>
+</section>
+<section id="ouput">
+<h2>Ouput<a class="headerlink" href="#ouput" title="Permalink to this headline">¶</a></h2>
+<p>After the inference, we have a sequence of up to 200 tokens. The
+structure is the same as the one for the input.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">openvino.runtime</span> <span class="kn">import</span> <span class="n">Core</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">itertools</span>
+<span class="kn">from</span> <span class="nn">tokenizers</span> <span class="kn">import</span> <span class="n">SentencePieceBPETokenizer</span>
+</pre></div>
+</div>
+<section id="downloading-model">
+<h3>Downloading model<a class="headerlink" href="#downloading-model" title="Permalink to this headline">¶</a></h3>
+<p>The following command will download the model to the current directory.
+Please, make sure you have run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">openvino-dev</span></code> beforehand.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span> omz_downloader --name  machine-translation-nar-en-de-0002
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">################|| Downloading machine-translation-nar-en-de-0002 ||################</span>
+
+<span class="o">==========</span> <span class="n">Downloading</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">k8sworker</span><span class="o">/</span><span class="n">cibuilds</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">OVNotebookOps</span><span class="o">-</span><span class="mi">231</span><span class="o">/.</span><span class="n">workspace</span><span class="o">/</span><span class="n">scm</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">notebooks</span><span class="o">/</span><span class="mi">221</span><span class="o">-</span><span class="n">machine</span><span class="o">-</span><span class="n">translation</span><span class="o">/</span><span class="n">intel</span><span class="o">/</span><span class="n">machine</span><span class="o">-</span><span class="n">translation</span><span class="o">-</span><span class="n">nar</span><span class="o">-</span><span class="n">en</span><span class="o">-</span><span class="n">de</span><span class="o">-</span><span class="mi">0002</span><span class="o">/</span><span class="n">tokenizer_tgt</span><span class="o">/</span><span class="n">merges</span><span class="o">.</span><span class="n">txt</span>
+
+
+<span class="o">==========</span> <span class="n">Downloading</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">k8sworker</span><span class="o">/</span><span class="n">cibuilds</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">OVNotebookOps</span><span class="o">-</span><span class="mi">231</span><span class="o">/.</span><span class="n">workspace</span><span class="o">/</span><span class="n">scm</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">notebooks</span><span class="o">/</span><span class="mi">221</span><span class="o">-</span><span class="n">machine</span><span class="o">-</span><span class="n">translation</span><span class="o">/</span><span class="n">intel</span><span class="o">/</span><span class="n">machine</span><span class="o">-</span><span class="n">translation</span><span class="o">-</span><span class="n">nar</span><span class="o">-</span><span class="n">en</span><span class="o">-</span><span class="n">de</span><span class="o">-</span><span class="mi">0002</span><span class="o">/</span><span class="n">tokenizer_tgt</span><span class="o">/</span><span class="n">vocab</span><span class="o">.</span><span class="n">json</span>
+
+
+<span class="o">==========</span> <span class="n">Downloading</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">k8sworker</span><span class="o">/</span><span class="n">cibuilds</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">OVNotebookOps</span><span class="o">-</span><span class="mi">231</span><span class="o">/.</span><span class="n">workspace</span><span class="o">/</span><span class="n">scm</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">notebooks</span><span class="o">/</span><span class="mi">221</span><span class="o">-</span><span class="n">machine</span><span class="o">-</span><span class="n">translation</span><span class="o">/</span><span class="n">intel</span><span class="o">/</span><span class="n">machine</span><span class="o">-</span><span class="n">translation</span><span class="o">-</span><span class="n">nar</span><span class="o">-</span><span class="n">en</span><span class="o">-</span><span class="n">de</span><span class="o">-</span><span class="mi">0002</span><span class="o">/</span><span class="n">tokenizer_src</span><span class="o">/</span><span class="n">merges</span><span class="o">.</span><span class="n">txt</span>
+
+
+<span class="o">==========</span> <span class="n">Downloading</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">k8sworker</span><span class="o">/</span><span class="n">cibuilds</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">OVNotebookOps</span><span class="o">-</span><span class="mi">231</span><span class="o">/.</span><span class="n">workspace</span><span class="o">/</span><span class="n">scm</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">notebooks</span><span class="o">/</span><span class="mi">221</span><span class="o">-</span><span class="n">machine</span><span class="o">-</span><span class="n">translation</span><span class="o">/</span><span class="n">intel</span><span class="o">/</span><span class="n">machine</span><span class="o">-</span><span class="n">translation</span><span class="o">-</span><span class="n">nar</span><span class="o">-</span><span class="n">en</span><span class="o">-</span><span class="n">de</span><span class="o">-</span><span class="mi">0002</span><span class="o">/</span><span class="n">tokenizer_src</span><span class="o">/</span><span class="n">vocab</span><span class="o">.</span><span class="n">json</span>
+
+
+<span class="o">==========</span> <span class="n">Downloading</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">k8sworker</span><span class="o">/</span><span class="n">cibuilds</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">OVNotebookOps</span><span class="o">-</span><span class="mi">231</span><span class="o">/.</span><span class="n">workspace</span><span class="o">/</span><span class="n">scm</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">notebooks</span><span class="o">/</span><span class="mi">221</span><span class="o">-</span><span class="n">machine</span><span class="o">-</span><span class="n">translation</span><span class="o">/</span><span class="n">intel</span><span class="o">/</span><span class="n">machine</span><span class="o">-</span><span class="n">translation</span><span class="o">-</span><span class="n">nar</span><span class="o">-</span><span class="n">en</span><span class="o">-</span><span class="n">de</span><span class="o">-</span><span class="mi">0002</span><span class="o">/</span><span class="n">FP32</span><span class="o">/</span><span class="n">machine</span><span class="o">-</span><span class="n">translation</span><span class="o">-</span><span class="n">nar</span><span class="o">-</span><span class="n">en</span><span class="o">-</span><span class="n">de</span><span class="o">-</span><span class="mf">0002.</span><span class="n">xml</span>
+
+
+<span class="o">==========</span> <span class="n">Downloading</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">k8sworker</span><span class="o">/</span><span class="n">cibuilds</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">OVNotebookOps</span><span class="o">-</span><span class="mi">231</span><span class="o">/.</span><span class="n">workspace</span><span class="o">/</span><span class="n">scm</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">notebooks</span><span class="o">/</span><span class="mi">221</span><span class="o">-</span><span class="n">machine</span><span class="o">-</span><span class="n">translation</span><span class="o">/</span><span class="n">intel</span><span class="o">/</span><span class="n">machine</span><span class="o">-</span><span class="n">translation</span><span class="o">-</span><span class="n">nar</span><span class="o">-</span><span class="n">en</span><span class="o">-</span><span class="n">de</span><span class="o">-</span><span class="mi">0002</span><span class="o">/</span><span class="n">FP32</span><span class="o">/</span><span class="n">machine</span><span class="o">-</span><span class="n">translation</span><span class="o">-</span><span class="n">nar</span><span class="o">-</span><span class="n">en</span><span class="o">-</span><span class="n">de</span><span class="o">-</span><span class="mf">0002.</span><span class="n">bin</span>
+
+
+<span class="o">==========</span> <span class="n">Downloading</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">k8sworker</span><span class="o">/</span><span class="n">cibuilds</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">OVNotebookOps</span><span class="o">-</span><span class="mi">231</span><span class="o">/.</span><span class="n">workspace</span><span class="o">/</span><span class="n">scm</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">notebooks</span><span class="o">/</span><span class="mi">221</span><span class="o">-</span><span class="n">machine</span><span class="o">-</span><span class="n">translation</span><span class="o">/</span><span class="n">intel</span><span class="o">/</span><span class="n">machine</span><span class="o">-</span><span class="n">translation</span><span class="o">-</span><span class="n">nar</span><span class="o">-</span><span class="n">en</span><span class="o">-</span><span class="n">de</span><span class="o">-</span><span class="mi">0002</span><span class="o">/</span><span class="n">FP16</span><span class="o">/</span><span class="n">machine</span><span class="o">-</span><span class="n">translation</span><span class="o">-</span><span class="n">nar</span><span class="o">-</span><span class="n">en</span><span class="o">-</span><span class="n">de</span><span class="o">-</span><span class="mf">0002.</span><span class="n">xml</span>
+
+
+<span class="o">==========</span> <span class="n">Downloading</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">k8sworker</span><span class="o">/</span><span class="n">cibuilds</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">OVNotebookOps</span><span class="o">-</span><span class="mi">231</span><span class="o">/.</span><span class="n">workspace</span><span class="o">/</span><span class="n">scm</span><span class="o">/</span><span class="n">ov</span><span class="o">-</span><span class="n">notebook</span><span class="o">/</span><span class="n">notebooks</span><span class="o">/</span><span class="mi">221</span><span class="o">-</span><span class="n">machine</span><span class="o">-</span><span class="n">translation</span><span class="o">/</span><span class="n">intel</span><span class="o">/</span><span class="n">machine</span><span class="o">-</span><span class="n">translation</span><span class="o">-</span><span class="n">nar</span><span class="o">-</span><span class="n">en</span><span class="o">-</span><span class="n">de</span><span class="o">-</span><span class="mi">0002</span><span class="o">/</span><span class="n">FP16</span><span class="o">/</span><span class="n">machine</span><span class="o">-</span><span class="n">translation</span><span class="o">-</span><span class="n">nar</span><span class="o">-</span><span class="n">en</span><span class="o">-</span><span class="n">de</span><span class="o">-</span><span class="mf">0002.</span><span class="n">bin</span>
+</pre></div>
+</div>
+</section>
+<section id="load-and-configure-the-model">
+<h3>Load and configure the model<a class="headerlink" href="#load-and-configure-the-model" title="Permalink to this headline">¶</a></h3>
+<p>The model is now available in the <code class="docutils literal notranslate"><span class="pre">intel/</span></code> folder. Below we load and
+configure its inputs and outputs.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">core</span> <span class="o">=</span> <span class="n">Core</span><span class="p">()</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">read_model</span><span class="p">(</span><span class="s1">&#39;intel/machine-translation-nar-en-de-0002/FP32/machine-translation-nar-en-de-0002.xml&#39;</span><span class="p">)</span>
+<span class="n">compiled_model</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">compile_model</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+<span class="n">input_name</span> <span class="o">=</span> <span class="s2">&quot;tokens&quot;</span>
+<span class="n">output_name</span> <span class="o">=</span> <span class="s2">&quot;pred&quot;</span>
+<span class="n">model</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">output_name</span><span class="p">)</span>
+<span class="n">max_tokens</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="n">input_name</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="load-tokenizers">
+<h3>Load tokenizers<a class="headerlink" href="#load-tokenizers" title="Permalink to this headline">¶</a></h3>
+<p>NLP models usually take a list of tokens as standard input. A token is a
+single word converted to some integer. To provide the proper input, we
+need the vocabulary for such mapping. We use ‘merges.txt’ to inform us
+what sequences of letters form a token. ‘vocab.json’ specifies the
+mapping between tokens and integers.</p>
+<p>The input needs to be transformed into a token sequence the model
+understands, and the ouput must be transformed into a sentence that is
+human readable.</p>
+<p>Initialize the tokenizer for the input <code class="docutils literal notranslate"><span class="pre">src_tokenizer</span></code> and the output
+<code class="docutils literal notranslate"><span class="pre">tgt_tokenizer</span></code>.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">src_tokenizer</span> <span class="o">=</span> <span class="n">SentencePieceBPETokenizer</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span>
+    <span class="s1">&#39;intel/machine-translation-nar-en-de-0002/tokenizer_src/vocab.json&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;intel/machine-translation-nar-en-de-0002/tokenizer_src/merges.txt&#39;</span>
+<span class="p">)</span>
+<span class="n">tgt_tokenizer</span> <span class="o">=</span> <span class="n">SentencePieceBPETokenizer</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span>
+    <span class="s1">&#39;intel/machine-translation-nar-en-de-0002/tokenizer_tgt/vocab.json&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;intel/machine-translation-nar-en-de-0002/tokenizer_tgt/merges.txt&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="perform-translation">
+<h3>Perform translation<a class="headerlink" href="#perform-translation" title="Permalink to this headline">¶</a></h3>
+<p>The following function translates a sentence in English to German.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="n">sentence</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Tokenize the sentence using the downloaded tokenizer and run the model,</span>
+<span class="sd">    whose output is decoded into a human readable string.</span>
+
+<span class="sd">    :param sentence: a string containing the phrase to be translated</span>
+<span class="sd">    :return: the translated string</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Remove leading and trailing white spaces</span>
+    <span class="n">sentence</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="n">tokens</span> <span class="o">=</span> <span class="n">src_tokenizer</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span><span class="o">.</span><span class="n">ids</span>
+    <span class="c1"># Transform the tokenized sentence into the model&#39;s input format</span>
+    <span class="n">tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">src_tokenizer</span><span class="o">.</span><span class="n">token_to_id</span><span class="p">(</span><span class="s1">&#39;&lt;s&gt;&#39;</span><span class="p">)]</span> <span class="o">+</span> \
+        <span class="n">tokens</span> <span class="o">+</span> <span class="p">[</span><span class="n">src_tokenizer</span><span class="o">.</span><span class="n">token_to_id</span><span class="p">(</span><span class="s1">&#39;&lt;/s&gt;&#39;</span><span class="p">)]</span>
+    <span class="n">pad_length</span> <span class="o">=</span> <span class="n">max_tokens</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+
+    <span class="c1"># If the sentence size is less than the maximum allowed tokens,</span>
+    <span class="c1"># fill the remaining tokens with &#39;&lt;pad&gt;&#39;.</span>
+    <span class="k">if</span> <span class="n">pad_length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">tokens</span> <span class="o">=</span> <span class="n">tokens</span> <span class="o">+</span> <span class="p">[</span><span class="n">src_tokenizer</span><span class="o">.</span><span class="n">token_to_id</span><span class="p">(</span><span class="s1">&#39;&lt;pad&gt;&#39;</span><span class="p">)]</span> <span class="o">*</span> <span class="n">pad_length</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span> <span class="o">==</span> <span class="n">max_tokens</span><span class="p">,</span> <span class="s2">&quot;input sentence is too long&quot;</span>
+    <span class="n">encoded_sentence</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Perform inference</span>
+    <span class="n">enc_translated</span> <span class="o">=</span> <span class="n">compiled_model</span><span class="p">({</span><span class="n">input_name</span><span class="p">:</span> <span class="n">encoded_sentence</span><span class="p">})</span>
+    <span class="n">output_key</span> <span class="o">=</span> <span class="n">compiled_model</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">output_name</span><span class="p">)</span>
+    <span class="n">enc_translated</span> <span class="o">=</span> <span class="n">enc_translated</span><span class="p">[</span><span class="n">output_key</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="c1"># Decode the sentence</span>
+    <span class="n">sentence</span> <span class="o">=</span> <span class="n">tgt_tokenizer</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">enc_translated</span><span class="p">)</span>
+
+    <span class="c1"># Remove &lt;pad&gt; tokens, as well as &#39;&lt;s&gt;&#39; and &#39;&lt;/s&gt;&#39; tokens which mark the</span>
+    <span class="c1"># beginning and ending of the sentence.</span>
+    <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;&lt;/s&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;s&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;pad&gt;&#39;</span><span class="p">]:</span>
+        <span class="n">sentence</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Transform sentence into lower case and join words by a white space</span>
+    <span class="n">sentence</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">sentence</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">key</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">sentence</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">sentence</span>
+</pre></div>
+</div>
+</section>
+<section id="translate-the-sentence">
+<h3>Translate the sentence<a class="headerlink" href="#translate-the-sentence" title="Permalink to this headline">¶</a></h3>
+<p>The following function is a basic loop that translates sentences.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">run_translator</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Run the translation in real time, reading the input from the user.</span>
+<span class="sd">    This function prints the translated sentence and the time</span>
+<span class="sd">    spent during inference.</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">input_sentence</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">input_sentence</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+            <span class="k">break</span>
+
+        <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+        <span class="n">translated</span> <span class="o">=</span> <span class="n">translate</span><span class="p">(</span><span class="n">input_sentence</span><span class="p">)</span>
+        <span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Translated: </span><span class="si">{</span><span class="n">translated</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Time: </span><span class="si">{</span><span class="n">end_time</span> <span class="o">-</span> <span class="n">start_time</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">s&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># uncomment the following line for a real time translation of your input</span>
+<span class="c1"># run_translator()</span>
+</pre></div>
+</div>
+<section id="test-your-translation">
+<h4>Test your translation<a class="headerlink" href="#test-your-translation" title="Permalink to this headline">¶</a></h4>
+<p>Run the following cell with an English sentence to have it translated to
+German</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sentence</span> <span class="o">=</span> <span class="s2">&quot;My name is openvino&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Translated: </span><span class="si">{</span><span class="n">translate</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Translated</span><span class="p">:</span> <span class="n">mein</span> <span class="n">name</span> <span class="n">ist</span> <span class="n">openvino</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+                </div>
+            
+            
+                <div class='prev-next-bottom'>
+                  
+    <a class='button bttn-sec button-size-l' id="prev-link" href="220-yolov5-accuracy-check-and-quantization-with-output.html" title="previous page">Prev</a>
+    <a class='button bttn-sec button-size-l' id="next-link" href="222-vision-image-colorization-with-output.html" title="next page">Next</a>
+
+                </div>
+            
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Intel®.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>
