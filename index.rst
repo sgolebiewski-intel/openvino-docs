@@ -22,6 +22,7 @@ OpenVINO™ Documentation
 
    <div class="section" id="welcome-to-openvino-toolkit-s-documentation">
    
+   <link rel="stylesheet" type="text/css" href="_static/css/homepage_style.css">
       <div style="clear:both;"> </div>
    
          <p>
