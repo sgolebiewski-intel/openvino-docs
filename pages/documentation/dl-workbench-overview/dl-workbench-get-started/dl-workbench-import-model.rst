@@ -12,7 +12,7 @@ Import Model
 ============
 
 :target:`workbench_start__import_model_1md_openvino_workbench_docs_workbench_dg_select_model` This document describes 
-he first part of :ref:`Get Started with DL Workbench <dl_workbench__get_started>` workflow, following the model import 
+the first part of :ref:`Get Started with DL Workbench <dl_workbench__get_started>` workflow, following the model import 
 steps from the Create Project video.
 
 .. list-table::

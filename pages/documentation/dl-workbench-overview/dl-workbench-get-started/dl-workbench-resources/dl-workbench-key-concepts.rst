@@ -21,7 +21,7 @@ Project is a combination of an OpenVINO IR model, a dataset, and a target device
 in the DL Workbench. You can work with multiple projects during one session. When 
 :ref:`creating a project <dl_workbench__get_started>`, you can:
 
-* Upload your own model or download one from the Intel® [Open Model Zoo](omz_models_group_intel) directly in the DL Workbench.
+* Upload your own model or download one from the Intel® `Open Model Zoo <https://docs.openvino.ai/latest/omz_models_group_intel.html>`__ directly in the DL Workbench.
 
 * Upload your own dataset or generate one in the DL Workbench.
 
@@ -36,9 +36,8 @@ Intermediate Representation (IR) is the OpenVINO™ format of pretrained model r
 
 * BIN file containing weights and biases
   
-=
-  OpenVINO™ Runtime operates with models in the IR format. You can convert your model of a supported format into 
-  the IR format with the :ref:`Model Optimizer <conv_prep__conv_with_model_optimizer>` directly in the DL Workbench.
+OpenVINO™ Runtime operates with models in the IR format. You can convert your model of a supported format into 
+the IR format with the :ref:`Model Optimizer <conv_prep__conv_with_model_optimizer>` directly in the DL Workbench.
 
 Original Model
 ~~~~~~~~~~~~~~
