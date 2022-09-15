@@ -28,7 +28,7 @@ Installation
 
    +++
 
-   .. link-button:: workbench_docs_Workbench_DG_Run_Locally
+   .. link-button:: ./dl-workbench-install/run-dl-workbench-locally
       :type: ref
       :text: Run DL Workbench Locally
       :classes: btn-primary btn-block stretched-link
@@ -39,7 +39,7 @@ Installation
 
    +++
 
-   .. link-button:: workbench_docs_Workbench_DG_Start_DL_Workbench_in_DevCloud
+   .. link-button:: ./dl-workbench-install/run-dl-workbench-in-devcloud
       :type: ref
       :text: Start DL Workbench in Intel® DevCloud
       :classes: btn-outline-primary btn-block stretched-link

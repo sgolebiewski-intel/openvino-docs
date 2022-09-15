@@ -48,7 +48,7 @@ Computer Vision Tutorials
 
     +++
 
-    .. link-button:: workbench_docs_Workbench_DG_Tutorial_Import_YOLO
+    .. link-button:: ./_workbench-files-to-migrate/workbench_docs_Workbench_DG_Tutorial_Import_YOLO
         :text: Open Object Detection Tutorial
         :type: ref
         :classes: btn-primary btn-block stretched-link
@@ -58,7 +58,7 @@ Computer Vision Tutorials
 
     +++
 
-    .. link-button:: workbench_docs_Workbench_DG_Tutorial_Classification
+    .. link-button:: ./_workbench-files-to-migrate/workbench_docs_Workbench_DG_Tutorial_Classification
         :text: Open Classification Tutorial
         :type: ref
         :classes: btn-outline-primary btn-block stretched-link
@@ -69,7 +69,7 @@ Computer Vision Tutorials
 
     +++
 
-    .. link-button:: workbench_docs_Workbench_DG_Tutorial_Instance_Segmentation
+    .. link-button:: ./_workbench-files-to-migrate/workbench_docs_Workbench_DG_Tutorial_Instance_Segmentation
         :text: Open Instance Segmentation Tutorial
         :type: ref
         :classes: btn-outline-primary btn-block stretched-link
@@ -80,7 +80,7 @@ Computer Vision Tutorials
 
     +++
 
-    .. link-button:: workbench_docs_Workbench_DG_Tutorial_Semantic_Segmentation
+    .. link-button:: ./_workbench-files-to-migrate/workbench_docs_Workbench_DG_Tutorial_Semantic_Segmentation
         :text: Open Semantic Segmentation Tutorial
         :type: ref
         :classes: btn-outline-primary btn-block stretched-link
@@ -91,7 +91,7 @@ Computer Vision Tutorials
 
     +++
 
-    .. link-button:: workbench_docs_Workbench_DG_Tutorial_Style_Transfer
+    .. link-button:: ./_workbench-files-to-migrate/workbench_docs_Workbench_DG_Tutorial_Style_Transfer
         :text: Open Style Transfer Tutorial
         :type: ref
         :classes: btn-outline-primary btn-block stretched-link
@@ -102,7 +102,7 @@ Computer Vision Tutorials
 
     +++
 
-    .. link-button:: workbench_docs_Workbench_DG_Measure_Accuracy_Object_detection
+    .. link-button:: ./_workbench-files-to-migrate/workbench_docs_Workbench_DG_Measure_Accuracy_Object_detection
         :text: Open Object Detection Tutorial
         :type: ref
         :classes: btn-outline-primary btn-block stretched-link
@@ -113,7 +113,7 @@ Computer Vision Tutorials
 
     +++
 
-    .. link-button:: workbench_docs_Workbench_DG_Measure_Accuracy_Classification
+    .. link-button:: ./_workbench-files-to-migrate/workbench_docs_Workbench_DG_Measure_Accuracy_Classification
         :text: Open Classification Tutorial
         :type: ref
         :classes: btn-outline-primary btn-block stretched-link
@@ -128,7 +128,7 @@ Natural Language Processing Tutorials
 
     +++
 
-    .. link-button:: workbench_docs_Workbench_DG_Tutorial_NLP
+    .. link-button:: ./_workbench-files-to-migrate/workbench_docs_Workbench_DG_Tutorial_NLP
         :text: Open NLP Tutorial
         :type: ref
         :classes: btn-outline-primary btn-block stretched-link

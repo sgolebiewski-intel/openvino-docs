@@ -40,7 +40,7 @@ OpenVINO™ Deep Learning Workbench User Guide
 
     +++
 
-    .. link-button:: workbench_docs_Workbench_DG_Select_Models
+    .. link-button:: ./_workbench-files-to-migrate/workbench_docs_Workbench_DG_Select_Models
         :text: Obtain Models
         :type: ref
         :classes: btn-primary btn-block stretched-link
@@ -51,7 +51,7 @@ OpenVINO™ Deep Learning Workbench User Guide
 
     +++
 
-    .. link-button:: workbench_docs_Workbench_DG_Generate_Datasets
+    .. link-button:: ./_workbench-files-to-migrate/workbench_docs_Workbench_DG_Generate_Datasets
         :text: Obtain Datasets
         :type: ref
         :classes: btn-outline-primary btn-block stretched-link
@@ -62,7 +62,7 @@ OpenVINO™ Deep Learning Workbench User Guide
 
     +++
 
-    .. link-button:: workbench_docs_Workbench_DG_Select_Environment
+    .. link-button:: ./_workbench-files-to-migrate/workbench_docs_Workbench_DG_Select_Environment
         :text: Select Environment
         :type: ref
         :classes: btn-outline-primary btn-block stretched-link
@@ -73,7 +73,7 @@ OpenVINO™ Deep Learning Workbench User Guide
 
     +++
 
-    .. link-button:: workbench_docs_Workbench_DG_Int_8_Quantization
+    .. link-button:: ./_workbench-files-to-migrate/workbench_docs_Workbench_DG_Int_8_Quantization
         :text: Optimize Model Performance
         :type: ref
         :classes: btn-outline-primary btn-block stretched-link
@@ -83,7 +83,7 @@ OpenVINO™ Deep Learning Workbench User Guide
 
     +++
 
-    .. link-button:: workbench_docs_Workbench_DG_Run_Inference
+    .. link-button:: ./_workbench-files-to-migrate/workbench_docs_Workbench_DG_Run_Inference
         :text: Explore Inference Configurations
         :type: ref
         :classes: btn-outline-primary btn-block stretched-link
@@ -94,7 +94,7 @@ OpenVINO™ Deep Learning Workbench User Guide
 
     +++
 
-    .. link-button:: workbench_docs_Workbench_DG_Measure_Accuracy
+    .. link-button:: ./_workbench-files-to-migrate/workbench_docs_Workbench_DG_Measure_Accuracy
         :text: Create Accuracy Report
         :type: ref
         :classes: btn-outline-primary btn-block stretched-link
@@ -105,7 +105,7 @@ OpenVINO™ Deep Learning Workbench User Guide
 
     +++
 
-    .. link-button:: workbench_docs_Workbench_DG_Deployment_Package
+    .. link-button:: ./_workbench-files-to-migrate/workbench_docs_Workbench_DG_Deployment_Package
         :text: Create Deployment Package
         :type: ref
         :classes: btn-outline-primary btn-block stretched-link
@@ -116,7 +116,7 @@ OpenVINO™ Deep Learning Workbench User Guide
 
     +++
 
-    .. link-button:: workbench_docs_Workbench_DG_Export_Project
+    .. link-button:: ./_workbench-files-to-migrate/workbench_docs_Workbench_DG_Export_Project
         :text: Export Project
         :type: ref
         :classes: btn-outline-primary btn-block stretched-link
@@ -127,7 +127,7 @@ OpenVINO™ Deep Learning Workbench User Guide
 
     +++
 
-    .. link-button:: workbench_docs_Workbench_DG_Deployment_Package
+    .. link-button:: ./_workbench-files-to-migrate/workbench_docs_Workbench_DG_Jupyter_Notebooks_CLI
         :text: Explore OpenVINO
         :type: ref
         :classes: btn-outline-primary btn-block stretched-link
@@ -138,7 +138,7 @@ OpenVINO™ Deep Learning Workbench User Guide
 
     +++
 
-    .. link-button:: workbench_docs_Workbench_DG_Export_Project
+    .. link-button:: ./_workbench-files-to-migrate/workbench_docs_Workbench_DG_Persist_Database
         :text: Maintain DL Workbench
         :type: ref
         :classes: btn-outline-primary btn-block stretched-link
