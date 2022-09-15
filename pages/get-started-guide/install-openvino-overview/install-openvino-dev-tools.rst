@@ -165,7 +165,7 @@ Now you may continue with the following tasks:
 
 * See pre-trained deep learning models in our :ref:`Open Model Zoo <doxid-model_zoo>`.
 
-* Try out OpenVINO via :ref:`OpenVINO Notebooks <doxid-tutorials>`.
+* Try out OpenVINO via :ref:`OpenVINO Notebooks <tuts__tutorials>`.
 
 * To write your own OpenVINO™ applications, see :ref:`OpenVINO Runtime User Guide <deploy_infer__openvino_runtime_user_guide>`.
 
