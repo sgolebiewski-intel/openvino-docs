@@ -16,23 +16,23 @@ Install and Configure Intel® Distribution of OpenVINO™ toolkit for Linux
    :hidden:
 
    Using Installer <./install-openvino-linux/installer-linux>
-   From PyPI <./installing-openvino-shared/installing-from-pypi>
+   From PyPI <./install-openvino-shared/install-from-pypi>
    From APT <./install-openvino-linux/install-from-apt>
    From YUM <./install-openvino-linux/install-from-yum>
-   From Anaconda Cloud <./installing-openvino-shared/intalling-from-anaconda>
+   From Anaconda Cloud <./install-openvino-shared/install-from-anaconda>
    Using Docker <./install-openvino-linux/docker-linux>
 
 If you want to install Intel® Distribution of OpenVINO™ toolkit on your Linux machine, there are a few ways to accomplish this. We prepared the following options for you:
 
 * :ref:`Install OpenVINO Runtime using an Installer <install__linux_installer>`
 
-* :ref:`Install OpenVINO from PyPI <doxid-openvino_docs_install_guides_installing_openvino_pip>`
+* :ref:`Install OpenVINO from PyPI <install__from_pypi>`
 
 * :ref:`Install OpenVINO Runtime from APT <install__linux_apt>`
 
 * :ref:`Install OpenVINO Runtime from YUM <install__linux_yum>`
 
-* :ref:`Install OpenVINO Runtime from Anaconda Cloud <doxid-openvino_docs_install_guides_installing_openvino_conda>`
+* :ref:`Install OpenVINO Runtime from Anaconda Cloud <install__from_conda>`
 
 * :ref:`Install OpenVINO with Docker <install__on_linux_from_docker>`
 

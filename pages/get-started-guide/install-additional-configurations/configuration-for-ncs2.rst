@@ -116,5 +116,5 @@ For example, to install the ``libusb`` library using Homebrew, use the following
 
 	brew install libusb
 
-You've completed all required configuration steps to perform inference on your Intel® Neural Compute Stick 2. Proceed to the `Start Using the Toolkit <openvino_docs_install_guides_installing_openvino_macos.html#get-started>`__ section to learn the basic OpenVINO™ toolkit workflow and run code samples and demo applications.
+You've completed all required configuration steps to perform inference on your Intel® Neural Compute Stick 2. Proceed to the :ref:`Start Using the Toolkit <install__macos_installer>` section to learn the basic OpenVINO™ toolkit workflow and run code samples and demo applications.
 

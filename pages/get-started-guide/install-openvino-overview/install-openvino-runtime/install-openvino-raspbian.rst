@@ -43,7 +43,7 @@ This guide provides step-by-step instructions on how to install the Intel® Dist
 
 #. `Install the Intel® Distribution of OpenVINO™ Toolkit <#install-openvino>`__
 
-#. `Install External Software Dependencies <#install-external-dependencies>`__
+#. `Install External Software Dependencies <#raspbian-install-external-dependencies>`__
 
 #. `Configure the Environment <#set-the-environment-variables>`__
 
@@ -80,7 +80,7 @@ Step 1: Install the Intel® Distribution of OpenVINO™ Toolkit
 
 Now the OpenVINO™ toolkit components are installed. Additional configuration steps are still required. Continue to the next sections to install External Software Dependencies, configure the environment and set up USB rules.
 
-.. _install-external-dependencies:
+.. _raspbian-install-external-dependencies:
 
 Step 2: Install External Software Dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -126,7 +126,7 @@ Step 5 (Optional): Workflow for Raspberry Pi
 
 If you want to use your model for inference, the model must be converted to the .bin and .xml Intermediate Representation (IR) files that are used as input by OpenVINO Runtime. The installation on Raspberry Pi only includes OpenVINO Runtime. Model Optimizer is available on `pypi.org <https://pypi.org/project/openvino-dev/>`__. To get the optimized models, you can use one of the following options:
 
-* Download public and Intel's pre-trained models from the `Open Model Zoo <https://github.com/openvinotoolkit/open_model_zoo>`__ using Model Downloader tool. For more information on pre-trained models, see Pre-Trained Models Documentation
+* Download public and Intel's pre-trained models from the `Open Model Zoo <https://github.com/openvinotoolkit/open_model_zoo>`__ using `Model Downloader tool <https://github.com/openvinotoolkit/open_model_zoo/blob/master/tools/model_tools/README.md>`__. For more information on pre-trained models, see `Pre-Trained Models Documentation <https://github.com/openvinotoolkit/open_model_zoo/blob/master/models/intel/index.md>`__
 
-* Convert the models using the Model Optimizer.
+* Convert the models using the :ref:`Model Optimizer <conv_prep__conv_with_model_optimizer>`.
 

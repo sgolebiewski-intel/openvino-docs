@@ -57,7 +57,7 @@ This guide provides step-by-step instructions on how to install the Intel® Dist
 
 #. `Install the Intel® Distribution of OpenVINO™ Toolkit <#install-openvino>`__
 
-#. `Install External Software Dependencies <#install-external-dependencies>`__
+#. `Install External Software Dependencies <#linux-install-external-dependencies>`__
 
 #. `Configure the Environment <#set-the-environment-variables>`__
 
@@ -139,7 +139,7 @@ To check **Release Notes** please visit: `Release Notes <https://software.intel.
 
 The core components are now installed. Continue to the next section to install additional dependencies.
 
-.. _install-external-dependencies:
+.. _linux-install-external-dependencies:
 
 Step 2: Install External Software Dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

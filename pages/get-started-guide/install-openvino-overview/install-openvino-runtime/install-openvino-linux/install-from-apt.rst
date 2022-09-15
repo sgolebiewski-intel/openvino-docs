@@ -184,7 +184,7 @@ Step 4 (Optional): Install Software Dependencies
 
 After you have installed OpenVINO Runtime, if you decided to :ref:`install OpenVINO Development Tools <install_openvino_dev_tools>`, make sure that you install external software dependencies first.
 
-Refer to `Install External Software Dependencies <openvino_docs_install_guides_installing_openvino_linux.html#install-external-dependencies>`__ for detailed steps.
+Refer to :ref:`Install External Software Dependencies <linux-install-external-dependencies>` for detailed steps.
 
 Step 5 (Optional): Configure Inference on Non-CPU Devices
 ---------------------------------------------------------
@@ -219,7 +219,7 @@ Now you may continue with the following tasks:
 
 * See pre-trained deep learning models in our :ref:`Open Model Zoo <doxid-model_zoo>`.
 
-* Try out OpenVINO via `OpenVINO Notebooks <https://docs.openvino.ai/latest/notebooks/notebooks.html>`__.
+* Try out OpenVINO via :ref:`OpenVINO Notebooks <doxid-tutorials>`.
 
 * To write your own OpenVINO™ applications, see :ref:`OpenVINO Runtime User Guide <deploy_infer__openvino_runtime_user_guide>`.
 

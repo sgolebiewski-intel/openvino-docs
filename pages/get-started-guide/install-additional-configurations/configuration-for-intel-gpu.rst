@@ -71,13 +71,13 @@ To check if you have this driver installed:
 
 #. Click the drop-down arrow to view the **Display adapters**. You can see the adapter that is installed in your computer:
    
-   .. image::  ./_assets/DeviceManager.PNG
+   .. image::  ./_assets/DeviceManager.png
 
 #. Right-click the adapter name and select **Properties**.
 
 #. Click the **Driver** tab to see the driver version.
    
-   .. image::  ./_assets/DeviceDriverVersion.PNG
+   .. image::  ./_assets/DeviceDriverVersion.png
 
 You are done updating your device driver and are ready to use your GPU. Proceed to the `Start Using the Toolkit <openvino_docs_install_guides_installing_openvino_windows.html#get-started>`__ section to learn the basic OpenVINO™ toolkit workflow and run code samples and demo applications.
 

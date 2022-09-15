@@ -101,44 +101,44 @@ By default, the distributed Docker image for OpenVINO has the recommended versio
 
 .. ref-code-block:: cpp
 
-	WORKDIR /tmp/opencl
-	RUN useradd -ms /bin/bash -G video,users openvino && \
-	    chown openvino -R /home/openvino
-	
-	RUN apt-get update && \
-	    apt-get install -y --no-install-recommends ocl-icd-libopencl1 && \
-	    rm -rf /var/lib/apt/lists/* && \
-	    curl -L "https://github.com/intel/compute-runtime/releases/download/19.41.14441/intel-gmmlib_19.3.2_amd64.deb" --output "intel-gmmlib_19.3.2_amd64.deb" && \
-	    curl -L "https://github.com/intel/compute-runtime/releases/download/19.41.14441/intel-igc-core_1.0.2597_amd64.deb" --output "intel-igc-core_1.0.2597_amd64.deb" && \
-	    curl -L "https://github.com/intel/compute-runtime/releases/download/19.41.14441/intel-igc-opencl_1.0.2597_amd64.deb" --output "intel-igc-opencl_1.0.2597_amd64.deb" && \
-	    curl -L "https://github.com/intel/compute-runtime/releases/download/19.41.14441/intel-opencl_19.41.14441_amd64.deb" --output "intel-opencl_19.41.14441_amd64.deb" && \
-	    curl -L "https://github.com/intel/compute-runtime/releases/download/19.41.14441/intel-ocloc_19.41.14441_amd64.deb" --output "intel-ocloc_19.04.12237_amd64.deb" && \
-	    dpkg -i /tmp/opencl/*.deb && \
-	    ldconfig && \
-	    rm /tmp/opencl
+   WORKDIR /tmp/opencl
+   RUN useradd -ms /bin/bash -G video,users openvino && \
+       chown openvino -R /home/openvino
+
+   RUN apt-get update && \
+       apt-get install -y --no-install-recommends ocl-icd-libopencl1 && \
+       rm -rf /var/lib/apt/lists/\* && \
+       curl -L "https://github.com/intel/compute-runtime/releases/download/19.41.14441/intel-gmmlib_19.3.2_amd64.deb" --output "intel-gmmlib_19.3.2_amd64.deb" && \
+       curl -L "https://github.com/intel/compute-runtime/releases/download/19.41.14441/intel-igc-core_1.0.2597_amd64.deb" --output "intel-igc-core_1.0.2597_amd64.deb" && \
+       curl -L "https://github.com/intel/compute-runtime/releases/download/19.41.14441/intel-igc-opencl_1.0.2597_amd64.deb" --output "intel-igc-opencl_1.0.2597_amd64.deb" && \
+       curl -L "https://github.com/intel/compute-runtime/releases/download/19.41.14441/intel-opencl_19.41.14441_amd64.deb" --output "intel-opencl_19.41.14441_amd64.deb" && \
+       curl -L "https://github.com/intel/compute-runtime/releases/download/19.41.14441/intel-ocloc_19.41.14441_amd64.deb" --output "intel-ocloc_19.04.12237_amd64.deb" && \
+       dpkg -i /tmp/opencl/\*.deb && \
+       ldconfig && \
+       rm /tmp/opencl
 
 **RHEL 8** :
 
 .. ref-code-block:: cpp
 
-	WORKDIR /tmp/opencl
-	RUN useradd -ms /bin/bash -G video,users openvino && \
-	    chown openvino -R /home/openvino
-	RUN groupmod -g 44 video
-	
-	RUN yum update -y && yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm && \
-	    yum update -y && yum install -y ocl-icd ocl-icd-devel && \
-	    yum clean all && rm -rf /var/cache/yum && \
-	    curl -L https://sourceforge.net/projects/intel-compute-runtime/files/19.41.14441/centos-7/intel-gmmlib-19.3.2-1.el7.x86_64.rpm/download -o intel-gmmlib-19.3.2-1.el7.x86_64.rpm && \
-	    curl -L https://sourceforge.net/projects/intel-compute-runtime/files/19.41.14441/centos-7/intel-gmmlib-devel-19.3.2-1.el7.x86_64.rpm/download -o intel-gmmlib-devel-19.3.2-1.el7.x86_64.rpm && \
-	    curl -L https://sourceforge.net/projects/intel-compute-runtime/files/19.41.14441/centos-7/intel-igc-core-1.0.2597-1.el7.x86_64.rpm/download -o intel-igc-core-1.0.2597-1.el7.x86_64.rpm && \
-	    curl -L https://sourceforge.net/projects/intel-compute-runtime/files/19.41.14441/centos-7/intel-igc-opencl-1.0.2597-1.el7.x86_64.rpm/download -o intel-igc-opencl-1.0.2597-1.el7.x86_64.rpm && \
-	    curl -L https://sourceforge.net/projects/intel-compute-runtime/files/19.41.14441/centos-7/intel-igc-opencl-devel-1.0.2597-1.el7.x86_64.rpm/download -o  intel-igc-opencl-devel-1.0.2597-1.el7.x86_64.rpm && \
-	    curl -L https://sourceforge.net/projects/intel-compute-runtime/files/19.41.14441/centos-7/intel-opencl-19.41.14441-1.el7.x86_64.rpm/download -o intel-opencl-19.41.14441-1.el7.x86_64.rpm \
-	    rpm -ivh ${TEMP_DIR}/*.rpm && \
-	    ldconfig && \
-	    rm -rf ${TEMP_DIR} && \
-	    yum remove -y epel-release
+   WORKDIR /tmp/opencl
+   RUN useradd -ms /bin/bash -G video,users openvino && \
+       chown openvino -R /home/openvino
+   RUN groupmod -g 44 video
+   
+   RUN yum update -y && yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm && \
+       yum update -y && yum install -y ocl-icd ocl-icd-devel && \
+       yum clean all && rm -rf /var/cache/yum && \
+       curl -L https://sourceforge.net/projects/intel-compute-runtime/files/19.41.14441/centos-7/intel-gmmlib-19.3.2-1.el7.x86_64.rpm/download -o intel-gmmlib-19.3.2-1.el7.x86_64.rpm && \
+       curl -L https://sourceforge.net/projects/intel-compute-runtime/files/19.41.14441/centos-7/intel-gmmlib-devel-19.3.2-1.el7.x86_64.rpm/download -o intel-gmmlib-devel-19.3.2-1.el7.x86_64.rpm && \
+       curl -L https://sourceforge.net/projects/intel-compute-runtime/files/19.41.14441/centos-7/intel-igc-core-1.0.2597-1.el7.x86_64.rpm/download -o intel-igc-core-1.0.2597-1.el7.x86_64.rpm && \
+       curl -L https://sourceforge.net/projects/intel-compute-runtime/files/19.41.14441/centos-7/intel-igc-opencl-1.0.2597-1.el7.x86_64.rpm/download -o intel-igc-opencl-1.0.2597-1.el7.x86_64.rpm && \
+       curl -L https://sourceforge.net/projects/intel-compute-runtime/files/19.41.14441/centos-7/intel-igc-opencl-devel-1.0.2597-1.el7.x86_64.rpm/download -o  intel-igc-opencl-devel-1.0.2597-1.el7.x86_64.rpm && \
+       curl -L https://sourceforge.net/projects/intel-compute-runtime/files/19.41.14441/centos-7/intel-opencl-19.41.14441-1.el7.x86_64.rpm/download -o intel-opencl-19.41.14441-1.el7.x86_64.rpm \
+       rpm -ivh ${TEMP_DIR}/\*.rpm && \
+       ldconfig && \
+       rm -rf ${TEMP_DIR} && \
+       yum remove -y epel-release
 
 .. _set-up-hddldaemon:
 
@@ -225,7 +225,7 @@ Run the Docker image with the following command:
 
 .. ref-code-block:: cpp
 
-	docker run -it --rm --device-cgroup-rule='c 189:* rmw' -v /dev/bus/usb:/dev/bus/usb <image_name>
+   docker run -it --rm --device-cgroup-rule='c 189:\* rmw' -v /dev/bus/usb:/dev/bus/usb <image_name>
 
 While the command above is not working, you can also run container in the privileged mode, enable the Docker network configuration as host, and mount all devices to the container. Run the following command:
 
@@ -259,13 +259,13 @@ Use the following command:
 
 .. ref-code-block:: cpp
 
-	docker run -it --rm --device=/dev/ion:/dev/ion -v /var/tmp:/var/tmp <image_name>
+   docker run -it --rm --device=/dev/ion:/dev/ion -v /var/tmp:/var/tmp <image_name>
 
 If your application runs inference of a network with a big size (>4MB) of input/output, the HDDL plugin will use shared memory. In this case, you must mount ``/dev/shm`` as volume:
 
 .. ref-code-block:: cpp
 
-	docker run -it --rm --device=/dev/ion:/dev/ion -v /var/tmp:/var/tmp -v /dev/shm:/dev/shm <image_name>
+   docker run -it --rm --device=/dev/ion:/dev/ion -v /var/tmp:/var/tmp -v /dev/shm:/dev/shm <image_name>
 
 Note the following things:
 
@@ -280,7 +280,7 @@ In some cases, the ion driver is not enabled (for example, due to a newer kernel
 
 .. ref-code-block:: cpp
 
-	docker run -it --rm --ipc=host --net=host -v /var/tmp:/var/tmp <image_name>
+   docker run -it --rm --ipc=host --net=host -v /var/tmp:/var/tmp <image_name>
 
 If that still does not solve the issue, try starting ``hddldaemon`` with the root user on host. However, this approach is not recommended. Please use with caution.
 
@@ -295,29 +295,29 @@ To run the ``Hello Classification Sample`` on a specific inference device, run t
 
 .. ref-code-block:: cpp
 
-	docker run -it --rm <image_name>
-	/bin/bash -c "cd ~ && omz_downloader --name googlenet-v1 --precisions FP16 && omz_converter --name googlenet-v1 --precision FP16 && curl -O https://storage.openvinotoolkit.org/data/test_data/images/car_1.bmp && python3 /opt/intel/openvino/samples/python/hello_classification/hello_classification.py public/googlenet-v1/FP16/googlenet-v1.xml car_1.bmp CPU"
+   docker run -it --rm <image_name>
+   /bin/bash -c "cd ~ && omz_downloader --name googlenet-v1 --precisions FP16 && omz_converter --name googlenet-v1 --precision FP16 && curl -O https://storage.openvinotoolkit.org/data/test_data/images/car_1.bmp && python3 /opt/intel/openvino/samples/python/hello_classification/hello_classification.py public/googlenet-v1/FP16/googlenet-v1.xml car_1.bmp CPU"
 
 **GPU** :
 
 .. ref-code-block:: cpp
 
-	docker run -itu root:root  --rm --device /dev/dri:/dev/dri <image_name>
-	/bin/bash -c "omz_downloader --name googlenet-v1 --precisions FP16 && omz_converter --name googlenet-v1 --precision FP16 && curl -O https://storage.openvinotoolkit.org/data/test_data/images/car_1.bmp && python3 samples/python/hello_classification/hello_classification.py public/googlenet-v1/FP16/googlenet-v1.xml car_1.bmp GPU"
+   docker run -itu root:root  --rm --device /dev/dri:/dev/dri <image_name>
+   /bin/bash -c "omz_downloader --name googlenet-v1 --precisions FP16 && omz_converter --name googlenet-v1 --precision FP16 && curl -O https://storage.openvinotoolkit.org/data/test_data/images/car_1.bmp && python3 samples/python/hello_classification/hello_classification.py public/googlenet-v1/FP16/googlenet-v1.xml car_1.bmp GPU"
 
 **MYRIAD** :
 
 .. ref-code-block:: cpp
 
-	docker run -itu root:root --rm --device-cgroup-rule='c 189:* rmw' -v /dev/bus/usb:/dev/bus/usb <image_name>
-	/bin/bash -c "omz_downloader --name googlenet-v1 --precisions FP16 && omz_converter --name googlenet-v1 --precision FP16 && curl -O https://storage.openvinotoolkit.org/data/test_data/images/car_1.bmp && python3 samples/python/hello_classification/hello_classification.py public/googlenet-v1/FP16/googlenet-v1.xml car_1.bmp MYRIAD"
+   docker run -itu root:root --rm --device-cgroup-rule='c 189:\* rmw' -v /dev/bus/usb:/dev/bus/usb <image_name>
+   /bin/bash -c "omz_downloader --name googlenet-v1 --precisions FP16 && omz_converter --name googlenet-v1 --precision FP16 && curl -O https://storage.openvinotoolkit.org/data/test_data/images/car_1.bmp && python3 samples/python/hello_classification/hello_classification.py public/googlenet-v1/FP16/googlenet-v1.xml car_1.bmp MYRIAD"
 
 **HDDL** :
 
 .. ref-code-block:: cpp
 
-	docker run -itu root:root --rm --device=/dev/ion:/dev/ion -v /var/tmp:/var/tmp -v /dev/shm:/dev/shm <image_name>
-	/bin/bash -c "omz_downloader --name googlenet-v1 --precisions FP16 && omz_converter --name googlenet-v1 --precision FP16 && curl -O https://storage.openvinotoolkit.org/data/test_data/images/car_1.bmp && umask 000 && python3 samples/python/hello_classification/hello_classification.py public/googlenet-v1/FP16/googlenet-v1.xml car_1.bmp HDDL"
+   docker run -itu root:root --rm --device=/dev/ion:/dev/ion -v /var/tmp:/var/tmp -v /dev/shm:/dev/shm <image_name>
+   /bin/bash -c "omz_downloader --name googlenet-v1 --precisions FP16 && omz_converter --name googlenet-v1 --precision FP16 && curl -O https://storage.openvinotoolkit.org/data/test_data/images/car_1.bmp && umask 000 && python3 samples/python/hello_classification/hello_classification.py public/googlenet-v1/FP16/googlenet-v1.xml car_1.bmp HDDL"
 
 Additional Resources
 ~~~~~~~~~~~~~~~~~~~~

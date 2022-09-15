@@ -42,7 +42,7 @@ Uninstall Using the Original Installation Package
 
   Follow the wizard. Select **Remove** option when presented. If you have more product versions installed, you can select one from a drop-down menu in GUI and from a list in CLI.
 
-  .. image:: _static/images/openvino-uninstall-dropdown-linux.png
+  .. image:: ./_assets/openvino-uninstall-dropdown-linux.png
     :width: 500px
     :align: center
 
