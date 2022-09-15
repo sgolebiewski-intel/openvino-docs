@@ -36,7 +36,7 @@ about various toolkit components.
 
 .. image:: ./_assets/openvino_dl_wb.png
 
-.. link-button:: workbench_docs_Workbench_DG_Start_DL_Workbench_in_DevCloud
+.. link-button:: ./dl-workbench-overview/dl-workbench-install/run-dl-workbench-in-devcloud
     :type: ref
     :text: Run DL Workbench in Intel® DevCloud
     :classes: btn-primary btn-block
@@ -109,15 +109,15 @@ The intuitive web-based interface of the DL Workbench enables you to easily use 
     * - `Open Model Zoo <https://docs.openvinotoolkit.org/latest/omz_tools_downloader.html>`__
       - Get access to the collection of high-quality pre-trained deep learning `public <https://docs.openvinotoolkit.org/latest/omz_models_group_public.html>`__ and `Intel-trained <https://docs.openvinotoolkit.org/latest/omz_models_group_intel.html>`__ models trained to resolve a variety of different tasks.
     * - `Model Optimizer <https://docs.openvinotoolkit.org/latest/openvino_docs_MO_DG_Deep_Learning_Model_Optimizer_DevGuide.html>`__
-      - Optimize and transform models trained in supported frameworks to the IR format. Supported frameworks include TensorFlow\*, Caffe\*, Kaldi\*, MXNet\*, and ONNX\* format.
+      - Optimize and transform models trained in supported frameworks to the IR format. Supported frameworks include TensorFlow, Caffe, Kaldi, MXNet, and ONNX format.
     * - `Benchmark Tool <https://docs.openvinotoolkit.org/latest/openvino_inference_engine_tools_benchmark_tool_README.html>`__
       - Estimate deep learning model inference performance on supported devices.
     * - `Accuracy Checker <https://docs.openvinotoolkit.org/latest/omz_tools_accuracy_checker.html>`__
       - Evaluate the accuracy of a model by collecting one or several metric values.
-    * - `Post-Training Optimization Tool <https://docs.openvinotoolkit.org/latest/pot_README.html>`__
+    * - `Post-Training Optimization Tool <https://docs.openvino.ai/latest/pot_introduction.html>`__
       - Optimize pretrained models with lowering the precision of a model from floating-point precision(FP32 or FP16) to integer precision (INT8), without the need to retrain or fine-tune models.
 
-.. link-button:: workbench_docs_Workbench_DG_Start_DL_Workbench_in_DevCloud
+.. link-button:: ./dl-workbench-overview/dl-workbench-install/run-dl-workbench-in-devcloud
     :type: ref
     :text: Run DL Workbench in Intel® DevCloud
     :classes: btn-outline-primary
