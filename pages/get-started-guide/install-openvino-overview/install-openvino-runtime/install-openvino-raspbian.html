@@ -76,7 +76,7 @@
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="Install OpenVINO™ Development Tools" href="../install-openvino-dev-tools.html" />
-    <link rel="prev" title="Install Intel® Distribution of OpenVINO™ toolkit from Anaconda Cloud" href="install-openvino-shared/install-from-anaconda.html" />
+    <link rel="prev" title="Install and Configure Intel® Distribution of OpenVINO™ toolkit for macOS" href="install-openvino-macos/installer-macos.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -266,6 +266,11 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="install-openvino-shared/install-from-pypi.html">
+         From PyPI
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="install-openvino-linux/install-from-apt.html">
          From APT
         </a>
@@ -273,6 +278,11 @@
        <li class="toctree-l4">
         <a class="reference internal" href="install-openvino-linux/install-from-yum.html">
          From YUM
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="install-openvino-shared/install-from-anaconda.html">
+         From Anaconda Cloud
         </a>
        </li>
        <li class="toctree-l4">
@@ -300,6 +310,11 @@
        <li class="toctree-l4">
         <a class="reference internal" href="install-openvino-shared/install-from-pypi.html">
          From PyPI
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="install-openvino-shared/install-from-anaconda.html">
+         From Anaconda Cloud
         </a>
        </li>
        <li class="toctree-l4">
@@ -677,7 +692,7 @@
 <p>This guide provides step-by-step instructions on how to install the Intel® Distribution of OpenVINO™ toolkit for Raspbian OS. The following steps will be covered:</p>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="#install-openvino">Install the Intel® Distribution of OpenVINO™ Toolkit</a></p></li>
-<li><p><a class="reference external" href="#install-external-dependencies">Install External Software Dependencies</a></p></li>
+<li><p><a class="reference external" href="#raspbian-install-external-dependencies">Install External Software Dependencies</a></p></li>
 <li><p><a class="reference external" href="#set-the-environment-variables">Configure the Environment</a></p></li>
 <li><p><a class="reference external" href="#add-usb-rules">Add USB rules for an Intel® Neural Compute Stick 2 device (Optional)</a></p></li>
 <li><p><a class="reference external" href="#workflow-for-raspberry-pi">Learn About Workflow for Raspberry Pi (Optional)</a></p></li>
@@ -698,7 +713,7 @@
 <p>Now the OpenVINO™ toolkit components are installed. Additional configuration steps are still required. Continue to the next sections to install External Software Dependencies, configure the environment and set up USB rules.</p>
 </section>
 <section id="step-2-install-external-software-dependencies">
-<span id="install-external-dependencies"></span><h2>Step 2: Install External Software Dependencies<a class="headerlink" href="#step-2-install-external-software-dependencies" title="Permalink to this headline">¶</a></h2>
+<span id="raspbian-install-external-dependencies"></span><h2>Step 2: Install External Software Dependencies<a class="headerlink" href="#step-2-install-external-software-dependencies" title="Permalink to this headline">¶</a></h2>
 <p>CMake version 3.7.2 or higher is required for building the OpenVINO™ toolkit sample application. To install, open a Terminal window and run the following command:</p>
 <div class="highlight"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">cmake</span></pre></div></div><p>CMake is installed. Continue to the next section to set the environment variables.</p>
 </section>
@@ -720,8 +735,8 @@
 <span id="workflow-for-raspberry-pi"></span><h2>Step 5 (Optional): Workflow for Raspberry Pi<a class="headerlink" href="#step-5-optional-workflow-for-raspberry-pi" title="Permalink to this headline">¶</a></h2>
 <p>If you want to use your model for inference, the model must be converted to the .bin and .xml Intermediate Representation (IR) files that are used as input by OpenVINO Runtime. The installation on Raspberry Pi only includes OpenVINO Runtime. Model Optimizer is available on <a class="reference external" href="https://pypi.org/project/openvino-dev/">pypi.org</a>. To get the optimized models, you can use one of the following options:</p>
 <ul class="simple">
-<li><p>Download public and Intel’s pre-trained models from the <a class="reference external" href="https://github.com/openvinotoolkit/open_model_zoo">Open Model Zoo</a> using Model Downloader tool. For more information on pre-trained models, see Pre-Trained Models Documentation</p></li>
-<li><p>Convert the models using the Model Optimizer.</p></li>
+<li><p>Download public and Intel’s pre-trained models from the <a class="reference external" href="https://github.com/openvinotoolkit/open_model_zoo">Open Model Zoo</a> using <a class="reference external" href="https://github.com/openvinotoolkit/open_model_zoo/blob/master/tools/model_tools/README.md">Model Downloader tool</a>. For more information on pre-trained models, see <a class="reference external" href="https://github.com/openvinotoolkit/open_model_zoo/blob/master/models/intel/index.md">Pre-Trained Models Documentation</a></p></li>
+<li><p>Convert the models using the <a class="reference internal" href="../../../documentation/converting-models-with-model-optimizer.html#conv-prep-conv-with-model-optimizer"><span class="std std-ref">Model Optimizer</span></a>.</p></li>
 </ul>
 </section>
 </section>
@@ -732,7 +747,7 @@
             
                 <div class='prev-next-bottom'>
                   
-    <a class='button bttn-sec button-size-l' id="prev-link" href="install-openvino-shared/install-from-anaconda.html" title="previous page">Prev</a>
+    <a class='button bttn-sec button-size-l' id="prev-link" href="install-openvino-macos/installer-macos.html" title="previous page">Prev</a>
     <a class='button bttn-sec button-size-l' id="next-link" href="../install-openvino-dev-tools.html" title="next page">Next</a>
 
                 </div>

@@ -76,7 +76,7 @@
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
     <link rel="next" title="Install and Configure Intel® Distribution of OpenVINO™ toolkit for Windows" href="../install-openvino-windows.html" />
-    <link rel="prev" title="Install Intel® Distribution of OpenVINO™ Toolkit for Linux Using YUM Repository" href="install-from-yum.html" />
+    <link rel="prev" title="Install Intel® Distribution of OpenVINO™ toolkit from Anaconda Cloud" href="../install-openvino-shared/install-from-anaconda.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -266,6 +266,11 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="../install-openvino-shared/install-from-pypi.html">
+         From PyPI
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="install-from-apt.html">
          From APT
         </a>
@@ -273,6 +278,11 @@
        <li class="toctree-l4">
         <a class="reference internal" href="install-from-yum.html">
          From YUM
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../install-openvino-shared/install-from-anaconda.html">
+         From Anaconda Cloud
         </a>
        </li>
        <li class="toctree-l4 current active">
@@ -300,6 +310,11 @@
        <li class="toctree-l4">
         <a class="reference internal" href="../install-openvino-shared/install-from-pypi.html">
          From PyPI
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../install-openvino-shared/install-from-anaconda.html">
+         From Anaconda Cloud
         </a>
        </li>
        <li class="toctree-l4">
@@ -781,13 +796,13 @@
 
 <span class="n">RUN</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> \
     <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">install</span><span class="o">-</span><span class="n">recommends</span> <span class="n">ocl</span><span class="o">-</span><span class="n">icd</span><span class="o">-</span><span class="n">libopencl1</span> <span class="o">&amp;&amp;</span> \
-    <span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">lists</span><span class="o">/*</span> <span class="o">&amp;&amp;</span> \
+    <span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">lists</span><span class="o">/</span><span class="err">\</span><span class="o">*</span> <span class="o">&amp;&amp;</span> \
     <span class="n">curl</span> <span class="o">-</span><span class="n">L</span> <span class="s">&quot;https://github.com/intel/compute-runtime/releases/download/19.41.14441/intel-gmmlib_19.3.2_amd64.deb&quot;</span> <span class="o">--</span><span class="n">output</span> <span class="s">&quot;intel-gmmlib_19.3.2_amd64.deb&quot;</span> <span class="o">&amp;&amp;</span> \
     <span class="n">curl</span> <span class="o">-</span><span class="n">L</span> <span class="s">&quot;https://github.com/intel/compute-runtime/releases/download/19.41.14441/intel-igc-core_1.0.2597_amd64.deb&quot;</span> <span class="o">--</span><span class="n">output</span> <span class="s">&quot;intel-igc-core_1.0.2597_amd64.deb&quot;</span> <span class="o">&amp;&amp;</span> \
     <span class="n">curl</span> <span class="o">-</span><span class="n">L</span> <span class="s">&quot;https://github.com/intel/compute-runtime/releases/download/19.41.14441/intel-igc-opencl_1.0.2597_amd64.deb&quot;</span> <span class="o">--</span><span class="n">output</span> <span class="s">&quot;intel-igc-opencl_1.0.2597_amd64.deb&quot;</span> <span class="o">&amp;&amp;</span> \
     <span class="n">curl</span> <span class="o">-</span><span class="n">L</span> <span class="s">&quot;https://github.com/intel/compute-runtime/releases/download/19.41.14441/intel-opencl_19.41.14441_amd64.deb&quot;</span> <span class="o">--</span><span class="n">output</span> <span class="s">&quot;intel-opencl_19.41.14441_amd64.deb&quot;</span> <span class="o">&amp;&amp;</span> \
     <span class="n">curl</span> <span class="o">-</span><span class="n">L</span> <span class="s">&quot;https://github.com/intel/compute-runtime/releases/download/19.41.14441/intel-ocloc_19.41.14441_amd64.deb&quot;</span> <span class="o">--</span><span class="n">output</span> <span class="s">&quot;intel-ocloc_19.04.12237_amd64.deb&quot;</span> <span class="o">&amp;&amp;</span> \
-    <span class="n">dpkg</span> <span class="o">-</span><span class="n">i</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">opencl</span><span class="o">/*</span><span class="p">.</span><span class="n">deb</span> <span class="o">&amp;&amp;</span> \
+    <span class="n">dpkg</span> <span class="o">-</span><span class="n">i</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">opencl</span><span class="o">/</span><span class="err">\</span><span class="o">*</span><span class="p">.</span><span class="n">deb</span> <span class="o">&amp;&amp;</span> \
     <span class="n">ldconfig</span> <span class="o">&amp;&amp;</span> \
     <span class="n">rm</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">opencl</span></pre></div></div><p><strong>RHEL 8</strong> :</p>
 <div class="highlight"><div class="highlight"><pre><span></span><span class="n">WORKDIR</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">opencl</span>
@@ -804,7 +819,7 @@
 <span class="c1">    curl -L https://sourceforge.net/projects/intel-compute-runtime/files/19.41.14441/centos-7/intel-igc-opencl-1.0.2597-1.el7.x86_64.rpm/download -o intel-igc-opencl-1.0.2597-1.el7.x86_64.rpm &amp;&amp; \</span>
 <span class="c1">    curl -L https://sourceforge.net/projects/intel-compute-runtime/files/19.41.14441/centos-7/intel-igc-opencl-devel-1.0.2597-1.el7.x86_64.rpm/download -o  intel-igc-opencl-devel-1.0.2597-1.el7.x86_64.rpm &amp;&amp; \</span>
 <span class="c1">    curl -L https://sourceforge.net/projects/intel-compute-runtime/files/19.41.14441/centos-7/intel-opencl-19.41.14441-1.el7.x86_64.rpm/download -o intel-opencl-19.41.14441-1.el7.x86_64.rpm \</span>
-<span class="c1">    rpm -ivh ${TEMP_DIR}/*.rpm &amp;&amp; \</span>
+<span class="c1">    rpm -ivh ${TEMP_DIR}/\*.rpm &amp;&amp; \</span>
 <span class="c1">    ldconfig &amp;&amp; \</span>
 <span class="c1">    rm -rf ${TEMP_DIR} &amp;&amp; \</span>
 <span class="c1">    yum remove -y epel-release</span></pre></div></div></section>
@@ -865,7 +880,7 @@
 <section id="running-the-image-on-intel-neural-compute-stick-2">
 <h3>Running the Image on Intel® Neural Compute Stick 2<a class="headerlink" href="#running-the-image-on-intel-neural-compute-stick-2" title="Permalink to this headline">¶</a></h3>
 <p>Run the Docker image with the following command:</p>
-<div class="highlight"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">it</span> <span class="o">--</span><span class="n">rm</span> <span class="o">--</span><span class="n">device</span><span class="o">-</span><span class="n">cgroup</span><span class="o">-</span><span class="n">rule</span><span class="o">=</span><span class="sc">&#39;c 189:* rmw&#39;</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">bus</span><span class="o">/</span><span class="nl">usb</span><span class="p">:</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">bus</span><span class="o">/</span><span class="n">usb</span> <span class="o">&lt;</span><span class="n">image_name</span><span class="o">&gt;</span></pre></div></div><p>While the command above is not working, you can also run container in the privileged mode, enable the Docker network configuration as host, and mount all devices to the container. Run the following command:</p>
+<div class="highlight"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">it</span> <span class="o">--</span><span class="n">rm</span> <span class="o">--</span><span class="n">device</span><span class="o">-</span><span class="n">cgroup</span><span class="o">-</span><span class="n">rule</span><span class="o">=</span><span class="sc">&#39;c 189:\* rmw&#39;</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">bus</span><span class="o">/</span><span class="nl">usb</span><span class="p">:</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">bus</span><span class="o">/</span><span class="n">usb</span> <span class="o">&lt;</span><span class="n">image_name</span><span class="o">&gt;</span></pre></div></div><p>While the command above is not working, you can also run container in the privileged mode, enable the Docker network configuration as host, and mount all devices to the container. Run the following command:</p>
 <div class="highlight"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">it</span> <span class="o">--</span><span class="n">rm</span> <span class="o">--</span><span class="n">privileged</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="nl">dev</span><span class="p">:</span><span class="o">/</span><span class="n">dev</span> <span class="o">--</span><span class="n">network</span><span class="o">=</span><span class="n">host</span> <span class="o">&lt;</span><span class="n">image_name</span><span class="o">&gt;</span></pre></div></div><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This option is not recommended, as conflicts with Kubernetes and other tools that use orchestration and private networks may occur. Please use it with caution and only for troubleshooting purposes.</p>
@@ -907,7 +922,7 @@
 <span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">bash</span> <span class="o">-</span><span class="n">c</span> <span class="s">&quot;cd ~ &amp;&amp; omz_downloader --name googlenet-v1 --precisions FP16 &amp;&amp; omz_converter --name googlenet-v1 --precision FP16 &amp;&amp; curl -O https://storage.openvinotoolkit.org/data/test_data/images/car_1.bmp &amp;&amp; python3 /opt/intel/openvino/samples/python/hello_classification/hello_classification.py public/googlenet-v1/FP16/googlenet-v1.xml car_1.bmp CPU&quot;</span></pre></div></div><p><strong>GPU</strong> :</p>
 <div class="highlight"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">itu</span> <span class="nl">root</span><span class="p">:</span><span class="n">root</span>  <span class="o">--</span><span class="n">rm</span> <span class="o">--</span><span class="n">device</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="nl">dri</span><span class="p">:</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">dri</span> <span class="o">&lt;</span><span class="n">image_name</span><span class="o">&gt;</span>
 <span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">bash</span> <span class="o">-</span><span class="n">c</span> <span class="s">&quot;omz_downloader --name googlenet-v1 --precisions FP16 &amp;&amp; omz_converter --name googlenet-v1 --precision FP16 &amp;&amp; curl -O https://storage.openvinotoolkit.org/data/test_data/images/car_1.bmp &amp;&amp; python3 samples/python/hello_classification/hello_classification.py public/googlenet-v1/FP16/googlenet-v1.xml car_1.bmp GPU&quot;</span></pre></div></div><p><strong>MYRIAD</strong> :</p>
-<div class="highlight"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">itu</span> <span class="nl">root</span><span class="p">:</span><span class="n">root</span> <span class="o">--</span><span class="n">rm</span> <span class="o">--</span><span class="n">device</span><span class="o">-</span><span class="n">cgroup</span><span class="o">-</span><span class="n">rule</span><span class="o">=</span><span class="sc">&#39;c 189:* rmw&#39;</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">bus</span><span class="o">/</span><span class="nl">usb</span><span class="p">:</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">bus</span><span class="o">/</span><span class="n">usb</span> <span class="o">&lt;</span><span class="n">image_name</span><span class="o">&gt;</span>
+<div class="highlight"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">itu</span> <span class="nl">root</span><span class="p">:</span><span class="n">root</span> <span class="o">--</span><span class="n">rm</span> <span class="o">--</span><span class="n">device</span><span class="o">-</span><span class="n">cgroup</span><span class="o">-</span><span class="n">rule</span><span class="o">=</span><span class="sc">&#39;c 189:\* rmw&#39;</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">bus</span><span class="o">/</span><span class="nl">usb</span><span class="p">:</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">bus</span><span class="o">/</span><span class="n">usb</span> <span class="o">&lt;</span><span class="n">image_name</span><span class="o">&gt;</span>
 <span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">bash</span> <span class="o">-</span><span class="n">c</span> <span class="s">&quot;omz_downloader --name googlenet-v1 --precisions FP16 &amp;&amp; omz_converter --name googlenet-v1 --precision FP16 &amp;&amp; curl -O https://storage.openvinotoolkit.org/data/test_data/images/car_1.bmp &amp;&amp; python3 samples/python/hello_classification/hello_classification.py public/googlenet-v1/FP16/googlenet-v1.xml car_1.bmp MYRIAD&quot;</span></pre></div></div><p><strong>HDDL</strong> :</p>
 <div class="highlight"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">itu</span> <span class="nl">root</span><span class="p">:</span><span class="n">root</span> <span class="o">--</span><span class="n">rm</span> <span class="o">--</span><span class="n">device</span><span class="o">=/</span><span class="n">dev</span><span class="o">/</span><span class="nl">ion</span><span class="p">:</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ion</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="nl">tmp</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">tmp</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="nl">shm</span><span class="p">:</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">shm</span> <span class="o">&lt;</span><span class="n">image_name</span><span class="o">&gt;</span>
 <span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">bash</span> <span class="o">-</span><span class="n">c</span> <span class="s">&quot;omz_downloader --name googlenet-v1 --precisions FP16 &amp;&amp; omz_converter --name googlenet-v1 --precision FP16 &amp;&amp; curl -O https://storage.openvinotoolkit.org/data/test_data/images/car_1.bmp &amp;&amp; umask 000 &amp;&amp; python3 samples/python/hello_classification/hello_classification.py public/googlenet-v1/FP16/googlenet-v1.xml car_1.bmp HDDL&quot;</span></pre></div></div></section>
@@ -927,7 +942,7 @@
             
                 <div class='prev-next-bottom'>
                   
-    <a class='button bttn-sec button-size-l' id="prev-link" href="install-from-yum.html" title="previous page">Prev</a>
+    <a class='button bttn-sec button-size-l' id="prev-link" href="../install-openvino-shared/install-from-anaconda.html" title="previous page">Prev</a>
     <a class='button bttn-sec button-size-l' id="next-link" href="../install-openvino-windows.html" title="next page">Next</a>
 
                 </div>
