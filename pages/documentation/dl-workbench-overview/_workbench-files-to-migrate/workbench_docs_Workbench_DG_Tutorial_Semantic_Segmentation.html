@@ -1894,7 +1894,7 @@ has become, and check the difference between original and optimized model accura
 <tbody>
 <tr class="row-even"><td><p><a class="reference external" href="https://docs.openvinotoolkit.org/latest/omz_models_model_fast_neural_style_mosaic_onnx.html">deeplabv3</a></p></td>
 <td><p><a class="reference external" href="https://paperswithcode.com/task/semantic-segmentation">Semantic Segmentation</a></p></td>
-<td><p><a class="reference external" href="https://www.tensorflow.org/">TensorFlow*</a></p></td>
+<td><p><a class="reference external" href="https://www.tensorflow.org/">TensorFlow</a></p></td>
 <td><p><a class="reference external" href="https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/public/deeplabv3">Open Model Zoo</a></p></td>
 <td><p><a class="reference internal" href="workbench_docs_Workbench_DG_Dataset_Types.html#workbench-dataset-types"><span class="std std-ref">Pascal Visual Object Classes (Pascal VOC)</span></a></p></td>
 </tr>
@@ -1961,7 +1961,10 @@ Parent model predictions used as optimal references.</p>
 <img alt="../../../../_images/report_table_segmentation.png" src="../../../../_images/report_table_segmentation.png" />
 <p>Advanced mode:</p>
 <img alt="../../../../_images/report_table_segmentation_advanced.png" src="../../../../_images/report_table_segmentation_advanced.png" />
-<p><strong>TIP:</strong> To sort the numbers from lowest to highest, click on the parameter name in the table.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To sort the numbers from lowest to highest, click on the parameter name in the table.</p>
+</div>
 <p>Click <strong>Visualize</strong> to see the prediction difference:</p>
 <img alt="../../../../_images/semantic_segmentation_results.png" src="../../../../_images/semantic_segmentation_results.png" />
 <p>In our case, the optimized <code class="docutils literal notranslate"><span class="pre">deeplabv3</span></code> model recognized all object of class #6 - buses. You can see that the clustering
@@ -1976,7 +1979,7 @@ model prediction.</p>
 <p>After evaluating the accuracy, you can decide whether the difference between imported and optimized models predictions
 is critical or not:</p>
 <ul class="simple">
-<li><p>If the tradeoff between accuracy and performance is too big, <a class="reference internal" href="workbench_docs_Workbench_DG_Generate_Datasets.html#workbench-dataset-obtain-datasets"><span class="std std-ref">import an annotated dataset</span></a> and use <a class="reference external" href="Int-8_Quantization.md#accuracyaware">AccuracyAware optimization method</a>, then repeat the steps from this tutorial.</p></li>
+<li><p>If the tradeoff between accuracy and performance is too big, <a class="reference internal" href="workbench_docs_Workbench_DG_Generate_Datasets.html#workbench-dataset-obtain-datasets"><span class="std std-ref">import an annotated dataset</span></a> and use <a class="reference internal" href="workbench_docs_Workbench_DG_Int_8_Quantization.html#workbench-guide-quantization"><span class="std std-ref">AccuracyAware optimization method</span></a>, then repeat the steps from this tutorial.</p></li>
 <li><p>If the tradeoff is acceptable, <a class="reference internal" href="workbench_docs_Workbench_DG_Deploy_and_Integrate_Performance_Criteria_into_Application.html#workbench-deployment-deploy-and-integrate-performance-criteria-into-app"><span class="std std-ref">explore inference configurations</span></a> to further enhance the performance. Then create a <a class="reference internal" href="workbench_docs_Workbench_DG_Deployment_Package.html#workbench-guide-deployment-package"><span class="std std-ref">deployment package</span></a> with your ready-to-deploy model.</p></li>
 </ul>
 <p><em>All images were taken from ImageNet, Pascal Visual Object Classes, and Common Objects in Context datasets for demonstration

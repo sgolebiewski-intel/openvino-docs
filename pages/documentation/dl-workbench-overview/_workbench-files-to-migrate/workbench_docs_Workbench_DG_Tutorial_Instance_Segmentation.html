@@ -1904,7 +1904,7 @@ has become, and check the difference between original and optimized model accura
 <tbody>
 <tr class="row-even"><td><p><a class="reference external" href="https://docs.openvino.ai/latest/omz_models_model_instance_segmentation_security_0002.html">instance-segmentation-security-0002</a></p></td>
 <td><p><a class="reference external" href="https://paperswithcode.com/task/instance-segmentation">Instance Segmentation</a></p></td>
-<td><p><a class="reference external" href="https://docs.openvino.ai/latest/workbench_docs_Workbench_DG_Key_Concepts.html#intermediate-representation-ir">OpenVINO IR*</a></p></td>
+<td><p><a class="reference external" href="https://docs.openvino.ai/latest/workbench_docs_Workbench_DG_Key_Concepts.html#intermediate-representation-ir">OpenVINO IR</a></p></td>
 <td><p><a class="reference external" href="https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/intel/instance-segmentation-security-0002">Open Model Zoo</a></p></td>
 <td><p><a class="reference internal" href="workbench_docs_Workbench_DG_Dataset_Types.html#workbench-dataset-types"><span class="std std-ref">Not Annotated</span></a></p></td>
 </tr>
@@ -1912,7 +1912,9 @@ has become, and check the difference between original and optimized model accura
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>You can learn how to <a class="reference internal" href="../dl-workbench-get-started/dl-workbench-import-model.html#workbench-start-import-model"><span class="std std-ref">import the model</span></a> and <a class="reference internal" href="../dl-workbench-get-started/dl-workbench-create-project.html#workbench-start-create-project"><span class="std std-ref">create a not annotated dataset</span></a> in the DL Workbench <a class="reference internal" href="../dl-workbench-get-started.html#dl-workbench-get-started"><span class="std std-ref">Get Started Guide</span></a>.</p>
+<p>You can learn how to <a class="reference internal" href="../dl-workbench-get-started/dl-workbench-import-model.html#workbench-start-import-model"><span class="std std-ref">import the model</span></a> and
+<a class="reference internal" href="../dl-workbench-get-started/dl-workbench-create-project.html#workbench-start-create-project"><span class="std std-ref">create a not annotated dataset</span></a> in the DL Workbench
+<a class="reference internal" href="../dl-workbench-get-started.html#dl-workbench-get-started"><span class="std std-ref">Get Started Guide</span></a>.</p>
 </div>
 </section>
 <section id="optimize-model-using-int8-calibration">
@@ -1981,7 +1983,10 @@ model might be incorrect.</p>
 <strong>Predicted Class Precision</strong>. Matches show the number of times the Optimized model detected the same location of
 an object as the Parent Model.</p>
 <img alt="../../../../_images/accuracy_table_advanced.png" src="../../../../_images/accuracy_table_advanced.png" />
-<p><strong>TIP:</strong> To sort the numbers from lowest to highest, click on the parameter name in the table.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To sort the numbers from lowest to highest, click on the parameter name in the table.</p>
+</div>
 <p>Click <strong>Visualize</strong> to see the prediction difference:</p>
 <img alt="../../../../_images/instance_segmentation_results.png" src="../../../../_images/instance_segmentation_results.png" />
 <p>In our case, the optimized <code class="docutils literal notranslate"><span class="pre">instance-segmentation-security-0002</span></code> model recognized all object of class #21 (bear).
@@ -1996,7 +2001,7 @@ for class 22 (zebra) are considerably less accurate than the Parent model predic
 <p>After evaluating the accuracy, you can decide whether the difference between imported and optimized models predictions
 is critical or not:</p>
 <ul class="simple">
-<li><p>If the tradeoff between accuracy and performance is too big, <a class="reference internal" href="workbench_docs_Workbench_DG_Generate_Datasets.html#workbench-dataset-obtain-datasets"><span class="std std-ref">import an annotated dataset</span></a> and use <a class="reference external" href="Int-8_Quantization.md#accuracyaware">AccuracyAware optimization method</a>, then repeat the steps from this tutorial.</p></li>
+<li><p>If the tradeoff between accuracy and performance is too big, <a class="reference internal" href="workbench_docs_Workbench_DG_Generate_Datasets.html#workbench-dataset-obtain-datasets"><span class="std std-ref">import an annotated dataset</span></a> and use <a class="reference internal" href="workbench_docs_Workbench_DG_Int_8_Quantization.html#workbench-guide-quantization"><span class="std std-ref">AccuracyAware optimization method</span></a>, then repeat the steps from this tutorial.</p></li>
 <li><p>If the tradeoff is acceptable, <a class="reference internal" href="workbench_docs_Workbench_DG_Deploy_and_Integrate_Performance_Criteria_into_Application.html#workbench-deployment-deploy-and-integrate-performance-criteria-into-app"><span class="std std-ref">explore inference configurations</span></a> to further enhance the performance. Then create a <a class="reference internal" href="workbench_docs_Workbench_DG_Deployment_Package.html#workbench-guide-deployment-package"><span class="std std-ref">deployment package</span></a> with your ready-to-deploy model.</p></li>
 </ul>
 <p><em>All images were taken from ImageNet, Pascal Visual Object Classes, and Common Objects in Context datasets for
