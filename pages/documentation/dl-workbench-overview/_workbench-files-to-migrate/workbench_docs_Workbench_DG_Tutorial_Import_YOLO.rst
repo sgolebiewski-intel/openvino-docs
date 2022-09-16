@@ -30,7 +30,7 @@ and shows how to import an original `Darknet YOLOv4 model <https://github.com/Al
       - `Object Detection <https://machinelearningmastery.com/object-recognition-with-deep-learning/>`__
       - `Darknet <https://pjreddie.com/darknet/>`__
       - `Github repository <https://github.com/AlexeyAB/darknet/releases/tag/yolov4>`__
-      - `Not Annotated <http://openvino-docs.inn.intel.com/latest/workbench_docs_Workbench_DG_Generate_Datasets.html>`__
+      - :ref:`Not Annotated <workbench_dataset__types>`
 
 In this tutorial, you will learn how to:
 

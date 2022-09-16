@@ -126,7 +126,7 @@ Next Step
 After evaluating the accuracy, you can decide whether the difference between imported and optimized models predictions 
 is critical or not:
 
-* If the tradeoff between accuracy and performance is too big, :ref:`import an annotated dataset <workbench_dataset__obtain_datasets>` and use `AccuracyAware optimization method <Int-8_Quantization.md#accuracyaware>`__, then repeat the steps from this tutorial.
+* If the tradeoff between accuracy and performance is too big, :ref:`import an annotated dataset <workbench_dataset__obtain_datasets>` and use :ref:`AccuracyAware optimization method <workbench_guide__quantization>`, then repeat the steps from this tutorial.
 
 * If the tradeoff is acceptable, :ref:`explore inference configurations <workbench_deployment__deploy_and_integrate_performance_criteria_into_app>` to further enhance the performance. Then create a :ref:`deployment package <workbench_guide__deployment_package>` with your ready-to-deploy model.
 

@@ -31,7 +31,9 @@ is crucial for assessing model quality.
 
 Refer to the :ref:`Get Started with DL Workbench <dl_workbench__get_started>` to learn how to import a model and a dataset.
 
-.. tip:: If you have optimized the model using :ref:`INT8 Calibration <workbench_guide__quantization>`, you can use a Not Annotated dataset to compare original and optimized model predictions.
+.. tip::
+   If you have optimized the model using :ref:`INT8 Calibration <workbench_guide__quantization>`, you can use 
+   a Not Annotated dataset to compare original and optimized model predictions.
 
 
 
@@ -88,7 +90,10 @@ in dataset annotations do not match.
 Here the model predicted class 502 (shoes) with a confidence equal to 0.41. The actual class from dataset annotations 
 is 415 (bakery) and has rank 65 in the model predictions as the model confidence for this class equals 0.
 
-.. tip:: You can enhance your model performance while ensuring that the model accuracy has not decreased dramatically. For that, :ref:`optimize your model <workbench_guide__quantization>` and create an Accuracy Report that allows you to visualize and :ref:`compare Optimized and Parent model predictions <workbench_tutorial__classification>`.
+.. tip::
+   You can enhance your model performance while ensuring that the model accuracy has not decreased dramatically. 
+   For that, :ref:`optimize your model <workbench_guide__quantization>` and create an Accuracy Report that allows 
+   you to visualize and :ref:`compare Optimized and Parent model predictions <workbench_tutorial__classification>`.
 
 
 

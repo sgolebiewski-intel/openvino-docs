@@ -33,11 +33,14 @@ has become, and check the difference between original and optimized model accura
       - Dataset
     * - `instance-segmentation-security-0002 <https://docs.openvino.ai/latest/omz_models_model_instance_segmentation_security_0002.html>`__
       - `Instance Segmentation <https://paperswithcode.com/task/instance-segmentation>`__
-      - `OpenVINO IR\* <https://docs.openvino.ai/latest/workbench_docs_Workbench_DG_Key_Concepts.html#intermediate-representation-ir>`__
+      - `OpenVINO IR <https://docs.openvino.ai/latest/workbench_docs_Workbench_DG_Key_Concepts.html#intermediate-representation-ir>`__
       - `Open Model Zoo <https://github.com/openvinotoolkit/open_model_zoo/tree/master/models/intel/instance-segmentation-security-0002>`__
       - :ref:`Not Annotated <workbench_dataset__types>`
 
-.. tip:: You can learn how to :ref:`import the model <workbench_start__import_model>` and :ref:`create a not annotated dataset <workbench_start__create_project>` in the DL Workbench :ref:`Get Started Guide <dl_workbench__get_started>`.
+.. tip::
+   You can learn how to :ref:`import the model <workbench_start__import_model>` and 
+   :ref:`create a not annotated dataset <workbench_start__create_project>` in the DL Workbench 
+   :ref:`Get Started Guide <dl_workbench__get_started>`.
 
 
 Optimize Model Using INT8 Calibration
@@ -130,7 +133,8 @@ an object as the Parent Model.
 
 .. image:: accuracy_table_advanced.png
 
-**TIP:** To sort the numbers from lowest to highest, click on the parameter name in the table.
+.. tip::
+   To sort the numbers from lowest to highest, click on the parameter name in the table.
 
 Click **Visualize** to see the prediction difference:
 
@@ -150,7 +154,7 @@ Next Step
 After evaluating the accuracy, you can decide whether the difference between imported and optimized models predictions 
 is critical or not:
 
-* If the tradeoff between accuracy and performance is too big, :ref:`import an annotated dataset <workbench_dataset__obtain_datasets>` and use `AccuracyAware optimization method <Int-8_Quantization.md#accuracyaware>`__, then repeat the steps from this tutorial.
+* If the tradeoff between accuracy and performance is too big, :ref:`import an annotated dataset <workbench_dataset__obtain_datasets>` and use :ref:`AccuracyAware optimization method <workbench_guide__quantization>`, then repeat the steps from this tutorial.
 
 * If the tradeoff is acceptable, :ref:`explore inference configurations <workbench_deployment__deploy_and_integrate_performance_criteria_into_app>` to further enhance the performance. Then create a :ref:`deployment package <workbench_guide__deployment_package>` with your ready-to-deploy model.
 
