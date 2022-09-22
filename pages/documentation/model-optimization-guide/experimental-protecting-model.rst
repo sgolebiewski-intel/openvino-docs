@@ -42,7 +42,7 @@ the RangeSupervision layer,
 where :math:`T_{low}` and :math:`T_{up}` are the lower and upper bounds for the 
 particular protection layer, respectively.
 
-The process flow follows the diagram `Fig 1 <#Schematic>`__. Starting from the 
+The process flow follows the diagram `Fig 1 <#schematic>`__. Starting from the 
 internal representation (IR) of an OpenVINO model, the POT RangeSupervision algorithm 
 is called to **add protection layers into the model graph**. This step requires 
 **appropriate threshold values that are automatically extracted from a specified 
@@ -60,6 +60,7 @@ effort and the protected IR model returned by the RangeSupervision algorithm can
 used independently from there on. No changes in the learned parameters of the 
 network are needed.
 
+.. _schematic:
 .. image:: ./_assets/scheme3.png
    :alt: Schematic
 
