@@ -75,8 +75,8 @@
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="openvino.preprocess" href="openvino.preprocess.html" />
-    <link rel="prev" title="openvino.runtime.passes" href="openvino.runtime.passes.html" />
+    <link rel="next" title="openvino.runtime.passes.Matcher" href="openvino.runtime.passes.Matcher.html" />
+    <link rel="prev" title="openvino.runtime.passes.MakeStateful" href="openvino.runtime.passes.MakeStateful.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -3867,6 +3867,11 @@
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="openvino.runtime.serialize.html">
+       openvino.runtime.serialize
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="openvino.runtime.set_batch.html">
        openvino.runtime.set_batch
       </a>
@@ -3964,11 +3969,6 @@
      <li class="toctree-l3">
       <a class="reference internal" href="openvino.runtime.Output.html">
        openvino.runtime.Output
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openvino.runtime.Parameter.html">
-       openvino.runtime.Parameter
       </a>
      </li>
      <li class="toctree-l3">
@@ -9686,9 +9686,124 @@
      </i>
     </label>
     <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino.runtime.passes.consumers_count.html">
+       openvino.runtime.passes.consumers_count
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino.runtime.passes.has_static_dim.html">
+       openvino.runtime.passes.has_static_dim
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino.runtime.passes.has_static_dims.html">
+       openvino.runtime.passes.has_static_dims
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino.runtime.passes.has_static_rank.html">
+       openvino.runtime.passes.has_static_rank
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino.runtime.passes.has_static_shape.html">
+       openvino.runtime.passes.has_static_shape
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino.runtime.passes.rank_equals.html">
+       openvino.runtime.passes.rank_equals
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino.runtime.passes.type_matches.html">
+       openvino.runtime.passes.type_matches
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino.runtime.passes.type_matches_any.html">
+       openvino.runtime.passes.type_matches_any
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino.runtime.passes.AnyInput.html">
+       openvino.runtime.passes.AnyInput
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino.runtime.passes.BackwardGraphRewrite.html">
+       openvino.runtime.passes.BackwardGraphRewrite
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino.runtime.passes.ConstantFolding.html">
+       openvino.runtime.passes.ConstantFolding
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino.runtime.passes.ConvertFP32ToFP16.html">
+       openvino.runtime.passes.ConvertFP32ToFP16
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino.runtime.passes.GraphRewrite.html">
+       openvino.runtime.passes.GraphRewrite
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino.runtime.passes.LowLatency2.html">
+       openvino.runtime.passes.LowLatency2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino.runtime.passes.MakeStateful.html">
+       openvino.runtime.passes.MakeStateful
+      </a>
+     </li>
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
        openvino.runtime.passes.Manager
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino.runtime.passes.Matcher.html">
+       openvino.runtime.passes.Matcher
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino.runtime.passes.MatcherPass.html">
+       openvino.runtime.passes.MatcherPass
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino.runtime.passes.ModelPass.html">
+       openvino.runtime.passes.ModelPass
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino.runtime.passes.Or.html">
+       openvino.runtime.passes.Or
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino.runtime.passes.PassBase.html">
+       openvino.runtime.passes.PassBase
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino.runtime.passes.Serialize.html">
+       openvino.runtime.passes.Serialize
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino.runtime.passes.VisualizeTree.html">
+       openvino.runtime.passes.VisualizeTree
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="openvino.runtime.passes.WrapType.html">
+       openvino.runtime.passes.WrapType
       </a>
      </li>
     </ul>
@@ -10250,6 +10365,11 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="ngraph.eye.html">
+         ngraph.eye
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="ngraph.fake_quantize.html">
          ngraph.fake_quantize
         </a>
@@ -10300,6 +10420,11 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="ngraph.generate_proposals.html">
+         ngraph.generate_proposals
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="ngraph.greater.html">
          ngraph.greater
         </a>
@@ -10307,6 +10432,11 @@
        <li class="toctree-l4">
         <a class="reference internal" href="ngraph.greater_equal.html">
          ngraph.greater_equal
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ngraph.grid_sample.html">
+         ngraph.grid_sample
         </a>
        </li>
        <li class="toctree-l4">
@@ -10372,6 +10502,11 @@
        <li class="toctree-l4">
         <a class="reference internal" href="ngraph.interpolate.html">
          ngraph.interpolate
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ngraph.irdft.html">
+         ngraph.irdft
         </a>
        </li>
        <li class="toctree-l4">
@@ -10575,6 +10710,11 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="ngraph.rdft.html">
+         ngraph.rdft
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="ngraph.read_value.html">
          ngraph.read_value
         </a>
@@ -10747,6 +10887,11 @@
        <li class="toctree-l4">
         <a class="reference internal" href="ngraph.softplus.html">
          ngraph.softplus
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="ngraph.softsign.html">
+         ngraph.softsign
         </a>
        </li>
        <li class="toctree-l4">
@@ -11026,11 +11171,11 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="openvino.runtime.passes.Manager">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">openvino.runtime.passes.</span></span><span class="sig-name descname"><span class="pre">Manager</span></span><a class="headerlink" href="#openvino.runtime.passes.Manager" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
-<p>openvino.runtime.passes.Manager wraps ov::pass::Manager using ManagerWrapper</p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">openvino.pyopenvino.passes.Manager</span></code></p>
+<p>Manager that additionally holds transformations objects.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="openvino.runtime.passes.Manager.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#openvino.runtime.passes.Manager" title="openvino.pyopenvino.passes.Manager"><span class="pre">openvino.pyopenvino.passes.Manager</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#openvino.runtime.passes.Manager.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">openvino.pyopenvino.passes.Manager</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#openvino.runtime.passes.Manager.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <p class="rubric">Methods</p>
@@ -11104,13 +11249,13 @@
 <td><p>Abstract classes can override this to customize issubclass().</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#openvino.runtime.passes.Manager.register_pass" title="openvino.runtime.passes.Manager.register_pass"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_pass</span></code></a>(*args, **kwargs)</p></td>
-<td><p>Overloaded function.</p></td>
+<td><p>Register transformation for further execution.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#openvino.runtime.passes.Manager.run_passes" title="openvino.runtime.passes.Manager.run_passes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_passes</span></code></a>(self, arg0)</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#openvino.runtime.passes.Manager.run_passes" title="openvino.runtime.passes.Manager.run_passes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_passes</span></code></a>(self, model)</p></td>
+<td><p>Executes sequence of transformations on given Model.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#openvino.runtime.passes.Manager.set_per_pass_validation" title="openvino.runtime.passes.Manager.set_per_pass_validation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_per_pass_validation</span></code></a>(self, arg0)</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#openvino.runtime.passes.Manager.set_per_pass_validation" title="openvino.runtime.passes.Manager.set_per_pass_validation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_per_pass_validation</span></code></a>(self, new_state)</p></td>
+<td><p>Enables or disables Model validation after each pass execution.</p></td>
 </tr>
 </tbody>
 </table>
@@ -11170,7 +11315,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="id0">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#openvino.runtime.passes.Manager" title="openvino.pyopenvino.passes.Manager"><span class="pre">openvino.pyopenvino.passes.Manager</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">openvino.pyopenvino.passes.Manager</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -11252,137 +11397,31 @@ overrides the normal algorithm (and the outcome is cached).</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="openvino.runtime.passes.Manager.register_pass">
-<span class="sig-name descname"><span class="pre">register_pass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#openvino.runtime.passes.Manager.register_pass" title="Permalink to this definition">¶</a></dt>
-<dd><p>Overloaded function.</p>
-<ol class="arabic">
-<li><p>register_pass(self: openvino.pyopenvino.passes.Manager, pass_name: str) -&gt; None</p>
-<blockquote>
-<div><blockquote>
-<div><p>Set the type of register pass for pass manager.</p>
-<p>:param pass_name : String to set the type of a pass.
-:type pass_name: str</p>
-</div></blockquote>
-<p>//</p>
-</div></blockquote>
-</li>
-<li><p>register_pass(self: openvino.pyopenvino.passes.Manager, pass_name: str, output_files: Tuple[str, str], version: str = ‘UNSPECIFIED’) -&gt; None</p>
-<blockquote>
-<div><blockquote>
-<div><p>Set the type of register pass for pass manager.</p>
-<dl class="field-list">
-<dt class="field-odd">param pass_name</dt>
-<dd class="field-odd"><p>String to set the type of a pass.</p>
-</dd>
-<dt class="field-even">type pass_name</dt>
-<dd class="field-even"><p>str</p>
-</dd>
-<dt class="field-odd">param output_files</dt>
-<dd class="field-odd"><p>Tuple which contains paths where .xml and .bin files will be saved.</p>
-</dd>
-<dt class="field-even">type output_files</dt>
-<dd class="field-even"><p>Tuple[str, str]</p>
-</dd>
-<dt class="field-odd">param version</dt>
-<dd class="field-odd"><p>Sets the version of the IR which will be generated.
-Supported versions are:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>“UNSPECIFIED” (default) : Use the latest or function version</p></li>
-<li><p>“IR_V10” : v10 IR</p></li>
-<li><p>“IR_V11” : v11 IR</p></li>
-</ul>
-</div></blockquote>
-</dd>
-<dt class="field-even">type version</dt>
-<dd class="field-even"><p>str</p>
-</dd>
-</dl>
-<ol class="arabic simple">
-<li><dl class="simple">
-<dt>Default Version</dt><dd><p>pass_manager = Manager()
-pass_manager.register_pass(“Serialize”, output_files=(“example.xml”, “example.bin”))</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>IR version 11</dt><dd><p>pass_manager = Manager()
-pass_manager.register_pass(“Serialize”, output_files=(“example.xml”, “example.bin”), version=”IR_V11”)</p>
-</dd>
-</dl>
-</li>
-</ol>
-</div></blockquote>
-<p>//</p>
-</div></blockquote>
-</li>
-<li><p>register_pass(self: openvino.pyopenvino.passes.Manager, pass_name: str, xml_path: str, bin_path: str, version: str = ‘UNSPECIFIED’) -&gt; None</p>
-<blockquote>
-<div><blockquote>
-<div><p>Set the type of register pass for pass manager.</p>
-<dl class="field-list">
-<dt class="field-odd">param pass_name</dt>
-<dd class="field-odd"><p>String to set the type of a pass.</p>
-</dd>
-<dt class="field-even">type pass_name</dt>
-<dd class="field-even"><p>str</p>
-</dd>
-<dt class="field-odd">param xml_path</dt>
-<dd class="field-odd"><p>Path where <a href="#id1"><span class="problematic" id="id2">*</span></a>.xml file will be saved.</p>
-</dd>
-<dt class="field-even">type xml_path</dt>
-<dd class="field-even"><p>str</p>
-</dd>
-<dt class="field-odd">param bin_path</dt>
-<dd class="field-odd"><p>Path where <a href="#id3"><span class="problematic" id="id4">*</span></a>.bin file will be saved.</p>
-</dd>
-<dt class="field-even">type bin_path</dt>
-<dd class="field-even"><p>str</p>
-</dd>
-<dt class="field-odd">param version</dt>
-<dd class="field-odd"><p>Sets the version of the IR which will be generated.
-Supported versions are:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>“UNSPECIFIED” (default) : Use the latest or function version</p></li>
-<li><p>“IR_V10” : v10 IR</p></li>
-<li><p>“IR_V11” : v11 IR</p></li>
-</ul>
-</div></blockquote>
-</dd>
-<dt class="field-even">type version</dt>
-<dd class="field-even"><p>str</p>
-</dd>
-</dl>
-<ol class="arabic simple">
-<li><dl class="simple">
-<dt>Default Version</dt><dd><p>pass_manager = Manager()
-pass_manager.register_pass(“Serialize”, xml_path=”example.xml”, bin_path=”example.bin”)</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>IR version 11</dt><dd><p>pass_manager = Manager()
-pass_manager.register_pass(“Serialize”, xml_path=”example.xml”, bin_path=”example.bin”, version=”IR_V11”)</p>
-</dd>
-</dl>
-</li>
-</ol>
-</div></blockquote>
-<p>//</p>
-</div></blockquote>
-</li>
-</ol>
+<span class="sig-name descname"><span class="pre">register_pass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="openvino.runtime.passes.PassBase.html#openvino.runtime.passes.PassBase" title="openvino.pyopenvino.passes.PassBase"><span class="pre">openvino.pyopenvino.passes.PassBase</span></a></span></span><a class="headerlink" href="#openvino.runtime.passes.Manager.register_pass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register transformation for further execution.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="openvino.runtime.passes.Manager.run_passes">
-<span class="sig-name descname"><span class="pre">run_passes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#openvino.runtime.passes.Manager" title="openvino.pyopenvino.passes.Manager"><span class="pre">openvino.pyopenvino.passes.Manager</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="openvino.runtime.Model.html#openvino.runtime.Model" title="openvino.pyopenvino.Model"><span class="pre">openvino.pyopenvino.Model</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#openvino.runtime.passes.Manager.run_passes" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">run_passes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">openvino.pyopenvino.passes.Manager</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="openvino.runtime.Model.html#openvino.runtime.Model" title="openvino.pyopenvino.Model"><span class="pre">openvino.pyopenvino.Model</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#openvino.runtime.passes.Manager.run_passes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes sequence of transformations on given Model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model</strong> (<a class="reference internal" href="openvino.runtime.Model.html#openvino.runtime.Model" title="openvino.runtime.Model"><em>openvino.runtime.Model</em></a>) – openvino.runtime.Model to be transformed.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="openvino.runtime.passes.Manager.set_per_pass_validation">
-<span class="sig-name descname"><span class="pre">set_per_pass_validation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#openvino.runtime.passes.Manager" title="openvino.pyopenvino.passes.Manager"><span class="pre">openvino.pyopenvino.passes.Manager</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#openvino.runtime.passes.Manager.set_per_pass_validation" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">set_per_pass_validation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">openvino.pyopenvino.passes.Manager</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_state</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#openvino.runtime.passes.Manager.set_per_pass_validation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enables or disables Model validation after each pass execution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>new_state</strong> (<em>bool</em>) – flag which enables or disables model validation.</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
@@ -11394,8 +11433,8 @@ pass_manager.register_pass(“Serialize”, xml_path=”example.xml”, bin_path
             
                 <div class='prev-next-bottom'>
                   
-    <a class='button bttn-sec button-size-l' id="prev-link" href="openvino.runtime.passes.html" title="previous page">Prev</a>
-    <a class='button bttn-sec button-size-l' id="next-link" href="openvino.preprocess.html" title="next page">Next</a>
+    <a class='button bttn-sec button-size-l' id="prev-link" href="openvino.runtime.passes.MakeStateful.html" title="previous page">Prev</a>
+    <a class='button bttn-sec button-size-l' id="next-link" href="openvino.runtime.passes.Matcher.html" title="next page">Next</a>
 
                 </div>
             
