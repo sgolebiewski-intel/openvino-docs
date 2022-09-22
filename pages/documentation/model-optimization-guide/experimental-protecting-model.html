@@ -1882,7 +1882,7 @@ the RangeSupervision layer,</p>
 \[x = clamp(x ; T_{low}, T_{up}) = min(max(x, T_{low}), T_{high}),\]</div>
 <p>where <span class="math notranslate nohighlight">\(T_{low}\)</span> and <span class="math notranslate nohighlight">\(T_{up}\)</span> are the lower and upper bounds for the
 particular protection layer, respectively.</p>
-<p>The process flow follows the diagram <a class="reference external" href="#Schematic">Fig 1</a>. Starting from the
+<p>The process flow follows the diagram <a class="reference external" href="#schematic">Fig 1</a>. Starting from the
 internal representation (IR) of an OpenVINO model, the POT RangeSupervision algorithm
 is called to <strong>add protection layers into the model graph</strong>. This step requires
 <strong>appropriate threshold values that are automatically extracted from a specified
@@ -1897,7 +1897,7 @@ overhead or accuracy impact in the absence of faults.</strong> Bound extraction 
 effort and the protected IR model returned by the RangeSupervision algorithm can be
 used independently from there on. No changes in the learned parameters of the
 network are needed.</p>
-<img alt="Schematic" src="../../../_images/scheme3.png" />
+<img alt="Schematic" id="schematic" src="../../../_images/scheme3.png" />
 <p><em>Fig 1: Schematic of RangeSupervision process flow.</em></p>
 <section id="supported-activation-layers">
 <h3>Supported activation layers<a class="headerlink" href="#supported-activation-layers" title="Permalink to this headline">¶</a></h3>

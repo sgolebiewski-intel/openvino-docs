@@ -1836,7 +1836,12 @@
                   
   <span class="target" id="extensibility-mo-caffe-python-layers"><span id="index-0"></span></span><section id="extending-model-optimizer-with-caffe-python-layers">
 <h1>Extending Model Optimizer with Caffe Python Layers<a class="headerlink" href="#extending-model-optimizer-with-caffe-python-layers" title="Permalink to this headline">¶</a></h1>
-<p><span class="target" id="extensibility-mo-caffe-python-layers-1md-openvino-docs-mo-dg-prepare-model-customize-model-optimizer-extending-model-optimizer-with-caffe-python-layers"></span> This article provides instructions on how to support a custom Caffe operation written only in Python. For example, the <a class="reference external" href="http://dl.dropboxusercontent.com/s/o6ii098-bu51d139/faster_rcnn_models.tgz?dl=0">Faster-R-CNN model</a> implemented in Caffe contains a custom proposal layer written in Python. The layer is described in the <a class="reference external" href="https://raw.githubusercontent.com/rbgirshick/py-faster-rcnn/master/models/pascal_voc/VGG16/faster_rcnn_end2end/test.prototxt">Faster-R-CNN prototxt</a> in the following way:</p>
+<p><span class="target" id="extensibility-mo-caffe-python-layers-1md-openvino-docs-mo-dg-prepare-model-customize-model-optimizer-extending-model-optimizer-with-caffe-python-layers"></span>
+This article provides instructions on how to support a custom Caffe operation written only in Python. For example,
+the <a class="reference external" href="https://dl.dropboxusercontent.com/s/o6ii098bu51d139/faster_rcnn_models.tgz?dl=0">Faster-R-CNN model</a>
+implemented in Caffe contains a custom proposal layer written in Python. The layer is described in the
+<a class="reference external" href="https://raw.githubusercontent.com/rbgirshick/py-faster-rcnn/master/models/pascal_voc/VGG16/faster_rcnn_end2end/test.prototxt">Faster-R-CNN prototxt</a>
+in the following way:</p>
 <div class="highlight"><div class="highlight"><pre><span></span><span class="n">layer</span> <span class="p">{</span>
   <span class="nl">name</span><span class="p">:</span> <span class="sc">&#39;proposal&#39;</span>
   <span class="nl">type</span><span class="p">:</span> <span class="sc">&#39;Python&#39;</span>
