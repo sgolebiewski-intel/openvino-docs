@@ -54,7 +54,7 @@ If you have installed OpenVINO Runtime via the installer, APT, or YUM, follow th
 
 #. **Optional:** Install header files to allow compilation of new code. You can find the header files at `Khronos OpenCL™ API Headers <https://github.com/KhronosGroup/OpenCL-Headers.git>`__.
 
-You've completed all required configuration steps to perform inference on processor graphics. Proceed to the `Start Using the Toolkit <openvino_docs_install_guides_installing_openvino_linux.html#get-started>`__ section to learn the basic OpenVINO™ toolkit workflow and run code samples and demo applications.
+You've completed all required configuration steps to perform inference on processor graphics. Proceed to the :ref:`Start Using the Toolkit <install__linux_installer>` section to learn the basic OpenVINO™ toolkit workflow and run code samples and demo applications.
 
 .. _gpu guide windows:
 
@@ -79,5 +79,5 @@ To check if you have this driver installed:
    
    .. image::  ./_assets/DeviceDriverVersion.png
 
-You are done updating your device driver and are ready to use your GPU. Proceed to the `Start Using the Toolkit <openvino_docs_install_guides_installing_openvino_windows.html#get-started>`__ section to learn the basic OpenVINO™ toolkit workflow and run code samples and demo applications.
+You are done updating your device driver and are ready to use your GPU. Proceed to the :ref:`Start Using the Toolkit <install__windows_installer>` section to learn the basic OpenVINO™ toolkit workflow and run code samples and demo applications.
 

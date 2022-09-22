@@ -48,7 +48,8 @@ The following Python API is used in the application:
     * - Options
       - Values
     * - Validated Models
-      - alexnet, googlenet-v1
+      - `alexnet <https://github.com/openvinotoolkit/open_model_zoo/blob/master/models/public/alexnet/README.md#alexnet>`__, 
+        `googlenet-v1 <https://github.com/openvinotoolkit/open_model_zoo/blob/master/models/public/googlenet-v1/README.md#googlenet-v1>`__
     * - Model Format
       - OpenVINO™ toolkit Intermediate Representation (.xml + .bin), ONNX (.onnx)
     * - Supported devices
@@ -91,27 +92,27 @@ Example
 
 #. Install the ``openvino-dev`` Python package to use Open Model Zoo Tools:
 
-.. ref-code-block:: cpp
+   .. ref-code-block:: cpp
 
-	python -m pip install openvino-dev[caffe,onnx,tensorflow2,pytorch,mxnet]
+      python -m pip install openvino-dev[caffe,onnx,tensorflow2,pytorch,mxnet]
 
 #. Download a pre-trained model:
-   
+
    .. ref-code-block:: cpp
-   
+
    	omz_downloader --name alexnet
 
 #. If a model is not in the IR or ONNX format, it must be converted. You can do this using the model converter:
 
-.. ref-code-block:: cpp
+   .. ref-code-block:: cpp
 
-	omz_converter --name alexnet
+      omz_converter --name alexnet
 
 #. Perform inference of ``banana.jpg`` using the ``alexnet`` model on a ``GPU``, for example:
 
-.. ref-code-block:: cpp
+   .. ref-code-block:: cpp
 
-	python hello_classification.py alexnet.xml banana.jpg GPU
+      python hello_classification.py alexnet.xml banana.jpg GPU
 
 Sample Output
 ~~~~~~~~~~~~~

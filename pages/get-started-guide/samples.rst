@@ -130,8 +130,8 @@ files collection available at `https://storage.openvinotoolkit.org/data/test_dat
 Samples that Support Pre-Trained Models
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To run the sample, you can use public or Intel's pre-trained models from the 
-Open Model Zoo. The models can be downloaded using the Model Downloader.
+To run the sample, you can use :ref:`public <overview_of_openvino_toolkit_public_pre_trained_models>`or `Intel's <overview_of_openvino_toolkit_intel_s_pre_trained_models>` pre-trained models from the 
+Open Model Zoo. The models can be downloaded using the `Model Downloader <https://github.com/openvinotoolkit/open_model_zoo/blob/master/tools/model_tools/README.md>`__.
 
 Build the Sample Applications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

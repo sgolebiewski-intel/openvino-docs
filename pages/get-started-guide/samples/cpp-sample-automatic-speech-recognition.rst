@@ -280,29 +280,29 @@ The Wall Street Journal DNN model used in this example was prepared using the Ka
 
 #. Prepare a speaker-transformed feature set given the feature transform specified in ``final.feature_transform`` and the feature files specified in ``feats.scp`` :
 
-.. ref-code-block:: cpp
+   .. ref-code-block:: cpp
 
-	nnet-forward --use-gpu=no final.feature_transform "ark,s,cs:copy-feats scp:feats.scp ark:- |" ark:feat.ark
+      nnet-forward --use-gpu=no final.feature_transform "ark,s,cs:copy-feats scp:feats.scp ark:- |" ark:feat.ark
 
 #. Score the feature set using the ``speech_sample`` :
 
-.. ref-code-block:: cpp
+   .. ref-code-block:: cpp
 
-	./speech_sample -d GNA_AUTO -bs 8 -i feat.ark -m wsj_dnn5b.xml -o scores.ark
+      ./speech_sample -d GNA_AUTO -bs 8 -i feat.ark -m wsj_dnn5b.xml -o scores.ark
 
 OpenVINO™ toolkit Intermediate Representation ``wsj_dnn5b.xml`` file was generated in the previous `Model Preparation <#model-preparation>`__ section.
 
 #. Run the Kaldi decoder to produce n-best text hypotheses and select most likely text given the WFST (``HCLG.fst``), vocabulary (``words.txt``), and TID/PID mapping (``final.mdl``):
 
-.. ref-code-block:: cpp
+   .. ref-code-block:: cpp
 
-	latgen-faster-mapped --max-active=7000 --max-mem=50000000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.0833 --allow-partial=true --word-symbol-table=words.txt final.mdl HCLG.fst ark:scores.ark ark:-| lattice-scale --inv-acoustic-scale=13 ark:- ark:- | lattice-best-path --word-symbol-table=words.txt ark:- ark,t:-  > out.txt &
+      latgen-faster-mapped --max-active=7000 --max-mem=50000000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.0833 --allow-partial=true --word-symbol-table=words.txt final.mdl HCLG.fst ark:scores.ark ark:-| lattice-scale --inv-acoustic-scale=13 ark:- ark:- | lattice-best-path --word-symbol-table=words.txt ark:- ark,t:-  > out.txt &
 
 #. Run the word error rate tool to check accuracy given the vocabulary (``words.txt``) and reference transcript (``test_filt.txt``):
 
-.. ref-code-block:: cpp
+   .. ref-code-block:: cpp
 
-	cat out.txt | utils/int2sym.pl -f 2- words.txt | sed s:\<UNK\>::g | compute-wer --text --mode=present ark:test_filt.txt ark,p:-
+      cat out.txt | utils/int2sym.pl -f 2- words.txt | sed s:\<UNK\>::g | compute-wer --text --mode=present ark:test_filt.txt ark,p:-
 
 All of mentioned files can be downloaded from `https://storage.openvinotoolkit.org/models_contrib/speech/2021.2/wsj_dnn5b_smbr <https://storage.openvinotoolkit.org/models_contrib/speech/2021.2/wsj_dnn5b_smbr>`__
 

@@ -43,7 +43,7 @@ Basic Inference Engine API is covered by :ref:`Hello Classification C sample <ge
     * - Options
       - Values
     * - Validated Models
-      - alexnet
+      - `alexnet <https://github.com/openvinotoolkit/open_model_zoo/blob/master/models/public/alexnet/README.md#alexnet>`__
     * - Model Format
       - Inference Engine Intermediate Representation (\*.xml + \*.bin), ONNX (\*.onnx)
     * - Validated images
@@ -96,22 +96,22 @@ Example
 -------
 
 #. Download a pre-trained model using Model Downloader:
-   
+
    .. ref-code-block:: cpp
-   
+
    	python <path_to_omz_tools>/downloader.py --name alexnet
 
 #. If a model is not in the Inference Engine IR or ONNX format, it must be converted. You can do this using the model converter script:
 
-.. ref-code-block:: cpp
+   .. ref-code-block:: cpp
 
-	python <path_to_omz_tools>/converter.py --name alexnet
+      python <path_to_omz_tools>/converter.py --name alexnet
 
 #. Perform inference of NV12 image using ``alexnet`` model on a ``CPU``, for example:
 
-.. ref-code-block:: cpp
+   .. ref-code-block:: cpp
 
-	<path_to_sample>/hello_nv12_input_classification_c <path_to_model>/alexnet.xml <path_to_image>/cat.yuv 300x300 CPU
+      <path_to_sample>/hello_nv12_input_classification_c <path_to_model>/alexnet.xml <path_to_image>/cat.yuv 300x300 CPU
 
 Sample Output
 ~~~~~~~~~~~~~

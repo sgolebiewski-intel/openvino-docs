@@ -49,7 +49,7 @@ Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification C++ sampl
     * - Options
       - Values
     * - Validated Models
-      - person-detection-retail-0013
+      - `person-detection-retail-0013 <https://github.com/openvinotoolkit/open_model_zoo/blob/master/models/intel/person-detection-retail-0013/README.md#person-detection-retail-0013>`__
     * - Model Format
       - OpenVINO™ toolkit Intermediate Representation (\*.xml + \*.bin), ONNX (\*.onnx)
     * - Supported devices
@@ -97,27 +97,27 @@ Example
 
 #. Install openvino-dev python package if you don't have it to use Open Model Zoo Tools:
 
-.. ref-code-block:: cpp
+   .. ref-code-block:: cpp
 
-	python -m pip install openvino-dev[caffe,onnx,tensorflow2,pytorch,mxnet]
+      python -m pip install openvino-dev[caffe,onnx,tensorflow2,pytorch,mxnet]
 
 #. Download a pre-trained model using:
 
-.. ref-code-block:: cpp
+   .. ref-code-block:: cpp
 
-	omz_downloader --name person-detection-retail-0013
+      omz_downloader --name person-detection-retail-0013
 
 #. ``person-detection-retail-0013`` does not need to be converted, because it is already in necessary format, so you can skip this step. If you want to use another model that is not in the IR or ONNX format, you can convert it using the model converter script:
 
-.. ref-code-block:: cpp
+   .. ref-code-block:: cpp
 
-	omz_converter --name <model_name>
+      omz_converter --name <model_name>
 
 #. Perform inference of ``person_detection.bmp`` using ``person-detection-retail-0013`` model on a ``GPU``, for example:
 
-.. ref-code-block:: cpp
+   .. ref-code-block:: cpp
 
-	hello_reshape_ssd person-detection-retail-0013.xml person_detection.bmp GPU
+      hello_reshape_ssd person-detection-retail-0013.xml person_detection.bmp GPU
 
 Sample Output
 ~~~~~~~~~~~~~

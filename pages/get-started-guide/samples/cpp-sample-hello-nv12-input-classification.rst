@@ -46,7 +46,7 @@ Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification C++ sampl
     * - Options
       - Values
     * - Validated Models
-      - alexnet
+      - `alexnet <https://github.com/openvinotoolkit/open_model_zoo/blob/master/models/public/alexnet/README.md#alexnet>`__
     * - Model Format
       - OpenVINO™ toolkit Intermediate Representation (\*.xml + \*.bin), ONNX (\*.onnx)
     * - Validated images
@@ -104,27 +104,27 @@ Example
 
 #. Install openvino-dev python package if you don't have it to use Open Model Zoo Tools:
 
-.. ref-code-block:: cpp
+   .. ref-code-block:: cpp
 
-	python -m pip install openvino-dev[caffe,onnx,tensorflow2,pytorch,mxnet]
+      python -m pip install openvino-dev[caffe,onnx,tensorflow2,pytorch,mxnet]
 
 #. Download a pre-trained model:
-   
+
    .. ref-code-block:: cpp
-   
+
    	omz_downloader --name alexnet
 
 #. If a model is not in the IR or ONNX format, it must be converted. You can do this using the model converter:
 
-.. ref-code-block:: cpp
+   .. ref-code-block:: cpp
 
-	omz_converter --name alexnet
+      omz_converter --name alexnet
 
 #. Perform inference of NV12 image using ``alexnet`` model on a ``CPU``, for example:
 
-.. ref-code-block:: cpp
+   .. ref-code-block:: cpp
 
-	hello_nv12_input_classification alexnet.xml car.yuv 300x300 CPU
+      hello_nv12_input_classification alexnet.xml car.yuv 300x300 CPU
 
 Sample Output
 ~~~~~~~~~~~~~

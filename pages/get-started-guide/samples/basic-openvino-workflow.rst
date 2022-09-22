@@ -50,15 +50,15 @@ If you have not yet installed and configured the toolkit, see the following guid
 
 .. tab:: Linux
 
-   See :doc:`Install Intel® Distribution of OpenVINO™ toolkit for Linux <openvino_docs_install_guides_installing_openvino_linux>`
+   See :ref:`Install Intel® Distribution of OpenVINO™ toolkit for Linux <install__linux_installer>`
 
 .. tab:: Windows
 
-   See :doc:`Install Intel® Distribution of OpenVINO™ toolkit for Windows <openvino_docs_install_guides_installing_openvino_windows>`
+   See :ref:`Install Intel® Distribution of OpenVINO™ toolkit for Windows <install__windows_installer>`
 
 .. tab:: macOS
 
-   See :doc:`Install Intel® Distribution of OpenVINO™ toolkit for macOS <openvino_docs_install_guides_installing_openvino_macos>`
+   See :ref:`Install Intel® Distribution of OpenVINO™ toolkit for macOS <install__macos_installer>`
 
 Install OpenVINO Development Tools
 ----------------------------------
@@ -82,34 +82,34 @@ To build OpenVINO samples:
 
 .. tab:: Linux
 
-   Go to :doc:`OpenVINO Samples page <openvino_docs_OV_UG_Samples_Overview>` and 
+   Go to :ref:`OpenVINO Samples page <build_samples_linux>` and 
    see the "Build the Sample Applications on Linux" section.
 
 .. tab:: Windows
 
-   Go to :doc:`OpenVINO Samples page <openvino_docs_OV_UG_Samples_Overview>` and 
+   Go to :ref:`OpenVINO Samples page <build_samples_windows>` and 
    see the "Build the Sample Applications on Microsoft Windows OS" section.
 
 .. tab:: macOS
 
-   Go to :doc:`OpenVINO Samples page <openvino_docs_OV_UG_Samples_Overview>` and 
+   Go to :ref:`OpenVINO Samples page <build_samples_macos>` and 
    see the "Build the Sample Applications on macOS" section.
 
 To build OpenVINO demos:
 
 .. tab:: Linux
 
-   Go to :doc:`Open Model Zoo Demos page <omz_demos>` and see the "Build the 
+   Go to :ref:`Open Model Zoo Demos page <open_model_zoo_demos>` and see the "Build the 
    Demo Applications on Linux" section.
 
 .. tab:: Windows
 
-   Go to :doc:`Open Model Zoo Demos page <omz_demos>` and see the "Build the 
+   Go to :ref:`Open Model Zoo Demos page <open_model_zoo_demos>` and see the "Build the 
    Demo Applications on Microsoft Windows OS" section.
 
 .. tab:: macOS
 
-   Go to :doc:`Open Model Zoo Demos page <omz_demos>` and see the "Build the 
+   Go to :ref:`Open Model Zoo Demos page <open_model_zoo_demos>` and see the "Build the 
    Demo Applications on Linux*" section. You can use the requirements from 
    "To build OpenVINO samples" above and adapt the Linux build steps for macOS.
 
@@ -133,7 +133,7 @@ Options to find a model suitable for the OpenVINO™ toolkit:
 
 * Download public or Intel pre-trained models from the 
   `Open Model Zoo <https://github.com/openvinotoolkit/open_model_zoo>`__ using 
-  the Model Downloader tool
+  the `Model Downloader tool <https://github.com/openvinotoolkit/open_model_zoo/blob/master/tools/model_tools/README.md>`__
 
 * Download from GitHub, Caffe Zoo, TensorFlow Zoo, etc.
 

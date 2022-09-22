@@ -42,7 +42,7 @@ Basic OpenVINO™ Runtime API is covered by :ref:`Hello Classification Python Sa
     * - Options
       - Values
     * - Validated Models
-      - mobilenet-ssd
+      - `mobilenet-ssd <https://github.com/openvinotoolkit/open_model_zoo/blob/master/models/public/mobilenet-ssd/README.md#mobilenet-ssd>`__
     * - Validated Layout
       - NCHW
     * - Model Format
@@ -89,27 +89,27 @@ Example
 
 #. Install the ``openvino-dev`` Python package to use Open Model Zoo Tools:
 
-.. ref-code-block:: cpp
+   .. ref-code-block:: cpp
 
-	python -m pip install openvino-dev[caffe,onnx,tensorflow2,pytorch,mxnet]
+      python -m pip install openvino-dev[caffe,onnx,tensorflow2,pytorch,mxnet]
 
 #. Download a pre-trained model:
-   
+
    .. ref-code-block:: cpp
-   
+
    	omz_downloader --name ssdlite_mobilenet_v2
 
 #. If a model is not in the IR or ONNX format, it must be converted. You can do this using the model converter:
 
-.. ref-code-block:: cpp
+   .. ref-code-block:: cpp
 
-	omz_converter --name ssdlite_mobilenet_v2
+      omz_converter --name ssdlite_mobilenet_v2
 
 #. Perform inference of ``banana.jpg`` using ``ssdlite_mobilenet_v2`` model on a ``GPU``, for example:
 
-.. ref-code-block:: cpp
+   .. ref-code-block:: cpp
 
-	python hello_reshape_ssd.py ssdlite_mobilenet_v2.xml banana.jpg GPU
+      python hello_reshape_ssd.py ssdlite_mobilenet_v2.xml banana.jpg GPU
 
 Sample Output
 ~~~~~~~~~~~~~
