@@ -1,4 +1,4 @@
-.. index:: pair: page; DefaultQuantization Algorithm
+.. index:: pair: page; DefaultQuantization Parameters
 .. _optim_perf__def_quant_algorithm:
 
 .. meta::
@@ -12,8 +12,8 @@
               Model Optimizer, OpenVINO IR 
 
 
-DefaultQuantization Algorithm
-=============================
+DefaultQuantization Parameters
+==============================
 
 :target:`optim_perf__def_quant_algorithm_1md_openvino_tools_pot_openvino_tools_pot_algorithms_quantization_default_readme` 
 
@@ -24,10 +24,10 @@ but provides many options that can be used to improve it.
 Parameters
 ~~~~~~~~~~
 
-DefaultQuantization Algorithm has mandatory and optional parameters. For more 
-details on how to use these parameters, refer to 
-:ref:`Best Practices <optim_perf__pot_best_practices>` article. Below is an 
-example of the DefaultQuantization method and its parameters:
+Default Quantization algorithm has mandatory and optional parameters. For 
+more details on how to use these parameters, refer to 
+:ref:`Best Practices <optim_perf__pot_best_practices>` document. Below is 
+an example of the definition of Default Quantization method and its parameters:
 
 .. ref-code-block:: cpp
 
@@ -66,20 +66,18 @@ All other options should be considered as an advanced mode and require deep
 knowledge of the quantization process. Below is an overall description of all 
 possible parameters:
 
-* ``"model type"`` - an optional parameter, required for additional patterns 
-  in the model. The default value is "None" ("Transformer" is only other 
-  supported value now).
+* ``"model type"`` - required for accurate optimization of some model architectures. 
+  Now, only `"transformer"` type is supported for Transformer-based models (BERT, etc.). Default value is `None`.
 
-* ``"inplace_statistics"`` - an optional parameter, required for change of 
-  collect statistics method. This parameter reduces the amount of memory 
-  consumed, but increases the calibration time.
+* ``"inplace_statistics"`` - used to change a method of statistics collection from in-place (in-graph operations) 
+  to external collectors that require more memory but can increase optimization time. Default value is `True`.
 
 * ``"ignored"`` - NN subgraphs which should be excluded from the optimization 
   process:
 
-  * ``"scope"`` - a list of particular nodes to exclude.
+  * ``"scope"`` - list of particular nodes to exclude.
 
-  * ``"operations"`` - a list of operation types to exclude (expressed in 
+  * ``"operations"`` - list of operation types to exclude (expressed in 
     OpenVINO IR notation). This list consists of the following tuples:
 
     * ``"type"`` - a type of ignored operation.
@@ -218,7 +216,7 @@ Tutorials:
 
 * `Quantization of Object Detection model from Model Zoo <https://github.com/openvinotoolkit/openvino_notebooks/tree/main/notebooks/111-detection-quantization>`__
 
-* `Quantization of Segmentation model for mediacal data <https://github.com/openvinotoolkit/openvino_notebooks/tree/main/notebooks/110-ct-segmentation-quantize>`__
+* `Quantization of Segmentation model for medical data <https://github.com/openvinotoolkit/openvino_notebooks/tree/main/notebooks/110-ct-segmentation-quantize>`__
 
 * `Quantization of BERT for Text Classification <https://github.com/openvinotoolkit/openvino_notebooks/tree/main/notebooks/105-language-quantize-bert>`__
 
@@ -234,8 +232,9 @@ Command-line example:
 
 * `Quantization of Image Classification model <https://docs.openvino.ai/latest/pot_configs_examples_README.html>`__
 
-Full specification and a template for DefaultQuantization algorithm for POT 
-command-line inferface:
+A template and full specification for DefaultQuantization algorithm for POT command-line interface:
+
+* `Template <https://github.com/openvinotoolkit/openvino/blob/master/tools/pot/openvino/tools/pot/configs/templates/default_quantization_template.json>`__
 
 * `Full specification <https://github.com/openvinotoolkit/openvino/blob/master/tools/pot/configs/default_quantization_spec.json>`__
 

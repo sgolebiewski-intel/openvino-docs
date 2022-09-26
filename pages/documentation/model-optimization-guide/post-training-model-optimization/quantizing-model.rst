@@ -1,4 +1,4 @@
-.. index:: pair: page; Quantizing Model
+.. index:: pair: page; Quantizing Models
 .. _optim_perf__def_quantization:
 
 .. meta::
@@ -12,8 +12,8 @@
               Model Optimizer, OpenVINO IR, DefaultQuantization
 
 
-Quantizing Model
-================
+Quantizing Models
+=================
 
 :target:`optim_perf__def_quantization_1md_openvino_tools_pot_docs_defaultquantizationusage`
 
@@ -25,8 +25,8 @@ Quantizing Model
 
 This guide describes how to apply model quantization with the Default Quantization 
 method without accuracy control, using an unannotated dataset. To use this method, 
-you need to create a Python script using an API of Post-Training Optimization Tool 
-(POT) and implement data preparation logic and quantization pipeline. If you are 
+create a Python script using an API of Post-Training Optimization Tool (POT) and 
+implement data preparation logic and quantization pipeline. If you are 
 not familiar with Python, try :ref:`command-line interface <optim_perf__pot_cli>` 
 of POT which is designed to quantize models from OpenVINO `Model Zoo <https://github.com/openvinotoolkit/open_model_zoo>`__. 
 The figure below shows the common workflow of the quantization script implemented 
@@ -71,8 +71,8 @@ For example, the ``torch.utils.data.Dataset`` has a similar interface as the
 be easily wrapped by POT API.
 
 .. note:: Model-specific preprocessing (for example, mean/scale normalization), 
-   can be embedded into the model at the conversion step, using Model Optimizer 
-   component. This should be considered during the implementation of the DataLoader 
+   can be embedded into the model at the conversion step, using Model Optimizer. 
+   This should be considered during the implementation of the DataLoader 
    interface to avoid "double" normalization, which can lead to the loss of accuracy 
    after optimization.
 
@@ -310,13 +310,12 @@ use :ref:`Accuracy-aware Quantization <optim_perf__accuracy_quantization>` metho
 Quantizing cascaded models
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In some cases, when the optimized model is a cascaded one (consists of several 
-submodels, for example, MT-CNN), you will need to implement a complex inference 
-pipeline that can properly handle different submodels and data flow between 
-them. POT API provides the ``Engine`` interface for this purpose, which allows 
-customization of the inference logic. However, it is recommended to inherit from 
-``IEEngine`` helper class that already contains all the logic required to do the 
-inference based on OpenVINO Python API. For more details, see the following 
+When the optimized model is a cascaded one (consists of several submodels, for example, MT-CNN), 
+it will be necessary to implement a complex inference pipeline that can properly handle 
+different submodels and data flow between them. POT API provides the ``Engine`` interface 
+for this purpose, which allows customization of the inference logic. However, it is 
+recommended to inherit from ``IEEngine`` helper class that already contains all the logic 
+required to do the inference based on OpenVINO Python API. For more details, see the following 
 :ref:`example <optim_perf__pot_api_example_face_detect>`.
 
 Examples

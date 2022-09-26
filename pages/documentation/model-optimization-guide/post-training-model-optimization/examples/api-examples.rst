@@ -112,3 +112,15 @@ The following examples demonstrate the implementation of ``Engine``,
 After execution of each example above the quantized model is placed into the 
 folder ``optimized``. The accuracy validation of the quantized model is 
 performed right after the quantization.
+
+See the tutorials
+-----------------
+
+* `Quantization of Image Classification model <https://github.com/openvinotoolkit/openvino_notebooks/tree/main/notebooks/301-tensorflow-training-openvino>`__
+
+* `Quantization of Object Detection model from Model Zoo <https://github.com/openvinotoolkit/openvino_notebooks/tree/main/notebooks/111-detection-quantization>`__
+
+* `Quantization of Segmentation model for medical data <https://github.com/openvinotoolkit/openvino_notebooks/tree/main/notebooks/110-ct-segmentation-quantize>`__
+
+* `Quantization of BERT for Text Classification <https://github.com/openvinotoolkit/openvino_notebooks/tree/main/notebooks/105-language-quantize-bert>`__
+

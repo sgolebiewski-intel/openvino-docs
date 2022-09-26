@@ -1,4 +1,4 @@
-.. index:: pair: page; Post-training Optimization Tool Frequently Asked Questions
+.. index:: pair: page; Post-training Optimization Tool FAQ
 .. _optim_perf__pot_faq:
 
 .. meta::
@@ -85,13 +85,13 @@ I'd like to quantize a model and I've converted it to IR but I don't have the Ac
 #. Try quantization using Python API of the Post-training Optimization Tool. For 
    more details see :ref:`Quantizing Model <optim_perf__def_quantization>`.
 
-#. If you consider command-line usage only refer to Accuracy Checker documentation 
-   to create the Accuracy Checker configuration file, and try to find the 
+#. If you consider command-line usage only refer to `Accuracy Checker <https://docs.openvinotoolkit.org/latest/omz_tools_accuracy_checker.html>`__ 
+   documentation to create the Accuracy Checker configuration file, and try to find the 
    configuration file for your model among the ones available in the Accuracy 
    Checker examples.
 
 #. An alternative way is to quantize the model in the 
-   `Simplified mode <#ref pot_docs_simplified_mode>`__ but you will not be able 
+   :ref:`Simplified mode <optim_perf__pot_simplified>` but you will not be able 
    to measure the accuracy.
 
 .. _tradeoff:

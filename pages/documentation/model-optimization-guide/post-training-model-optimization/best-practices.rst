@@ -75,18 +75,22 @@ without a substantial performance reduction with respect to default settings:
    helpful for models with non-ReLU activation functions, for example, 
    YOLO, EfficientNet, etc.
 
-#. The second option is the ``use_fast_bias``. Setting this option to ``false`` 
-   enables a different bias correction method which is generally more accurate 
-   and applied after model quantization, as a part of the Default 
-   Quantization algorithm.
+#. The next option is `use_fast_bias`. Setting this option to `false` enables a 
+   different bias correction method which is more accurate, in general,and applied 
+   after model quantization as a part of the Default Quantization algorithm.
 
-   .. note:: Changing this option can substantially increase quantization 
-      time in POT tool.
+   .. note:: 
+      Changing this option can substantially increase quantization time in the POT tool.
 
-#. Another important option is the ``range_estimator``. It defines how to 
-   calculate the minimum and maximum of quantization range for weights and 
-   activations. For example, the following ``range_estimator`` for activations 
-   can improve the accuracy for Faster R-CNN based networks:
+#. Some model architectures require a special approach when being quantized. For example, 
+   Transformer-based models need to keep some operations in the original precision to 
+   preserve accuracy. That is why POT provides a `model_type` option to specify the model 
+   architecture. Now, only `"transformer"` type is available. Use it to quantize 
+   Transformer-based models, e.g. BERT.
+
+#. Another important option is a `range_estimator`. It defines how to calculate the minimum 
+   and maximum of quantization range for weights and activations. For example, the following 
+   ``range_estimator`` for activations can improve the accuracy for Faster R-CNN based networks:
 
    .. ref-code-block:: cpp
 
@@ -108,32 +112,32 @@ without a substantial performance reduction with respect to default settings:
           }
       }
 
-#. The next option is the ``stat_subset_size``. It controls the size of the 
-   calibration dataset used by POT to collect statistics for quantization 
-   parameters initialization. It is assumed that this dataset should contain 
-   a sufficient number of representative samples. Hence, varying this parameter 
-   may affect accuracy (higher is better). However, it proves that 300 samples 
-   are sufficient to get representative statistics in most cases.
+#. The next option is `stat_subset_size`. It controls the size of the calibration 
+   dataset used by POT to collect statistics for quantization parameters initialization. 
+   It is assumed that this dataset should contain a sufficient number of representative 
+   samples. Thus, varying this parameter may affect accuracy (higher is better). However, 
+   we empirically found that 300 samples are sufficient to get representative statistics 
+   in most cases.
 
-#. The last option is the ``ignored_scope``. It allows excluding some layers 
-   from the quantization process, for example, their inputs will not be 
-   quantized. It may be helpful for some patterns, which are known in advance, 
-   that they drop accuracy when executing in low-precision. For example, the 
-   ``DetectionOutput`` layer of SSD model expressed as a subgraph should not 
-   be quantized to preserve the accuracy of Object Detection models. One of 
-   the sources for the ignored scope can be the Accuracy-aware algorithm, which 
-   can revert layers back to the original precision (see the details below).
+#. The last option is `ignored_scope`. It allows excluding some layers from the quantization 
+   process, i.e. their inputs will not be quantized. It may be helpful for some patterns for 
+   which it is known in advance that they drop accuracy when executing in low-precision. For 
+   example, `DetectionOutput` layer of SSD model expressed as a subgraph should not be quantized 
+   to preserve the accuracy of Object Detection models. One of the sources for the ignored scope 
+   can be the Accuracy-aware algorithm which can revert layers back to the original precision 
+   (see details below).
 
-Find the possible options and their description in the 
-``configs/default_quantization_spec.json`` file in the POT directory.
+Find all the possible options and their description in the configuration 
+`specification file <https://github.com/openvinotoolkit/openvino/blob/master/tools/pot/configs/default_quantization_spec.json>`__ 
+in the POT directory.
 
 Accuracy-aware Quantization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If the steps above do not result in an accurate quantized model, you may use 
-the so-called :ref:`Accuracy-aware Quantization <optim_perf__accuracy_quantization>` 
-algorithm, which produces mixed-precision models. Here is a fragment of 
-Accuracy-aware Quantization configuration with default settings:
+When the steps above do not lead to the accurate quantized model, you may use the so-called 
+:ref:`Accuracy-aware Quantization <optim_perf__accuracy_quantization>` algorithm which leads 
+to mixed-precision models. A fragment of Accuracy-aware Quantization configuration with default 
+settings is shown below:
 
 .. ref-code-block:: cpp
 
@@ -163,6 +167,6 @@ To improve model performance after Accuracy-aware Quantization, try the
 for optimal quantization parameters before reverting layers to the "backup" 
 precision. Note that this may impact the overall quantization time, though.
 
-If the Accuracy-aware Quantization algorithm does not provide the desired 
-accuracy and performance or you need an accurate, fully-quantized model, use 
-:ref:`NNCF <optim_perf__nncf_introduction>` for Quantization-Aware Training.
+If you do not achieve the desired accuracy and performance after applying the 
+Accuracy-aware Quantization algorithm or you need an accurate fully-quantized model, 
+we recommend either using Quantization-Aware Training from :ref:`NNCF <optim_perf__tmo_introduction>`.

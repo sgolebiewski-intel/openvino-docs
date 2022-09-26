@@ -17,7 +17,7 @@ Experimental: Protecting Model
 :target:`optim_perf__protect_model_1md_openvino_tools_pot_openvino_tools_pot_algorithms_quantization_range_supervision_readme`
 
 Introduction
-~~~~~~~~~~~
+~~~~~~~~~~~~
 
 Deep neural network find applications in many scenarios where the prediction is a 
 critical component for safety-relevant decisions. Such workloads can benefit from 
@@ -92,9 +92,7 @@ RangeSupervision layer.
 Usage
 ~~~~~
 
-RangeSupervision protection can be used the same way as 
-
-:ref:`DefaultQuantization <optim_perf__def_quantization>` method.
+RangeSupervision protection can be used the same way as :ref:`DefaultQuantization <optim_perf__def_quantization>` method.
 
 Algorithm configuration
 -----------------------
@@ -113,7 +111,7 @@ Algorithm has a minimal configuration. Below is an example of such configuration
    }
 
 The protected model will be saved in IR format in a new folder 
-\*./results/<model_name>_RangeSupervision/...\* .
+*./results/<model_name>_RangeSupervision/...* .
 
 Mandatory parameters:
 
@@ -127,11 +125,11 @@ Mandatory parameters:
 Example of RangeSupervision results
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following example shows a traffic camera image and predicted objects using 
-a Yolov3 pretrained on the Coco dataset. A single weight fault was injected in 
-a randomly chosen convolution layer of Yolo, flipping the most significant bit 
-of the selected network parameter. If range supervision is applied, the 
-original network performance is recovered despite the presence of the fault.
+The following example shows a traffic camera image and predicted objects using a YOLOv3 
+pre-trained on the Coco dataset. A single weight fault was injected in a randomly chosen 
+convolution layer of YOLO, flipping the most significant bit of the selected network parameter. 
+If range supervision is applied, the original network performance is recovered despite the 
+presence of the fault.
 
 .. image:: ./_assets/img_combined_2.png
 

@@ -22,7 +22,7 @@ Model Optimization Guide
    :hidden:
 
    ./model-optimization-guide/post-training-model-optimization
-   ./model-optimization-guide/neural-network-compression-framework
+   ./model-optimization-guide/tmo-introduction
    ./model-optimization-guide/experimental-protecting-model
 
 Model optimization is an optional offline step of improving final model 
@@ -35,12 +35,12 @@ optimize models at different steps of model development:
   vs BGR input channels, and other parameters to speed up preprocess of a model 
   (:ref:`Embedding Preprocessing Computation <conv_prep__add_optim_preprocess>`).
 
-* **Post-training Optimization tool** :ref:`(POT) <optim_perf__pot_intro>` is 
+* :ref:`Post-training Optimization w/ POT <optim_perf__pot_intro>` is 
   designed to optimize inference of deep learning models by applying post-training 
   methods that do not require model retraining or fine-tuning, for example, 
   post-training 8-bit quantization.
 
-* **Neural Network Compression Framework** :ref:`(NNCF) <optim_perf__nncf_introduction>` 
+* :ref:`Training-time Optimization w/ NNCF <optim_perf__tmo_introduction>` 
   provides a suite of advanced methods for training-time model optimization within 
   the DL framework, such as PyTorch and TensorFlow. It supports methods, like 
   Quantization-aware Training and Filter Pruning. NNCF-optimized models can be 
@@ -49,10 +49,16 @@ optimize models at different steps of model development:
 Detailed workflow:
 ~~~~~~~~~~~~~~~~~~
 
+To understand which development optimization tool you need, refer to the diagram:
+
 .. image:: ./_assets/DEVELOPMENT_FLOW_V3_crunch.svg
 
-The diagram below will help you understand which development optimization tool 
-you need to use:
+
+Post-training methods are limited in terms of achievable accuracy-performance trade-off for optimizing models. 
+In this case, training-time optimization with NNCF is an option.
+
+Once the model is optimized using the aforementioned tools it can be used for inference using the regular OpenVINO 
+inference workflow. No changes to the inference code are required.
 
 .. image:: ./_assets/WHAT_TO_USE.svg
 

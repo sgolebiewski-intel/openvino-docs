@@ -1,4 +1,4 @@
-.. index:: pair: page; Model Accuracy for INT8 and FP32 Precision
+.. index:: pair: page; Model Accuracy and Performance for INT8 and FP32
 .. _optim_perf__performance_int8_vs_fp32:
 
 .. meta::
@@ -12,8 +12,8 @@
               i7-6700K, Intel® Core™ i7-1185G7
 
 
-Model Accuracy for INT8 and FP32 Precision
-==========================================
+Model Accuracy and Performance for INT8 and FP32
+================================================
 
 :target:`optim_perf__performance_int8_vs_fp32_1md_openvino_docs_benchmarks_optim_perf__performance_int8_vs_fp32` 
 

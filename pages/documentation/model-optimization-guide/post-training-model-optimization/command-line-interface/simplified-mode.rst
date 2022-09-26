@@ -23,6 +23,8 @@ Engine interface from the POT API. It allows reading the data from an arbitrary
 folder specified by the user. For more details about POT API, refer to the 
 corresponding :ref:`description <optim_perf__pot_api>`. Currently, Simplified 
 mode is available only for image data in PNG or JPEG formats, stored in a single folder.
+It supports Computer Vision models with a single input or two inputs where the second is 
+"image_info" (Faster R-CNN, Mask R-CNN, etc.).
 
 .. note:: This mode cannot be used with accuracy-aware methods. There is no 
    way to control accuracy after optimization. Nevertheless, this mode can be 
@@ -58,7 +60,7 @@ can be found `at the following link <https://github.com/openvinotoolkit/openvino
 
 For more details about POT usage via CLI, refer to this :ref:`CLI document <optim_perf__pot_cli>`.
 
-See Also
-~~~~~~~~
+Additional Resources
+~~~~~~~~~~~~~~~~~~~~
 
 * :ref:`Configuration File Description <optim_perf__pot_config_file>`

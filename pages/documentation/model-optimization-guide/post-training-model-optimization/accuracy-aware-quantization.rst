@@ -1,4 +1,4 @@
-.. index:: pair: page; Quantizing Model with Accuracy Control
+.. index:: pair: page; Quantizing Models with Accuracy Control
 .. _optim_perf__accuracy_quantization:
 
 .. meta::
@@ -10,8 +10,8 @@
               INT16 precision, quantization parameters, quantizing models, 
               inference, precise quantization
 
-Quantizing Model with Accuracy Control
-======================================
+Quantizing Models with Accuracy Control
+=======================================
 
 :target:`optim_perf__accuracy_quantization_1md_openvino_tools_pot_docs_accuracyawarequantizationusage`
 
@@ -242,7 +242,7 @@ on demand is also available in the ``Pipeline`` object.
 
 In case when Accuracy-aware Quantization does not allow achieving the desired 
 accuracy-performance trade-off, it is recommended to try Quantization-aware 
-Training from :ref:`NNCF <optim_perf__nncf_introduction>`.
+Training from :ref:`NNCF <optim_perf__tmo_introduction>`.
 
 Examples
 ~~~~~~~~

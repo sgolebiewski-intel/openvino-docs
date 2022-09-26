@@ -1,4 +1,4 @@
-.. index:: pair: page; AccuracyAwareQuantization Algorithm
+.. index:: pair: page; AccuracyAwareQuantization Parameters
 .. _optim_perf__accuracy_quant_algorithm:
 
 .. meta::
@@ -10,27 +10,26 @@
               parameters, quantizing models, inference, AccuracyAwareQuantization,
               accuracy-aware quantization, 
 
-AccuracyAwareQuantization Algorithm
-===================================
+AccuracyAwareQuantization Parameters
+====================================
 
 :target:`optim_perf__accuracy_quant_algorithm_1md_openvino_tools_pot_openvino_tools_pot_algorithms_quantization_accuracy_aware_readme`
 
 Introduction
 ~~~~~~~~~~~~
 
-The purpose of AccuracyAwareQuantization Algorithm is performing precise 
-quantization, while keeping model accuracy within a pre-defined range. In 
-comparison to :ref:`DefaultQuantization <optim_perf__def_quant_algorithm>` 
-algorithm this may cause a degradation in performance because some layers 
-can be reverted back to the original precision.
+Accuracy-aware Quantization algorithm is aimed at accurate quantization and 
+allows the model's accuracy to stay within the pre-defined range. This may 
+cause a degradation in performance in comparison to :ref:`DefaultQuantization <optim_perf__def_quant_algorithm>` 
+algorithm because some layers can be reverted back to the original precision.
 
 Parameters
 ~~~~~~~~~~
 
-Since the :ref:`DefaultQuantization <optim_perf__def_quant_algorithm>` 
-algorithm is used as an initialization, all its parameters are also valid and can 
-be specified. Below is an example of the ``AccuracyAwareQuantization`` method 
-and its parameters:
+Since the :ref:`Default Quantization <optim_perf__def_quant_algorithm>` 
+algorithm is used as an initialization, all its parameters are also valid 
+and can be specified. Here is an example of the definition of the Accuracy-aware 
+Quantization method and its parameters:
 
 .. ref-code-block:: cpp
 
@@ -100,8 +99,9 @@ Example:
 
 * `Quantization of Object Detection model with control of accuracy <https://github.com/openvinotoolkit/openvino/tree/master/tools/pot/openvino/tools/pot/api/samples/object_detection>`__
 
-Full specification and a template for AccuracyAwareQuantization algorithm for 
-POT command-line interface:
+A template and full specification for AccuracyAwareQuantization algorithm for POT command-line interface:
+
+* `Template <https://github.com/openvinotoolkit/openvino/blob/master/tools/pot/openvino/tools/pot/configs/templates/accuracy_aware_quantization_template.json>`__
 
 * `Full specification <https://github.com/openvinotoolkit/openvino/blob/master/tools/pot/configs/accuracy_aware_quantization_spec.json>`__
 
