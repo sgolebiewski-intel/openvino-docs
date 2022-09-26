@@ -383,7 +383,7 @@ network is compiled with.
 	}
 
 This function is the only way to get configuration values when a network is imported and compiled by other developers 
-and tools (for example, the `Compile tool <../_inference_engine_tools_compile_tool_README.html>`__).
+and tools (for example, the :ref:`Compile tool <deploy_infer__compile_tool>`).
 
 The next step in plugin library implementation is the 
 :ref:`Synchronous Inference Request <extensibility_plugin__synch_inf_req>` class.

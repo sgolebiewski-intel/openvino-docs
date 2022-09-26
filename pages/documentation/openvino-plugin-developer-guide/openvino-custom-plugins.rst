@@ -201,7 +201,7 @@ The function accepts a const shared pointer to ``:ref:`ov::Model <doxid-classov_
 
 #. Applies common and plugin-specific transformations on a copied graph to make the graph more friendly to hardware operations. For details how to write custom plugin-specific transformation, please, refer to :ref:`Writing OpenVINO™ transformations <extensibility_transformations__overview>` guide. See detailed topics about network representation:
    
-   * `Intermediate Representation and Operation Sets <../_docs_MO_DG_IR_and_opsets.html>`__
+   * :ref:`Intermediate Representation and Operation Sets <doxid-openvino_docs__m_o__d_g__i_r_and_opsets>`
    
    * :ref:`Quantized networks <extensibility_plugin__quantized_networks>`.
 

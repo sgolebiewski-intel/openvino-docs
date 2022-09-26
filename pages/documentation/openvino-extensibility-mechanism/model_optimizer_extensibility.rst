@@ -82,7 +82,7 @@ and ``mo.graph.port.Port`` classes. Thus, low-level graph manipulation is error 
 
 Further details and examples related to a model representation in memory are provided in the sections below, 
 in a context for a better explanation. Also, for more information on how to use ports and connections, 
-refer to the `Graph Traversal and Modification Using s and s <#graph-ports-and-conneсtions>`__ section.
+refer to the `Graph Traversal and Modification Using Ports and Connections <#graph-ports>`__ section.
 
 .. _model-conversion-pipeline:
 
@@ -285,7 +285,7 @@ available in the ``mo/ops/reshape.py`` file):
 
 Methods ``in_port()`` and ``output_port()`` of the ``Node`` class are used to get and set data node attributes. For more 
 information on how to use them, refer to the 
-`Graph Traversal and Modification Using Ports and Connections <#graph-ports-and-conneсtions>`__ section.
+`Graph Traversal and Modification Using Ports and Connections <#graph-ports>`__ section.
 
 .. _middle-phase:
 
@@ -314,7 +314,7 @@ Middle Phase
 The middle phase starts after partial inference. At this phase, a graph contains data nodes and output shapes of all operations 
 in the graph have been calculated. Any transformation implemented at this stage must update the ``shape`` attribute for all 
 newly added operations. It is highly recommended to use API described in the 
-`Graph Traversal and Modification Using Ports and Connections <#graph-ports-and-conneсtions>`__ because modification of a graph 
+`Graph Traversal and Modification Using Ports and Connections <#graph-ports>`__ because modification of a graph 
 using this API causes automatic re-inference of affected nodes as well as necessary data nodes creation.
 
 More information on how to develop middle transformations and dedicated API description is provided in the 
@@ -385,7 +385,7 @@ The last phase of a model conversion is the Intermediate Representation emitting
 
 #. Generates an ``.xml`` file defining a graph structure. The information about operation inputs and outputs are prepared uniformly for all operations regardless of their type. A list of attributes to be saved to the ``.xml`` file is defined with the ``backend_attrs()`` or ``supported_attrs()`` of the ``Op`` class used for a graph node instantiation. For more information on how the operation attributes are saved to XML, refer to the function ``prepare_emit_ir()`` in the ``mo/pipeline/common.py`` file and `Model Optimizer Operation <#extension-operation>`__ section.
 
-.. _graph-ports-and-conneсtions:
+.. _graph-ports:
 
 Graph Traversal and Modification Using Ports and Connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

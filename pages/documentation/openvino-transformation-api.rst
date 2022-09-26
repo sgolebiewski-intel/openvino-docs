@@ -165,7 +165,7 @@ To eliminate operation, OpenVINO™ has special method that considers all limita
 ``:ref:`ov::replace_output_update_name() <doxid-namespaceov_1a75ba2120e573883bd96bb19c887c6a1d>``` in case of successful 
 replacement it automatically preserves friendly name and runtime info.
 
-.. _transformations_types:
+.. _transformations-types:
 
 Transformations types
 ~~~~~~~~~~~~~~~~~~~~~
@@ -245,8 +245,9 @@ When transformation has multiple fusions or decompositions,
 ``:ref:`ov::copy_runtime_info <doxid-namespaceov_1a3bb5969a95703b4b4fd77f6f58837207>``` must be called multiple times 
 for each case.
 
-**Note** : copy_runtime_info removes rt_info from destination nodes. If you want to keep it, you need to specify them 
-in source nodes like this: copy_runtime_info({a, b, c}, {a, b})
+.. note:: 
+   `copy_runtime_info` removes `rt_info` from destination nodes. If you want to keep it, you need to specify them 
+   in source nodes like this: `copy_runtime_info({a, b, c}, {a, b})`
 
 3. Constant Folding
 -------------------
@@ -307,7 +308,7 @@ Using pass manager
 
 ``:ref:`ov::pass::Manager <doxid-classov_1_1pass_1_1_manager>``` is a container class that can store the list of transformations 
 and execute them. The main idea of this class is to have high-level representation for grouped list of transformations. It can 
-register and apply any `transformation pass <#transformations_types>`__ on model. In addition, 
+register and apply any `transformation pass <#transformations-types>`__ on model. In addition, 
 ``:ref:`ov::pass::Manager <doxid-classov_1_1pass_1_1_manager>``` has extended debug capabilities (find more information in 
 the `how to debug transformations <#how_to_debug_transformations>`__ section).
 
