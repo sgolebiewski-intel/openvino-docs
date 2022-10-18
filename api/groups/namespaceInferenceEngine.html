@@ -705,6 +705,17 @@
     <span class="kt">bool</span> <span class="n">new_api</span>
     <span class="p">);</span>
 
+<span class="n">std</span><span class="o">::</span><span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <a class="reference internal" href="#doxid-namespace-inference-engine-1a3347174a19ab54bff7e37107d438da6d"><span class="std std-ref">GetRemovedNodes</span></a><span></span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="k">const</span> <a class="reference internal" href="classov_1_1Model.html#doxid-classov-1-1-model"><span class="std std-ref">ov::Model</span></a><span></span><span class="o">&gt;&amp;</span> <span class="n">originalFunction</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="k">const</span> <a class="reference internal" href="classov_1_1Model.html#doxid-classov-1-1-model"><span class="std std-ref">ov::Model</span></a><span></span><span class="o">&gt;&amp;</span> <span class="n">transformedFunction</span>
+    <span class="p">);</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <a class="reference internal" href="#doxid-namespace-inference-engine-1a2fdbf6d39c27c2cbbb1e9da0aaa89e39"><span class="std std-ref">GetSupportedNodes</span></a><span></span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="k">const</span> <a class="reference internal" href="classov_1_1Model.html#doxid-classov-1-1-model"><span class="std std-ref">ov::Model</span></a><span></span><span class="o">&gt;&amp;</span> <span class="n">model</span><span class="p">,</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><a class="reference internal" href="classov_1_1Model.html#doxid-classov-1-1-model"><span class="std std-ref">ov::Model</span></a><span></span><span class="o">&gt;&amp;</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">transform</span><span class="p">,</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">bool</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><a class="reference internal" href="classov_1_1Node.html#doxid-classov-1-1-node"><span class="std std-ref">ngraph::Node</span></a><span></span><span class="o">&gt;</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">is_node_supported</span>
+    <span class="p">);</span>
+
 <span class="n">std</span><span class="o">::</span><span class="n">string</span> <a class="reference internal" href="groupie_dev_api_file_utils.html#doxid-group-ie-dev-api-file-utils-1ga15d24bbab01b2c9b18d3eba65d72ed93"><span class="std std-ref">getIELibraryPath</span></a><span></span><span class="p">();</span>
 <span class="kr">inline</span> <span class="o">::</span><a class="reference internal" href="namespaceov_1_1util.html#doxid-namespaceov-1-1util-1ae0746e01ce425506d6d00729a988ae66"><span class="std std-ref">ov::util::FilePath</span></a><span></span> <span class="doxyrest-code-target target" id="doxid-namespace-inference-engine-1af2fd40713be7416e605e33cee0d33720"><span></span><span class="n">getInferenceEngineLibraryPath</span></span><span></span><span class="p">();</span>
 <span class="kt">bool</span> <a class="reference internal" href="groupie_dev_api_system_conf.html#doxid-group-ie-dev-api-system-conf-1gaa28c1b3e2f68e250f9b63e16926f928d"><span class="std std-ref">checkOpenMpEnvVars</span></a><span></span><span class="p">(</span><span class="kt">bool</span> <span class="n">includeOMPNumThreads</span> <span class="o">=</span> <span class="nb">true</span><span class="p">);</span>
@@ -1439,6 +1450,52 @@
 </tr>
 </tbody>
 </table>
+<span class="target" id="doxid-namespace-inference-engine-1a3347174a19ab54bff7e37107d438da6d"></span><div class="highlight doxyrest-title-code-block"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">GetRemovedNodes</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="k">const</span> <a class="reference internal" href="classov_1_1Model.html#doxid-classov-1-1-model"><span class="std std-ref">ov::Model</span></a><span></span><span class="o">&gt;&amp;</span> <span class="n">originalFunction</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="k">const</span> <a class="reference internal" href="classov_1_1Model.html#doxid-classov-1-1-model"><span class="std std-ref">ov::Model</span></a><span></span><span class="o">&gt;&amp;</span> <span class="n">transformedFunction</span>
+    <span class="p">)</span></pre></div></div><p>Returns set of nodes which were removed after transformation. If originalFunction contains node1 and transformedFunction does not contains node1 in ops list, node1 will be returned.</p>
+<p class="rubric">Parameters:</p>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>originalFunction</p></td>
+<td><p>Original network</p></td>
+</tr>
+<tr class="row-even"><td><p>transformedFunction</p></td>
+<td><p>Transformed network</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Returns:</p>
+<p>Set of strings which contains removed node names</p>
+<span class="target" id="doxid-namespace-inference-engine-1a2fdbf6d39c27c2cbbb1e9da0aaa89e39"></span><div class="highlight doxyrest-title-code-block"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">unordered_set</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">GetSupportedNodes</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="k">const</span> <a class="reference internal" href="classov_1_1Model.html#doxid-classov-1-1-model"><span class="std std-ref">ov::Model</span></a><span></span><span class="o">&gt;&amp;</span> <span class="n">model</span><span class="p">,</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><a class="reference internal" href="classov_1_1Model.html#doxid-classov-1-1-model"><span class="std std-ref">ov::Model</span></a><span></span><span class="o">&gt;&amp;</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">transform</span><span class="p">,</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">bool</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><a class="reference internal" href="classov_1_1Node.html#doxid-classov-1-1-node"><span class="std std-ref">ngraph::Node</span></a><span></span><span class="o">&gt;</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">is_node_supported</span>
+    <span class="p">)</span></pre></div></div><p>Returns set of nodes from original model which are determined as supported after applied transformation pipeline.</p>
+<p class="rubric">Parameters:</p>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>model</p></td>
+<td><p>Original model</p></td>
+</tr>
+<tr class="row-even"><td><p>transform</p></td>
+<td><p>Transformation pipeline function</p></td>
+</tr>
+<tr class="row-odd"><td><p>is_node_supported</p></td>
+<td><p>Function returning whether node is supported or not</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Returns:</p>
+<p>Set of strings which contains supported node names</p>
 <span class="target" id="doxid-namespace-inference-engine-1a40a34e19e6181de9b7c7eae719edd34e"></span><div class="highlight doxyrest-title-code-block"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><a class="reference internal" href="classInferenceEngine_1_1IAllocator.html#doxid-class-inference-engine-1-1-i-allocator"><span class="std std-ref">InferenceEngine::IAllocator</span></a><span></span><span class="o">&gt;</span> <span class="n">CreateDefaultAllocator</span><span class="p">()</span></pre></div></div><p>Creates the default implementation of the Inference Engine allocator per plugin.</p>
 <p class="rubric">Returns:</p>
 <p>The Inference Engine IAllocator* instance</p>

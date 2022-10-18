@@ -2011,6 +2011,11 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#algorithms">
+   Algorithms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-it-works">
    How It works
   </a>
@@ -2083,35 +2088,46 @@
                   
   <section id="smartlab-python-demo">
 <h1>Smartlab Python* Demo<a class="headerlink" href="#smartlab-python-demo" title="Permalink to this headline">¶</a></h1>
-<p>This is the demo application with smartlab action recognition and smartlab object detection algorithms.
-This demo takes multi-view video inputs to identify actions and objects, then evaluates scores of current state.
-Action recognition architecture uses two encoders for front-view and top-view respectively, and a single decoder.
-Object detection uses two models for each view to detect large and small objects, respectively.
+<p>This is the demo application with smartlab object detection and smartlab action recognition algorithms.
+This demo takes multi-view video inputs to identify objects and actions, then evaluates scores for teacher’s reference.
+The UI is shown as:
+<img alt="image" src="../../../_images/smartlab.gif" />
+<strong>The left picture</strong> and <strong>right picture</strong> show top view and side view on the test bench respectively. For object detection part,
+<strong>blue bounding boxes</strong> are shown. Below these pictures, <strong>progress bar</strong> is shown for action types, and the colors of actions correspond to
+the <strong>action names</strong> above. Scoring part is below the entire UI and there are 8 score points. <code class="docutils literal notranslate"><span class="pre">[1]</span></code> means student can
+get 1 point while <code class="docutils literal notranslate"><span class="pre">[0]</span></code> means student loses the point. <code class="docutils literal notranslate"><span class="pre">[-]</span></code> means under evaluation.</p>
+<section id="algorithms">
+<h2>Algorithms<a class="headerlink" href="#algorithms" title="Permalink to this headline">¶</a></h2>
+<p>Architecture of smart science lab contains object detection, action recognition and scoring evaluator.
 The following pre-trained models are delivered with the product:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">i3d-rgb-tf</span></code> + <code class="docutils literal notranslate"><span class="pre">smartlab-sequence-modelling-0001</span></code>, which are other models for identifying actions 2 actions of smartlab (adjust_rider, put_take).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">smartlab-object-detection-0001</span></code> + <code class="docutils literal notranslate"><span class="pre">smartlab-object-detection-0002</span></code> + <code class="docutils literal notranslate"><span class="pre">smartlab-object-detection-0003</span></code> + <code class="docutils literal notranslate"><span class="pre">smartlab-object-detection-0004</span></code>, which are models for detecting smartlab objects (10 objects). They detect balance, weights, tweezers, box, battery, tray, ruler, rider, scale, hand.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">smartlab-object-detection-0001</span></code> + <code class="docutils literal notranslate"><span class="pre">smartlab-object-detection-0002</span></code> + <code class="docutils literal notranslate"><span class="pre">smartlab-object-detection-0003</span></code> + <code class="docutils literal notranslate"><span class="pre">smartlab-object-detection-0004</span></code>, which are models
+to detect 10 objects including: balance, weights, tweezers, box, battery, tray, ruler, rider, scale, hand.</p></li>
 </ul>
+<p>Action recognition include two options:</p>
+<ul class="simple">
+<li><p>–mode multiview: <code class="docutils literal notranslate"><span class="pre">smartlab-action-recognition-0001-encoder-top</span></code> + <code class="docutils literal notranslate"><span class="pre">smartlab-action-recognition-0001-encoder-side</span></code> +
+<code class="docutils literal notranslate"><span class="pre">smartlab-action-recognition-0001-decoder</span></code> , identifying 3 action types.</p></li>
+<li><p>–mode mstcn: <code class="docutils literal notranslate"><span class="pre">smartlab-sequence-modelling-0001</span></code> + <code class="docutils literal notranslate"><span class="pre">smartlab-sequence-modelling-0002</span></code>, identifying 14 action types.</p></li>
+</ul>
+</section>
 <section id="how-it-works">
 <h2>How It works<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
 <p>The demo pipeline consists of several steps:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Decode</span></code> reads frames from the input videos</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Detector</span></code> detects smartlab objects (balance, weights, tweezers, box, battery, tray, ruler, rider scale, hand)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Segmentor</span></code> segments video frames based on action of the frame</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Evaluator</span></code> calculates scores of the current state</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Display</span></code> displays detected objects, recognized action, calculated scores on the current frame</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Decode</span></code> read frames from the two input videos</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Detector</span></code> detect objects (balance, weights, tweezers, box, battery, tray, ruler, rider scale, hand)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Segmentor</span></code> segment and classify video frames based on action type of the frame</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Evaluator</span></code> give scores of the current state</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Display</span></code> display the whole UI</p></li>
 </ul>
-<blockquote>
-<div><p><strong>NOTE</strong>: By default, Open Model Zoo demos expect input with BGR channels order. If you trained your model to work with RGB order, you need to manually rearrange the default channels order in the demo application or reconvert your model using the Model Optimizer tool with the <code class="docutils literal notranslate"><span class="pre">--reverse_input_channels</span></code> argument specified. For more information about the argument, refer to <strong>When to Reverse Input Channels</strong> section of [Embedding Preprocessing Computation](&#64;ref openvino_docs_MO_DG_Additional_Optimization_Use_Cases).</p>
-</div></blockquote>
 </section>
 <section id="preparing-to-run">
 <h2>Preparing to Run<a class="headerlink" href="#preparing-to-run" title="Permalink to this headline">¶</a></h2>
-<p>For demo input image or video files, you need to provide smartlab videos (https://storage.openvinotoolkit.org/data/test_data/videos/smartlab/).
-The list of models supported by the demo is in <code class="docutils literal notranslate"><span class="pre">&lt;omz_dir&gt;/demos/smartlab_demo/python/models.lst</span></code> file.
-This file can be used as a parameter for <span class="xref myst">Model Downloader</span> and Converter to download and, if necessary, convert models to OpenVINO format (*.xml + *.bin).</p>
-<p>An example of using the Model Downloader:</p>
+<p>Example input video: https://storage.openvinotoolkit.org/data/test_data/videos/smartlab/v3.</p>
+<p>The list of models supported by the demo is in <code class="docutils literal notranslate"><span class="pre">&lt;omz_dir&gt;/demos/smartlab_demo/python/models.lst</span></code> file.
+This file can be used as a parameter for <span class="xref myst">Model Downloader</span> to download.
+An example of using the Model Downloader:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>omz_downloader --list models.lst
 </pre></div>
 </div>
@@ -2122,66 +2138,96 @@ This file can be used as a parameter for <span class="xref myst">Model Downloade
 <li><p>smartlab-object-detection-0002</p></li>
 <li><p>smartlab-object-detection-0003</p></li>
 <li><p>smartlab-object-detection-0004</p></li>
+<li><p>mode mtcnn</p>
+<ul>
 <li><p>smartlab-sequence-modelling-0001</p></li>
-<li><p>i3d-rgb-tf</p></li>
+<li><p>smartlab-sequence-modelling-0002</p></li>
+</ul>
+</li>
+<li><p>mode multiview</p>
+<ul>
+<li><p>smartlab-action-recognition-0001-encoder-top</p></li>
+<li><p>smartlab-action-recognition-0001-encoder-side</p></li>
+<li><p>smartlab-action-recognition-0001-decoder</p></li>
+</ul>
+</li>
 </ul>
 <blockquote>
-<div><p><strong>NOTE</strong>: Refer to the tables <a class="reference internal" href="../../../models/intel/device_support.html"><span class="doc std std-doc">Intel’s Pre-Trained Models Device Support</span></a> and <a class="reference internal" href="../../../models/public/device_support.html"><span class="doc std std-doc">Public Pre-Trained Models Device Support</span></a> for the details on models inference support at different devices.</p>
+<div><p><strong>NOTE</strong>: Refer to the tables <a class="reference internal" href="../../../models/intel/device_support.html"><span class="doc std std-doc">Intel’s Pre-Trained Models Device Support</span></a> for
+the details on models inference support at different devices.</p>
 </div></blockquote>
 </section>
 </section>
 <section id="running">
 <h2>Running<a class="headerlink" href="#running" title="Permalink to this headline">¶</a></h2>
 <p>Running the demo with <code class="docutils literal notranslate"><span class="pre">-h</span></code> shows this help message:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">smartlab_demo</span><span class="o">.</span><span class="n">py</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">d</span> <span class="n">DEVICE</span><span class="p">]</span> <span class="o">-</span><span class="n">tv</span> <span class="n">TOPVIEW</span> <span class="o">-</span><span class="n">fv</span> <span class="n">FRONTVIEW</span> <span class="o">-</span><span class="n">m_ta</span> <span class="n">M_TOPALL</span> <span class="o">-</span><span class="n">m_tm</span> <span class="n">M_TOPMOVE</span> <span class="o">-</span><span class="n">m_fa</span> <span class="n">M_FRONTALL</span>
-                        <span class="o">-</span><span class="n">m_fm</span> <span class="n">M_FRONTMOVE</span> <span class="o">-</span><span class="n">m_en</span> <span class="n">M_ENCODER</span> <span class="o">-</span><span class="n">m_de</span> <span class="n">M_DECODER</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">smartlab_demo</span><span class="o">.</span><span class="n">py</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">d</span> <span class="n">DEVICE</span><span class="p">]</span> <span class="o">-</span><span class="n">tv</span> <span class="n">TOPVIEW</span> <span class="o">-</span><span class="n">sv</span> <span class="n">SIDEVIEW</span> <span class="o">-</span><span class="n">m_ta</span> <span class="n">M_TOPALL</span> <span class="o">-</span><span class="n">m_tm</span> <span class="n">M_TOPMOVE</span> <span class="o">-</span><span class="n">m_sa</span> <span class="n">M_SIDEALL</span>
+                        <span class="o">-</span><span class="n">m_sm</span> <span class="n">M_SIDEMOVE</span> <span class="o">-</span><span class="n">m_de</span> <span class="n">M_DECODER</span> <span class="o">-</span><span class="n">m_en</span> <span class="n">M_ENCODER</span> <span class="p">[</span><span class="o">-</span><span class="n">m_en_t</span> <span class="n">M_ENCODER_TOP</span> <span class="o">-</span><span class="n">m_en_s</span> <span class="n">M_ENCODER_SIDE</span><span class="p">]</span>
 
 <span class="n">Options</span><span class="p">:</span>
   <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>            <span class="n">Show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span><span class="o">.</span>
   <span class="o">-</span><span class="n">d</span> <span class="n">DEVICE</span><span class="p">,</span> <span class="o">--</span><span class="n">device</span> <span class="n">DEVICE</span>
                         <span class="n">Optional</span><span class="o">.</span> <span class="n">Specify</span> <span class="n">the</span> <span class="n">target</span> <span class="n">to</span> <span class="n">infer</span> <span class="n">on</span> <span class="n">CPU</span> <span class="ow">or</span> <span class="n">GPU</span><span class="o">.</span>
   <span class="o">-</span><span class="n">tv</span> <span class="n">TOPVIEW</span><span class="p">,</span> <span class="o">--</span><span class="n">topview</span> <span class="n">TOPVIEW</span>
-                        <span class="n">Required</span><span class="o">.</span> <span class="n">Topview</span> <span class="n">stream</span> <span class="n">to</span> <span class="n">be</span> <span class="n">processed</span><span class="o">.</span> <span class="n">The</span> <span class="nb">input</span> <span class="n">must</span> <span class="n">be</span> <span class="n">a</span> <span class="n">single</span> <span class="n">image</span><span class="p">,</span> <span class="n">a</span> <span class="n">folder</span> <span class="n">of</span> <span class="n">images</span><span class="p">,</span>
-                        <span class="n">video</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">camera</span> <span class="nb">id</span><span class="o">.</span>
-  <span class="o">-</span><span class="n">fv</span> <span class="n">FRONTVIEW</span><span class="p">,</span> <span class="o">--</span><span class="n">frontview</span> <span class="n">FRONTVIEW</span>
-                        <span class="n">Required</span><span class="o">.</span> <span class="n">FrontView</span> <span class="n">to</span> <span class="n">be</span> <span class="n">processed</span><span class="o">.</span> <span class="n">The</span> <span class="nb">input</span> <span class="n">must</span> <span class="n">be</span> <span class="n">a</span> <span class="n">single</span> <span class="n">image</span><span class="p">,</span> <span class="n">a</span> <span class="n">folder</span> <span class="n">of</span> <span class="n">images</span><span class="p">,</span>
-                        <span class="n">video</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">camera</span> <span class="nb">id</span><span class="o">.</span>
+                        <span class="n">Required</span><span class="o">.</span> <span class="n">Topview</span> <span class="n">stream</span> <span class="n">to</span> <span class="n">be</span> <span class="n">processed</span><span class="o">.</span> <span class="n">The</span> <span class="nb">input</span> <span class="n">must</span> <span class="n">be</span> <span class="n">a</span> <span class="n">single</span> <span class="n">image</span><span class="p">,</span> <span class="n">a</span> <span class="n">folder</span> <span class="n">of</span> <span class="n">images</span><span class="p">,</span> <span class="n">video</span> <span class="n">file</span> <span class="ow">or</span>
+                        <span class="n">camera</span> <span class="nb">id</span><span class="o">.</span>
+  <span class="o">-</span><span class="n">sv</span> <span class="n">SIDEVIEW</span><span class="p">,</span> <span class="o">--</span><span class="n">sideview</span> <span class="n">SIDEVIEW</span>
+                        <span class="n">Required</span><span class="o">.</span> <span class="n">SideView</span> <span class="n">to</span> <span class="n">be</span> <span class="n">processed</span><span class="o">.</span> <span class="n">The</span> <span class="nb">input</span> <span class="n">must</span> <span class="n">be</span> <span class="n">a</span> <span class="n">single</span> <span class="n">image</span><span class="p">,</span> <span class="n">a</span> <span class="n">folder</span> <span class="n">of</span> <span class="n">images</span><span class="p">,</span> <span class="n">video</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">camera</span>
+                        <span class="nb">id</span><span class="o">.</span>
   <span class="o">-</span><span class="n">m_ta</span> <span class="n">M_TOPALL</span><span class="p">,</span> <span class="o">--</span><span class="n">m_topall</span> <span class="n">M_TOPALL</span>
                         <span class="n">Required</span><span class="o">.</span> <span class="n">Path</span> <span class="n">to</span> <span class="n">topview</span> <span class="nb">all</span> <span class="k">class</span> <span class="nc">model</span><span class="o">.</span>
   <span class="o">-</span><span class="n">m_tm</span> <span class="n">M_TOPMOVE</span><span class="p">,</span> <span class="o">--</span><span class="n">m_topmove</span> <span class="n">M_TOPMOVE</span>
                         <span class="n">Required</span><span class="o">.</span> <span class="n">Path</span> <span class="n">to</span> <span class="n">topview</span> <span class="n">moving</span> <span class="k">class</span> <span class="nc">model</span><span class="o">.</span>
-  <span class="o">-</span><span class="n">m_fa</span> <span class="n">M_FRONTALL</span><span class="p">,</span> <span class="o">--</span><span class="n">m_frontall</span> <span class="n">M_FRONTALL</span>
-                        <span class="n">Required</span><span class="o">.</span> <span class="n">Path</span> <span class="n">to</span> <span class="n">frontview</span> <span class="nb">all</span> <span class="k">class</span> <span class="nc">model</span><span class="o">.</span>
-  <span class="o">-</span><span class="n">m_fm</span> <span class="n">M_FRONTMOVE</span><span class="p">,</span> <span class="o">--</span><span class="n">m_frontmove</span> <span class="n">M_FRONTMOVE</span>
-                        <span class="n">Required</span><span class="o">.</span> <span class="n">Path</span> <span class="n">to</span> <span class="n">frontview</span> <span class="n">moving</span> <span class="k">class</span> <span class="nc">model</span><span class="o">.</span>
-  <span class="o">-</span><span class="n">m_en</span> <span class="n">M_ENCODER</span><span class="p">,</span> <span class="o">--</span><span class="n">m_encoder</span> <span class="n">M_ENCODER</span>
-                        <span class="n">Required</span><span class="o">.</span> <span class="n">Path</span> <span class="n">to</span> <span class="n">encoder</span> <span class="n">model</span><span class="o">.</span>
+  <span class="o">-</span><span class="n">m_sa</span> <span class="n">M_SIDEALL</span><span class="p">,</span> <span class="o">--</span><span class="n">m_sideall</span> <span class="n">M_SIDEALL</span>
+                        <span class="n">Required</span><span class="o">.</span> <span class="n">Path</span> <span class="n">to</span> <span class="n">sidetview</span> <span class="nb">all</span> <span class="k">class</span> <span class="nc">model</span><span class="o">.</span>
+  <span class="o">-</span><span class="n">m_sm</span> <span class="n">M_SIDEMOVE</span><span class="p">,</span> <span class="o">--</span><span class="n">m_sidemove</span> <span class="n">M_SIDEMOVE</span>
+                        <span class="n">Required</span><span class="o">.</span> <span class="n">Path</span> <span class="n">to</span> <span class="n">sidetview</span> <span class="n">moving</span> <span class="k">class</span> <span class="nc">model</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">mode</span> <span class="n">MODE</span>           <span class="n">Optional</span><span class="o">.</span> <span class="n">Action</span> <span class="n">recognition</span> <span class="n">mode</span><span class="p">:</span> <span class="n">multiview</span> <span class="ow">or</span> <span class="n">mstcn</span>
+  <span class="o">-</span><span class="n">m_en_t</span> <span class="n">M_ENCODER_TOP</span><span class="p">,</span> <span class="o">--</span><span class="n">m_encoder_top</span> <span class="n">M_ENCODER_TOP</span>
+                        <span class="n">Required</span> <span class="k">for</span> <span class="n">multiview</span> <span class="n">mode</span><span class="o">.</span> <span class="n">Path</span> <span class="n">to</span> <span class="n">encoder</span> <span class="n">model</span> <span class="k">for</span> <span class="n">topview</span><span class="o">.</span>
+  <span class="o">-</span><span class="n">m_en_s</span> <span class="n">M_ENCODER_SIDE</span><span class="p">,</span> <span class="o">--</span><span class="n">m_encoder_side</span> <span class="n">M_ENCODER_SIDE</span>
+                        <span class="n">Required</span> <span class="k">for</span> <span class="n">multiview</span> <span class="n">mode</span><span class="o">.</span> <span class="n">Path</span> <span class="n">to</span> <span class="n">encoder</span> <span class="n">model</span> <span class="k">for</span> <span class="n">sideview</span><span class="o">.</span>
   <span class="o">-</span><span class="n">m_de</span> <span class="n">M_DECODER</span><span class="p">,</span> <span class="o">--</span><span class="n">m_decoder</span> <span class="n">M_DECODER</span>
-                        <span class="n">Required</span><span class="o">.</span> <span class="n">Path</span> <span class="n">to</span> <span class="n">decoder</span> <span class="n">model</span><span class="o">.</span>
+                        <span class="n">Required</span> <span class="k">for</span> <span class="n">both</span> <span class="n">multiview</span> <span class="ow">and</span> <span class="n">mstcn</span> <span class="n">mode</span><span class="o">.</span> <span class="n">Path</span> <span class="n">to</span> <span class="n">decoder</span> <span class="n">model</span><span class="o">.</span>
+  <span class="o">-</span><span class="n">m_en</span> <span class="n">M_ENCODER</span><span class="p">,</span> <span class="o">--</span><span class="n">m_encoder</span> <span class="n">M_ENCODER</span>
+                        <span class="n">Required</span> <span class="k">for</span> <span class="n">mstcn</span> <span class="n">mode</span><span class="o">.</span> <span class="n">Path</span> <span class="n">to</span> <span class="n">encoder</span> <span class="n">model</span><span class="o">.</span>
 </pre></div>
 </div>
-<p><strong>For example</strong>, to run the demo, please provide the model paths and two input streams:</p>
+<p>For example, run the demo with multiview mode:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 smartlab_demo.py
-    -tv ./stream_1_top.mp4
-    -fv ./stream_1_high.mp4
+    -tv stream_1_top.mp4
+    -sv stream_1_left.mp4
     -m_ta <span class="s2">&quot;./intel/smartlab-object-detection-0001/FP32/smartlab-object-detection-0001.xml&quot;</span>
     -m_tm <span class="s2">&quot;./intel/smartlab-object-detection-0002/FP32/smartlab-object-detection-0002.xml&quot;</span>
-    -m_fa <span class="s2">&quot;./intel/smartlab-object-detection-0003/FP32/smartlab-object-detection-0003.xml&quot;</span>
-    -m_fm <span class="s2">&quot;./intel/smartlab-object-detection-0004/FP32/smartlab-object-detection-0004.xml&quot;</span>
-    -m_en <span class="s2">&quot;./public/i3d-rgb-tf/FP32/i3d-rgb-tf.xml&quot;</span>
-    -m_de <span class="s2">&quot;./intel/smartlab-sequence-modelling-0001/FP32/smartlab-sequence-modelling-0001.xml&quot;</span>
+    -m_sa <span class="s2">&quot;./intel/smartlab-object-detection-0003/FP32/smartlab-object-detection-0003.xml&quot;</span>
+    -m_sm <span class="s2">&quot;./intel/smartlab-object-detection-0004/FP32/smartlab-object-detection-0004.xml&quot;</span>
+    -m_en_t <span class="s2">&quot;./intel/smartlab-action-recognition-0001-encoder-top/FP32/smartlab-action-recognition-0001-encoder-top.xml&quot;</span>
+    -m_en_s <span class="s2">&quot;./intel/smartlab-action-recognition-0001-encoder-side/FP32/smartlab-action-recognition-0001-encoder-side.xml&quot;</span>
+    -m_de <span class="s2">&quot;./intel/smartlab-action-recognition-0001-decoder/FP32/smartlab-action-recognition-0001-decoder.xml&quot;</span>
+</pre></div>
+</div>
+<p>run the demo with mstcn mode:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 smartlab_demo.py
+    -tv stream_1_top.mp4
+    -sv stream_1_left.mp4
+    -m_ta <span class="s2">&quot;./intel/smartlab-object-detection-0001/FP32/smartlab-object-detection-0001.xml&quot;</span>
+    -m_tm <span class="s2">&quot;./intel/smartlab-object-detection-0002/FP32/smartlab-object-detection-0002.xml&quot;</span>
+    -m_sa <span class="s2">&quot;./intel/smartlab-object-detection-0003/FP32/smartlab-object-detection-0003.xml&quot;</span>
+    -m_sm <span class="s2">&quot;./intel/smartlab-object-detection-0004/FP32/smartlab-object-detection-0004.xml&quot;</span>
+    --mode mstcn
+    -m_en <span class="s2">&quot;./intel/sequence_modelling/FP32/smartlab-sequence-modelling-0001.xml&quot;</span>
+    -m_de <span class="s2">&quot;./intel/sequence_modelling/FP32/smartlab-sequence-modelling-0002.xml&quot;</span>
 </pre></div>
 </div>
 </section>
 <section id="demo-output">
 <h2>Demo Output<a class="headerlink" href="#demo-output" title="Permalink to this headline">¶</a></h2>
-<p>The application uses OpenCV to display the real-time object detection, action recognition results and evaluation results.</p>
+<p>The application uses OpenCV to display the online results.</p>
 </section>
 <section id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="../../README.html"><span class="doc std std-doc">Open Model Zoo Demos</span></a></p></li>
-<li><p><a class="reference external" href="https://docs.openvino.ai/latest/openvino_docs_MO_DG_Deep_Learning_Model_Optimizer_DevGuide.html">Model Optimizer</a></p></li>
 <li><p><span class="xref myst">Model Downloader</span></p></li>
 </ul>
 </section>

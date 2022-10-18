@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>interface ngraph::snippets::pass::InsertConvertOnInputs &#8212; OpenVINO™  documentation</title>
+    <title>namespace ngraph::snippets::utils &#8212; OpenVINO™  documentation</title>
     
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
@@ -71,7 +71,7 @@
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/target-highlight.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <link rel="canonical" href="https://docs.openvino.ai/latest/api/groups/classngraph_1_1snippets_1_1pass_1_1InsertConvertOnInputs.html" />
+    <link rel="canonical" href="https://docs.openvino.ai/latest/api/groups/namespacengraph_1_1snippets_1_1utils.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -312,6 +312,11 @@
        </i>
       </label>
       <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="classngraph_1_1op_1_1internal_1_1GenerateProposalsIEInternal.html">
+         GenerateProposalsIEInternal
+        </a>
+       </li>
        <li class="toctree-l4">
         <a class="reference internal" href="classngraph_1_1op_1_1internal_1_1MulticlassNmsIEInternal.html">
          MulticlassNmsIEInternal
@@ -608,6 +613,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="namespacengraph_1_1opset10.html">
+     opset10
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="namespacengraph_1_1opset2.html">
      opset2
     </a>
@@ -893,6 +903,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="classngraph_1_1pass_1_1ConvertGELU.html">
        ConvertGELU
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="classngraph_1_1pass_1_1ConvertGP9ToGPIEInternal.html">
+       ConvertGP9ToGPIEInternal
       </a>
      </li>
      <li class="toctree-l3">
@@ -1767,24 +1782,34 @@
        </li>
       </ul>
      </li>
-     <li class="toctree-l3 current active has-children">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="namespacengraph_1_1snippets_1_1pass.html">
        pass
       </a>
-      <input checked="" class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+      <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
       <label for="toctree-checkbox-25">
        <i class="fas fa-chevron-down">
        </i>
       </label>
-      <ul class="current">
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="enumngraph_1_1snippets_1_1pass_1_1SnippetsNodeType.html">
          SnippetsNodeType
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="classngraph_1_1snippets_1_1pass_1_1AlignElementType.html">
+         AlignElementType
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="classngraph_1_1snippets_1_1pass_1_1AssignRegisters.html">
          AssignRegisters
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="classngraph_1_1snippets_1_1pass_1_1CommonFakeQuantizeDecomposition.html">
+         CommonFakeQuantizeDecomposition
         </a>
        </li>
        <li class="toctree-l4">
@@ -1797,9 +1822,9 @@
          EnumerateNodes
         </a>
        </li>
-       <li class="toctree-l4 current active">
-        <a class="current reference internal" href="#">
-         InsertConvertOnInputs
+       <li class="toctree-l4">
+        <a class="reference internal" href="classngraph_1_1snippets_1_1pass_1_1FakeQuantizeDecomposition.html">
+         FakeQuantizeDecomposition
         </a>
        </li>
        <li class="toctree-l4">
@@ -1823,11 +1848,6 @@
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="classngraph_1_1snippets_1_1pass_1_1ResetTypeRelaxedNodePrecision.html">
-         ResetTypeRelaxedNodePrecision
-        </a>
-       </li>
-       <li class="toctree-l4">
         <a class="reference internal" href="classngraph_1_1snippets_1_1pass_1_1SetScalarCountForLoad.html">
          SetScalarCountForLoad
         </a>
@@ -1843,6 +1863,11 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="classngraph_1_1snippets_1_1pass_1_1CommonOptimizations.html">
+         CommonOptimizations
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="classngraph_1_1snippets_1_1pass_1_1ConvertPowerToPowerStatic.html">
          ConvertPowerToPowerStatic
         </a>
@@ -1853,6 +1878,11 @@
         </a>
        </li>
       </ul>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       utils
+      </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="classngraph_1_1snippets_1_1Emitter.html">
@@ -1954,6 +1984,11 @@
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="classov_1_1pass_1_1AUGRUCellFusion.html">
+   AUGRUCellFusion
+  </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="classngraph_1_1pass_1_1AddFakeQuantizeFusion.html">
@@ -2426,8 +2461,18 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="classov_1_1pass_1_1FusedNamesCleanup.html">
+   FusedNamesCleanup
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="classngraph_1_1pass_1_1GRUCellDecomposition.html">
    GRUCellDecomposition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="classov_1_1pass_1_1GRUCellFusion.html">
+   GRUCellFusion
   </a>
  </li>
  <li class="toctree-l1">
@@ -2448,6 +2493,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="classngraph_1_1pass_1_1GeluFusion.html">
    GeluFusion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="classov_1_1pass_1_1GeluFusionWithErfFour.html">
+   GeluFusionWithErfFour
   </a>
  </li>
  <li class="toctree-l1">
@@ -3036,6 +3086,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="classov_1_1pass_1_1SequenceFusion.html">
+   SequenceFusion
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="classngraph_1_1pass_1_1SetBatchSize.html">
    SetBatchSize
   </a>
@@ -3319,19 +3374,9 @@
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
 
 <nav id="bd-toc-nav">
-    <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#inherited-members">
-   Inherited Members
-  </a>
- </li>
-</ul>
-
+    
 </nav>
               </div>
               
@@ -3369,49 +3414,16 @@
             
                 <div>
                   
-  <section id="interface-ngraph-snippets-pass-insertconvertoninputs">
-<span id="doxid-classngraph-1-1snippets-1-1pass-1-1-insert-convert-on-inputs"></span><span id="index-0"></span><h1>interface ngraph::snippets::pass::InsertConvertOnInputs<a class="headerlink" href="#interface-ngraph-snippets-pass-insertconvertoninputs" title="Permalink to this headline">¶</a></h1>
-<p>Inserts ConvertSaturation op after Parameters and Scalars to convert data type of inputs to supported execution data type. Note: ConvertSaturation op isn’t covered by specification of “Convert” op This op is used for conversion into and from FP32 after the correspoding Load and before Store to calculate in FP32 inside subgraph body in CPU Plugin.</p>
-<div class="highlight doxyrest-overview-code-block"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;insert_convert_on_inputs.hpp&gt;</span><span class="cp"></span>
+  <section id="namespace-ngraph-snippets-utils">
+<span id="doxid-namespacengraph-1-1snippets-1-1utils"></span><span id="index-0"></span><h1>namespace ngraph::snippets::utils<a class="headerlink" href="#namespace-ngraph-snippets-utils" title="Permalink to this headline">¶</a></h1>
+<div class="highlight doxyrest-overview-code-block"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="n">utils</span> <span class="p">{</span>
 
-<span class="k">template</span> <span class="nl">InsertConvertOnInputs</span><span class="p">:</span> <span class="k">public</span> <a class="reference internal" href="classov_1_1pass_1_1MatcherPass.html#doxid-classov-1-1pass-1-1-matcher-pass"><span class="std std-ref">ov::pass::MatcherPass</span></a><span></span>
-<span class="p">{</span>
-    <span class="c1">// construction</span>
+<span class="c1">// global functions</span>
 
-    <span class="doxyrest-code-target target" id="doxid-classngraph-1-1snippets-1-1pass-1-1-insert-convert-on-inputs-1acd75f5acbc21121a4987b505fd584d82"><span></span><span class="n">InsertConvertOnInputs</span></span><span></span><span class="p">(</span><span class="k">const</span> <a class="reference internal" href="classov_1_1element_1_1Type.html#doxid-classov-1-1element-1-1-type"><span class="std std-ref">ov::element::Type</span></a><span></span> <span class="n">exec_type</span> <span class="o">=</span> <a class="reference internal" href="groupov_element_cpp_api.html#doxid-group-ov-element-cpp-api-1gadc8a5dda3244028a5c0b024897215d43"><span class="std std-ref">ov::element::f32</span></a><span></span><span class="p">);</span>
-<span class="p">};</span></pre></div></div><section id="inherited-members">
-<h2>Inherited Members<a class="headerlink" href="#inherited-members" title="Permalink to this headline">¶</a></h2>
-<div class="highlight doxyrest-overview-inherited-code-block"><div class="highlight"><pre><span></span><span class="k">public</span><span class="o">:</span>
-    <span class="c1">// typedefs</span>
+<span class="k">auto</span> <span class="doxyrest-code-target target" id="doxid-namespacengraph-1-1snippets-1-1utils-1a358f9ae3a568fa1daf1f29cd395699f5"><span></span><span class="n">get_non_scalar_constant_count_for_fq</span></span><span></span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">ngraph</span><span class="o">::</span><span class="n">opset1</span><span class="o">::</span><span class="n">FakeQuantize</span><span class="o">&gt;&amp;</span> <span class="n">fq</span><span class="p">);</span>
+<span class="k">auto</span> <span class="doxyrest-code-target target" id="doxid-namespacengraph-1-1snippets-1-1utils-1ae9662dbc57d7c956127a27f2f2a6be11"><span></span><span class="n">is_scalar_constant</span></span><span></span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><a class="reference internal" href="classov_1_1Node.html#doxid-classov-1-1-node"><span class="std std-ref">ngraph::Node</span></a><span></span><span class="o">&gt;&amp;</span> <span class="n">source_output_node</span><span class="p">);</span>
 
-    <span class="k">typedef</span> <a class="reference internal" href="structov_1_1DiscreteTypeInfo.html#doxid-structov-1-1-discrete-type-info"><span class="std std-ref">DiscreteTypeInfo</span></a><span></span> <a class="reference internal" href="classov_1_1pass_1_1PassBase.html#doxid-classov-1-1pass-1-1-pass-base-1a91aae259b4676ba5aca057d542d44b77"><span class="std std-ref">type_info_t</span></a><span></span><span class="p">;</span>
-
-    <span class="c1">// methods</span>
-
-    <span class="kt">bool</span> <a class="reference internal" href="classov_1_1pass_1_1PassBase.html#doxid-classov-1-1pass-1-1-pass-base-1a3107964f6c4d4bf1d3fbc2bf97ccc0b8"><span class="std std-ref">get_property</span></a><span></span><span class="p">(</span><span class="k">const</span> <a class="reference internal" href="namespaceov_1_1pass.html#doxid-namespaceov-1-1pass-1a4a61a9b72db0e4ed511e6da0d0619e05"><span class="std std-ref">PassPropertyMask</span></a><span></span><span class="o">&amp;</span> <span class="n">prop_mask</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
-    <span class="kt">void</span> <a class="reference internal" href="classov_1_1pass_1_1PassBase.html#doxid-classov-1-1pass-1-1-pass-base-1a78ddde2a8770041d2f23ce59af908f5d"><span class="std std-ref">set_name</span></a><span></span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">);</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <a class="reference internal" href="classov_1_1pass_1_1PassBase.html#doxid-classov-1-1pass-1-1-pass-base-1a6cd527d2176f1350dd999dc4632a576b"><span class="std std-ref">get_name</span></a><span></span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
-    <span class="kt">void</span> <a class="reference internal" href="classov_1_1pass_1_1PassBase.html#doxid-classov-1-1pass-1-1-pass-base-1a6a56827a1cf76be99289bab703982869"><span class="std std-ref">set_callback</span></a><span></span><span class="p">(</span><span class="k">const</span> <a class="reference internal" href="namespaceov_1_1pass.html#doxid-namespaceov-1-1pass-1a0628acbe84362598648bb66624d4db5c"><span class="std std-ref">param_callback</span></a><span></span><span class="o">&amp;</span> <span class="n">callback</span><span class="p">);</span>
-    <span class="k">virtual</span> <span class="kt">void</span> <a class="reference internal" href="classov_1_1pass_1_1PassBase.html#doxid-classov-1-1pass-1-1-pass-base-1abe74bba4b563ad367f2fdc7836016391"><span class="std std-ref">set_pass_config</span></a><span></span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><a class="reference internal" href="classov_1_1pass_1_1PassConfig.html#doxid-classov-1-1pass-1-1-pass-config"><span class="std std-ref">PassConfig</span></a><span></span><span class="o">&gt;&amp;</span> <span class="n">pass_config</span><span class="p">);</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><a class="reference internal" href="classov_1_1pass_1_1PassConfig.html#doxid-classov-1-1pass-1-1-pass-config"><span class="std std-ref">PassConfig</span></a><span></span><span class="o">&gt;</span> <a class="reference internal" href="classov_1_1pass_1_1PassBase.html#doxid-classov-1-1pass-1-1-pass-base-1a384e9a459cf0d8f1633241594fad2775"><span class="std std-ref">get_pass_config</span></a><span></span><span class="p">();</span>
-    <span class="kt">bool</span> <a class="reference internal" href="classov_1_1pass_1_1PassBase.html#doxid-classov-1-1pass-1-1-pass-base-1a568e5b1f0e01f221d36dffabbf156b3d"><span class="std std-ref">m_transformation_callback</span></a><span></span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="k">const</span> <a class="reference internal" href="classov_1_1Node.html#doxid-classov-1-1-node"><span class="std std-ref">Node</span></a><span></span><span class="o">&gt;&amp;</span> <span class="n">node</span><span class="p">);</span>
-    <span class="kt">bool</span> <a class="reference internal" href="classov_1_1pass_1_1PassBase.html#doxid-classov-1-1pass-1-1-pass-base-1aa5265bf720996877709aa990f49d2dab"><span class="std std-ref">transformation_callback</span></a><span></span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="k">const</span> <a class="reference internal" href="classov_1_1Node.html#doxid-classov-1-1-node"><span class="std std-ref">Node</span></a><span></span><span class="o">&gt;&amp;</span> <span class="n">node</span><span class="p">);</span>
-    <span class="k">virtual</span> <span class="k">const</span> <a class="reference internal" href="classov_1_1pass_1_1PassBase.html#doxid-classov-1-1pass-1-1-pass-base-1a91aae259b4676ba5aca057d542d44b77"><span class="std std-ref">type_info_t</span></a><span></span><span class="o">&amp;</span> <a class="reference internal" href="classov_1_1pass_1_1PassBase.html#doxid-classov-1-1pass-1-1-pass-base-1ab8abd258e9464f536b97f9a352336e7b"><span class="std std-ref">get_type_info</span></a><span></span><span class="p">()</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <a class="reference internal" href="classov_1_1pass_1_1MatcherPass.html#doxid-classov-1-1pass-1-1-matcher-pass-1a525c64de11717629f6599042761eb844"><span class="std std-ref">OPENVINO_RTTI</span></a><span></span><span class="p">(</span><span class="s">&quot;ov::pass::MatcherPass&quot;</span><span class="p">);</span>
-    <a class="reference internal" href="classov_1_1pass_1_1MatcherPass.html#doxid-classov-1-1pass-1-1-matcher-pass"><span class="std std-ref">MatcherPass</span></a><span></span><span class="o">&amp;</span> <a class="reference internal" href="classov_1_1pass_1_1MatcherPass.html#doxid-classov-1-1pass-1-1-matcher-pass-1af5ea759b7239d01262eacb1b78eaecd4"><span class="std std-ref">operator =</span></a><span></span> <span class="p">(</span><span class="k">const</span> <a class="reference internal" href="classov_1_1pass_1_1MatcherPass.html#doxid-classov-1-1pass-1-1-matcher-pass"><span class="std std-ref">MatcherPass</span></a><span></span><span class="o">&amp;</span><span class="p">);</span>
-    <span class="kt">bool</span> <a class="reference internal" href="classov_1_1pass_1_1MatcherPass.html#doxid-classov-1-1pass-1-1-matcher-pass-1afe5e71b978b3dc8274ea93bb6e7dcc23"><span class="std std-ref">apply</span></a><span></span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><a class="reference internal" href="classov_1_1Node.html#doxid-classov-1-1-node"><span class="std std-ref">ov::Node</span></a><span></span><span class="o">&gt;</span> <span class="n">node</span><span class="p">);</span>
-
-    <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">class</span><span class="p">...</span> <span class="n">Args</span><span class="o">&gt;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <a class="reference internal" href="classov_1_1pass_1_1MatcherPass.html#doxid-classov-1-1pass-1-1-matcher-pass-1a49d3b7dfaf1e0e47f8d3df87d6721406"><span class="std std-ref">register_new_node</span></a><span></span><span class="p">(</span><span class="n">Args</span><span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">args</span><span class="p">);</span>
-
-    <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <a class="reference internal" href="classov_1_1pass_1_1MatcherPass.html#doxid-classov-1-1pass-1-1-matcher-pass-1a7b4dbbd700f30f6def6fb953cd9a0012"><span class="std std-ref">register_new_node</span></a><span></span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="n">node</span><span class="p">);</span>
-
-    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><a class="reference internal" href="classov_1_1Node.html#doxid-classov-1-1-node"><span class="std std-ref">ov::Node</span></a><span></span><span class="o">&gt;</span> <a class="reference internal" href="classov_1_1pass_1_1MatcherPass.html#doxid-classov-1-1pass-1-1-matcher-pass-1a18566e71cfdd080ccad0ac68f6ae3aea"><span class="std std-ref">register_new_node_</span></a><span></span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><a class="reference internal" href="classov_1_1Node.html#doxid-classov-1-1-node"><span class="std std-ref">ov::Node</span></a><span></span><span class="o">&gt;&amp;</span> <span class="n">node</span><span class="p">);</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><a class="reference internal" href="classov_1_1Node.html#doxid-classov-1-1-node"><span class="std std-ref">ov::Node</span></a><span></span><span class="o">&gt;&gt;&amp;</span> <a class="reference internal" href="classov_1_1pass_1_1MatcherPass.html#doxid-classov-1-1pass-1-1-matcher-pass-1abec03dfa833169e7e74896653b5a4bb8"><span class="std std-ref">get_new_nodes</span></a><span></span><span class="p">();</span>
-    <span class="kt">void</span> <a class="reference internal" href="classov_1_1pass_1_1MatcherPass.html#doxid-classov-1-1pass-1-1-matcher-pass-1a9a3abba77cc94f47e1cdc4e064544d6a"><span class="std std-ref">clear_new_nodes</span></a><span></span><span class="p">();</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><a class="reference internal" href="classov_1_1pass_1_1pattern_1_1Matcher.html#doxid-classov-1-1pass-1-1pattern-1-1-matcher"><span class="std std-ref">pattern::Matcher</span></a><span></span><span class="o">&gt;</span> <a class="reference internal" href="classov_1_1pass_1_1MatcherPass.html#doxid-classov-1-1pass-1-1-matcher-pass-1aadfd06517bf80ca5c67eae4195e75766"><span class="std std-ref">get_matcher</span></a><span></span><span class="p">();</span></pre></div></div></section>
-</section>
+<span class="p">}</span> <span class="c1">// namespace utils</span></pre></div></div></section>
 
 
                 </div>

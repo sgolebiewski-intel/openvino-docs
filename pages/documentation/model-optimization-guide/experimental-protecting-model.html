@@ -79,7 +79,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Runtime Inference Optimizations" href="../runtime-inference-optimizations.html" />
-    <link rel="prev" title="Neural Network Compression Framework" href="neural-network-compression-framework.html" />
+    <link rel="prev" title="Filter Pruning of Convolutional Models" href="tmo-introduction/filter-pruning.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -535,7 +535,7 @@
   <ul class="current">
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="post-training-model-optimization.html">
-     Optimizing models post-training
+     Optimizing Models Post-training
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
     <label for="toctree-checkbox-5">
@@ -545,7 +545,7 @@
     <ul>
      <li class="toctree-l3 has-children">
       <a class="reference internal" href="post-training-model-optimization/quantizing-model.html">
-       Quantizing Model
+       Quantizing Models
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
       <label for="toctree-checkbox-6">
@@ -555,14 +555,14 @@
       <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="post-training-model-optimization/quantizing-model/default-quantization-algorithm.html">
-         DefaultQuantization Algorithm
+         DefaultQuantization Parameters
         </a>
        </li>
       </ul>
      </li>
      <li class="toctree-l3 has-children">
       <a class="reference internal" href="post-training-model-optimization/accuracy-aware-quantization.html">
-       Quantizing Model with Accuracy Control
+       Quantizing Models with Accuracy Control
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
       <label for="toctree-checkbox-7">
@@ -572,7 +572,7 @@
       <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="post-training-model-optimization/accuracy-aware-quantization/accuracy-aware-quantization-algorithm.html">
-         AccuracyAwareQuantization Algorithm
+         AccuracyAwareQuantization Parameters
         </a>
        </li>
       </ul>
@@ -687,10 +687,27 @@
      </li>
     </ul>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="neural-network-compression-framework.html">
-     Neural Network Compression Framework
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="tmo-introduction.html">
+     Optimizing Models at Training Time
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="tmo-introduction/qat-introduction.html">
+       Quantization-aware Training (QAT)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="tmo-introduction/filter-pruning.html">
+       Filter Pruning of Convolutional Models
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
@@ -703,8 +720,8 @@
   <a class="reference internal" href="../runtime-inference-optimizations.html">
    Runtime Inference Optimizations
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-  <label for="toctree-checkbox-12">
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -718,8 +735,8 @@
     <a class="reference internal" href="../runtime-inference-optimizations/optimizing-for-latency.html">
      Optimizing for the Latency
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-    <label for="toctree-checkbox-13">
+    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+    <label for="toctree-checkbox-14">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -752,8 +769,8 @@
   <a class="reference internal" href="../tuning-utilities.html">
    Tuning Utilities
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-  <label for="toctree-checkbox-14">
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -769,8 +786,8 @@
   <a class="reference internal" href="../performance-benchmarks.html">
    Performance Benchmarks
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -779,8 +796,8 @@
     <a class="reference internal" href="../performance-benchmarks/openvino-performance-benchmarks.html">
      Intel® Distribution of OpenVINO™ toolkit Benchmark Results
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-    <label for="toctree-checkbox-16">
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -792,7 +809,7 @@
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../performance-benchmarks/openvino-performance-benchmarks/model-accuracy-for-int8-fp32.html">
-       Model Accuracy for INT8 and FP32 Precision
+       Model Accuracy and Performance for INT8 and FP32
       </a>
      </li>
     </ul>
@@ -820,8 +837,8 @@
   <a class="reference internal" href="../openvino-runtime-user-guide.html">
    Performing Inference with OpenVINO Runtime
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-  <label for="toctree-checkbox-17">
+  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+  <label for="toctree-checkbox-18">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -830,8 +847,8 @@
     <a class="reference internal" href="../openvino-runtime-user-guide/openvino-runtime-integrate-application.html">
      Integrate OpenVINO™ with Your Application
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
-    <label for="toctree-checkbox-18">
+    <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+    <label for="toctree-checkbox-19">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -862,8 +879,8 @@
     <a class="reference internal" href="../openvino-runtime-user-guide/working-with-devices.html">
      Working with devices
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
-    <label for="toctree-checkbox-19">
+    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+    <label for="toctree-checkbox-20">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -882,8 +899,8 @@
       <a class="reference internal" href="../openvino-runtime-user-guide/working-with-devices/inference-device-gpu.html">
        GPU Device
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
-      <label for="toctree-checkbox-20">
+      <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+      <label for="toctree-checkbox-21">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -899,8 +916,8 @@
       <a class="reference internal" href="../openvino-runtime-user-guide/working-with-devices/inference-device-vpu.html">
        VPU Devices
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
-      <label for="toctree-checkbox-21">
+      <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+      <label for="toctree-checkbox-22">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -933,8 +950,8 @@
     <a class="reference internal" href="../openvino-runtime-user-guide/preprocessing.html">
      Preprocessing
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
-    <label for="toctree-checkbox-22">
+    <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+    <label for="toctree-checkbox-23">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -960,8 +977,8 @@
     <a class="reference internal" href="../openvino-runtime-user-guide/dynamic-shapes.html">
      Dynamic Shapes
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
-    <label for="toctree-checkbox-23">
+    <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+    <label for="toctree-checkbox-24">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -977,8 +994,8 @@
     <a class="reference internal" href="../openvino-runtime-user-guide/automatic-device-selection.html">
      Automatic Device Selection
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
-    <label for="toctree-checkbox-24">
+    <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+    <label for="toctree-checkbox-25">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1021,8 +1038,8 @@
   <a class="reference internal" href="../openvino-deployment-guide.html">
    Deploying Your Applications with OpenVINO™
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
-  <label for="toctree-checkbox-25">
+  <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+  <label for="toctree-checkbox-26">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1060,8 +1077,8 @@
   <a class="reference internal" href="../dl-workbench-overview.html">
    OpenVINO™ Deep Learning Workbench Overview
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
-  <label for="toctree-checkbox-26">
+  <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+  <label for="toctree-checkbox-27">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1070,8 +1087,8 @@
     <a class="reference internal" href="../dl-workbench-overview/dl-workbench-install.html">
      Installation
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
-    <label for="toctree-checkbox-27">
+    <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+    <label for="toctree-checkbox-28">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1085,8 +1102,8 @@
       <a class="reference internal" href="../dl-workbench-overview/dl-workbench-install/run-dl-workbench-locally.html">
        Run the DL Workbench Locally
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
-      <label for="toctree-checkbox-28">
+      <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+      <label for="toctree-checkbox-29">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1114,8 +1131,8 @@
     <a class="reference internal" href="../dl-workbench-overview/dl-workbench-get-started.html">
      Get Started
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
-    <label for="toctree-checkbox-29">
+    <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+    <label for="toctree-checkbox-30">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1134,8 +1151,8 @@
       <a class="reference internal" href="../dl-workbench-overview/dl-workbench-get-started/dl-workbench-resources.html">
        Educational Resources about DL Workbench
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
-      <label for="toctree-checkbox-30">
+      <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+      <label for="toctree-checkbox-31">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1153,8 +1170,8 @@
     <a class="reference internal" href="../dl-workbench-overview/dl-workbench-tutorials.html">
      Tutorials
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
-    <label for="toctree-checkbox-31">
+    <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+    <label for="toctree-checkbox-32">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1205,8 +1222,8 @@
     <a class="reference internal" href="../dl-workbench-overview/dl-workbench-user-guide.html">
      User Guide
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
-    <label for="toctree-checkbox-32">
+    <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+    <label for="toctree-checkbox-33">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1215,8 +1232,8 @@
       <a class="reference internal" href="../dl-workbench-overview/_workbench-files-to-migrate/workbench_docs_Workbench_DG_Select_Models.html">
        Obtain Models
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
-      <label for="toctree-checkbox-33">
+      <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
+      <label for="toctree-checkbox-34">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1230,8 +1247,8 @@
         <a class="reference internal" href="../dl-workbench-overview/_workbench-files-to-migrate/workbench_docs_Workbench_DG_Original_Model_Import.html">
          Import Original Model
         </a>
-        <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
-        <label for="toctree-checkbox-34">
+        <input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
+        <label for="toctree-checkbox-35">
          <i class="fas fa-chevron-down">
          </i>
         </label>
@@ -1249,8 +1266,8 @@
       <a class="reference internal" href="../dl-workbench-overview/_workbench-files-to-migrate/workbench_docs_Workbench_DG_Generate_Datasets.html">
        Obtain Datasets
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
-      <label for="toctree-checkbox-35">
+      <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+      <label for="toctree-checkbox-36">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1259,8 +1276,8 @@
         <a class="reference internal" href="../dl-workbench-overview/_workbench-files-to-migrate/workbench_docs_Workbench_DG_Dataset_Types.html">
          Dataset Types
         </a>
-        <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
-        <label for="toctree-checkbox-36">
+        <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
+        <label for="toctree-checkbox-37">
          <i class="fas fa-chevron-down">
          </i>
         </label>
@@ -1278,8 +1295,8 @@
       <a class="reference internal" href="../dl-workbench-overview/_workbench-files-to-migrate/workbench_docs_Workbench_DG_Select_Environment.html">
        Select Environment
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
-      <label for="toctree-checkbox-37">
+      <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
+      <label for="toctree-checkbox-38">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1288,8 +1305,8 @@
         <a class="reference internal" href="../dl-workbench-overview/_workbench-files-to-migrate/workbench_docs_Workbench_DG_Remote_Profiling.html">
          Work with Remote Targets
         </a>
-        <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
-        <label for="toctree-checkbox-38">
+        <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
+        <label for="toctree-checkbox-39">
          <i class="fas fa-chevron-down">
          </i>
         </label>
@@ -1327,8 +1344,8 @@
       <a class="reference internal" href="../dl-workbench-overview/_workbench-files-to-migrate/workbench_docs_Workbench_DG_Run_Inference.html">
        Explore Inference Configurations
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
-      <label for="toctree-checkbox-39">
+      <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
+      <label for="toctree-checkbox-40">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1364,8 +1381,8 @@
       <a class="reference internal" href="../dl-workbench-overview/_workbench-files-to-migrate/workbench_docs_Workbench_DG_Measure_Accuracy.html">
        Create Accuracy Report
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
-      <label for="toctree-checkbox-40">
+      <input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
+      <label for="toctree-checkbox-41">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1391,8 +1408,8 @@
       <a class="reference internal" href="../dl-workbench-overview/_workbench-files-to-migrate/workbench_docs_Workbench_DG_Deployment_Package.html">
        Create Deployment Package
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
-      <label for="toctree-checkbox-41">
+      <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
+      <label for="toctree-checkbox-42">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1413,8 +1430,8 @@
       <a class="reference internal" href="../dl-workbench-overview/_workbench-files-to-migrate/workbench_docs_Workbench_DG_Jupyter_Notebooks_CLI.html">
        Learn OpenVINO in DL Workbench
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
-      <label for="toctree-checkbox-42">
+      <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
+      <label for="toctree-checkbox-43">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1435,8 +1452,8 @@
       <a class="reference internal" href="../dl-workbench-overview/_workbench-files-to-migrate/workbench_docs_security_Workbench.html">
        Run DL Workbench Securely
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
-      <label for="toctree-checkbox-43">
+      <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
+      <label for="toctree-checkbox-44">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1459,8 +1476,8 @@
     <a class="reference internal" href="../dl-workbench-overview/dl-workbench-troubleshooting.html">
      Troubleshooting
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
-    <label for="toctree-checkbox-44">
+    <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
+    <label for="toctree-checkbox-45">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1490,8 +1507,8 @@
   <a class="reference internal" href="../opencv-graph-api.html">
    Introduction to OpenCV Graph API
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
-  <label for="toctree-checkbox-45">
+  <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
+  <label for="toctree-checkbox-46">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1534,8 +1551,8 @@
   <a class="reference internal" href="../openvino-extensibility-mechanism.html">
    OpenVINO Extensibility Mechanism
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
-  <label for="toctree-checkbox-46">
+  <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
+  <label for="toctree-checkbox-47">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1564,8 +1581,8 @@
     <a class="reference internal" href="../openvino-extensibility-mechanism/model_optimizer_extensibility.html">
      Model Optimizer Extensibility
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
-    <label for="toctree-checkbox-47">
+    <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
+    <label for="toctree-checkbox-48">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1583,8 +1600,8 @@
   <a class="reference internal" href="../openvino-transformation-api.html">
    Overview of Transformations API
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
-  <label for="toctree-checkbox-48">
+  <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
+  <label for="toctree-checkbox-49">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1610,8 +1627,8 @@
   <a class="reference internal" href="../openvino-plugin-developer-guide.html">
    Overview of Inference Engine Plugin Library
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
-  <label for="toctree-checkbox-49">
+  <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
+  <label for="toctree-checkbox-50">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1655,8 +1672,8 @@
     <a class="reference internal" href="../openvino-plugin-developer-guide/low-precision-transformations.html">
      OpenVINO™ Low Precision Transformations
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
-    <label for="toctree-checkbox-50">
+    <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
+    <label for="toctree-checkbox-51">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1665,8 +1682,8 @@
       <a class="reference internal" href="../openvino-plugin-developer-guide/low-precision-transformations/low-precision-transformation-attributes.html">
        Low-Precision Transformation Attributes
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
-      <label for="toctree-checkbox-51">
+      <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
+      <label for="toctree-checkbox-52">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1729,8 +1746,8 @@
     <a class="reference internal" href="../openvino-plugin-developer-guide/custom-plugin-api-reference.html">
      Plugin API Reference
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
-    <label for="toctree-checkbox-52">
+    <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
+    <label for="toctree-checkbox-53">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1918,8 +1935,7 @@ RangeSupervision layer.</p>
 </section>
 <section id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
-<p>RangeSupervision protection can be used the same way as</p>
-<p><a class="reference internal" href="post-training-model-optimization/quantizing-model.html#optim-perf-def-quantization"><span class="std std-ref">DefaultQuantization</span></a> method.</p>
+<p>RangeSupervision protection can be used the same way as <a class="reference internal" href="post-training-model-optimization/quantizing-model.html#optim-perf-def-quantization"><span class="std std-ref">DefaultQuantization</span></a> method.</p>
 <section id="algorithm-configuration">
 <h3>Algorithm configuration<a class="headerlink" href="#algorithm-configuration" title="Permalink to this headline">¶</a></h3>
 <p>Algorithm has a minimal configuration. Below is an example of such configuration:</p>
@@ -1931,7 +1947,7 @@ RangeSupervision layer.</p>
         <span class="p">}</span>
 
 <span class="p">}</span></pre></div></div><p>The protected model will be saved in IR format in a new folder
-*./results/&lt;model_name&gt;_RangeSupervision/…* .</p>
+<em>./results/&lt;model_name&gt;_RangeSupervision/…</em> .</p>
 <p>Mandatory parameters:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;stat_subset_size&quot;</span></code> : This parameter defines <em>how many images</em> of the
@@ -1945,11 +1961,11 @@ increasing extraction time.</p></li>
 </section>
 <section id="example-of-rangesupervision-results">
 <h2>Example of RangeSupervision results<a class="headerlink" href="#example-of-rangesupervision-results" title="Permalink to this headline">¶</a></h2>
-<p>The following example shows a traffic camera image and predicted objects using
-a Yolov3 pretrained on the Coco dataset. A single weight fault was injected in
-a randomly chosen convolution layer of Yolo, flipping the most significant bit
-of the selected network parameter. If range supervision is applied, the
-original network performance is recovered despite the presence of the fault.</p>
+<p>The following example shows a traffic camera image and predicted objects using a YOLOv3
+pre-trained on the Coco dataset. A single weight fault was injected in a randomly chosen
+convolution layer of YOLO, flipping the most significant bit of the selected network parameter.
+If range supervision is applied, the original network performance is recovered despite the
+presence of the fault.</p>
 <img alt="../../../_images/img_combined_2.png" src="../../../_images/img_combined_2.png" />
 <p><em>Fig 2: Example of fault mitigation via range supervision.</em></p>
 </section>
@@ -1974,7 +1990,7 @@ Range Supervision”, 2021.
             
                 <div class='prev-next-bottom'>
                   
-    <a class='button bttn-sec button-size-l' id="prev-link" href="neural-network-compression-framework.html" title="previous page">Prev</a>
+    <a class='button bttn-sec button-size-l' id="prev-link" href="tmo-introduction/filter-pruning.html" title="previous page">Prev</a>
     <a class='button bttn-sec button-size-l' id="next-link" href="../runtime-inference-optimizations.html" title="next page">Next</a>
 
                 </div>

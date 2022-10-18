@@ -5,10 +5,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Neural Network Compression Framework optimizes Deep Neural Networks by using quantization and pruning methods that require model fine-tuning or re-training." name="description" />
-<meta content="Neural Network Compression Framework, NNCF, Deep Neural Networks, DNN, quantization, model quantization, model pruning, model optimization, accuracy-aware model training, quantization-aware training, PyTorch, TensorFlow, image classification, object detection, semantic segmentation, quantizing models, open source, model optimization workflow, compression algorithm" name="keywords" />
 
-    <title>Neural Network Compression Framework &#8212; OpenVINO™  documentation</title>
+    <title>Optimizing Models at Training Time &#8212; OpenVINO™  documentation</title>
     
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
@@ -73,11 +71,11 @@
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/target-highlight.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <link rel="canonical" href="https://docs.openvino.ai/latest/pages/documentation/model-optimization-guide/neural-network-compression-framework.html" />
+    <link rel="canonical" href="https://docs.openvino.ai/latest/pages/documentation/model-optimization-guide/tmo-introduction.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Experimental: Protecting Model" href="experimental-protecting-model.html" />
+    <link rel="next" title="Quantization-aware Training (QAT)" href="tmo-introduction/qat-introduction.html" />
     <link rel="prev" title="Post-training Optimization Tool FAQ" href="post-training-model-optimization/post-training-optimization-tool-faq.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
@@ -534,7 +532,7 @@
   <ul class="current">
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="post-training-model-optimization.html">
-     Optimizing models post-training
+     Optimizing Models Post-training
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
     <label for="toctree-checkbox-5">
@@ -544,7 +542,7 @@
     <ul>
      <li class="toctree-l3 has-children">
       <a class="reference internal" href="post-training-model-optimization/quantizing-model.html">
-       Quantizing Model
+       Quantizing Models
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
       <label for="toctree-checkbox-6">
@@ -554,14 +552,14 @@
       <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="post-training-model-optimization/quantizing-model/default-quantization-algorithm.html">
-         DefaultQuantization Algorithm
+         DefaultQuantization Parameters
         </a>
        </li>
       </ul>
      </li>
      <li class="toctree-l3 has-children">
       <a class="reference internal" href="post-training-model-optimization/accuracy-aware-quantization.html">
-       Quantizing Model with Accuracy Control
+       Quantizing Models with Accuracy Control
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
       <label for="toctree-checkbox-7">
@@ -571,7 +569,7 @@
       <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="post-training-model-optimization/accuracy-aware-quantization/accuracy-aware-quantization-algorithm.html">
-         AccuracyAwareQuantization Algorithm
+         AccuracyAwareQuantization Parameters
         </a>
        </li>
       </ul>
@@ -686,10 +684,27 @@
      </li>
     </ul>
    </li>
-   <li class="toctree-l2 current active">
+   <li class="toctree-l2 current active has-children">
     <a class="current reference internal" href="#">
-     Neural Network Compression Framework
+     Optimizing Models at Training Time
     </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="tmo-introduction/qat-introduction.html">
+       Quantization-aware Training (QAT)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="tmo-introduction/filter-pruning.html">
+       Filter Pruning of Convolutional Models
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="experimental-protecting-model.html">
@@ -702,8 +717,8 @@
   <a class="reference internal" href="../runtime-inference-optimizations.html">
    Runtime Inference Optimizations
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-  <label for="toctree-checkbox-12">
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -717,8 +732,8 @@
     <a class="reference internal" href="../runtime-inference-optimizations/optimizing-for-latency.html">
      Optimizing for the Latency
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-    <label for="toctree-checkbox-13">
+    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+    <label for="toctree-checkbox-14">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -751,8 +766,8 @@
   <a class="reference internal" href="../tuning-utilities.html">
    Tuning Utilities
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-  <label for="toctree-checkbox-14">
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -768,8 +783,8 @@
   <a class="reference internal" href="../performance-benchmarks.html">
    Performance Benchmarks
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -778,8 +793,8 @@
     <a class="reference internal" href="../performance-benchmarks/openvino-performance-benchmarks.html">
      Intel® Distribution of OpenVINO™ toolkit Benchmark Results
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-    <label for="toctree-checkbox-16">
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -791,7 +806,7 @@
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../performance-benchmarks/openvino-performance-benchmarks/model-accuracy-for-int8-fp32.html">
-       Model Accuracy for INT8 and FP32 Precision
+       Model Accuracy and Performance for INT8 and FP32
       </a>
      </li>
     </ul>
@@ -819,8 +834,8 @@
   <a class="reference internal" href="../openvino-runtime-user-guide.html">
    Performing Inference with OpenVINO Runtime
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-  <label for="toctree-checkbox-17">
+  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+  <label for="toctree-checkbox-18">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -829,8 +844,8 @@
     <a class="reference internal" href="../openvino-runtime-user-guide/openvino-runtime-integrate-application.html">
      Integrate OpenVINO™ with Your Application
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
-    <label for="toctree-checkbox-18">
+    <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+    <label for="toctree-checkbox-19">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -861,8 +876,8 @@
     <a class="reference internal" href="../openvino-runtime-user-guide/working-with-devices.html">
      Working with devices
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
-    <label for="toctree-checkbox-19">
+    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+    <label for="toctree-checkbox-20">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -881,8 +896,8 @@
       <a class="reference internal" href="../openvino-runtime-user-guide/working-with-devices/inference-device-gpu.html">
        GPU Device
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
-      <label for="toctree-checkbox-20">
+      <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+      <label for="toctree-checkbox-21">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -898,8 +913,8 @@
       <a class="reference internal" href="../openvino-runtime-user-guide/working-with-devices/inference-device-vpu.html">
        VPU Devices
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
-      <label for="toctree-checkbox-21">
+      <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+      <label for="toctree-checkbox-22">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -932,8 +947,8 @@
     <a class="reference internal" href="../openvino-runtime-user-guide/preprocessing.html">
      Preprocessing
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
-    <label for="toctree-checkbox-22">
+    <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+    <label for="toctree-checkbox-23">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -959,8 +974,8 @@
     <a class="reference internal" href="../openvino-runtime-user-guide/dynamic-shapes.html">
      Dynamic Shapes
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
-    <label for="toctree-checkbox-23">
+    <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+    <label for="toctree-checkbox-24">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -976,8 +991,8 @@
     <a class="reference internal" href="../openvino-runtime-user-guide/automatic-device-selection.html">
      Automatic Device Selection
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
-    <label for="toctree-checkbox-24">
+    <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+    <label for="toctree-checkbox-25">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1020,8 +1035,8 @@
   <a class="reference internal" href="../openvino-deployment-guide.html">
    Deploying Your Applications with OpenVINO™
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
-  <label for="toctree-checkbox-25">
+  <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+  <label for="toctree-checkbox-26">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1059,8 +1074,8 @@
   <a class="reference internal" href="../dl-workbench-overview.html">
    OpenVINO™ Deep Learning Workbench Overview
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
-  <label for="toctree-checkbox-26">
+  <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+  <label for="toctree-checkbox-27">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1069,8 +1084,8 @@
     <a class="reference internal" href="../dl-workbench-overview/dl-workbench-install.html">
      Installation
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
-    <label for="toctree-checkbox-27">
+    <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+    <label for="toctree-checkbox-28">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1084,8 +1099,8 @@
       <a class="reference internal" href="../dl-workbench-overview/dl-workbench-install/run-dl-workbench-locally.html">
        Run the DL Workbench Locally
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
-      <label for="toctree-checkbox-28">
+      <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+      <label for="toctree-checkbox-29">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1113,8 +1128,8 @@
     <a class="reference internal" href="../dl-workbench-overview/dl-workbench-get-started.html">
      Get Started
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
-    <label for="toctree-checkbox-29">
+    <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+    <label for="toctree-checkbox-30">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1133,8 +1148,8 @@
       <a class="reference internal" href="../dl-workbench-overview/dl-workbench-get-started/dl-workbench-resources.html">
        Educational Resources about DL Workbench
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
-      <label for="toctree-checkbox-30">
+      <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+      <label for="toctree-checkbox-31">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1152,8 +1167,8 @@
     <a class="reference internal" href="../dl-workbench-overview/dl-workbench-tutorials.html">
      Tutorials
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
-    <label for="toctree-checkbox-31">
+    <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+    <label for="toctree-checkbox-32">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1204,8 +1219,8 @@
     <a class="reference internal" href="../dl-workbench-overview/dl-workbench-user-guide.html">
      User Guide
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
-    <label for="toctree-checkbox-32">
+    <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+    <label for="toctree-checkbox-33">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1214,8 +1229,8 @@
       <a class="reference internal" href="../dl-workbench-overview/_workbench-files-to-migrate/workbench_docs_Workbench_DG_Select_Models.html">
        Obtain Models
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
-      <label for="toctree-checkbox-33">
+      <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
+      <label for="toctree-checkbox-34">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1229,8 +1244,8 @@
         <a class="reference internal" href="../dl-workbench-overview/_workbench-files-to-migrate/workbench_docs_Workbench_DG_Original_Model_Import.html">
          Import Original Model
         </a>
-        <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
-        <label for="toctree-checkbox-34">
+        <input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
+        <label for="toctree-checkbox-35">
          <i class="fas fa-chevron-down">
          </i>
         </label>
@@ -1248,8 +1263,8 @@
       <a class="reference internal" href="../dl-workbench-overview/_workbench-files-to-migrate/workbench_docs_Workbench_DG_Generate_Datasets.html">
        Obtain Datasets
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
-      <label for="toctree-checkbox-35">
+      <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+      <label for="toctree-checkbox-36">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1258,8 +1273,8 @@
         <a class="reference internal" href="../dl-workbench-overview/_workbench-files-to-migrate/workbench_docs_Workbench_DG_Dataset_Types.html">
          Dataset Types
         </a>
-        <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
-        <label for="toctree-checkbox-36">
+        <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
+        <label for="toctree-checkbox-37">
          <i class="fas fa-chevron-down">
          </i>
         </label>
@@ -1277,8 +1292,8 @@
       <a class="reference internal" href="../dl-workbench-overview/_workbench-files-to-migrate/workbench_docs_Workbench_DG_Select_Environment.html">
        Select Environment
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
-      <label for="toctree-checkbox-37">
+      <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
+      <label for="toctree-checkbox-38">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1287,8 +1302,8 @@
         <a class="reference internal" href="../dl-workbench-overview/_workbench-files-to-migrate/workbench_docs_Workbench_DG_Remote_Profiling.html">
          Work with Remote Targets
         </a>
-        <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
-        <label for="toctree-checkbox-38">
+        <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
+        <label for="toctree-checkbox-39">
          <i class="fas fa-chevron-down">
          </i>
         </label>
@@ -1326,8 +1341,8 @@
       <a class="reference internal" href="../dl-workbench-overview/_workbench-files-to-migrate/workbench_docs_Workbench_DG_Run_Inference.html">
        Explore Inference Configurations
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
-      <label for="toctree-checkbox-39">
+      <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
+      <label for="toctree-checkbox-40">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1363,8 +1378,8 @@
       <a class="reference internal" href="../dl-workbench-overview/_workbench-files-to-migrate/workbench_docs_Workbench_DG_Measure_Accuracy.html">
        Create Accuracy Report
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
-      <label for="toctree-checkbox-40">
+      <input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
+      <label for="toctree-checkbox-41">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1390,8 +1405,8 @@
       <a class="reference internal" href="../dl-workbench-overview/_workbench-files-to-migrate/workbench_docs_Workbench_DG_Deployment_Package.html">
        Create Deployment Package
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
-      <label for="toctree-checkbox-41">
+      <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
+      <label for="toctree-checkbox-42">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1412,8 +1427,8 @@
       <a class="reference internal" href="../dl-workbench-overview/_workbench-files-to-migrate/workbench_docs_Workbench_DG_Jupyter_Notebooks_CLI.html">
        Learn OpenVINO in DL Workbench
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
-      <label for="toctree-checkbox-42">
+      <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
+      <label for="toctree-checkbox-43">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1434,8 +1449,8 @@
       <a class="reference internal" href="../dl-workbench-overview/_workbench-files-to-migrate/workbench_docs_security_Workbench.html">
        Run DL Workbench Securely
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
-      <label for="toctree-checkbox-43">
+      <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
+      <label for="toctree-checkbox-44">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1458,8 +1473,8 @@
     <a class="reference internal" href="../dl-workbench-overview/dl-workbench-troubleshooting.html">
      Troubleshooting
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
-    <label for="toctree-checkbox-44">
+    <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
+    <label for="toctree-checkbox-45">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1489,8 +1504,8 @@
   <a class="reference internal" href="../opencv-graph-api.html">
    Introduction to OpenCV Graph API
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
-  <label for="toctree-checkbox-45">
+  <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
+  <label for="toctree-checkbox-46">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1533,8 +1548,8 @@
   <a class="reference internal" href="../openvino-extensibility-mechanism.html">
    OpenVINO Extensibility Mechanism
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
-  <label for="toctree-checkbox-46">
+  <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
+  <label for="toctree-checkbox-47">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1563,8 +1578,8 @@
     <a class="reference internal" href="../openvino-extensibility-mechanism/model_optimizer_extensibility.html">
      Model Optimizer Extensibility
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
-    <label for="toctree-checkbox-47">
+    <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
+    <label for="toctree-checkbox-48">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1582,8 +1597,8 @@
   <a class="reference internal" href="../openvino-transformation-api.html">
    Overview of Transformations API
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
-  <label for="toctree-checkbox-48">
+  <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
+  <label for="toctree-checkbox-49">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1609,8 +1624,8 @@
   <a class="reference internal" href="../openvino-plugin-developer-guide.html">
    Overview of Inference Engine Plugin Library
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
-  <label for="toctree-checkbox-49">
+  <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
+  <label for="toctree-checkbox-50">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1654,8 +1669,8 @@
     <a class="reference internal" href="../openvino-plugin-developer-guide/low-precision-transformations.html">
      OpenVINO™ Low Precision Transformations
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
-    <label for="toctree-checkbox-50">
+    <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
+    <label for="toctree-checkbox-51">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1664,8 +1679,8 @@
       <a class="reference internal" href="../openvino-plugin-developer-guide/low-precision-transformations/low-precision-transformation-attributes.html">
        Low-Precision Transformation Attributes
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
-      <label for="toctree-checkbox-51">
+      <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
+      <label for="toctree-checkbox-52">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1728,8 +1743,8 @@
     <a class="reference internal" href="../openvino-plugin-developer-guide/custom-plugin-api-reference.html">
      Plugin API Reference
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
-    <label for="toctree-checkbox-52">
+    <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
+    <label for="toctree-checkbox-53">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1786,38 +1801,36 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#features">
-   Features
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optimization-methods">
+   Optimization methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recommended-workflow">
+   Recommended workflow:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation">
+   Installation
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#installation">
-     Installation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#usage-examples">
-     Usage examples
+    <a class="reference internal nav-link" href="#install-from-pypi">
+     Install from PyPI
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tutorials">
-   Tutorials
+  <a class="reference internal nav-link" href="#see-also">
+   See also
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#samples">
-   Samples
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#additional-resources">
-     Additional Resources
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -1858,126 +1871,83 @@
             
                 <div>
                   
-  <span class="target" id="optim-perf-nncf-introduction"><span id="index-0"></span></span><section id="neural-network-compression-framework">
-<h1>Neural Network Compression Framework<a class="headerlink" href="#neural-network-compression-framework" title="Permalink to this headline">¶</a></h1>
-<p><span class="target" id="optim-perf-nncf-introduction-1md-openvino-docs-optimization-guide-optim-perf-nncf-introduction"></span></p>
-<p>The Neural Network Compression Framework (NNCF) aims at optimizing Deep Neural
-Networks (DNN) by means of methods such as quantization and pruning. It provides
-in-training optimization capabilities, which means that the optimization methods
-require model fine-tuning or even re-training.</p>
-<p>NNCF is distributed as a separate tool but is closely aligned with OpenVINO in
-terms of supported optimization features and models. It is open source and
-available on <a class="reference external" href="https://github.com/openvinotoolkit/nncf">GitHub</a>. The diagram
-below shows the model optimization workflow, using NNCF.</p>
-<img alt="../../../_images/nncf_workflow.png" src="../../../_images/nncf_workflow.png" />
-<section id="features">
-<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+  <section id="optimizing-models-at-training-time">
+<h1>Optimizing Models at Training Time<a class="headerlink" href="#optimizing-models-at-training-time" title="Permalink to this headline">¶</a></h1>
+<p><span class="target" id="optim-perf-tmo-introduction-1md-openvino-docs-optimization-guide-optim-perf-tmo-introduction"></span></p>
+<div class="toctree-wrapper compound">
+</div>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Training-time model optimization is a way to get a more efficient and HW-friendly model when applying optimization
+methods with fine-tuning. It can help when the <a class="reference internal" href="post-training-model-optimization.html#optim-perf-pot-intro"><span class="std std-ref">post-training optimization</span></a> does not provide the
+desired accuracy or performance results. OpenVINO does not have training capabilities but it provides a Neural
+Network Compression Framework (NNCF) tool that can be used to integrate training-time optimizations supported by OpenVINO
+in the training scripts created using source frameworks, such as PyTorch or TensorFlow 2.</p>
+<p>To apply training-time optimization methods you need typical artefacts used to train model:</p>
 <ul class="simple">
-<li><p>Support for optimization of PyTorch and TensorFlow 2.x models.</p></li>
-<li><p>Support for various optimization algorithms, applied during a model fine-tuning
-process to achieve a better trade-off between performance and accuracy:</p></li>
+<li><p>A floating-point model in the framework representation.</p></li>
+<li><p>Training script written with framework API.</p></li>
+<li><p>Training and validation datasets.</p></li>
 </ul>
-<table class="table">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Compression algorithm</p></th>
-<th class="head"><p>PyTorch</p></th>
-<th class="head"><p>TensorFlow 2.x</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/openvinotoolkit/nncf/blob/develop/docs/compression_algorithms/Quantization.md">8- bit quantization</a></p></td>
-<td><p>Supported</p></td>
-<td><p>Supported</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/openvinotoolkit/nncf/blob/develop/docs/compression_algorithms/Pruning.md">Filter pruning</a></p></td>
-<td><p>Supported</p></td>
-<td><p>Supported</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/openvinotoolkit/nncf/blob/develop/docs/compression_algorithms/Sparsity.md">Sparsity</a></p></td>
-<td><p>Supported</p></td>
-<td><p>Supported</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/openvinotoolkit/nncf/blob/develop/docs/compression_algorithms/Quantization.md#mixed_precision_quantization">Mixed-precision quantization</a></p></td>
-<td><p>Supported</p></td>
-<td><p>Not supported</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://github.com/openvinotoolkit/nncf/blob/develop/docs/compression_algorithms/Binarization.md">Binarization</a></p></td>
-<td><p>Supported</p></td>
-<td><p>Not supported</p></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><p>Stacking of optimization methods, for example: 8-bit quaNtization + Filter Pruning.</p></li>
-<li><p>Support for <a class="reference external" href="https://github.com/openvinotoolkit/nncf/blob/develop/docs/Usage.md#accuracy-aware-model-training">Accuracy-Aware model training</a> pipelines via the <a class="reference external" href="https://github.com/openvinotoolkit/nncf/tree/develop/docs/accuracy_aware_model_training/AdaptiveCompressionLevelTraining.md">Adaptive Compression Level Training</a> and <a class="reference external" href="https://github.com/openvinotoolkit/nncf/tree/develop/docs/accuracy_aware_model_training/EarlyExitTrainig.md">Early Exit Training</a>.</p></li>
-<li><p>Automatic, configurable model graph transformation to obtain the compressed model.</p>
+<p>Figure below shows a common workflow of applying training-time optimizations with NNCF.</p>
+<img alt="../../../_images/nncf_workflow.png" src="../../../_images/nncf_workflow.png" />
+</section>
+<section id="optimization-methods">
+<h2>Optimization methods<a class="headerlink" href="#optimization-methods" title="Permalink to this headline">¶</a></h2>
+<p>There are two methods available to improve model performance with OpenVINO:</p>
+<ul class="simple">
+<li><p><strong>8-bit uniform quantization</strong> (or simply quantization) is a technique that allows moving from floating-point precision
+to 8-bit integer precision for weights and activations during the inference time. It helps to reduce the model size, memory
+footprint and latency as well as improve the computational efficiency using integer arithmetic. During the quantization
+process the model undergoes the transformation process when additional operations, that contain quantization information,
+are inserted into the model. However, the model continues to be the floating-point and can be fine-tuned to restore the
+accuracy degradation introduced by the quantization the same way as the original model. This procedure is called
+Quantization-aware Training (QAT). The actual transition to integer arithmetic happens at model inference.</p></li>
+<li><p><strong>Structured pruning</strong> is used to remove unnecessary or redundant groups of weights from Deep Neural Networks. In the case
+of Convolutional Neural Networks it usually results in <strong>Filter Pruning</strong> where the whole convolutional filters are being
+removed from the model reducing the model size and footprint as well as overall computational complexity. This process
+consists of two steps: 1. search and zero out redundant filters along with model fine-tuning 2. remove zero filters after
+the fine-tuning. Since this method changes the model structure it usually requires a long fine-tuning or even retraining
+depending on the pruning ratio.</p></li>
+</ul>
+</section>
+<section id="recommended-workflow">
+<h2>Recommended workflow:<a class="headerlink" href="#recommended-workflow" title="Permalink to this headline">¶</a></h2>
+<p>Based on the complexity and ease of use of the optimization methods, we recommend the following workflow to accelerate
+the inference with the fine-tuning.</p>
+<ul class="simple">
+<li><p><strong>Quantization-aware Training (QAT)</strong> to get fast and accurate results with significant improvement in the inference
+performance. Currently, a HW-compatible (CPU, GPU, VPU) QAT for 8-bit inference is available. For details, see
+<a class="reference internal" href="tmo-introduction/qat-introduction.html#optim-perf-qat-introduction"><span class="std std-ref">Quantization-aware Training</span></a> documentation.</p></li>
+<li><p><strong>Filter Pruning</strong>, used to get additional speedup on top of quantization. For details, see
+<a class="reference internal" href="tmo-introduction/filter-pruning.html#optim-perf-filter-pruning"><span class="std std-ref">Filter Pruning</span></a> documentation.</p></li>
+</ul>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>NNCF is open-sourced on <a class="reference external" href="https://github.com/openvinotoolkit/nncf">GitHub</a> and distributed as a separate package. It
+is also available on PyPI. We recommend installing it to the Python environment where the framework is installed.</p>
+<section id="install-from-pypi">
+<h3>Install from PyPI<a class="headerlink" href="#install-from-pypi" title="Permalink to this headline">¶</a></h3>
+<p>To install the latest released version via pip manager run the following command:</p>
+<div class="highlight"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">nncf</span></pre></div></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To install with specific frameworks, use the <cite>pip install nncf[extras]</cite> command, where extras is a list of possible extras,
+for example, <cite>torch</cite>, <cite>tf</cite>, <cite>onnx</cite>.</p>
+</div>
+<p>To install the latest NNCF version from source follow the instruction on <a class="reference external" href="https://github.com/openvinotoolkit/nncf#installation">GitHub</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Only models created using Sequential or Keras Functional API are
-supported. Support for TensorFlow models is limited.</p>
+<p>NNCF does not have OpenVINO as an installation requirement. To deploy optimized models you should install
+OpenVINO separately.</p>
 </div>
-<ul class="simple">
-<li><p>GPU-accelerated layers for faster compressed model fine-tuning.</p></li>
-</ul>
-</li>
-<li><p>Distributed training support.</p></li>
-<li><p>Examples of configuration files for each supported compression algorithm.</p></li>
-<li><p>Exporting PyTorch compressed models to ONNX checkpoints and TensorFlow
-compressed models to SavedModel or Frozen Graph format, ready to use with
-<a class="reference external" href="https://github.com/openvinotoolkit/">OpenVINO toolkit</a>.</p></li>
-<li><p>Git patches for prominent third-party repositories
-(<a class="reference external" href="https://github.com/huggingface/transformers">huggingface-transformers</a>)
-demonstrating the process of integrating NNCF into custom training pipelines.</p></li>
-</ul>
-<section id="installation">
-<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h3>
-<p>NNCF provides the packages available for installation through the PyPI
-repository. To install the latest version via pip manager, run the following command:</p>
-<div class="highlight"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">nncf</span></pre></div></div></section>
-<section id="usage-examples">
-<h3>Usage examples<a class="headerlink" href="#usage-examples" title="Permalink to this headline">¶</a></h3>
-<p>NNCF provides various examples and tutorials that demonstrate usage of
-optimization methods:</p>
 </section>
 </section>
-<section id="tutorials">
-<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<section id="see-also">
+<h2>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/openvinotoolkit/openvino_notebooks/tree/main/notebooks/302-pytorch-quantization-aware-training">Quantization-aware training of PyTorch model</a></p></li>
-<li><p><a class="reference external" href="https://github.com/openvinotoolkit/openvino_notebooks/tree/main/notebooks/305-tensorflow-quantization-aware-training">Quantization-aware training of TensorFlow model</a></p></li>
+<li><p><a class="reference internal" href="post-training-model-optimization.html#optim-perf-pot-intro"><span class="std std-ref">Post-training Optimization</span></a></p></li>
 </ul>
-</section>
-<section id="samples">
-<h2>Samples<a class="headerlink" href="#samples" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>PyTorch:</p>
-<ul>
-<li><p><a class="reference external" href="https://github.com/openvinotoolkit/nncf/blob/develop/examples/torch/classification/README.md">Image Classification sample</a></p></li>
-<li><p><a class="reference external" href="https://github.com/openvinotoolkit/nncf/blob/develop/examples/torch/object_detection/README.md">Object Detection sample</a></p></li>
-<li><p><a class="reference external" href="https://github.com/openvinotoolkit/nncf/blob/develop/examples/torch/semantic_segmentation/README.md">Semantic segmentation sample</a></p></li>
-</ul>
-</li>
-<li><p>TensorFlow samples:</p>
-<ul>
-<li><p><a class="reference external" href="https://github.com/openvinotoolkit/nncf/blob/develop/examples/tensorflow/classification/README.md">Image Classification sample</a></p></li>
-<li><p><a class="reference external" href="https://github.com/openvinotoolkit/nncf/blob/develop/examples/tensorflow/object_detection/README.md">Object Detection sample</a></p></li>
-<li><p><a class="reference external" href="https://github.com/openvinotoolkit/nncf/blob/develop/examples/tensorflow/segmentation/README.md">Instance Segmentation sample</a></p></li>
-</ul>
-</li>
-</ul>
-<section id="additional-resources">
-<h3>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/openvinotoolkit/nncf#nncf-compressed-model-zoo">Compressed Model Zoo</a></p></li>
-<li><p><a class="reference external" href="https://github.com/openvinotoolkit/openvino_contrib/tree/master/modules/optimum">NNCF in HuggingFace Optimum</a></p></li>
-<li><p><a class="reference internal" href="post-training-model-optimization.html#optim-perf-pot-intro"><span class="std std-ref">Post-training optimization</span></a></p></li>
-</ul>
-</section>
 </section>
 </section>
 
@@ -1988,7 +1958,7 @@ optimization methods:</p>
                 <div class='prev-next-bottom'>
                   
     <a class='button bttn-sec button-size-l' id="prev-link" href="post-training-model-optimization/post-training-optimization-tool-faq.html" title="previous page">Prev</a>
-    <a class='button bttn-sec button-size-l' id="next-link" href="experimental-protecting-model.html" title="next page">Next</a>
+    <a class='button bttn-sec button-size-l' id="next-link" href="tmo-introduction/qat-introduction.html" title="next page">Next</a>
 
                 </div>
             
